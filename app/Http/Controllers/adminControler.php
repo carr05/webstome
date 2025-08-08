@@ -44,8 +44,9 @@ class adminControler extends Controller
     }
 
     public function logout()
-    {
-        session()->forget(['admin_id', 'admin_username']);
-        return redirect()->route('landing');
-    }
+{
+    session()->forget(['admin_id', 'admin_username']);
+    return redirect()->route('login');
+}
+
 }
