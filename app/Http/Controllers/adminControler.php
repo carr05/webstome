@@ -42,6 +42,10 @@ class adminControler extends Controller
 
         return view('home');
     }
+    public function layout()
+    {
+        return view('layout'); // atau nama view yang benar
+    }
 
     public function logout()
 {
