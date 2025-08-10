@@ -14,32 +14,27 @@
     }
 
     /* Sidebar */
-    .sidebar {
-      width: 220px;
-      background-color: #4B3FAE;
-      color: white;
-      height: 100vh;
-      position: fixed;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 20px 0;
-    }
-    .sidebar h2 {
-      text-align: center;
-      font-size: 18px;
-    }
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-    .sidebar ul li {
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-    .sidebar ul li:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+   .sidebar {
+            background-color: #5A45D3;
+            color: white;
+            width: 230px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 5px 10px;
+        }
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
     /* Main content */
     .main {
@@ -128,7 +123,7 @@
   <div class="sidebar" id="sidebar">
     <div>
       <h5 class="text-center mb-4">🎓 Webstome</h5>
-      <a href="#" class="active"><i class="bi bi-grid me-2"></i> Dashboard</a>
+      <a href="{{ url('/home') }}" class="active"><i class="bi bi-grid me-2"></i> Dashboard</a>
       
 <a href="{{ url('/layout') }}">
     <i class="bi bi-people me-2"></i>Layout
