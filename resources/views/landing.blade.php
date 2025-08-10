@@ -8,7 +8,7 @@
 <body>
     <h2>Selamat datang di aplikasi</h2>
     <a href="{{ route('login') }}">
-        <button>Login di sini</button>
+        <button type="button">Login</button>                                                
     </a>
 </body>
 </html>
