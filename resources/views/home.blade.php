@@ -320,7 +320,10 @@
     <div>
       <h5 class="text-center mb-4">🎓 Webstome</h5>
       <a href="#" class="active"><i class="bi bi-grid me-2"></i> Dashboard</a>
-      <a href="#"><i class="bi bi-people me-2"></i> Data Guru</a>
+      
+<a href="{{ url('/layout') }}">
+    <i class="bi bi-people me-2"></i>Layout
+</a>
       <a href="#"><i class="bi bi-book me-2"></i> Data Siswa</a>
       <a href="#"><i class="bi bi-calendar me-2"></i> Agenda</a>
       <a href="#"><i class="bi bi-images me-2"></i> Galeri</a>
