@@ -8861,8 +8861,8 @@ section,
         <div class="row align-items-center g-5 mb-5">
           <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
             <div class="hero-image-wrapper">
-              <img src="assets/img/education/students-7.webp" alt="Student Life" class="img-fluid main-image">
-              {{ asset('') }}
+              <img src=" {{ asset('assets/img/education/students-7.webp') }}" alt="Student Life" class="img-fluid main-image">
+             
               <div class="floating-card" data-aos="zoom-in" data-aos-delay="400">
                 <div class="card-icon">
                   <i class="bi bi-people-fill"></i>
@@ -8921,7 +8921,7 @@ section,
             <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
               <div class="featured-activity">
                 <div class="activity-media">
-                  <img src="assets/img/education/activities-2.webp" alt="Featured Activity" class="img-fluid">
+                  <img src="{{ asset('assets/img/education/activities-2.webp') }}" alt="Featured Activity" class="img-fluid">                  
                   <div class="activity-overlay">
                     <div class="overlay-content">
                       <h4>Student Organizations</h4>
@@ -8939,7 +8939,8 @@ section,
               <div class="activities-list">
                 <div class="activity-item" data-aos="slide-up" data-aos-delay="350">
                   <div class="activity-thumb">
-                    <img src="assets/img/education/activities-6.webp" alt="Research Projects" class="img-fluid">
+                    <img src="{{ asset('assets/img/education/activities-6.webp') }}" alt="Research Projects" class="img-fluid">
+                    
                   </div>
                   <div class="activity-info">
                     <h6>Research Projects</h6>
@@ -8949,7 +8950,8 @@ section,
 
                 <div class="activity-item" data-aos="slide-up" data-aos-delay="400">
                   <div class="activity-thumb">
-                    <img src="assets/img/education/activities-1.webp" alt="Community Service" class="img-fluid">
+                    <img src="{{ asset('assets/img/education/activities-1.webp') }}" alt="Community Service" class="img-fluid">
+                    
                   </div>
                   <div class="activity-info">
                     <h6>Community Service</h6>
@@ -8959,7 +8961,8 @@ section,
 
                 <div class="activity-item" data-aos="slide-up" data-aos-delay="450">
                   <div class="activity-thumb">
-                    <img src="assets/img/education/activities-4.webp" alt="Innovation Labs" class="img-fluid">
+                    <img src="{{ asset('assets/img/education/activities-4.webp') }}" alt="Innovation Labs" class="img-fluid">
+                    
                   </div>
                   <div class="activity-info">
                     <h6>Innovation Labs</h6>
@@ -9017,7 +9020,8 @@ section,
             <div class="swiper-slide">
               <div class="testimonial-item" data-aos="zoom-in" data-aos-delay="200">
                 <div class="testimonial-header">
-                  <img src="assets/img/person/person-f-12.webp" alt="Client" class="img-fluid" loading="lazy">
+                  <img src=" {{ asset('assets/img/person/person-f-12.webp') }}" alt="Client" class="img-fluid" loading="lazy">
+                 
                   <div class="rating">
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
