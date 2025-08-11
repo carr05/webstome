@@ -84,18 +84,8 @@
 
 <div class="wrapper">
     <!-- Sidebar -->
-<<<<<<< HEAD
-    <div class="sidebar">
-        <h4>Webstome</h4>
-        <a href="#">Dashboard</a>
-        <a href="#">Tampilan</a>
-        <a href="#">Konten</a>
-        <a href="#">Pengaturan</a>
-        <a href="#">Logout</a>
-    </div>
 
-    <!-- Main Content -->
-=======
+   
   <div class="sidebar" id="sidebar">
     <div>
       <h5 class="text-center mb-4">🎓 Webstome</h5>
@@ -118,7 +108,7 @@
     </div>
   </div>
     <!-- Main content -->
->>>>>>> af48d9acd33bc007568c15e9cbeb6ca464dece3b
+
     <div class="main-content">
         <!-- Header -->
         <div class="header-card">
