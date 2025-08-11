@@ -329,7 +329,7 @@
 </a>
       <a href="#"><i class="bi bi-calendar me-2"></i> Agenda</a>
       <a href="#"><i class="bi bi-images me-2"></i> Galeri</a>
-      <a href="#"><i class="bi bi-newspaper me-2"></i> Berita</a>
+      <a href="{{ url('/berita') }}"><i class="bi bi-newspaper me-2"></i> Berita</a>
       <a href="#"><i class="bi bi-trophy me-2"></i> Prestasi</a>
     </div>
     <div class="sidebar-bottom">

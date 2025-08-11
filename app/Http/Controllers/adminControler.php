@@ -47,6 +47,11 @@ class adminControler extends Controller
         return view('layout'); // atau nama view yang benar
     }
 
+    public function berita()
+    {
+        return view('berita');
+    }
+
     public function logout()
 {
     session()->forget(['admin_id', 'admin_username']);

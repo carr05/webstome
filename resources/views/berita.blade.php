@@ -14,32 +14,27 @@
     }
 
     /* Sidebar */
-    .sidebar {
-      width: 220px;
-      background-color: #4B3FAE;
-      color: white;
-      height: 100vh;
-      position: fixed;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 20px 0;
-    }
-    .sidebar h2 {
-      text-align: center;
-      font-size: 18px;
-    }
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-    .sidebar ul li {
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-    .sidebar ul li:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+   .sidebar {
+            background-color: #5A45D3;
+            color: white;
+            width: 230px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 5px 10px;
+        }
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
     /* Main content */
     .main {
@@ -125,20 +120,28 @@
 <body>
 
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <div>
-      <h2>Webstome</h2>
-      <ul>
-        <li>Dashboard</li>
-        <li>Berita</li>
-        <li>Galeri</li>
-      </ul>
+      <h5 class="text-center mb-4">🎓 Webstome</h5>
+      <a href="{{ url('/home') }}" class="active"><i class="bi bi-grid me-2"></i> Dashboard</a>
+      
+<a href="{{ url('/layout') }}">
+    <i class="bi bi-people me-2"></i>Layout
+</a>
+      <a href="#"><i class="bi bi-book me-2"></i> Data Siswa</a>
+      <a href="#"><i class="bi bi-calendar me-2"></i> Agenda</a>
+      <a href="#"><i class="bi bi-images me-2"></i> Galeri</a>
+      <a href="{{ url('/berita') }}">
+        <i class="bi bi-newspaper me-2"></i> Berita
+      </a>
+      <a href="#"><i class="bi bi-trophy me-2"></i> Prestasi</a>
     </div>
-    <div style="padding: 0 20px;">
-      <p>⚙️ Webstome</p>
-      <p>↩️ Logout</p>
+    <div class="sidebar-bottom">
+      <a href="#"><i class="bi bi-gear me-2"></i> Pengaturan</a>
+      <a href="#"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
     </div>
   </div>
+
 
   <!-- Main -->
   <div class="main">
