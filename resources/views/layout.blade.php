@@ -9,37 +9,42 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background-color: #EDEAFF;
             margin: 0;
-            background-color: #f8f9fa;
-            overflow: hidden;
         }
+        .wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+        /* Sidebar */
         .sidebar {
             background-color: #5A45D3;
             color: white;
             width: 230px;
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            padding-top: 20px;
+            padding: 20px 0;
+            flex-shrink: 0;
+        }
+        .sidebar h4 {
+            text-align: center;
+            margin-bottom: 30px;
         }
         .sidebar a {
             color: white;
             text-decoration: none;
             display: block;
             padding: 10px 20px;
-            border-radius: 8px;
             margin: 5px 10px;
+            border-radius: 8px;
+            font-weight: 500;
         }
         .sidebar a:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
+        /* Main content */
         .main-content {
-            margin-left: 230px;
-            height: 100vh;
-            overflow-y: auto;
-            background-color: #EDEAFF;
+            flex: 1;
             padding: 20px;
+            overflow-y: auto;
         }
         .header-card {
             background-color: white;
@@ -48,6 +53,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
         }
         .card-section {
             background-color: white;
@@ -63,6 +69,7 @@
             text-align: center;
             font-weight: 500;
             cursor: pointer;
+            width: 100%;
         }
         .card-button:hover {
             background-color: #D7CCFF;
@@ -75,9 +82,10 @@
 </head>
 <body>
 
+<div class="wrapper">
     <!-- Sidebar -->
     <div class="sidebar">
-        <h4 class="text-center mb-4">Webstome</h4>
+        <h4>Webstome</h4>
         <a href="#">Dashboard</a>
         <a href="#">Tampilan</a>
         <a href="#">Konten</a>
@@ -85,7 +93,7 @@
         <a href="#">Logout</a>
     </div>
 
-    <!-- Main content -->
+    <!-- Main Content -->
     <div class="main-content">
         <!-- Header -->
         <div class="header-card">
@@ -100,12 +108,12 @@
         <div class="card-section">
             <h6 class="mb-3">Pilih Elemen untuk Dikustomisasi</h6>
             <div class="row g-3">
-                <div class="col-6 col-md-4"><button class="w-100 card-button">Navbar</button></div>
-                <div class="col-6 col-md-4"><button class="w-100 card-button">Title</button></div>
-                <div class="col-6 col-md-4"><button class="w-100 card-button">Cards</button></div>
-                <div class="col-6 col-md-4"><button class="w-100 card-button">Button</button></div>
-                <div class="col-6 col-md-4"><button class="w-100 card-button">Forms</button></div>
-                <div class="col-6 col-md-4"><button class="w-100 card-button">Global</button></div>
+                <div class="col-6 col-md-4"><button class="card-button">Navbar</button></div>
+                <div class="col-6 col-md-4"><button class="card-button">Title</button></div>
+                <div class="col-6 col-md-4"><button class="card-button">Cards</button></div>
+                <div class="col-6 col-md-4"><button class="card-button">Button</button></div>
+                <div class="col-6 col-md-4"><button class="card-button">Forms</button></div>
+                <div class="col-6 col-md-4"><button class="card-button">Global</button></div>
             </div>
         </div>
 
@@ -114,14 +122,12 @@
             <div class="col-md-6">
                 <div class="card-section">
                     <h6>Skema warna</h6>
-                    <div class="mt-3">
-                        <p>Primary</p>
-                        <div class="color-box" style="background-color:#5A45D3;"></div>
-                        <p class="mt-2">Secondary</p>
-                        <div class="color-box" style="background-color:#EDEAFF;"></div>
-                        <p class="mt-2">Text</p>
-                        <div class="color-box" style="background-color:#000;"></div>
-                    </div>
+                    <p class="mt-3">Primary</p>
+                    <div class="color-box" style="background-color:#5A45D3;"></div>
+                    <p class="mt-2">Secondary</p>
+                    <div class="color-box" style="background-color:#EDEAFF;"></div>
+                    <p class="mt-2">Text</p>
+                    <div class="color-box" style="background-color:#000;"></div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -138,7 +144,7 @@
             </div>
         </div>
 
-        <!-- Live preview -->
+        <!-- Live Preview -->
         <div class="card-section mt-3">
             <h6>Live Preview</h6>
             <div class="p-3" style="background-color:#EDEAFF; border-radius:10px;">
@@ -150,6 +156,7 @@
             </div>
         </div>
     </div>
+</div>
 
 </body>
 </html>
