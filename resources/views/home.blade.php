@@ -325,7 +325,7 @@
     <i class="bi bi-people me-2"></i>Layout
 </a>
       <a href="{{ url('/layout') }}">
-    <i class="bi bi-people me-2"></i>Berita
+    <i class="bi bi-images me-2"></i>Berita
 </a>
       <a href="#"><i class="bi bi-calendar me-2"></i> Agenda</a>
       <a href="#"><i class="bi bi-images me-2"></i> Galeri</a>
