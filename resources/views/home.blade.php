@@ -334,7 +334,7 @@
     </div>
     <div class="sidebar-bottom">
       <a href="#"><i class="bi bi-gear me-2"></i> Pengaturan</a>
-      <a href="#"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
+      <a href="{{ url('/logout') }}"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
     </div>
   </div>
 
