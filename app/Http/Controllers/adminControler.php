@@ -52,6 +52,16 @@ class adminControler extends Controller
         return view('berita');
     }
 
+    public function agenda()
+    {
+        return view('agenda');
+    }
+
+    public function index()
+    {
+        return view('layout1.index');
+    }
+
     public function logout()
 {
     session()->forget(['admin_id', 'admin_username']);

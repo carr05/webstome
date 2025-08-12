@@ -261,7 +261,6 @@
   <!-- Include Sidebar -->
   @include('layouts.main')
 
-
   <!-- Main Content -->
   <div class="main-container">
     <div class="main-content">

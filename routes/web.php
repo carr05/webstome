@@ -15,6 +15,11 @@ Route::get('/layout', [adminControler::class, 'layout'])->name('layout1');
 Route::get('/logout', action: [adminControler::class, 'logout'])->name('logout');
 
 Route::get('/berita', [adminControler::class, 'berita'])->name('berita');
+<<<<<<< HEAD
 
+=======
+Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');
+Route::get('/layout1/index', [adminControler::class, 'index'])->name('layout1.index');
+>>>>>>> 040aee3b4b4bff6911308873d3bc106648ef63cf
 Route::get('/logout', [adminControler::class, 'logout'])->name('logout');
 
