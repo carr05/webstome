@@ -1,82 +1,97 @@
 <?php
 
+// app/Http/Controllers/beritaController.php
+
 namespace App\Http\Controllers;
 
-use App\Models\Berita;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Models\berita; // Pastikan model 'berita' ada
 
 class beritaController extends Controller
 {
-    public function index()
+    public function landing()
     {
-        $beritas = Berita::latest()->paginate(5);
-        return view('berita', compact('beritas'));
+        // Ambil 5 berita terbaru
+        $recentNews = berita::latest()->take(5)->get();
+
+        // Kirim ke view 'landing.blade.php'
+        return view('landing', compact('recentNews'));
     }
 
+public function index()
+    {
+        // Ambil semua berita dari database
+        $berita = Berita::latest()->get();
+
+        // Kirim data ke view
+        return view('layout1.index', compact('berita'));
+    }
+    // Form tambah berita
     public function create()
     {
-        return view('berita-create');
+        return view('admin.berita.create');
     }
 
+    // Simpan berita baru
     public function store(Request $request)
     {
         $request->validate([
             'judul' => 'required',
             'konten' => 'required',
             'tanggal' => 'required|date',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
+            'gambar' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
-        $gambar = null;
+        $gambarPath = null;
         if ($request->hasFile('gambar')) {
-            $gambar = $request->file('gambar')->store('berita', 'public');
+            $gambarPath = $request->file('gambar')->store('berita', 'public');
         }
 
         Berita::create([
             'judul' => $request->judul,
             'konten' => $request->konten,
             'tanggal' => $request->tanggal,
-            'gambar' => $gambar
+            'gambar' => $gambarPath
         ]);
 
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan!');
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan');
     }
 
-    public function edit(Berita $berita)
+    // Form edit berita
+    public function edit(berita $berita)
     {
-        return view('berita-edit', compact('berita'));
+        return view('admin.berita.edit', compact('berita'));
     }
 
-    public function update(Request $request, Berita $berita)
+    // Update berita
+    public function update(Request $request, berita $berita)
     {
         $request->validate([
             'judul' => 'required',
             'konten' => 'required',
             'tanggal' => 'required|date',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
+            'gambar' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
-        $gambar = $berita->gambar;
+        $gambarPath = $berita->gambar;
         if ($request->hasFile('gambar')) {
-            if ($gambar) Storage::disk('public')->delete($gambar);
-            $gambar = $request->file('gambar')->store('berita', 'public');
+            $gambarPath = $request->file('gambar')->store('berita', 'public');
         }
 
         $berita->update([
             'judul' => $request->judul,
             'konten' => $request->konten,
             'tanggal' => $request->tanggal,
-            'gambar' => $gambar
+            'gambar' => $gambarPath
         ]);
 
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil diperbarui!');
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil diperbarui');
     }
 
+    // Hapus berita
     public function destroy(Berita $berita)
     {
-        if ($berita->gambar) Storage::disk('public')->delete($berita->gambar);
         $berita->delete();
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus!');
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus');
     }
 }

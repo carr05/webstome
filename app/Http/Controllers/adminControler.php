@@ -9,13 +9,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\admin;
 use Illuminate\Support\Facades\Hash;
+use App\Models\berita;
 
 class adminControler extends Controller
 {
     public function landing()
-    {
-        return view('landing');
-    }
+{
+    $recentNews = berita::latest()->take(3)->get();
+    return view('layout1.index', compact('recentNews'));
+}
+
 
     public function formLogin()
     {
