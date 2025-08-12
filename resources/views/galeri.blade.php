@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Agenda</title>
+  <title>Dashboard - Berita</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -119,10 +119,33 @@
 </head>
 <body>
 
-  @include('layouts.main')
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div>
+      <h5 class="text-center mb-4">🎓 Webstome</h5>
+      <a href="{{ url('/home') }}" class="active"><i class="bi bi-grid me-2"></i> Dashboard</a>
+      
+<a href="{{ url('/layout') }}">
+    <i class="bi bi-people me-2"></i>Layout
+</a>
+      <a href="#"><i class="bi bi-book me-2"></i> Data Siswa</a>
+      <a href="#"><i class="bi bi-calendar me-2"></i> Agenda</a>
+      <a href="#"><i class="bi bi-images me-2"></i> Galeri</a>
+      <a href="{{ url('/berita') }}">
+        <i class="bi bi-newspaper me-2"></i> Berita
+      </a>
+      <a href="#"><i class="bi bi-trophy me-2"></i> Prestasi</a>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="#"><i class="bi bi-gear me-2"></i> Pengaturan</a>
+      <a href="#"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
+    </div>
+  </div>
+
+
   <!-- Main -->
   <div class="main">
-    <h2>Agenda</h2>
+    <h2>Berita</h2>
 
     <!-- Statistik -->
     <div class="stats">
