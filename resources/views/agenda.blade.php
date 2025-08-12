@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Agenda</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      display: flex;
-      background-color: #6c63ff;
-    }
-
-    /* Sidebar */
-   .sidebar {
-            background-color: #5A45D3;
-            color: white;
-            width: 230px;
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            padding-top: 20px;
-        }
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            padding: 10px 20px;
-            border-radius: 8px;
-            margin: 5px 10px;
-        }
-        .sidebar a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+<style>
 
     /* Main content */
     .main {

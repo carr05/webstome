@@ -14,8 +14,7 @@
         margin: 0;
 
     }
- 
-    
+
     /* Main Container */
     .main-container {
       margin-left: 240px;
