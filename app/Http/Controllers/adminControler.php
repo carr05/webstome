@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
-
-// app/Http/Controllers/adminController.php
+// app/Http/Controllers/adminControler.php
 
 namespace App\Http\Controllers;
 
@@ -14,11 +12,10 @@ use App\Models\berita;
 class adminControler extends Controller
 {
     public function landing()
-{
-    $recentNews = berita::latest()->take(3)->get();
-    return view('layout1.index', compact('recentNews'));
-}
-
+    {
+        $recentNews = berita::latest()->take(3)->get();
+        return view('layout1.index', compact('recentNews'));
+    }
 
     public function formLogin()
     {
@@ -30,7 +27,10 @@ class adminControler extends Controller
         $admin = admin::where('username', $request->username)->first();
 
         if ($admin && Hash::check($request->password, $admin->password)) {
-            session(['admin_id' => $admin->id, 'admin_username' => $admin->username]);
+            session([
+                'admin_id' => $admin->id,
+                'admin_username' => $admin->username
+            ]);
             return redirect()->route('home');
         }
 
@@ -45,6 +45,7 @@ class adminControler extends Controller
 
         return view('home');
     }
+
     public function layout()
     {
         return view('layout'); // atau nama view yang benar
@@ -61,14 +62,15 @@ class adminControler extends Controller
     }
 
     public function index()
-    {
-        return view('layout1.index');
-    }
-
-    public function logout()
 {
-    session()->forget(['admin_id', 'admin_username']);
-    return redirect()->route('login');
+    $recentNews = berita::latest()->take(3)->get();
+    return view('layout1.index', compact('recentNews'));
 }
 
+
+    public function logout()
+    {
+        session()->forget(['admin_id', 'admin_username']);
+        return redirect()->route('login');
+    }
 }

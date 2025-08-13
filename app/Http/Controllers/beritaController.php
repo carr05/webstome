@@ -1,31 +1,26 @@
 <?php
 
-// app/Http/Controllers/beritaController.php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\berita; // Pastikan model 'berita' ada
+use App\Models\berita; // sesuai nama model huruf kecil
 
-class beritaController extends Controller
+class beritacontroller extends Controller
 {
+    // Halaman Landing - Menampilkan 5 berita terbaru
     public function landing()
     {
-        // Ambil 5 berita terbaru
         $recentNews = berita::latest()->take(5)->get();
-
-        // Kirim ke view 'landing.blade.php'
         return view('landing', compact('recentNews'));
     }
 
-public function index()
+    // Halaman daftar semua berita
+    public function index()
     {
-        // Ambil semua berita dari database
-        $berita = Berita::latest()->get();
-
-        // Kirim data ke view
-        return view('layout1.index', compact('berita'));
+        $berita = berita::latest()->get();
+        return view('berita', compact('berita'));
     }
+
     // Form tambah berita
     public function create()
     {
@@ -36,10 +31,10 @@ public function index()
     public function store(Request $request)
     {
         $request->validate([
-            'judul' => 'required',
-            'konten' => 'required',
+            'judul'   => 'required',
+            'konten'  => 'required',
             'tanggal' => 'required|date',
-            'gambar' => 'image|mimes:jpeg,png,jpg|max:2048'
+            'gambar'  => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
         $gambarPath = null;
@@ -47,11 +42,11 @@ public function index()
             $gambarPath = $request->file('gambar')->store('berita', 'public');
         }
 
-        Berita::create([
-            'judul' => $request->judul,
-            'konten' => $request->konten,
+        berita::create([
+            'judul'   => $request->judul,
+            'konten'  => $request->konten,
             'tanggal' => $request->tanggal,
-            'gambar' => $gambarPath
+            'gambar'  => $gambarPath
         ]);
 
         return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan');
@@ -67,30 +62,39 @@ public function index()
     public function update(Request $request, berita $berita)
     {
         $request->validate([
-            'judul' => 'required',
-            'konten' => 'required',
+            'judul'   => 'required',
+            'konten'  => 'required',
             'tanggal' => 'required|date',
-            'gambar' => 'image|mimes:jpeg,png,jpg|max:2048'
+            'gambar'  => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
         $gambarPath = $berita->gambar;
         if ($request->hasFile('gambar')) {
+            // Hapus gambar lama jika ada
+            if ($gambarPath && file_exists(storage_path('app/public/' . $gambarPath))) {
+                unlink(storage_path('app/public/' . $gambarPath));
+            }
             $gambarPath = $request->file('gambar')->store('berita', 'public');
         }
 
         $berita->update([
-            'judul' => $request->judul,
-            'konten' => $request->konten,
+            'judul'   => $request->judul,
+            'konten'  => $request->konten,
             'tanggal' => $request->tanggal,
-            'gambar' => $gambarPath
+            'gambar'  => $gambarPath
         ]);
 
         return redirect()->route('berita.index')->with('success', 'Berita berhasil diperbarui');
     }
 
     // Hapus berita
-    public function destroy(Berita $berita)
+    public function destroy(berita $berita)
     {
+        // Hapus gambar jika ada
+        if ($berita->gambar && file_exists(storage_path('app/public/' . $berita->gambar))) {
+            unlink(storage_path('app/public/' . $berita->gambar));
+        }
+
         $berita->delete();
         return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus');
     }
