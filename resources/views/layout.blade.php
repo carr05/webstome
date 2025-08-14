@@ -31,6 +31,7 @@
       overflow-y: auto;
       box-shadow: 0 8px 40px rgba(0,0,0,0.1);
     }
+    
     .card-section, .header-card {
         background-color: white;
         border-radius: 15px;

@@ -57,6 +57,40 @@ class adminControler extends Controller
         return view('agenda');
     }
 
+    public function galeri()
+    {
+        return view('galeri');
+    }
+
+    public function jurusan()
+    {
+        return view('jurusan');
+    }
+    public function prestasi()
+    {
+        return view('prestasi');
+    }
+    public function guru()
+    {
+        return view('guru');
+    }
+    public function staff()
+    {
+        return view('staff');
+    }
+    public function alumni()
+    {
+        return view('alumni');
+    }
+    public function ekstrakurikuler()
+    {
+        return view('ekstrakurikuler');
+    }
+    public function karya()
+    {
+        return view('karya');
+    }
+
     public function index()
     {
         return view('layout1.index');
