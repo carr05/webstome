@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Index - Vesperr Bootstrap Template</title>
@@ -26,7 +28,7 @@
   <link href="{{ asset('assets2/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
 <link href="{{ asset('assets2/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
 <!-- Template Main CSS File -->
-<link href="{{ asset('assets2/css/main.css') }}" rel="stylesheet">
+
 
     
   <!-- Main CSS File -->
@@ -242,7 +244,7 @@ h6 {
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
   .navmenu {
-    padding: 0;
+    padding: 100;
   }
 
   .navmenu ul {
@@ -2879,6 +2881,8 @@ section,
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets2/js/main.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

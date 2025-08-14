@@ -11,7 +11,7 @@ Route::get('/home', [adminControler::class, 'home'])->name('home');
 Route::get('/logout', [adminControler::class, 'logout'])->name('logout');
 
 // Layout
-Route::get('/layout', [adminControler::class, 'layout'])->name('layout1');
+Route::get('/layout1', [adminControler::class, 'layout'])->name('layout1');
 Route::get('/layout1/index', [adminControler::class, 'index'])->name('layout1.index');
 
 // Berita (CRUD)
