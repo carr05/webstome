@@ -4,38 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - Berita</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
       background-color: #5955B3;
+      margin: 0;
     }
-
-    /* Main wrapper */
-    .main {
-      margin-left: 220px;
-      background-color: #EDEBFF;
-      flex: 1;
-      padding: 30px;
-      min-height: 100vh;
+    .main-container {
+      margin-left: 240px;
+      padding: 20px;
+      height: 100vh;
     }
-
-    /* Panel konten putih */
-    .content-box {
-      background: white;
+    .main-content {
+      background-color: #f8f9ff;
       border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 30px;
+      height: 100%;
+      overflow-y: auto;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
     }
-
-    h2 {
-      margin-top: 0;
-      color: #4B3FAE;
-      font-weight: 700;
+    .card-section {
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
-
-    /* Statistik */
     .stats {
       display: flex;
       gap: 20px;
@@ -60,8 +57,6 @@
       font-weight: 700;
       margin-top: 5px;
     }
-
-    /* Tombol Upload */
     .upload-btn {
       display: inline-flex;
       align-items: center;
@@ -87,8 +82,6 @@
       font-weight: bold;
       font-size: 16px;
     }
-
-    /* Tabel */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -106,8 +99,6 @@
     tbody tr:nth-child(even) {
       background-color: #f9f9f9;
     }
-
-    /* Pagination */
     .pagination {
       display: flex;
       justify-content: center;
@@ -131,11 +122,12 @@
 </head>
 <body>
 
-  @include('layouts.main')
+@include('layouts.main')
 
-  <div class="main">
-    <div class="content-box">
-      <h2>BERITA</h2>
+<div class="main-container">
+  <div class="main-content">
+    <div class="card-section">
+      <h2 class="fw-bold text-primary">BERITA</h2>
 
       <!-- Statistik -->
       <div class="stats">
@@ -147,12 +139,12 @@
         <div class="stat-card">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.13-3.36L23 10M1 14l5.36 4.36A9 9 0 0 0 20.49 15"></path></svg>
           BERITA DI UPDATE
-          <span>24</span>
+          <span>12</span>
         </div>
         <div class="stat-card">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m5 0V4a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2"></path></svg>
           BERITA DI HAPUS
-          <span>24</span>
+          <span>5</span>
         </div>
       </div>
 
@@ -179,7 +171,7 @@
             <td>1</td>
             <td><img src="https://via.placeholder.com/50" alt=""></td>
             <td>Judul Berita</td>
-            <td>Isi konten...</td>
+            <td>Isi konten singkat...</td>
             <td>10/08/2025</td>
             <td>✏️ 🗑️</td>
           </tr>
@@ -198,6 +190,7 @@
       </div>
     </div>
   </div>
+</div>
 
 </body>
 </html>
