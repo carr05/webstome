@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9052,14 +9053,11 @@ section,
     </div>
   </div>
 </section>
-
-<!-- /Testimonials Section -->
-
-    <!-- Stats Section -->
+<!-- Stats Section -->
     
 
     <!-- Recent News Section -->
-    <section id="recent-news" class="recent-news section">
+  <section id="recent-news" class="recent-news section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -9074,8 +9072,7 @@ section,
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="100">
             <article class="post-item d-flex">
               <div class="post-img">
-                <img src="{{ asset('assets/img/blog/blog-post-1.webp') }}" alt="" class="img-fluid" loading="lazy">
-                
+                <img src="assets/img/blog/blog-post-1.webp" alt="" class="img-fluid" loading="lazy">
               </div>
 
               <div class="post-content flex-grow-1">
@@ -9091,8 +9088,7 @@ section,
 
                 <div class="post-meta">
                   <div class="post-author">
-                    <img src="{{ asset('assets/img/person/person-f-12.webp') }}" alt="" class="img-fluid">
-                    
+                    <img src="assets/img/person/person-f-12.webp" alt="" class="img-fluid">
                     <span class="author-name">Lina Chen</span>
                   </div>
                   <span class="post-date">Mar 15, 2025</span>
@@ -9104,8 +9100,7 @@ section,
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="200">
             <article class="post-item d-flex">
               <div class="post-img">
-                <img src="{{ asset('assets/img/blog/blog-post-2.webp') }}" alt="" class="img-fluid" loading="lazy">
-                
+                <img src="assets/img/blog/blog-post-2.webp" alt="" class="img-fluid" loading="lazy">
               </div>
 
               <div class="post-content flex-grow-1">
@@ -9121,8 +9116,7 @@ section,
 
                 <div class="post-meta">
                   <div class="post-author">
-                    <img src="{{ asset('assets/img/person/person-f-13.webp') }}" alt="" class="img-fluid">
-                    
+                    <img src="assets/img/person/person-f-13.webp" alt="" class="img-fluid">
                     <span class="author-name">Sofia Rodriguez</span>
                   </div>
                   <span class="post-date">Apr 22, 2025</span>
@@ -9134,8 +9128,7 @@ section,
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
             <article class="post-item d-flex">
               <div class="post-img">
-                <img src="{{ asset('assets/img/blog/blog-post-3.webp') }}" alt="" class="img-fluid" loading="lazy">
-                
+                <img src="assets/img/blog/blog-post-3.webp" alt="" class="img-fluid" loading="lazy">
               </div>
 
               <div class="post-content flex-grow-1">
@@ -9151,8 +9144,7 @@ section,
 
                 <div class="post-meta">
                   <div class="post-author">
-                    <img src=" {{ asset('assets/img/person/person-m-10.webp') }}" alt="" class="img-fluid">
-                   
+                    <img src="assets/img/person/person-m-10.webp" alt="" class="img-fluid">
                     <span class="author-name">Lucas Thompson</span>
                   </div>
                   <span class="post-date">May 8, 2025</span>
@@ -9164,8 +9156,7 @@ section,
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="400">
             <article class="post-item d-flex">
               <div class="post-img">
-                <img src="{{ asset('assets/img/blog/blog-post-4.webp') }}" alt="" class="img-fluid" loading="lazy">
-                
+                <img src="assets/img/blog/blog-post-4.webp" alt="" class="img-fluid" loading="lazy">
               </div>
 
               <div class="post-content flex-grow-1">
@@ -9181,8 +9172,7 @@ section,
 
                 <div class="post-meta">
                   <div class="post-author">
-                    <img src="{{ asset('assets/img/person/person-f-14.webp') }}" alt="" class="img-fluid">
-                    
+                    <img src="assets/img/person/person-f-14.webp" alt="" class="img-fluid">
                     <span class="author-name">Emma Patel</span>
                   </div>
                   <span class="post-date">Jun 30, 2025</span>
