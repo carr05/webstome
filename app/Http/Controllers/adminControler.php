@@ -17,6 +17,12 @@ class adminControler extends Controller
         return view('layout1.index', compact('recentNews'));
     }
 
+    public function landing2()
+    {
+        $recentNews = berita::latest()->take(3)->get();
+        return view('layout2.index', compact('recentNews'));
+    }
+
     public function formLogin()
     {
         return view('login');
