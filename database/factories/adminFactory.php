@@ -18,7 +18,8 @@ class adminFactory extends Factory
     {
         return [
             'username' => 'admin',  
-            'password' => Hash::make('admin')  
+            'password' => Hash::make('admin'),
+            'school_id' => 1,
         ];
     }
 }
