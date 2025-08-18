@@ -5,6 +5,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminControler;
 
+Route::get('/dashboard', function () {
+    return 'Welcome Dashboard';
+})->middleware('check.subdomain');
 
 Route::get('/', [adminControler::class, 'formLogin'])->name('login');
 Route::post('/login', [adminControler::class, 'prosesLogin'])->name('login.post');
@@ -22,5 +25,10 @@ Route::get('/alumni', [adminControler::class, 'alumni'])->name('alumni');
 Route::get('/ekstrakurikuler', [adminControler::class, 'ekstrakurikuler'])->name('ekstrakurikuler');
 Route::get('/karya', [adminControler::class, 'karya'])->name('karya');
 
+Route::get('/layout1/index', [adminControler::class, 'landing'])->name('layout1.index');
+Route::get('/layout2/home', [adminControler::class, 'landing2'])->name('layout2.index');
+
 Route::get('/logout', action: [adminControler::class, 'logout'])->name('logout');
 
+Route::get('/template', action: [adminControler::class, 'template'])->name('template');
+Route::post('/template', [adminController::class, 'chooseLayout'])->name('template.choose');
