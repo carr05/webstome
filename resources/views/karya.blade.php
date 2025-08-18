@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Berita</title>
+  <title>Dashboard - KARYA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -127,23 +127,24 @@
 <div class="main-container">
   <div class="main-content">
     <div class="card-section">
-      <h2 class="fw-bold text-primary">BERITA</h2>
+      <h2 class="fw-bold" style="color:#5955B3;">KARYA</h2>
+
 
       <!-- Statistik -->
       <div class="stats">
         <div class="stat-card">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path><polyline points="7 9 12 4 17 9"></polyline><line x1="12" x2="12" y1="4" y2="16"></line></svg>
-          BERITA DI UNGGAH
+          KARYA DI UNGGAH
           <span>24</span>
         </div>
         <div class="stat-card">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.13-3.36L23 10M1 14l5.36 4.36A9 9 0 0 0 20.49 15"></path></svg>
-          BERITA DI UPDATE
+          KARYA DI UPDATE
           <span>12</span>
         </div>
         <div class="stat-card">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m5 0V4a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2"></path></svg>
-          BERITA DI HAPUS
+          KARYA DI HAPUS
           <span>5</span>
         </div>
       </div>
@@ -170,7 +171,7 @@
           <tr>
             <td>1</td>
             <td><img src="https://via.placeholder.com/50" alt=""></td>
-            <td>Judul Berita</td>
+            <td>Judul KARYA</td>
             <td>Isi konten singkat...</td>
             <td>10/08/2025</td>
             <td>✏️ 🗑️</td>

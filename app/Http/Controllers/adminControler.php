@@ -38,13 +38,22 @@ class adminControler extends Controller
     }
 
     public function home()
-    {
-        if (!session()->has('admin_id')) {
-            return redirect()->route('login');
-        }
-
-        return view('home');
+{
+    if (!session()->has('admin_id')) {
+        return redirect()->route('login');
     }
+
+    $admin = admin::find(session('admin_id'));
+
+    // Jika admin belum memilih layout, tampilkan pop-up
+    if (!$admin->selected_layout) {
+        return view('home', ['showLayoutPopup' => true]);
+    }
+
+    // Kalau sudah memilih, tampilkan halaman home biasa
+    return view('home', ['showLayoutPopup' => false]);
+}
+
 
     public function layout()
     {
