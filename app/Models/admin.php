@@ -13,5 +13,9 @@ class admin extends Model
 
     protected $table = 'dataadmin';
 
+<<<<<<< HEAD
+    protected $fillable = ['username', 'password', 'layout_choice'];
+=======
     protected $fillable = ['username', 'password', 'layout'];
+>>>>>>> db43bc6151149c3be40e3b67218ba6ea55f956d7
 }

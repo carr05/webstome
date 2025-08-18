@@ -12,7 +12,7 @@ Route::get('/dashboard', function () {
 Route::get('/', [adminControler::class, 'formLogin'])->name('login');
 Route::post('/login', [adminControler::class, 'prosesLogin'])->name('login.post');
 Route::get('/home', [adminControler::class, 'home'])->name('home');
-
+Route::post('/save-layout', [adminControler::class, 'saveLayout'])->name('save.layout');
 Route::get('/layout', [adminControler::class, 'layout'])->name('layout1');
 Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');
 Route::get('/berita', [adminControler::class, 'berita'])->name('berita');
