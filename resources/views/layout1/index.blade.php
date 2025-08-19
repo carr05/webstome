@@ -8603,7 +8603,7 @@ section,
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
               <h3>Our Story</h3>
-              <h2>Educating Minds, Inspiring Hearts</h2>
+              <h2>Sejarah Sekolah</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae odio ac nisi tristique venenatis. Nullam feugiat ipsum vitae justo finibus, in sagittis dolor malesuada. Aenean vel fringilla est, a vulputate massa.</p>
 
               <div class="timeline">
