@@ -5,7 +5,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminControler;
 
-Route::get('/dashboard', function () {
+Route::get('/haloo', function () {
     return 'Welcome Dashboard';
 })->middleware('check.subdomain');
 

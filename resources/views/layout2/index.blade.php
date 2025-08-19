@@ -214,7 +214,7 @@
 
           <div class="col-lg-6">
             <div class="image-wrapper">
-              <img src="assets/img/education/campus-5.webp" alt="Campus Overview" class="img-fluid">
+              <img src="{{ asset('assets2/img/education/campus-5.webp') }}" alt="Campus Overview" class="img-fluid">
               <div class="experience-badge">
                 <div class="years">32+</div>
                 <div class="text">Years of Excellence</div>
@@ -261,7 +261,7 @@
               </div>
             </div>
             <div class="overview-image">
-              <img src="assets/img/education/showcase-7.webp" alt="Education" class="img-fluid">
+              <img src="{{ asset('assets2/img/education/showcase-7.webp') }}" alt="Education" class="img-fluid">
             </div>
           </div>
 
@@ -269,7 +269,7 @@
 
             <div class="program-card featured-program">
               <div class="card-image">
-                <img src="assets/img/education/courses-8.webp" alt="Program" class="img-fluid">
+                <img src="{{ asset('assets2/img/education/courses-8.webp') }}" alt="Program" class="img-fluid">
                 <div class="program-badge">
                   <i class="bi bi-star-fill"></i>
                   <span>Top Rated</span>
@@ -303,7 +303,7 @@
 
               <div class="program-item">
                 <div class="item-visual">
-                  <img src="assets/img/education/courses-12.webp" alt="Program" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/courses-12.webp') }}" alt="Program" class="img-fluid">
                 </div>
                 <div class="item-details">
                   <div class="item-category">Business</div>
@@ -321,7 +321,7 @@
 
               <div class="program-item">
                 <div class="item-visual">
-                  <img src="assets/img/education/courses-5.webp" alt="Program" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/courses-5.webp') }}" alt="Program" class="img-fluid">
                 </div>
                 <div class="item-details">
                   <div class="item-category">Health Sciences</div>
@@ -339,7 +339,7 @@
 
               <div class="program-item">
                 <div class="item-visual">
-                  <img src="assets/img/education/courses-15.webp" alt="Program" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/courses-15.webp') }}" alt="Program" class="img-fluid">
                 </div>
                 <div class="item-details">
                   <div class="item-category">Creative Arts</div>
@@ -357,7 +357,7 @@
 
               <div class="program-item">
                 <div class="item-visual">
-                  <img src="assets/img/education/courses-9.webp" alt="Program" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/courses-9.webp') }}" alt="Program" class="img-fluid">
                 </div>
                 <div class="item-details">
                   <div class="item-category">Science</div>
@@ -423,7 +423,7 @@
           <div class="col-lg-6">
             <div class="visual-grid">
               <div class="main-visual">
-                <img src="assets/img/education/students-7.webp" alt="Campus Life" class="img-fluid">
+                <img src="{{ asset('assets2/img/education/students-7.webp') }}" alt="Campus Life" class="img-fluid">
                 <div class="overlay-badge">
                   <i class="bi bi-heart-fill"></i>
                   <span>Campus Community</span>
@@ -432,14 +432,14 @@
 
               <div class="secondary-visuals">
                 <div class="small-visual">
-                  <img src="assets/img/education/activities-8.webp" alt="Student Activities" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/activities-8.webp') }}" alt="Student Activities" class="img-fluid">
                   <div class="visual-caption">
                     <span>Student Activities</span>
                   </div>
                 </div>
 
                 <div class="small-visual">
-                  <img src="assets/img/education/activities-5.webp" alt="Academic Excellence" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/activities-5.webp') }}" alt="Academic Excellence" class="img-fluid">
                   <div class="visual-caption">
                     <span>Academic Excellence</span>
                   </div>
@@ -454,7 +454,7 @@
             <div class="col-lg-4">
               <div class="highlight-card">
                 <div class="highlight-image">
-                  <img src="assets/img/education/activities-7.webp" alt="Leadership Programs" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/activities-7.webp') }}" alt="Leadership Programs" class="img-fluid">
                 </div>
                 <div class="highlight-content">
                   <h5>Leadership Development</h5>
