@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Factories;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -11,7 +11,7 @@ class adminFactory extends Factory
 {
     /**
      * Define the model's default state.
-     *
+     *yy
      * @return array<string, mixed>
      */
     public function definition(): array

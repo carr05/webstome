@@ -14,6 +14,7 @@ Route::post('/login', [adminControler::class, 'prosesLogin'])->name('login.post'
 Route::get('/home', [adminControler::class, 'home'])->name('home');
 Route::post('/save-layout', [adminControler::class, 'saveLayout'])->name('save.layout');
 Route::get('/layout', [adminControler::class, 'layout'])->name('layout1');
+Route::get('/hero', [adminControler::class, 'hero'])->name('hero');
 Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');
 Route::get('/berita', [adminControler::class, 'berita'])->name('berita');
 Route::get('/galeri', [adminControler::class, 'galeri'])->name('galeri');
@@ -28,7 +29,7 @@ Route::get('/karya', [adminControler::class, 'karya'])->name('karya');
 Route::get('/layout1/index', [adminControler::class, 'landing'])->name('layout1.index');
 Route::get('/layout2/home', [adminControler::class, 'landing2'])->name('layout2.index');
 
-Route::get('/logout', action: [adminControler::class, 'logout'])->name('logout');
+Route::get('/tamplate', [adminControler::class, 'tamplate'])->name('tamplate');
+Route::get('/tamplate', [adminControler::class, 'chooseLayout'])->name('tamplate.choose');
 
-Route::get('/template', action: [adminControler::class, 'template'])->name('template');
-Route::post('/template', [adminController::class, 'chooseLayout'])->name('template.choose');
+Route::get('/logout', action: [adminControler::class, 'logout'])->name('logout');
