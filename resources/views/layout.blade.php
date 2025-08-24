@@ -100,7 +100,7 @@
             <div class="col-6 col-md-4"><button class="card-button"><i class="bi bi-type"></i> Title</button></div>
             <div class="col-6 col-md-4"><button class="card-button"><i class="bi bi-card-text"></i> Cards</button></div>
             <div class="col-6 col-md-4"><button class="card-button"><i class="bi bi-square"></i> Button</button></div>
-            <div class="col-6 col-md-4"><button class="card-button"><i class="bi bi-ui-checks"></i> Forms</button></div>
+            <div class="col-6 col-md-4"><button class="card-button"><i class="bi bi-square"></i>Hover</button></div>
             <div class="col-6 col-md-4"><button class="card-button"><i class="bi bi-sliders"></i> Global</button></div>
         </div>
     </div>
@@ -164,20 +164,7 @@
         </div>
     </div>
 
-    <!-- Live Preview -->
-    <div class="card-section">
-        <h6>Live preview</h6>
-        <div class="live-preview">
-            <div class="live-box mb-3" style="height:60px;"></div>
-            <div class="row g-3">
-                <div class="col-6"><div class="live-box" style="height:100px;"></div></div>
-                <div class="col-6">
-                    <div class="live-box mb-3" style="height:45px;"></div>
-                    <div class="live-box" style="height:45px;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 </div>
 </div>
 </body>

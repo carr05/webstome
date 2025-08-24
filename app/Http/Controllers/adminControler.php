@@ -70,6 +70,11 @@ class adminControler extends Controller
     {
         return view('layout1.about');
     }
+    public function hero()
+    {
+        return view('hero'); // atau nama view yang benar
+
+    }
 
     public function berita()
     {
@@ -120,44 +125,6 @@ class adminControler extends Controller
     $recentNews = berita::latest()->take(3)->get();
     return view('layout1.index', compact('recentNews'));
 }
-
-public function showCRUD()
-{
-    $user = auth()->user();
-    $layout = $user->layout; // misal relasi 'layout()' sudah ada
-
-    return view('home', compact('layout'));
-}
-
-public function template()
-{
-    return view('template');
-}
-
-public function chooseLayout(Request $request)
-    {
-        // validasi input
-        $request->validate([
-            'layout_id' => 'required|exists:layouts,id',
-        ]);
-
-        // Ambil layout yang dipilih
-        $layout = Layout::findOrFail($request->layout_id);
-
-        // Simpan ke user yang sedang login
-        $user = Auth::user();
-        if ($user) {
-            $user->layout_id = $layout->id;
-            $user->save();
-        }
-
-        // Redirect dengan pesan sukses
-        return redirect()->back()->with('success', 'Layout berhasil dipilih: ' . $layout->name);
-    }
-
-
-
-
 
 
     public function logout()
