@@ -4,6 +4,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminControler;
+use App\http\Controllers\layoutController;
 
 Route::get('/haloo', function () {
     return 'Welcome Dashboard';
@@ -34,3 +35,8 @@ Route::get('/tamplate', [adminControler::class, 'tamplate'])->name('tamplate');
 Route::get('/tamplate', [adminControler::class, 'chooseLayout'])->name('tamplate.choose');
 
 Route::get('/logout', action: [adminControler::class, 'logout'])->name('logout');
+Route::post('/pilih-layout/{layout}', [layoutController::class, 'pilihLayout'])->name('pilih.layout');
+Route::get('/tampilan', [adminControler::class, 'tampilan'])->name('tampilan');
+
+
+

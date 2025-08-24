@@ -37,7 +37,7 @@ class adminControler extends Controller
                 'admin_id' => $admin->id,
                 'admin_username' => $admin->username
             ]);
-            return redirect()->route('home');
+            return redirect()->route('tampilan');
         }
 
         return back()->with('error', 'Username atau password salah.');
@@ -64,6 +64,11 @@ class adminControler extends Controller
     public function layout()
     {
         return view('layout'); // atau nama view yang benar
+    }
+
+    public function tampilan()
+    {
+        return view('tampilan'); // atau nama view yang benar
     }
 
     public function about()
