@@ -26,6 +26,7 @@ Route::get('/ekstrakurikuler', [adminControler::class, 'ekstrakurikuler'])->name
 Route::get('/karya', [adminControler::class, 'karya'])->name('karya');
 
 Route::get('/layout1/index', [adminControler::class, 'landing'])->name('layout1.index');
+Route::get('/layout1/about', [adminControler::class, 'about'])->name('layout1.abaout');
 Route::get('/layout2/index', [adminControler::class, 'landing2'])->name('layout2.index');
 
 Route::get('/logout', action: [adminControler::class, 'logout'])->name('logout');

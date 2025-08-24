@@ -66,6 +66,11 @@ class adminControler extends Controller
         return view('layout'); // atau nama view yang benar
     }
 
+    public function about()
+    {
+        return view('layout1.about');
+    }
+
     public function berita()
     {
         return view('berita');

@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-  
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - College Bootstrap Template</title>
+  <title>About - College Bootstrap Template</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -19,7 +18,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
- <!-- Bootstrap -->
   <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -31,8 +29,8 @@
   <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <style>
-    /**
+<style>
+  /**
 * Template Name: College
 * Template URL: https://bootstrapmade.com/college-bootstrap-education-template/
 * Updated: Jun 19 2025 with Bootstrap v5.3.6
@@ -8411,8 +8409,7 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-    </style>
-
+</style>
   <!-- =======================================================
   * Template Name: College
   * Template URL: https://bootstrapmade.com/college-bootstrap-education-template/
@@ -8422,7 +8419,8 @@ section,
   ======================================================== -->
 </head>
 
-<body class="index-page">
+
+<body class="about-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
@@ -8435,10 +8433,10 @@ section,
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li class="dropdown"><a href="{{ url('/layout1/about') }}"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown"><a href="about.html" class="active"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="{{ url('/layout1/about') }}">About Us</a></li>
+              <li><a href="about.html" class="active">About Us</a></li>
               <li><a href="admissions.html">Admissions</a></li>
               <li><a href="academics.html">Academics</a></li>
               <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
@@ -8488,122 +8486,41 @@ section,
 
   <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-
-      <div class="hero-wrapper">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
-              <h1>Inspiring Excellence Through Education</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacus id tortor facilisis tincidunt. Donec gravida risus at sollicitudin luctus.</p>
-              <div class="stats-row">
-                <div class="stat-item">
-                  <span class="stat-number">96%</span>
-                  <span class="stat-label">Employment Rate</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">12:1</span>
-                  <span class="stat-label">Student-Teacher Ratio</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">50+</span>
-                  <span class="stat-label">Programs</span>
-                </div>
-              </div>
-              <div class="action-buttons">
-                <a href="#" class="btn-primary">Start Your Journey</a>
-                <a href="#" class="btn-secondary">Virtual Tour</a>
-              </div>
-            </div>
-            <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
-              <img src="{{ asset('assets/img/education/showcase-6.webp') }}" alt="Education" class="img-fluid main-image">
-
-              <div class="image-overlay">
-                <div class="badge-accredited">
-                  <i class="bi bi-patch-check-fill"></i>
-                  <span>Accredited Excellence</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Sambutan Kepala Sekolah</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">About</li>
+          </ol>
+        </nav>
       </div>
+    </div><!-- End Page Title -->
 
-      <div class="feature-cards-wrapper" data-aos="fade-up" data-aos-delay="300">
-        <div class="container">
-          <div class="row gy-4">
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="bi bi-book-fill"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Innovative Curriculum</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacus id tortor facilisis.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="feature-card active">
-                <div class="feature-icon">
-                  <i class="bi bi-laptop-fill"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Modern Facilities</h3>
-                  <p>Donec gravida risus at sollicitudin luctus. Nullam feugiat odio vitae justo pharetra.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="bi bi-people-fill"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Expert Faculty</h3>
-                  <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="upcoming-event" data-aos="fade-up" data-aos-delay="400">
-        <div class="container">
-          <div class="event-content">
-            <div class="event-date">
-              <span class="day">15</span>
-              <span class="month">NOV</span>
-            </div>
-            <div class="event-info">
-              <h3>Spring Semester Open House</h3>
-              <p>Join us to explore campus facilities, meet our faculty, and learn about scholarship opportunities.</p>
-            </div>
-            <div class="event-action">
-              <a href="#" class="btn-event">RSVP Now</a>
-              <span class="countdown">Starts in 3 weeks</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
+    <!-- History Section -->
+    <section id="history" class="history section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-              <h3>Our Story</h3>
-              <h2>Educating Minds, Inspiring Hearts</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae odio ac nisi tristique venenatis. Nullam feugiat ipsum vitae justo finibus, in sagittis dolor malesuada. Aenean vel fringilla est, a vulputate massa.</p>
+              <h3></h3>
+              <h2></h2>
+              <p>Assalamu’alaikum warahmatullahi wabarakatuh,<br>
+
+Puji syukur kita panjatkan ke hadirat Allah SWT atas limpahan rahmat dan karunia-Nya, sehingga kita semua senantiasa diberikan kesehatan, kesempatan, dan kekuatan untuk terus berkarya dan berprestasi.
+
+SMKN 4 Malang senantiasa berkomitmen untuk menjadi lembaga pendidikan yang unggul dalam membentuk generasi yang berkarakter, terampil, serta siap menghadapi tantangan dunia kerja dan perkembangan zaman. Melalui dukungan seluruh guru, staf, peserta didik, dan orang tua, kami terus berupaya meningkatkan mutu pendidikan, sarana prasarana, serta layanan sekolah agar mampu mencetak lulusan yang berdaya saing tinggi.
+
+Kami berharap website/agenda/kegiatan ini dapat menjadi sarana informasi dan komunikasi yang bermanfaat, serta jembatan antara sekolah dengan masyarakat luas. Mari bersama-sama kita dukung anak-anak kita agar tumbuh menjadi pribadi yang cerdas, berakhlak mulia, dan siap menjadi bagian dari pembangunan bangsa.
+
+Wassalamu’alaikum warahmatullahi wabarakatuh.
+
+Hormat kami,
+Kepala Sekolah SMKN 4 Malang</p>
 
               <div class="timeline">
                 <div class="timeline-item">
@@ -8643,7 +8560,7 @@ section,
 
           <div class="col-lg-6">
             <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
-              <img src="{{ asset('assets/img/education/campus-5.webp') }}" alt="Campus" class="img-fluid rounded">
+              <img src="{{asset('assets/img/person/kepsek.webp')}}" alt="Campus" class="img-fluid rounded">
 
               <div class="mission-vision" data-aos="fade-up" data-aos-delay="400">
                 <div class="mission">
@@ -8711,742 +8628,275 @@ section,
 
       </div>
 
-    </section><!-- /About Section -->
+    </section><!-- /History Section -->
 
-    <!-- Featured Programs Section -->
-    <section id="featured-programs" class="featured-programs section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Featured Programs</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+    <!-- Leadership Section -->
+    <section id="leadership" class="leadership section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-5">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <div class="program-banner">
-              <div class="banner-image">
-                <img src="{{ asset('assets/img/education/campus-3.webp') }}" alt="Program" class="img-fluid">
-                <div class="banner-badge">
-                  <span class="badge-text">Popular</span>
-                </div>
-              </div>
-              <div class="banner-info">
-                <div class="program-header">
-                  <h3>Engineering &amp; Technology</h3>
-                  <div class="program-stats">
-                    <span><i class="bi bi-people-fill"></i> 450+ Students</span>
-                    <span><i class="bi bi-award-fill"></i> 95% Success Rate</span>
-                  </div>
-                </div>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-                <div class="program-details">
-                  <div class="detail-item">
-                    <i class="bi bi-calendar-check"></i>
-                    <span>Duration: 4 Years</span>
-                  </div>
-                  <div class="detail-item">
-                    <i class="bi bi-mortarboard-fill"></i>
-                    <span>Bachelor's Degree</span>
-                  </div>
-                </div>
-                <a href="#" class="discover-btn">Discover Program</a>
-              </div>
-            </div>
-          </div><!-- End Program Banner -->
-
-          <div class="col-lg-6">
-            <div class="programs-grid">
-              <div class="row g-3">
-                <div class="col-12" data-aos="fade-left" data-aos-delay="200">
-                  <div class="program-item">
-                    <div class="item-icon">
-                      <img src="{{ asset('assets/img/education/education-4.webp') }}" alt="Program" class="img-fluid">
-                      
-                    </div>
-                    <div class="item-content">
-                      <h4>Business Management</h4>
-                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                      <div class="meta-info">
-                        <span>3 Years</span>
-                        <span>Master's Degree</span>
-                      </div>
-                    </div>
-                    <div class="item-arrow">
-                      <i class="bi bi-arrow-right"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-12" data-aos="fade-left" data-aos-delay="300">
-                  <div class="program-item">
-                    <div class="item-icon">
-                      <img src="{{ asset('assets/img/education/education-6.webp') }}" alt="Program" class="img-fluid">
-                      
-                    </div>
-                    <div class="item-content">
-                      <h4>Digital Marketing</h4>
-                      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
-                      <div class="meta-info">
-                        <span>2 Years</span>
-                        <span>Certificate</span>
-                      </div>
-                    </div>
-                    <div class="item-arrow">
-                      <i class="bi bi-arrow-right"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-12" data-aos="fade-left" data-aos-delay="400">
-                  <div class="program-item">
-                    <div class="item-icon">
-                      <img src="{{ asset('assets/img/education/education-8.webp') }}" alt="Program" class="img-fluid">
-                      
-                    </div>
-                    <div class="item-content">
-                      <h4>Health Sciences</h4>
-                      <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
-                      <div class="meta-info">
-                        <span>5 Years</span>
-                        <span>Bachelor's Degree</span>
-                      </div>
-                    </div>
-                    <div class="item-arrow">
-                      <i class="bi bi-arrow-right"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-12" data-aos="fade-left" data-aos-delay="500">
-                  <div class="program-item">
-                    <div class="item-icon">
-                      <img src="{{ asset('assets/img/education/education-10.webp') }}" alt="Program" class="img-fluid">                      
-                    </div>
-                    <div class="item-content">
-                      <h4>Creative Arts</h4>
-                      <p>Et harum quidem rerum facilis est et expedita distinctio nam libero tempore.</p>
-                      <div class="meta-info">
-                        <span>3 Years</span>
-                        <span>Bachelor's Degree</span>
-                      </div>
-                    </div>
-                    <div class="item-arrow">
-                      <i class="bi bi-arrow-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Programs Grid -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Featured Programs Section -->
-
-    <!-- Students Life Block Section -->
-    <section id="students-life-block" class="students-life-block section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Students Life</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row align-items-center g-5 mb-5">
-          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
-            <div class="hero-image-wrapper">
-              <img src=" {{ asset('assets/img/education/students-7.webp') }}" alt="Student Life" class="img-fluid main-image">
-             
-              <div class="floating-card" data-aos="zoom-in" data-aos-delay="400">
-                <div class="card-icon">
-                  <i class="bi bi-people-fill"></i>
-                </div>
-                <div class="card-content">
-                  <span class="card-number">2500+</span>
-                  <span class="card-label">Active Students</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
-            <div class="content-wrapper">
-              <div class="section-badge" data-aos="fade-up" data-aos-delay="350">
-                <span>Student Life</span>
-              </div>
-              <h2 data-aos="fade-up" data-aos-delay="400">Vivamus consequat lorem at nisl laoreet commodo a ac lectus</h2>
-              <p class="lead-text" data-aos="fade-up" data-aos-delay="450">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-
-              <div class="info-grid" data-aos="fade-up" data-aos-delay="500">
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="bi bi-calendar-event"></i>
-                  </div>
-                  <div class="info-text">
-                    <strong>Year-Round Events</strong>
-                    <span>Duis aute irure dolor in reprehenderit voluptate</span>
-                  </div>
-                </div>
-
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="bi bi-award"></i>
-                  </div>
-                  <div class="info-text">
-                    <strong>Achievement Programs</strong>
-                    <span>Excepteur sint occaecat cupidatat non proident</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cta-section" data-aos="fade-up" data-aos-delay="600">
-                <a href="student-activities.html" class="btn-primary">Discover More</a>
-                <a href="virtual-tour.html" class="btn-link">
-                  <i class="bi bi-play-circle"></i>
-                  <span>Take Virtual Tour</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="activities-showcase">
-          <div class="row g-4">
-            <div class="col-lg-8" data-aos="fade-right" data-aos-delay="200">
-              <div class="featured-activity">
-                <div class="activity-media">
-                  <img src="{{ asset('assets/img/education/activities-2.webp') }}" alt="Featured Activity" class="img-fluid">                  
-                  <div class="activity-overlay">
-                    <div class="overlay-content">
-                      <h4>Student Organizations</h4>
-                      <p>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                      <a href="#" class="overlay-btn">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
-              <div class="activities-list">
-                <div class="activity-item" data-aos="slide-up" data-aos-delay="350">
-                  <div class="activity-thumb">
-                    <img src="{{ asset('assets/img/education/activities-6.webp') }}" alt="Research Projects" class="img-fluid">
-                    
-                  </div>
-                  <div class="activity-info">
-                    <h6>Research Projects</h6>
-                    <p>Sed ut perspiciatis unde omnis natus error</p>
-                  </div>
-                </div>
-
-                <div class="activity-item" data-aos="slide-up" data-aos-delay="400">
-                  <div class="activity-thumb">
-                    <img src="{{ asset('assets/img/education/activities-1.webp') }}" alt="Community Service" class="img-fluid">
-                    
-                  </div>
-                  <div class="activity-info">
-                    <h6>Community Service</h6>
-                    <p>At vero eos et accusamus et iusto odio</p>
-                  </div>
-                </div>
-
-                <div class="activity-item" data-aos="slide-up" data-aos-delay="450">
-                  <div class="activity-thumb">
-                    <img src="{{ asset('assets/img/education/activities-4.webp') }}" alt="Innovation Labs" class="img-fluid">
-                    
-                  </div>
-                  <div class="activity-info">
-                    <h6>Innovation Labs</h6>
-                    <p>Temporibus autem quibusdam officiis debitis</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Students Life Block Section -->
-
-
-<!-- Testimonials Section -->
-<section id="testimonials" class="py-5" style="background-color: #f5f9fc;">
-  <div class="container">
-
-    <!-- Section Title -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Testimonials</h2>
-      <p class="text-muted">
-        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
-      </p>
-      <div class="mx-auto" style="width:80px; height:3px; background-color:#0d6efd;"></div>
-    </div>
-
-    <!-- Testimonials Row -->
-    <div class="row g-4 justify-content-center">
-
-      <!-- Testimonial Item -->
-      <div class="col-md-6 col-lg-4">
-        <div class="bg-white p-4 text-center rounded shadow-sm h-100">
-          <img src="{{ asset('assets/img/person/person-m-8.webp') }}" 
-               alt="David Rodriguez" class="rounded-circle mb-3" width="80" height="80">
-          <div class="mb-3 text-warning">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-          </div>
-          <p class="fst-italic text-muted">
-            “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa.”
-          </p>
-          <h5 class="mt-3 mb-1">David Rodriguez</h5>
-          <small class="text-muted">Software Engineer</small>
-        </div>
-      </div>
-
-      <!-- Testimonial Item -->
-      <div class="col-md-6 col-lg-4">
-        <div class="bg-white p-4 text-center rounded shadow-sm h-100">
-          <img src="{{ asset('assets/img/person/person-f-6.webp') }}" 
-               alt="Amanda Wilson" class="rounded-circle mb-3" width="80" height="80">
-          <div class="mb-3 text-warning">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-          </div>
-          <p class="fst-italic text-muted">
-            “Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.”
-          </p>
-          <h5 class="mt-3 mb-1">Amanda Wilson</h5>
-          <small class="text-muted">Creative Director</small>
-        </div>
-      </div>
-
-      <!-- Testimonial Item -->
-      <div class="col-md-6 col-lg-4">
-        <div class="bg-white p-4 text-center rounded shadow-sm h-100">
-          <img src="{{ asset('assets/img/person/person-m-12.webp') }}" 
-               alt="Ryan Thompson" class="rounded-circle mb-3" width="80" height="80">
-          <div class="mb-3 text-warning">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-          </div>
-          <p class="fst-italic text-muted">
-            “Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis.”
-          </p>
-          <h5 class="mt-3 mb-1">Ryan Thompson</h5>
-          <small class="text-muted">Business Analyst</small>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- Stats Section -->
-    
-
-    <!-- Recent News Section -->
-  <section id="recent-news" class="recent-news section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Recent News</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="100">
-            <article class="post-item d-flex">
-              <div class="post-img">
-                <img src="assets/img/blog/blog-post-1.webp" alt="" class="img-fluid" loading="lazy">
-              </div>
-
-              <div class="post-content flex-grow-1">
-                <a href="#" class="category">Design</a>
-
-                <h2 class="post-title">
-                  <a href="#">Sed ut perspiciatis unde omnis</a>
-                </h2>
-
-                <p class="post-description">
-                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.
-                </p>
-
-                <div class="post-meta">
-                  <div class="post-author">
-                    <img src="assets/img/person/person-f-12.webp" alt="" class="img-fluid">
-                    <span class="author-name">Lina Chen</span>
-                  </div>
-                  <span class="post-date">Mar 15, 2025</span>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="200">
-            <article class="post-item d-flex">
-              <div class="post-img">
-                <img src="assets/img/blog/blog-post-2.webp" alt="" class="img-fluid" loading="lazy">
-              </div>
-
-              <div class="post-content flex-grow-1">
-                <a href="#" class="category">Product</a>
-
-                <h2 class="post-title">
-                  <a href="#">At vero eos et accusamus</a>
-                </h2>
-
-                <p class="post-description">
-                  Et harum quidem rerum facilis est et expedita distinctio nam libero tempore, cum soluta nobis est eligendi.
-                </p>
-
-                <div class="post-meta">
-                  <div class="post-author">
-                    <img src="assets/img/person/person-f-13.webp" alt="" class="img-fluid">
-                    <span class="author-name">Sofia Rodriguez</span>
-                  </div>
-                  <span class="post-date">Apr 22, 2025</span>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
-            <article class="post-item d-flex">
-              <div class="post-img">
-                <img src="assets/img/blog/blog-post-3.webp" alt="" class="img-fluid" loading="lazy">
-              </div>
-
-              <div class="post-content flex-grow-1">
-                <a href="#" class="category">Software Engineering</a>
-
-                <h2 class="post-title">
-                  <a href="#">Temporibus autem quibusdam</a>
-                </h2>
-
-                <p class="post-description">
-                  Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur.
-                </p>
-
-                <div class="post-meta">
-                  <div class="post-author">
-                    <img src="assets/img/person/person-m-10.webp" alt="" class="img-fluid">
-                    <span class="author-name">Lucas Thompson</span>
-                  </div>
-                  <span class="post-date">May 8, 2025</span>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="400">
-            <article class="post-item d-flex">
-              <div class="post-img">
-                <img src="assets/img/blog/blog-post-4.webp" alt="" class="img-fluid" loading="lazy">
-              </div>
-
-              <div class="post-content flex-grow-1">
-                <a href="#" class="category">Creative</a>
-
-                <h2 class="post-title">
-                  <a href="#">Nam libero tempore soluta</a>
-                </h2>
-
-                <p class="post-description">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-
-                <div class="post-meta">
-                  <div class="post-author">
-                    <img src="assets/img/person/person-f-14.webp" alt="" class="img-fluid">
-                    <span class="author-name">Emma Patel</span>
-                  </div>
-                  <span class="post-date">Jun 30, 2025</span>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Recent News Section -->
-
-    <!-- Events Section -->
-    <section id="events" class="events section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Events</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="{{ asset('assets/img/education/events-3.webp') }}" alt="Workshop" class="img-fluid">
-                
-                <div class="event-date-overlay">
-                  <span class="date">MAR<br>18</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge academic">Academic</span>
-                  <span class="event-time">2:00 PM</span>
-                </div>
-                <h3>Advanced Mathematics Workshop</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Room 205, Science Building</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>25 Participants</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="{{ asset('assets/img/education/events-5.webp') }}" alt="Tournament" class="img-fluid">
-                
-                <div class="event-date-overlay">
-                  <span class="date">APR<br>05</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge sports">Sports</span>
-                  <span class="event-time">9:00 AM</span>
-                </div>
-                <h3>Inter-School Basketball Championship</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed eiusmod tempor incididunt ut labore et dolore magna.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Sports Complex Gym</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>8 Teams</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="{{ asset('assets/img/education/events-7.webp') }}" alt="Art Exhibition" class="img-fluid">
-               
-                <div class="event-date-overlay">
-                  <span class="date">APR<br>12</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge arts">Arts</span>
-                  <span class="event-time">6:00 PM</span>
-                </div>
-                <h3>Student Art Exhibition Opening</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Art Gallery, First Floor</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>Open to All</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="event-item">
-              <div class="event-image">
-                <img src=" {{ asset('assets/img/education/events-2.webp') }}" alt="Science Fair" class="img-fluid">
-               
-                <div class="event-date-overlay">
-                  <span class="date">MAY<br>03</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge academic">Academic</span>
-                  <span class="event-time">10:00 AM</span>
-                </div>
-                <h3>Annual Science Fair Competition</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Main Auditorium Hall</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>45 Projects</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="event-item">
-              <div class="event-image">
-                <img src="{{ asset('assets/img/education/events-8.webp') }}" alt="Community Event" class="img-fluid">
-                
-                <div class="event-date-overlay">
-                  <span class="date">MAY<br>15</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge community">Community</span>
-                  <span class="event-time">3:00 PM</span>
-                </div>
-                <h3>Family Fun Day Celebration</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>School Playground Area</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>All Families</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="event-item">
-              <div class="event-image">
-                <img src=" {{ asset('assets/img/education/events-6.webp') }}" alt="Music Concert" class="img-fluid">
-               
-                <div class="event-date-overlay">
-                  <span class="date">JUN<br>02</span>
-                </div>
-              </div>
-              <div class="event-details">
-                <div class="event-category">
-                  <span class="badge arts">Arts</span>
-                  <span class="event-time">7:30 PM</span>
-                </div>
-                <h3>Summer Music Concert Finale</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                <div class="event-info">
-                  <div class="info-row">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Music Hall Theater</span>
-                  </div>
-                  <div class="info-row">
-                    <i class="bi bi-people"></i>
-                    <span>300 Seats</span>
-                  </div>
-                </div>
-                <div class="event-footer">
-                  <a href="#" class="register-btn">Register Now</a>
-                  <div class="event-share">
-                    <i class="bi bi-share"></i>
-                    <i class="bi bi-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="events-navigation" data-aos="fade-up" data-aos-delay="500">
+        <div class="intro-wrapper">
           <div class="row align-items-center">
-            <div class="col-md-8">
-              <div class="filter-tabs">
-                <button class="filter-tab active" data-filter="all">All Events</button>
-                <button class="filter-tab" data-filter="academic">Academic</button>
-                <button class="filter-tab" data-filter="sports">Sports</button>
-                <button class="filter-tab" data-filter="arts">Arts</button>
-                <button class="filter-tab" data-filter="community">Community</button>
+            <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+              <div class="intro-image">
+                <img src="{{asset('assets/img/education/teacher-5.webp')}}" alt="School Leadership" class="img-fluid rounded-lg">
+                <div class="experience-badge">
+                  <span class="years">35+</span>
+                  <span class="text">Years of Educational Excellence</span>
+                </div>
               </div>
             </div>
-            <div class="col-md-4 text-end">
-              <a href="#" class="view-calendar-btn">
-                <i class="bi bi-calendar3"></i>
-                View Calendar
-              </a>
+            <div class="col-lg-6 order-lg-1" data-aos="fade-up" data-aos-delay="300">
+              <div class="intro-content">
+                <span class="subtitle">Administration &amp; Leadership</span>
+                <h2 class="title">Inspiring Leaders Shaping Tomorrow's Generation</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor euismod lobortis. Mauris ornare ante non justo mattis, vitae fermentum est commodo. Morbi eget tristique justo. Mauris id tellus tempus, ornare ligula egestas, ultricies libero.</p>
+                <div class="highlights">
+                  <div class="highlight-item">
+                    <div class="icon-box">
+                      <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <div class="content">
+                      <h4>Expert Faculty</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </div>
+                  <div class="highlight-item">
+                    <div class="icon-box">
+                      <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                    <div class="content">
+                      <h4>Academic Excellence</h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="leadership-section" data-aos="fade-up">
+          <div class="section-header text-center">
+            <span class="subtitle">Our Team</span>
+            <h2 class="title">Meet Our Distinguished Leadership</h2>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet scelerisque pellentesque. Praesent vestibulum scelerisque scelerisque.</p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="team-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="member-image">
+                      <img src="{{asset('assets/img/person/person-m-4.webp')}}" alt="Principal" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                      <h4>Drs. Gunawan Dwiyono, M.Pd.</h4>
+                      <p>Kepala Sekolah</p>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>Dr. Robert Williams</h4>
+                    <p class="position">Principal</p>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor euismod lobortis.</p>
+                    <div class="social-links">
+                      <a href="#"><i class="bi bi-linkedin"></i></a>
+                      <a href="#"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#"><i class="bi bi-envelope"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="team-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="member-image">
+                      <img src="{{asset('assets/img/person/person-f-6.webp')}}" alt="Vice Principal" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                      <h4>Dr. Jennifer Parker</h4>
+                      <p>Vice Principal</p>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>Dr. Jennifer Parker</h4>
+                    <p class="position">Vice Principal</p>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor euismod lobortis.</p>
+                    <div class="social-links">
+                      <a href="#"><i class="bi bi-linkedin"></i></a>
+                      <a href="#"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#"><i class="bi bi-envelope"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="team-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="member-image">
+                      <img src="{{asset('assets/img/person/person-m-9.webp')}}" alt="Academic Dean" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                      <h4>Prof. Michael Stevens</h4>
+                      <p>Academic Dean</p>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>Prof. Michael Stevens</h4>
+                    <p class="position">Academic Dean</p>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor euismod lobortis.</p>
+                    <div class="social-links">
+                      <a href="#"><i class="bi bi-linkedin"></i></a>
+                      <a href="#"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#"><i class="bi bi-envelope"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="team-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="member-image">
+                      <img src="{{asset('assets/img/person/person-f-5.webp')}}" alt="Student Affairs" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                      <h4>Dr. Angela Martinez</h4>
+                      <p>Student Affairs</p>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>Dr. Angela Martinez</h4>
+                    <p class="position">Student Affairs</p>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor euismod lobortis.</p>
+                    <div class="social-links">
+                      <a href="#"><i class="bi bi-linkedin"></i></a>
+                      <a href="#"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#"><i class="bi bi-envelope"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="team-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="member-image">
+                      <img src="{{asset('assets/img/person/person-f-7.webp')}}" alt="Admissions Director" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                      <h4>Sophia Rodriguez</h4>
+                      <p>Admissions Director</p>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>Sophia Rodriguez</h4>
+                    <p class="position">Admissions Director</p>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor euismod lobortis.</p>
+                    <div class="social-links">
+                      <a href="#"><i class="bi bi-linkedin"></i></a>
+                      <a href="#"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#"><i class="bi bi-envelope"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="team-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="member-image">
+                      <img src="{{asset('assets/img/person/person-m-8.webp')}}" alt="Technology Director" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                      <h4>James Thompson</h4>
+                      <p>Technology Director</p>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>James Thompson</h4>
+                    <p class="position">Technology Director</p>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor euismod lobortis.</p>
+                    <div class="social-links">
+                      <a href="#"><i class="bi bi-linkedin"></i></a>
+                      <a href="#"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#"><i class="bi bi-envelope"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="team-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="member-image">
+                      <img src="{{asset('assets/img/person/person-m-3.webp')}}" alt="Athletics Director" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                      <h4>Daniel Wilson</h4>
+                      <p>Athletics Director</p>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>Daniel Wilson</h4>
+                    <p class="position">Athletics Director</p>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor euismod lobortis.</p>
+                    <div class="social-links">
+                      <a href="#"><i class="bi bi-linkedin"></i></a>
+                      <a href="#"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#"><i class="bi bi-envelope"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="team-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <div class="member-image">
+                      <img src="{{asset('assets/img/person/person-f-4.webp')}}" alt="Counseling Head" class="img-fluid">
+                    </div>
+                    <div class="member-info">
+                      <h4>Dr. Emily Chen</h4>
+                      <p>Counseling Head</p>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>Dr. Emily Chen</h4>
+                    <p class="position">Counseling Head</p>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor euismod lobortis.</p>
+                    <div class="social-links">
+                      <a href="#"><i class="bi bi-linkedin"></i></a>
+                      <a href="#"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#"><i class="bi bi-envelope"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
 
-    </section><!-- /Events Section -->
+    </section><!-- /Leadership Section -->
 
   </main>
 
@@ -9549,10 +8999,11 @@ section,
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
   <!-- Main JS File -->
-   <script src="{{ asset('assets/js/main.js') }}"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
 
-  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+
 </body>
 
 </html>
