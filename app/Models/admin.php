@@ -13,5 +13,9 @@ class admin extends Model
 
     protected $table = 'dataadmin';
 
-    protected $fillable = ['username', 'password', 'layout'];
+    protected $fillable = ['username', 'password'];
+    public function tampilan()
+    {
+        return $this->hasOne(Tampilan::class, 'admin_id', 'id');
+    }
 }

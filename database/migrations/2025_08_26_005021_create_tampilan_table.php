@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('dataadmin', function (Blueprint $table) {
-            //
-            $table->string('layout')->default('layout1'); 
+       Schema::create('tampilan', function (Blueprint $table) {
+             $table->id();
+    $table->string('layout')->nullable();
+    $table->enum('font_size', ['s', 'm', 'l'])->default('m');
+    $table->string('warna')->nullable();
+    $table->string('font')->nullable();
+    $table->timestamps();
         });
     }
 
@@ -22,9 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('dataadmin', function (Blueprint $table) {
-            //
-            $table->dropColumn('layout');
-        });
+        Schema::dropIfExists('tampilan');
     }
 };

@@ -17,7 +17,6 @@ Schema::create('dataadmin', function (Blueprint $table) {
     $table->string('username');
     $table->string('password');
     $table->unsignedBigInteger('school_id')->nullable(); // tambahkan ini
-
     $table->foreign('school_id')->references('id')->on('school')->onDelete('set null');
     
     $table->timestamps();
