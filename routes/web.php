@@ -4,7 +4,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminControler;
-use App\http\Controllers\layoutController;
+use App\Http\Controllers\layoutController;
 use App\Http\Controllers\tampilanController;
 
 Route::get('/haloo', function () {
@@ -14,7 +14,7 @@ Route::get('/haloo', function () {
 Route::get('/', [adminControler::class, 'formLogin'])->name('login');
 Route::post('/login', [adminControler::class, 'prosesLogin'])->name('login.post');
 Route::get('/home', [adminControler::class, 'home'])->name('home');
-Route::post('/save-layout', [adminControler::class, 'saveLayout'])->name('save.layout');
+Route::post('/save-layout', [adminControler::class, 'simpanLayout'])->name('save.layout');
 Route::get('/layout', [adminControler::class, 'layout'])->name('layout');
 Route::get('/hero', [adminControler::class, 'hero'])->name('hero');
 Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');

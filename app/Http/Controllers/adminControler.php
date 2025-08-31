@@ -160,43 +160,47 @@ public function home()
         return redirect()->route('login');
     }
 
-    public function tampilan()
-    {
-        if (!session()->has('admin_id')) {
-            return redirect()->route('login');
-        }
-
-        $tampilan = Tampilan::find(1);
-
-        if (!$tampilan) {
-            $tampilan = Tampilan::create([
-                'layout' => null,
-                'font_size' => $request->font_size ?? 'm',
-                'warna' => null,
-            ]);
-        }
-
-        return view('tampilan', ['layout' => $tampilan->layout]);
+    public function tampilan(Request $request)
+{
+    if (!session()->has('admin_id')) {
+        return redirect()->route('login');
     }
+
+    $tampilan = Tampilan::find(1);
+
+    if (!$tampilan) {
+        $tampilan = Tampilan::create([
+            'layout' => null,
+            'font_size' => 'm', // default saja, tidak perlu dari $request
+            'warna' => null,
+            'font' => $request->font ?? 'Poppins'
+        ]);
+    }
+
+    return view('tampilan', compact('tampilan'));
+}
+
 
     // SIMPAN LAYOUT
     public function updateLayout(Request $request)
-    {
-        $request->validate([
-            'layout' => 'required|string|in:layout1,layout2'
-        ]);
+{
+    $request->validate([
+        'layout' => 'required|string|in:layout1,layout2'
+    ]);
 
-        $tampilan = Tampilan::updateOrCreate(
-            ['id' => 1],
-            [
-                'layout' => $request->layout,
-                'font_size' => $request->font_size ?? 'm',
-                'warna' => $request->warna ?? null,
-            ]
-        );
+    Tampilan::updateOrCreate(
+        ['id' => 1],
+        [
+            'layout' => $request->layout,
+            'font_size' => $request->font_size ?? 'm',
+            'warna' => $request->warna ?? null,
+            'font' => $request->font ?? 'Poppins'  
+        ]
+    );
 
-        return redirect()->route('home')->with('success', 'Layout berhasil disimpan!');
-    }
+    return redirect()->route('home')->with('success', 'Layout berhasil disimpan!');
+}
+
     public function simpanLayout(Request $request)
 {
     Tampilan::updateOrCreate(

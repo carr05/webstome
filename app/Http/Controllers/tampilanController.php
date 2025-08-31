@@ -10,26 +10,40 @@ class tampilanController extends Controller
     public function index()
     {
         $tampilan = Tampilan::first();
-        return view('layout', compact('tampilan'));
+        return view('tampilan', compact('tampilan'));
+
     }
 
-    public function update(Request $request)
-    {
-        $tampilan = Tampilan::first();
+   public function update(Request $request)
+{
+    $tampilan = Tampilan::first();
 
-        if (!$tampilan) {
-            $tampilan = new Tampilan();
-        }
+    if (!$tampilan) {
+        $tampilan = new Tampilan();
+    }
 
+    // Update layout kalau dikirim
+    if ($request->has('layout') && $request->layout != '') {
         $tampilan->layout = $request->layout;
-    $tampilan->font_size = $request->font_size ?? 'm'; // default 'm'
-    $tampilan->font = $request->font ?? 'Poppins';     // default Poppins
-    $tampilan->warna = $request->warna ?? '#000000';
+    }
+
+    // Update warna/font/font_size kalau dikirim
+    if ($request->has('warna') && $request->warna != '') {
+        $tampilan->warna = $request->warna;
+    }
+    if ($request->has('font') && $request->font != '') {
+        $tampilan->font = $request->font;
+    }
+    if ($request->has('font_size') && $request->font_size != '') {
+        $tampilan->font_size = $request->font_size;
+    }
+
     $tampilan->save();
 
-        return redirect()->route('home')
-                         ->with('success', 'Tampilan berhasil diperbarui!');
-    }
+    return redirect()->route('home')
+                     ->with('success', 'Tampilan berhasil diperbarui!');
+}
+
 }
 
 
