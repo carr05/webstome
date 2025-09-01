@@ -12,24 +12,23 @@
         font-family: 'Poppins', sans-serif;
         background-color: #5955B3;
         margin: 0;
-<<<<<<< HEAD
+
 
     }
 
     /* Main Container */
-=======
-    }
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
+
+    
+
     .main-container {
       margin-left: 240px;
       padding: 20px;
       height: 100vh;
     }
-<<<<<<< HEAD
+
 
     /* White Scrollable Content */
 =======
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
     .main-content {
       background-color: #f8f9ff;
       border-radius: 20px;
@@ -38,10 +37,7 @@
       overflow-y: auto;
       box-shadow: 0 8px 40px rgba(0,0,0,0.1);
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
+
     .card-section, .header-card {
         background-color: white;
         border-radius: 15px;
@@ -54,13 +50,12 @@
         justify-content: space-between;
         align-items: center;
     }
-<<<<<<< HEAD
+
     .header-card img {
         max-width: 200px;
     }
-=======
+
     .header-card img { max-width: 150px; }
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
     .card-button {
         background-color: #EDEAFF;
         border: none;
@@ -71,13 +66,13 @@
         text-align: center;
         transition: 0.3s;
     }
-<<<<<<< HEAD
+
     .card-button:hover {
         background-color: #D7CCFF;
     }
-=======
+
     .card-button:hover { background-color: #D7CCFF; }
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
+
     .color-box {
         height: 40px;
         border-radius: 8px;
