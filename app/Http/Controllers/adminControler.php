@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 use App\Models\admin;
 use Illuminate\Support\Facades\Hash;
 use App\Models\berita;
+<<<<<<< HEAD
+=======
+use App\Models\tampilan;
+
+>>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
 
 class adminControler extends Controller
 {
@@ -30,18 +35,51 @@ class adminControler extends Controller
 
     public function prosesLogin(Request $request)
     {
+<<<<<<< HEAD
         $admin = admin::where('username', $request->username)->first();
+=======
+        $request->validate([
+            'username' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        $admin = Admin::where('username', $request->username)->first();
+>>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
 
         if ($admin && Hash::check($request->password, $admin->password)) {
             session([
                 'admin_id' => $admin->id,
+<<<<<<< HEAD
                 'admin_username' => $admin->username
             ]);
             return redirect()->route('tampilan');
+=======
+                'admin_username' => $admin->username,
+            ]);
+
+            $tampilan = Tampilan::find(1);
+
+            if (!$tampilan) {
+                $tampilan = Tampilan::create([
+                    'layout' => null,
+                    'font_size' => 'm',
+                    'warna' => null,
+                ]);
+            }
+
+            // Jika sudah pilih layout → langsung ke home
+            if ($tampilan->layout) {
+                return redirect()->route('home');
+            }
+
+            // Kalau belum pilih layout → arahkan ke halaman pilih layout
+            return redirect()->route('tampilan.index');
+>>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
         }
 
         return back()->with('error', 'Username atau password salah.');
     }
+<<<<<<< HEAD
 
     public function home()
 {
@@ -59,6 +97,23 @@ class adminControler extends Controller
     // Kalau sudah memilih, tampilkan halaman home biasa
     return view('home', ['showLayoutPopup' => false]);
 }
+=======
+public function home()
+    {
+        if (!session()->has('admin_id')) {
+            return redirect()->route('login');
+        }
+
+        $tampilan = Tampilan::find(1);
+
+        if (!$tampilan || !$tampilan->layout) {
+            return redirect()->route('tampilan.index');
+        }
+
+        return view('home', ['layout' => $tampilan->layout]);
+    }
+
+>>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
 
 
     public function layout()
@@ -66,7 +121,11 @@ class adminControler extends Controller
         return view('layout'); // atau nama view yang benar
     }
 
+<<<<<<< HEAD
     public function tampilan()
+=======
+    public function tampilan1()
+>>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
     {
         return view('tampilan'); // atau nama view yang benar
     }
@@ -137,4 +196,64 @@ class adminControler extends Controller
         session()->forget(['admin_id', 'admin_username']);
         return redirect()->route('login');
     }
+<<<<<<< HEAD
+=======
+
+    public function tampilan(Request $request)
+{
+    if (!session()->has('admin_id')) {
+        return redirect()->route('login');
+    }
+
+    $tampilan = Tampilan::find(1);
+
+    if (!$tampilan) {
+        $tampilan = Tampilan::create([
+            'layout' => null,
+            'font_size' => 'm', // default saja, tidak perlu dari $request
+            'warna' => null,
+            'font' => $request->font ?? 'Poppins'
+        ]);
+    }
+
+    return view('tampilan', compact('tampilan'));
+}
+
+
+    // SIMPAN LAYOUT
+    public function updateLayout(Request $request)
+{
+    $request->validate([
+        'layout' => 'required|string|in:layout1,layout2'
+    ]);
+
+    Tampilan::updateOrCreate(
+        ['id' => 1],
+        [
+            'layout' => $request->layout,
+            'font_size' => $request->font_size ?? 'm',
+            'warna' => $request->warna ?? null,
+            'font' => $request->font ?? 'Poppins'  
+        ]
+    );
+
+    return redirect()->route('home')->with('success', 'Layout berhasil disimpan!');
+}
+
+    public function simpanLayout(Request $request)
+{
+    Tampilan::updateOrCreate(
+        ['id' => 1], // selalu pakai id 1, jadi cuma ada 1 data
+        [
+            'layout' => $request->layout,
+            'font_size' => $request->font_size ?? 'm',
+            'warna' => $request->warna ?? null,
+        ]
+    );
+
+    return redirect()->route('home')->with('success', 'Layout berhasil disimpan!');
+}
+
+
+>>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
 }

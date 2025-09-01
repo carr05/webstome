@@ -152,6 +152,7 @@
       background: #4B3FAE;
       color: white;
     }
+<<<<<<< HEAD
     .menu-btn {
       display: inline-flex;
       align-items: center;
@@ -263,6 +264,8 @@
     .menu-actions .edit {
       color: #3ba25d;
     }
+=======
+>>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
   </style>
 </head>
 <body>
@@ -271,6 +274,7 @@
 
 <div class="main-container">
   <div class="main-content">
+<<<<<<< HEAD
     <div class="card-section">
      <h2 class="fw-bold" style="color:#5955B3;">MENU</h2>
 <br>
@@ -398,3 +402,38 @@
 
 </body>
 </html>
+=======
+
+    <!-- Hero Section -->
+    <div class="hero" style="background-image:url('/images/hero-default.jpg')">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <img src="/images/logo-sekolah.png" alt="Logo Sekolah" class="hero-logo">
+        <h2 class="fw-bold">Selamat Datang di Dashboard Guru</h2>
+        <p>Kelola data guru dengan mudah</p>
+      </div>
+    </div>
+
+    <!-- Form Edit Hero -->
+    <div class="card-section mb-4">
+      <h5 class="fw-bold" style="color:#5955B3;">Edit Hero</h5>
+      <form action="/update-hero" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="mb-3">
+          <label class="form-label">Ganti Logo Sekolah</label>
+          <input type="file" name="logo" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Ganti Gambar Background Hero</label>
+          <input type="file" name="background" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+      </form>
+    </div>
+
+    
+    
+
+</body>
+</html>
+>>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2

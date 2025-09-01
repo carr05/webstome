@@ -69,6 +69,11 @@
     <a href="{{ url('/home') }}" class="{{ Request::is('home') ? 'active' : '' }}"><i class="bi bi-house me-2"></i> Dashboard</a>
     <a href="{{ url('/layout') }}" class="{{ Request::is('layout') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Layout</a>
     <a href="{{ url('/hero') }}" class="{{ Request::is('hero') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Menu</a>
+
+    <a href="{{ url('/home') }}" class="{{ Request::is('home') ? 'active' : '' }}"><i class="bi bi-house me-2"></i> Dashboard</a>
+    <a href="{{ url('/layout') }}" class="{{ Request::is('layout') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Layout</a>
+    <a href="{{ url('/hero') }}" class="{{ Request::is('hero') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Hero</a>
+
     <a href="{{ url('/berita') }}" class="{{ Request::is('berita') ? 'active' : '' }}"><i class="bi bi-newspaper me-2"></i> Berita</a>
     <a href="{{ url('/agenda') }}" class="{{ Request::is('agenda') ? 'active' : '' }}"><i class="bi bi-calendar me-2"></i> Agenda</a>
     <a href="{{ url('/galeri') }}" class="{{ Request::is('galeri') ? 'active' : '' }}"><i class="bi bi-images me-2"></i> Galeri</a>
@@ -81,6 +86,9 @@
     <a href="{{ url('/karya') }}" class="{{ Request::is('karya') ? 'active' : '' }}"><i class="bi bi-palette me-2"></i> Karya</a>
   </div>
   <div class="sidebar-bottom">
+
+    <a href="{{ url('/pengaturan') }}"><i class="bi bi-gear me-2"></i> Pengaturan</a>
+
     <a href="{{ url('/logout') }}"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
   </div>
 </div>
