@@ -7,20 +7,6 @@ use App\Models\admin;
 
 class layoutController extends Controller
 {
-<<<<<<< HEAD
-    public function pilihLayout($layout)
-{
-    $admin = \App\Models\admin::find(session('admin_id'));
-
-    if (!$admin) {
-        return redirect()->route('login')->with('error', 'Silakan login dulu.');
-    }
-
-    $admin->layout = $layout; // pastikan kolom di DB ada
-    $admin->save();
-
-    return redirect()->route('home')->with('success', 'Layout berhasil dipilih.');
-=======
     public function pilihLayout(Request $request)
 {
     $request->validate([
@@ -36,7 +22,7 @@ class layoutController extends Controller
     $admin->save();
 
     return redirect()->route('home')->with('success', 'Layout berhasil dipilih!');
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
+
 }
 
 

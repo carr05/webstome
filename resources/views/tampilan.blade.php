@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-<form action="{{ route('pilih.layout', ['layout' => 1]) }}" method="POST">
-    @csrf
-    <button type="submit">Pilih Layout 1</button>
-</form>
 
-<form action="{{ route('pilih.layout', ['layout' => 2]) }}" method="POST">
-    @csrf
-    <button type="submit">Pilih Layout 2</button>
-</form>
-=======
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -51,4 +41,4 @@
 
 </body>
 </html>
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
+
