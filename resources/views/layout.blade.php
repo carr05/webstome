@@ -105,9 +105,9 @@
                         <h6 class="fw-bold" style="color:#5A45D3;">Skema warna</h6>
                         <label class="mt-3 fw-medium">Primary</label>
                         <div class="d-flex gap-3 align-items-center">
-                            <input type="text" name="warna" class="form-control" 
-                                   value="{{ old('warna', $tampilan->warna ?? '#000000') }}" style="max-width:120px;">
-                            <div class="color-box" style="background-color:{{ old('warna', $tampilan->warna ?? '#000000') }};width:40px;"></div>
+                            <input type="color" name="warna" class="form-control form-control-color" 
+       value="{{ $tampilan->warna ?? '#000000' }}" title="Pilih warna utama" style="max-width:80px;">
+                            <div class="color-box" style="background-color:{{ $tampilan->warna ?? '#000000' }};width:40px;"></div>
                         </div>
                     </div>
                 </div>
@@ -118,16 +118,16 @@
                         <h6 class="fw-bold" style="color:#5A45D3;">Typography</h6>
                         <label class="mt-3 fw-medium">Primary font</label>
                         <select name="font" class="form-select" style="max-width:200px;">
-                            <option value="Poppins" {{ old('font', $tampilan->font ?? '') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
-                            <option value="Roboto" {{ old('font', $tampilan->font ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
-                            <option value="Open Sans" {{ old('font', $tampilan->font ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
+                            <option value="Poppins" {{ ($tampilan->font ?? '') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                            <option value="Roboto" {{ ($tampilan->font ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
+                            <option value="Open Sans" {{ ($tampilan->font ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
                         </select>
 
                         <label class="mt-3 fw-medium">Ukuran font</label>
                         <select name="font_size" class="form-select" style="max-width:200px;">
-                            <option value="s" {{ old('font_size', $tampilan->font_size ?? '') == 's' ? 'selected' : '' }}>Kecil</option>
-                            <option value="m" {{ old('font_size', $tampilan->font_size ?? '') == 'm' ? 'selected' : '' }}>Sedang</option>
-                            <option value="l" {{ old('font_size', $tampilan->font_size ?? '') == 'l' ? 'selected' : '' }}>Besar</option>
+                            <option value="s" {{ ($tampilan->font_size ?? '') == 's' ? 'selected' : '' }}>Kecil</option>
+                            <option value="m" {{ ($tampilan->font_size ?? '') == 'm' ? 'selected' : '' }}>Sedang</option>
+                            <option value="l" {{ ($tampilan->font_size ?? '') == 'l' ? 'selected' : '' }}>Besar</option>
                         </select>
 
                         <div class="mt-3 text-center">
@@ -139,7 +139,6 @@
 
             <!-- Tombol Simpan -->
             <div class="text-end mt-3">
-                
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
         </form>
