@@ -4,12 +4,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminControler;
-<<<<<<< HEAD
+
 use App\http\Controllers\layoutController;
-=======
-use App\Http\Controllers\layoutController;
+
+
 use App\Http\Controllers\tampilanController;
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
 
 Route::get('/haloo', function () {
     return 'Welcome Dashboard';
@@ -18,13 +17,8 @@ Route::get('/haloo', function () {
 Route::get('/', [adminControler::class, 'formLogin'])->name('login');
 Route::post('/login', [adminControler::class, 'prosesLogin'])->name('login.post');
 Route::get('/home', [adminControler::class, 'home'])->name('home');
-<<<<<<< HEAD
-Route::post('/save-layout', [adminControler::class, 'saveLayout'])->name('save.layout');
-Route::get('/layout', [adminControler::class, 'layout'])->name('layout1');
-=======
 Route::post('/save-layout', [adminControler::class, 'simpanLayout'])->name('save.layout');
 Route::get('/layout', [adminControler::class, 'layout'])->name('layout');
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
 Route::get('/hero', [adminControler::class, 'hero'])->name('hero');
 Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');
 Route::get('/berita', [adminControler::class, 'berita'])->name('berita');
@@ -46,14 +40,8 @@ Route::get('/tamplate', [adminControler::class, 'chooseLayout'])->name('tamplate
 
 Route::get('/logout', action: [adminControler::class, 'logout'])->name('logout');
 Route::post('/pilih-layout/{layout}', [layoutController::class, 'pilihLayout'])->name('pilih.layout');
-<<<<<<< HEAD
-Route::get('/tampilan', [adminControler::class, 'tampilan'])->name('tampilan');
-
-
-
-=======
 
 
 Route::get('/tampilan', [tampilanController::class, 'index'])->name('tampilan.index');
 Route::post('/tampilan/update', [tampilanController::class, 'update'])->name('tampilan.update');
->>>>>>> 9d760ca3b9a1edb5979a059f770aceed65a1c1e2
+
