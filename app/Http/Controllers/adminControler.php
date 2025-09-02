@@ -13,16 +13,16 @@ use App\Models\tampilan;
 class adminControler extends Controller
 {
     public function landing()
-    {
-        $recentNews = berita::latest()->take(3)->get();
-        return view('layout1.index', compact('recentNews'));
-    }
+{
+    $tampilan = Tampilan::first();
+    return view('layout1.index', compact('tampilan'));
+}
 
     public function landing2()
-    {
-        $recentNews = berita::latest()->take(3)->get();
-        return view('layout2.index', compact('recentNews'));
-    }
+{
+    $tampilan = Tampilan::first();
+    return view('layout2.index', compact('tampilan'));
+}
 
     public function formLogin()
     {
@@ -83,13 +83,13 @@ public function home()
 
     public function layout()
     {
-        return view('layout'); // atau nama view yang benar
+        return view('tampilan.index'); // atau nama view yang benar
     }
 
     public function tampilan1()
 
     {
-        return view('tampilan'); // atau nama view yang benar
+        return view('tampilan.index'); // atau nama view yang benar
     }
 
     public function about()
@@ -145,6 +145,8 @@ public function home()
     {
         return view('karya');
     }
+
+    
 
     public function index()
 {

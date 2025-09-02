@@ -26,6 +26,9 @@
   <!-- Main CSS File -->
   <link href="{{ asset('assets2/css/main.css') }}" rel="stylesheet">
 
+  
+
+
   <!-- =======================================================
   * Template Name: MySchool
   * Template URL: https://bootstrapmade.com/myschool-bootstrap-school-template/
@@ -33,11 +36,17 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top" 
+  style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
+           --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
+           --font-size: {{ $tampilan->font_size ?? '16px' }};">
+         
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">

@@ -67,7 +67,7 @@
     <h5 class="text-center mb-4">🎓 Webstome</h5>
     <a style="background-color: #fff; color: black; text-align: center;" href="{{ url('/') }}" class="{{ Request::is('preview') ? 'active' : '' }}">Priview</a>
     <a href="{{ url('/home') }}" class="{{ Request::is('home') ? 'active' : '' }}"><i class="bi bi-house me-2"></i> Dashboard</a>
-    <a href="{{ url('/layout') }}" class="{{ Request::is('layout') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Layout</a>
+    <a href="{{ url('/tampilan') }}" class="{{ Request::is('tampilan') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Layout</a>
     <a href="{{ url('/hero') }}" class="{{ Request::is('hero') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Menu</a>
 
 

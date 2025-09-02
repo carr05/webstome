@@ -10,7 +10,7 @@ class tampilanController extends Controller
     public function index()
     {
         $tampilan = Tampilan::first();
-        return view('tampilan', compact('tampilan'));
+        return view('tampilan.index', compact('tampilan'));
 
     }
 
@@ -40,7 +40,7 @@ class tampilanController extends Controller
 
     $tampilan->save();
 
-    return redirect()->route('home')
+    return redirect()->route('tampilan.index')
                      ->with('success', 'Tampilan berhasil diperbarui!');
 }
 
