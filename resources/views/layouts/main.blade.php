@@ -65,9 +65,13 @@
 <div class="sidebar" id="sidebar">
   <div>
     <h5 class="text-center mb-4">🎓 Webstome</h5>
-    <a style="background-color: #fff; color: black; text-align: center;" href="{{ url('/') }}" class="{{ Request::is('preview') ? 'active' : '' }}">Priview</a>
     <a href="{{ url('/home') }}" class="{{ Request::is('home') ? 'active' : '' }}"><i class="bi bi-house me-2"></i> Dashboard</a>
+
     <a href="{{ url('/tampilan') }}" class="{{ Request::is('tampilan') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Layout</a>
+
+    <a href="{{ url('/') }}" class="{{ Request::is('preview') ? 'active' : '' }}"><i class="bi bi-eye me-2"></i>Priview</a>
+    <a href="{{ url('/layout') }}" class="{{ Request::is('layout') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Layout</a>
+
     <a href="{{ url('/hero') }}" class="{{ Request::is('hero') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Menu</a>
 
 
@@ -84,7 +88,6 @@
   </div>
   <div class="sidebar-bottom">
 
-    <a href="{{ url('/pengaturan') }}"><i class="bi bi-gear me-2"></i> Pengaturan</a>
 
     <a href="{{ url('/logout') }}"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
   </div>
