@@ -52,8 +52,8 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <i class="bi bi-buildings"></i>
-        <h1 class="sitename">MySchool</h1>
+        <i class="bi bi-buildings" ></i>
+        <h1 class="sitename" >MySchool</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
