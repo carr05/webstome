@@ -12,6 +12,15 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         //
+        $middleware->web([
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+    ]);
+
+    // alias middleware (pengganti $routeMiddleware di Kernel.php)
+    $middleware->alias([
+        'check.subdomain' => \App\Http\Middleware\CheckSubdomain::class,
+    ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

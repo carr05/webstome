@@ -9,7 +9,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{{ asset('assets2/img/favicon.png') }}" rel="icon">  
+  <link href="{{ asset('assets2/img/favicon.png') }}" rel="icon">
   <link href="{{ asset('assets2/img/apple-touch-icon.png') }}" rel="apple-touch-icon">  
 
   <!-- Fonts -->
@@ -18,14 +18,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{ asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">  
-  <link href="{{ asset('assets2/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">  
-  <link href="{{ asset('assets2/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">  
-  <link href="{{ asset('assets2/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">  
+  <link href="{{ asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets2/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets2/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets2/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="{{ asset('assets2/css/main.css') }}" rel="stylesheet">
+
   
+
 
   <!-- =======================================================
   * Template Name: MySchool
@@ -34,18 +36,24 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top" 
+  style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
+           --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
+           --font-size: {{ $tampilan->font_size ?? '16px' }};">
+         
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <i class="bi bi-buildings"></i>
-        <h1 class="sitename">MySchool</h1>
+        <i class="bi bi-buildings" ></i>
+        <h1 class="sitename" >MySchool</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -215,7 +223,7 @@
 
           <div class="col-lg-6">
             <div class="image-wrapper">
-              <img src="assets/img/education/campus-5.webp" alt="Campus Overview" class="img-fluid">
+              <img src="{{ asset('assets2/img/education/campus-5.webp') }}" alt="Campus Overview" class="img-fluid">
               <div class="experience-badge">
                 <div class="years">32+</div>
                 <div class="text">Years of Excellence</div>
@@ -262,7 +270,7 @@
               </div>
             </div>
             <div class="overview-image">
-              <img src="assets/img/education/showcase-7.webp" alt="Education" class="img-fluid">
+              <img src="{{ asset('assets2/img/education/showcase-7.webp') }}" alt="Education" class="img-fluid">
             </div>
           </div>
 
@@ -270,7 +278,7 @@
 
             <div class="program-card featured-program">
               <div class="card-image">
-                <img src="assets/img/education/courses-8.webp" alt="Program" class="img-fluid">
+                <img src="{{ asset('assets2/img/education/courses-8.webp') }}" alt="Program" class="img-fluid">
                 <div class="program-badge">
                   <i class="bi bi-star-fill"></i>
                   <span>Top Rated</span>
@@ -304,7 +312,7 @@
 
               <div class="program-item">
                 <div class="item-visual">
-                  <img src="assets/img/education/courses-12.webp" alt="Program" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/courses-12.webp') }}" alt="Program" class="img-fluid">
                 </div>
                 <div class="item-details">
                   <div class="item-category">Business</div>
@@ -322,7 +330,7 @@
 
               <div class="program-item">
                 <div class="item-visual">
-                  <img src="assets/img/education/courses-5.webp" alt="Program" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/courses-5.webp') }}" alt="Program" class="img-fluid">
                 </div>
                 <div class="item-details">
                   <div class="item-category">Health Sciences</div>
@@ -340,7 +348,7 @@
 
               <div class="program-item">
                 <div class="item-visual">
-                  <img src="assets/img/education/courses-15.webp" alt="Program" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/courses-15.webp') }}" alt="Program" class="img-fluid">
                 </div>
                 <div class="item-details">
                   <div class="item-category">Creative Arts</div>
@@ -358,7 +366,7 @@
 
               <div class="program-item">
                 <div class="item-visual">
-                  <img src="assets/img/education/courses-9.webp" alt="Program" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/courses-9.webp') }}" alt="Program" class="img-fluid">
                 </div>
                 <div class="item-details">
                   <div class="item-category">Science</div>
@@ -424,7 +432,7 @@
           <div class="col-lg-6">
             <div class="visual-grid">
               <div class="main-visual">
-                <img src="assets/img/education/students-7.webp" alt="Campus Life" class="img-fluid">
+                <img src="{{ asset('assets2/img/education/students-7.webp') }}" alt="Campus Life" class="img-fluid">
                 <div class="overlay-badge">
                   <i class="bi bi-heart-fill"></i>
                   <span>Campus Community</span>
@@ -433,14 +441,14 @@
 
               <div class="secondary-visuals">
                 <div class="small-visual">
-                  <img src="assets/img/education/activities-8.webp" alt="Student Activities" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/activities-8.webp') }}" alt="Student Activities" class="img-fluid">
                   <div class="visual-caption">
                     <span>Student Activities</span>
                   </div>
                 </div>
 
                 <div class="small-visual">
-                  <img src="assets/img/education/activities-5.webp" alt="Academic Excellence" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/activities-5.webp') }}" alt="Academic Excellence" class="img-fluid">
                   <div class="visual-caption">
                     <span>Academic Excellence</span>
                   </div>
@@ -455,7 +463,7 @@
             <div class="col-lg-4">
               <div class="highlight-card">
                 <div class="highlight-image">
-                  <img src="assets/img/education/activities-7.webp" alt="Leadership Programs" class="img-fluid">
+                  <img src="{{ asset('assets2/img/education/activities-7.webp') }}" alt="Leadership Programs" class="img-fluid">
                 </div>
                 <div class="highlight-content">
                   <h5>Leadership Development</h5>
@@ -1147,15 +1155,14 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="{{ asset('assets2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>  
-  <script src="{{ asset('assets2/vendor/php-email-form/validate.js') }}"></script> 
-  <script src="{{ asset('assets2/vendor/swiper/swiper-bundle.min.js') }}"></script>  
-  <script src="{{ asset('assets2/vendor/purecounter/purecounter_vanilla.js') }}"></script>  
-  <script src="{{ asset('assets2/vendor/glightbox/js/glightbox.min.js') }}"></script>  
+  <script src="{{ asset('assets2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/glightbox/js/glightbox.min.js') }}"></script>
 
   <!-- Main JS File -->
   <script src="{{ asset('assets2/js/main.js') }}"></script>
-  
 
 </body>
 

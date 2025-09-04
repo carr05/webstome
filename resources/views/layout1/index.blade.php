@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,30 +48,17 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
-}
+            /* Font global */
+            --default-font: "{{ $tampilan->font ?? 'Roboto' }}", system-ui, sans-serif;
+            --heading-font: "{{ $tampilan->font ?? 'Open Sans' }}", sans-serif;
+            --nav-font: "{{ $tampilan->font ?? 'Poppins' }}", sans-serif;
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #f1f5f7; /* Background color for the entire website, including individual sections */
-  --default-color: #010608; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #011e2c; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #04415f; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
+            /* Warna utama dari input user */
+            --accent-color: {{ $tampilan->warna ?? '#04415f' }};
+            --nav-color: {{ $tampilan->warna ?? '#04415f' }};
+            --nav-hover-color: {{ $tampilan->warna ?? '#2086b8' }};
+        }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #04415f;  /* The default color of the main navmenu links */
-  --nav-hover-color: #2086b8; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #010608; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #04415f; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-}
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
@@ -8437,9 +8423,9 @@ section,
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="{{ url('/layout1/about') }}"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="about.html">About Us</a></li>
+              <li><a href="{{ url('/layout1/about') }}">About Us</a></li>
               <li><a href="admissions.html">Admissions</a></li>
               <li><a href="academics.html">Academics</a></li>
               <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
@@ -8603,7 +8589,7 @@ section,
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
               <h3>Our Story</h3>
-              <h2>Educating Minds, Inspiring Hearts</h2>
+              <h2>Sejarah Sekolah</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae odio ac nisi tristique venenatis. Nullam feugiat ipsum vitae justo finibus, in sagittis dolor malesuada. Aenean vel fringilla est, a vulputate massa.</p>
 
               <div class="timeline">

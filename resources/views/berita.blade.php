@@ -127,7 +127,8 @@
 <div class="main-container">
   <div class="main-content">
     <div class="card-section">
-      <h2 class="fw-bold text-primary">BERITA</h2>
+     <h2 class="fw-bold" style="color:#5955B3;">BERITA</h2>
+
 
       <!-- Statistik -->
       <div class="stats">

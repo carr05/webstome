@@ -8,20 +8,21 @@ use Illuminate\Http\Request;
 use App\Models\admin;
 use Illuminate\Support\Facades\Hash;
 use App\Models\berita;
+use App\Models\tampilan;
 
 class adminControler extends Controller
 {
     public function landing()
-    {
-        $recentNews = berita::latest()->take(3)->get();
-        return view('layout1.index', compact('recentNews'));
-    }
+{
+    $tampilan = Tampilan::first();
+    return view('layout1.index', compact('tampilan'));
+}
 
     public function landing2()
-    {
-        $recentNews = berita::latest()->take(3)->get();
-        return view('layout2.home', compact('recentNews'));
-    }
+{
+    $tampilan = Tampilan::first();
+    return view('layout2.index', compact('tampilan'));
+}
 
     public function formLogin()
     {
@@ -30,31 +31,75 @@ class adminControler extends Controller
 
     public function prosesLogin(Request $request)
     {
-        $admin = admin::where('username', $request->username)->first();
+        $request->validate([
+            'username' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        $admin = Admin::where('username', $request->username)->first();
 
         if ($admin && Hash::check($request->password, $admin->password)) {
             session([
                 'admin_id' => $admin->id,
-                'admin_username' => $admin->username
+                'admin_username' => $admin->username,
             ]);
-            return redirect()->route('home');
+
+            $tampilan = Tampilan::find(1);
+
+            if (!$tampilan) {
+                $tampilan = Tampilan::create([
+                    'layout' => null,
+                    'font_size' => 'm',
+                    'warna' => null,
+                ]);
+            }
+
+            // Jika sudah pilih layout → langsung ke home
+            if ($tampilan->layout) {
+                return redirect()->route('home');
+            }
+
+            // Kalau belum pilih layout → arahkan ke halaman pilih layout
+            return redirect()->route('tampilan.index');
         }
 
         return back()->with('error', 'Username atau password salah.');
     }
-
-    public function home()
+public function home()
     {
         if (!session()->has('admin_id')) {
             return redirect()->route('login');
         }
 
-        return view('home');
+        $tampilan = Tampilan::find(1);
+
+        if (!$tampilan || !$tampilan->layout) {
+            return redirect()->route('tampilan.index');
+        }
+
+        return view('home', ['layout' => $tampilan->layout]);
     }
+
 
     public function layout()
     {
-        return view('layout'); // atau nama view yang benar
+        return view('tampilan.index'); // atau nama view yang benar
+    }
+
+    public function tampilan1()
+
+    {
+        return view('tampilan.index'); // atau nama view yang benar
+    }
+
+    public function about()
+    {
+        return view('layout1.about');
+    }
+    public function hero()
+    {
+        return view('hero'); // atau nama view yang benar
+
     }
 
     public function berita()
@@ -100,6 +145,8 @@ class adminControler extends Controller
     {
         return view('karya');
     }
+
+    
 
     public function index()
 {
