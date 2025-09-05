@@ -56,10 +56,19 @@
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        cursor: pointer;
     }
 
     .card-button:hover {
         background-color: #D7CCFF;
+    }
+
+    /* Style saat aktif */
+    .card-button.active {
+        background-color: #5A45D3;
+        color: white;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(90, 69, 211, 0.3);
     }
 
     .color-box {
@@ -100,13 +109,15 @@
             <div class="card-section">
                 <h6 class="mb-3">Pilih Elemen untuk Dikustomisasi</h6>
                 <div class="row g-3">
-                    <div class="col-6 col-md-4"><button type="button" class="card-button"><i class="bi bi-menu-button"></i> Navbar</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button"><i class="bi bi-type"></i> Title</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button"><i class="bi bi-card-text"></i> Cards</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button"><i class="bi bi-square"></i> Button</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button"><i class="bi bi-square"></i> Hover</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button"><i class="bi bi-sliders"></i> Global</button></div>
+                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="navbar"><i class="bi bi-menu-button"></i> Navbar</button></div>
+                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="title"><i class="bi bi-type"></i> Title</button></div>
+                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="cards"><i class="bi bi-card-text"></i> Cards</button></div>
+                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="button"><i class="bi bi-square"></i> Button</button></div>
+                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="hover"><i class="bi bi-square"></i> Hover</button></div>
+                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="global"><i class="bi bi-sliders"></i> Global</button></div>
                 </div>
+                <!-- input hidden supaya bisa kirim pilihan ke backend -->
+                <input type="hidden" name="selected_element" id="selectedElement">
             </div>
 
             <!-- Skema Warna & Typography -->
@@ -157,6 +168,23 @@
 
     </div>
 </div>
+
+<script>
+    // ambil semua button elemen
+    const buttons = document.querySelectorAll('.card-button');
+    const hiddenInput = document.getElementById('selectedElement');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // hapus class active dari semua
+            buttons.forEach(b => b.classList.remove('active'));
+            // tambahkan ke yg diklik
+            this.classList.add('active');
+            // simpan data ke input hidden
+            hiddenInput.value = this.dataset.element;
+        });
+    });
+</script>
 
 </body>
 </html>
