@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminControler;
 use App\Http\Controllers\layoutController;
 use App\Http\Controllers\tampilanController;
+use App\Http\Controllers\heroController;
+
 
 Route::get('/haloo', function () {
     return 'Welcome Dashboard';
@@ -20,6 +22,7 @@ Route::post('/save-layout', [adminControler::class, 'simpanLayout'])->name('save
 Route::get('/layout', [adminControler::class, 'layout'])->name('layout');
 
 // Tampilan (kustomisasi)
+
 Route::get('/tampilan', [tampilanController::class, 'index'])->name('tampilan.index');
 Route::post('/tampilan/update', [tampilanController::class, 'update'])->name('tampilan.update');
 
@@ -38,10 +41,12 @@ Route::get('/karya', [adminControler::class, 'karya'])->name('karya');
 
 // Layout landing pages
 Route::get('/layout1/index', [adminControler::class, 'landing'])->name('layout1.index');
-Route::get('/layout1/about', [adminControler::class, 'about'])->name('layout1.about');
 Route::get('/layout2/index', [adminControler::class, 'landing2'])->name('layout2.index');
 
 // Pilih Layout
 Route::get('/tamplate', [adminControler::class, 'tamplate'])->name('tamplate');
 Route::get('/tamplate/choose', [adminControler::class, 'chooseLayout'])->name('tamplate.choose');
 Route::post('/pilih-layout/{layout}', [layoutController::class, 'pilihLayout'])->name('pilih.layout');
+
+Route::get('/hero', [heroController::class, 'index'])->name('hero.index');
+Route::post('/hero/update', [heroController::class, 'update'])->name('hero.update');

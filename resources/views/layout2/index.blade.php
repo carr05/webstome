@@ -44,15 +44,21 @@
 
   <header id="header" class="header d-flex align-items-center sticky-top" 
   style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
-           --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
-           --font-size: {{ $tampilan->font_size ?? '16px' }};">
+         --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
+         --font-size: {{ $tampilan->font_size ?? '16px' }};
+         
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ $hero->image ? asset('assets2/img/'.$hero->image) : asset('assets2/img/default-hero.jpg') }}');">
+         
          
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <i class="bi bi-buildings" ></i>
+      <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt=""> 
+        
         <h1 class="sitename" >MySchool</h1>
       </a>
 
@@ -112,7 +118,12 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section" 
+    style="         
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ $hero->image ? asset('assets2/img/'.$hero->image) : asset('assets2/img/default-hero.jpg') }}');">
 
       <div class="hero-container">
         <div class="hero-content">

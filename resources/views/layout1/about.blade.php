@@ -8420,7 +8420,7 @@ section,
   /* Add your styles here */
 }
 </style>
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
+
   <!-- =======================================================
   * Template Name: College
   * Template URL: https://bootstrapmade.com/college-bootstrap-education-template/
@@ -8430,10 +8430,6 @@ section,
   ======================================================== -->
 </head>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
 <body class="about-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
@@ -8503,11 +8499,11 @@ section,
     <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-<<<<<<< HEAD
+
         <h1 class="mb-2 mb-lg-0">About</h1>
-=======
+
         <h1 class="mb-2 mb-lg-0">Sambutan Kepala Sekolah</h1>
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
+
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
@@ -8525,11 +8521,11 @@ section,
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-<<<<<<< HEAD
+
               <h3>Our Story</h3>
               <h2>Educating Minds, Inspiring Hearts</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae odio ac nisi tristique venenatis. Nullam feugiat ipsum vitae justo finibus, in sagittis dolor malesuada. Aenean vel fringilla est, a vulputate massa.</p>
-=======
+
               <h3></h3>
               <h2></h2>
               <p>Assalamu’alaikum warahmatullahi wabarakatuh,<br>
@@ -8544,7 +8540,7 @@ Wassalamu’alaikum warahmatullahi wabarakatuh.
 
 Hormat kami,
 Kepala Sekolah SMKN 4 Malang</p>
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
+
 
               <div class="timeline">
                 <div class="timeline-item">
@@ -8584,11 +8580,11 @@ Kepala Sekolah SMKN 4 Malang</p>
 
           <div class="col-lg-6">
             <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
-<<<<<<< HEAD
+
               <img src="assets/img/education/campus-5.webp" alt="Campus" class="img-fluid rounded">
-=======
+
               <img src="{{asset('assets/img/person/kepsek.webp')}}" alt="Campus" class="img-fluid rounded">
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
+
 
               <div class="mission-vision" data-aos="fade-up" data-aos-delay="400">
                 <div class="mission">
@@ -8667,11 +8663,8 @@ Kepala Sekolah SMKN 4 Malang</p>
           <div class="row align-items-center">
             <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
               <div class="intro-image">
-<<<<<<< HEAD
                 <img src="assets/img/education/teacher-5.webp" alt="School Leadership" class="img-fluid rounded-lg">
-=======
                 <img src="{{asset('assets/img/education/teacher-5.webp')}}" alt="School Leadership" class="img-fluid rounded-lg">
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
                 <div class="experience-badge">
                   <span class="years">35+</span>
                   <span class="text">Years of Educational Excellence</span>
@@ -8755,11 +8748,8 @@ Kepala Sekolah SMKN 4 Malang</p>
                 <div class="card-inner">
                   <div class="card-front">
                     <div class="member-image">
-<<<<<<< HEAD
                       <img src="assets/img/person/person-f-6.webp" alt="Vice Principal" class="img-fluid">
-=======
                       <img src="{{asset('assets/img/person/person-f-6.webp')}}" alt="Vice Principal" class="img-fluid">
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
                     </div>
                     <div class="member-info">
                       <h4>Dr. Jennifer Parker</h4>
@@ -8875,11 +8865,8 @@ Kepala Sekolah SMKN 4 Malang</p>
                 <div class="card-inner">
                   <div class="card-front">
                     <div class="member-image">
-<<<<<<< HEAD
                       <img src="assets/img/person/person-m-8.webp" alt="Technology Director" class="img-fluid">
-=======
                       <img src="{{asset('assets/img/person/person-m-8.webp')}}" alt="Technology Director" class="img-fluid">
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
                     </div>
                     <div class="member-info">
                       <h4>James Thompson</h4>
@@ -8905,11 +8892,8 @@ Kepala Sekolah SMKN 4 Malang</p>
                 <div class="card-inner">
                   <div class="card-front">
                     <div class="member-image">
-<<<<<<< HEAD
                       <img src="assets/img/person/person-m-3.webp" alt="Athletics Director" class="img-fluid">
-=======
                       <img src="{{asset('assets/img/person/person-m-3.webp')}}" alt="Athletics Director" class="img-fluid">
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
                     </div>
                     <div class="member-info">
                       <h4>Daniel Wilson</h4>
@@ -8935,11 +8919,8 @@ Kepala Sekolah SMKN 4 Malang</p>
                 <div class="card-inner">
                   <div class="card-front">
                     <div class="member-image">
-<<<<<<< HEAD
                       <img src="assets/img/person/person-f-4.webp" alt="Counseling Head" class="img-fluid">
-=======
                       <img src="{{asset('assets/img/person/person-f-4.webp')}}" alt="Counseling Head" class="img-fluid">
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
                     </div>
                     <div class="member-info">
                       <h4>Dr. Emily Chen</h4>
@@ -9057,7 +9038,7 @@ Kepala Sekolah SMKN 4 Malang</p>
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-<<<<<<< HEAD
+
   <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
   <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
@@ -9066,7 +9047,7 @@ Kepala Sekolah SMKN 4 Malang</p>
   <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-=======
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -9075,17 +9056,16 @@ Kepala Sekolah SMKN 4 Malang</p>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
+
 
   <!-- Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
 
-<<<<<<< HEAD
-=======
+
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 
->>>>>>> d018293d4462c8cdcbb40bf7e7e17559b776ceb8
+
 </body>
 
 </html>

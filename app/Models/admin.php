@@ -12,15 +12,7 @@ class admin extends Model
     use HasFactory;
 
     protected $table = 'dataadmin';
-
-
-
     protected $fillable = ['username', 'password', 'layout'];
-
-
-
-    
-
     public function tampilan()
     {
         return $this->hasOne(Tampilan::class, 'admin_id', 'id');

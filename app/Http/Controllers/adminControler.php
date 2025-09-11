@@ -9,6 +9,7 @@ use App\Models\admin;
 use Illuminate\Support\Facades\Hash;
 use App\Models\berita;
 use App\Models\tampilan;
+use App\Models\hero;
 
 class adminControler extends Controller
 {
@@ -21,8 +22,10 @@ class adminControler extends Controller
     public function landing2()
 {
     $tampilan = Tampilan::first();
-    return view('layout2.index', compact('tampilan'));
+    $hero = Hero::first(); // ambil data hero pertama
+    return view('layout2.index', compact('tampilan', 'hero'));
 }
+    
 
     public function formLogin()
     {
@@ -30,41 +33,42 @@ class adminControler extends Controller
     }
 
     public function prosesLogin(Request $request)
-    {
-        $request->validate([
-            'username' => 'required|string',
-            'password' => 'required|string',
+{
+    $request->validate([
+        'username' => 'required|string',
+        'password' => 'required|string',
+    ]);
+
+    $admin = Admin::where('username', $request->username)->first();
+
+    if ($admin && Hash::check($request->password, $admin->password)) {
+        session([
+            'admin_id' => $admin->id,
+            'admin_username' => $admin->username,
         ]);
 
-        $admin = Admin::where('username', $request->username)->first();
+        $tampilan = Tampilan::find(1);
 
-        if ($admin && Hash::check($request->password, $admin->password)) {
-            session([
-                'admin_id' => $admin->id,
-                'admin_username' => $admin->username,
+        if (!$tampilan) {
+            $tampilan = Tampilan::create([
+                'layout' => null,
+                'font_size' => 'm',
+                'warna' => null,
             ]);
-
-            $tampilan = Tampilan::find(1);
-
-            if (!$tampilan) {
-                $tampilan = Tampilan::create([
-                    'layout' => null,
-                    'font_size' => 'm',
-                    'warna' => null,
-                ]);
-            }
-
-            // Jika sudah pilih layout → langsung ke home
-            if ($tampilan->layout) {
-                return redirect()->route('home');
-            }
-
-            // Kalau belum pilih layout → arahkan ke halaman pilih layout
-            return redirect()->route('tampilan.index');
         }
 
-        return back()->with('error', 'Username atau password salah.');
+        // Jika sudah pilih layout → langsung ke home
+        if ($tampilan->layout) {
+            return redirect()->route('home');
+        }
+
+        // Kalau belum pilih layout → arahkan ke halaman layout.blade
+        return redirect()->route('layout');
     }
+
+    return back()->with('error', 'Username atau password salah.');
+}
+
 public function home()
     {
         if (!session()->has('admin_id')) {
@@ -74,7 +78,7 @@ public function home()
         $tampilan = Tampilan::find(1);
 
         if (!$tampilan || !$tampilan->layout) {
-            return redirect()->route('tampilan.index');
+            return redirect()->route('layout');
         }
 
         return view('home', ['layout' => $tampilan->layout]);
@@ -83,7 +87,7 @@ public function home()
 
     public function layout()
     {
-        return view('tampilan.index'); // atau nama view yang benar
+        return view('layout'); // atau nama view yang benar
     }
 
     public function tampilan1()

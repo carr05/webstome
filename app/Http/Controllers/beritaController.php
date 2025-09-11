@@ -2,56 +2,100 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\berita;
 use Illuminate\Http\Request;
-use App\Models\Berita;
-use App\Models\Admin;
+use Illuminate\Support\Facades\Storage;
 
 class beritaController extends Controller
 {
+    /**
+     * Tampilkan daftar berita
+     */
     public function index()
     {
-        $admin = Admin::find(session('admin_id')); // ambil admin yang login
-
-        // Tampilkan CRUD berita sesuai layout
-        if ($admin->selected_layout == 'layout1') {
-            return view('layout1.berita.index', [
-                'berita' => Berita::all()
-            ]);
-        } else {
-            return view('layout2.berita.index', [
-                'berita' => Berita::all()
-            ]);
-        }
+        $berita = Berita::latest()->paginate(10);
+        return view('berita.index', compact('berita'));
     }
 
+    /**
+     * Tampilkan form tambah berita
+     */
     public function create()
     {
         return view('berita.create');
     }
 
+    /**
+     * Simpan berita baru
+     */
     public function store(Request $request)
     {
-        Berita::create($request->all());
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan!');
+        $request->validate([
+            'judul' => 'required',
+            'konten' => 'required',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+        ]);
+
+        $gambar = $request->file('gambar') ? $request->file('gambar')->store('berita', 'public') : null;
+
+        Berita::create([
+            'judul' => $request->judul,
+            'konten' => $request->konten,
+            'gambar' => $gambar,
+            'tanggal' => now(),
+        ]);
+
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan');
     }
 
-    public function edit($id)
+    /**
+     * Tampilkan form edit berita
+     */
+    public function edit(Berita $beritum)
     {
-        $berita = Berita::findOrFail($id);
-        return view('berita.edit', compact('berita'));
+        return view('berita.edit', compact('beritum'));
     }
 
-    public function update(Request $request, $id)
+    /**
+     * Update berita
+     */
+    public function update(Request $request, Berita $beritum)
     {
-        $berita = Berita::findOrFail($id);
-        $berita->update($request->all());
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil diperbarui!');
+        $request->validate([
+            'judul' => 'required',
+            'konten' => 'required',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+        ]);
+
+        if ($request->hasFile('gambar')) {
+            // hapus gambar lama kalau ada
+            if ($beritum->gambar) {
+                Storage::disk('public')->delete($beritum->gambar);
+            }
+            $gambar = $request->file('gambar')->store('berita', 'public');
+        } else {
+            $gambar = $beritum->gambar;
+        }
+
+        $beritum->update([
+            'judul' => $request->judul,
+            'konten' => $request->konten,
+            'gambar' => $gambar,
+        ]);
+
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil diperbarui');
     }
 
-    public function destroy($id)
+    /**
+     * Hapus berita
+     */
+    public function destroy(Berita $beritum)
     {
-        $berita = Berita::findOrFail($id);
-        $berita->delete();
-        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus!');
+        if ($beritum->gambar) {
+            Storage::disk('public')->delete($beritum->gambar);
+        }
+        $beritum->delete();
+
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus');
     }
 }

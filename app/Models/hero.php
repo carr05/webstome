@@ -5,17 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class berita extends Model
+class hero extends Model
 {
     //
     use HasFactory;
 
-    protected $table = 'berita';
-
+    protected $table = 'hero';
     protected $fillable = [
-        'judul',
-        'konten',
-        'gambar',
-        'tanggal',
+        'font_size',
+        'font_color',
+        'font',
+        'image',
     ];
 }

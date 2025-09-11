@@ -13,69 +13,28 @@
         background-color: #5955B3;
         margin: 0;
     }
-
-    .main-container {
-      margin-left: 240px;
-      padding: 20px;
-      height: 100vh;
-    }
-
+    .main-container { margin-left: 240px; padding: 20px; height: 100vh; }
     .main-content {
-      background-color: #f8f9ff;
-      border-radius: 20px;
-      padding: 30px;
-      height: 100%;
-      overflow-y: auto;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      background-color: #f8f9ff; border-radius: 20px; padding: 30px; height: 100%;
+      overflow-y: auto; box-shadow: 0 8px 40px rgba(0,0,0,0.1);
     }
-
     .card-section, .header-card {
-        background-color: white;
-        border-radius: 15px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        background-color: white; border-radius: 15px; padding: 20px;
+        margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
-
-    .header-card {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .header-card img {
-        max-width: 150px;
-    }
-
+    .header-card { display: flex; justify-content: space-between; align-items: center; }
+    .header-card img { max-width: 150px; }
     .card-button {
-        background-color: #EDEAFF;
-        border: none;
-        padding: 15px;
-        border-radius: 15px;
-        font-weight: 500;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        cursor: pointer;
+        background-color: #EDEAFF; border: none; padding: 15px;
+        border-radius: 15px; font-weight: 500; width: 100%; text-align: center;
+        transition: 0.3s; cursor: pointer;
     }
-
-    .card-button:hover {
-        background-color: #D7CCFF;
-    }
-
-    /* Style saat aktif */
+    .card-button:hover { background-color: #D7CCFF; }
     .card-button.active {
-        background-color: #5A45D3;
-        color: white;
-        font-weight: 600;
+        background-color: #5A45D3; color: white; font-weight: 600;
         box-shadow: 0 4px 12px rgba(90, 69, 211, 0.3);
     }
-
-    .color-box {
-        height: 40px;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-    }
+    .color-box { height: 40px; border-radius: 8px; border: 1px solid #ddd; }
 </style>
 </head>
 <body>
@@ -102,7 +61,7 @@
         @endif
 
         <!-- Form Kustomisasi -->
-        <form action="{{ route('tampilan.update') }}" method="POST">
+        <form action="{{ route('tampilan.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <!-- Elemen -->
@@ -110,18 +69,14 @@
                 <h6 class="mb-3">Pilih Elemen untuk Dikustomisasi</h6>
                 <div class="row g-3">
                     <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="navbar"><i class="bi bi-menu-button"></i> Navbar</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="title"><i class="bi bi-type"></i> Title</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="cards"><i class="bi bi-card-text"></i> Cards</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="button"><i class="bi bi-square"></i> Button</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="hover"><i class="bi bi-square"></i> Hover</button></div>
-                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="global"><i class="bi bi-sliders"></i> Global</button></div>
+                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="title"><i class="bi bi-type"></i> Hero</button></div>
+                    <div class="col-6 col-md-4"><button type="button" class="card-button" data-element="navbar"><i class="bi bi-menu-button"></i> Footer</button></div>
                 </div>
-                <!-- input hidden supaya bisa kirim pilihan ke backend -->
                 <input type="hidden" name="selected_element" id="selectedElement">
             </div>
 
-            <!-- Skema Warna & Typography -->
-            <div class="row">
+            <!-- Navbar Settings -->
+            <div class="row" id="navbarSettings" style="display:none;">
                 <!-- Skema Warna -->
                 <div class="col-md-6">
                     <div class="card-section">
@@ -129,7 +84,7 @@
                         <label class="mt-3 fw-medium">Primary</label>
                         <div class="d-flex gap-3 align-items-center">
                             <input type="color" name="warna" class="form-control form-control-color" 
-       value="{{ $tampilan->warna ?? '#000000' }}" title="Pilih warna utama" style="max-width:80px;">
+                                   value="{{ $tampilan->warna ?? '#000000' }}" title="Pilih warna utama" style="max-width:80px;">
                             <div class="color-box" style="background-color:{{ $tampilan->warna ?? '#000000' }};width:40px;"></div>
                         </div>
                     </div>
@@ -152,10 +107,60 @@
                             <option value="m" {{ ($tampilan->font_size ?? '') == 'm' ? 'selected' : '' }}>Sedang</option>
                             <option value="l" {{ ($tampilan->font_size ?? '') == 'l' ? 'selected' : '' }}>Besar</option>
                         </select>
+                    </div>
+                </div>
 
-                        <div class="mt-3 text-center">
-                            <img src="https://via.placeholder.com/250x150?text=Preview" class="img-fluid">
-                        </div>
+                <!-- Logo -->
+                <div class="col-md-12">
+                    <div class="card-section">
+                        <h6 class="fw-bold" style="color:#5A45D3;">Logo</h6>
+                        <input type="file" name="logo" class="form-control mt-2" accept="image/*">
+                        @if(!empty($tampilan->logo))
+                            <div class="mt-2">
+                                <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt="Logo" style="max-height:80px;">
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Settings -->
+            <div class="row" id="heroSettings" style="display:none;">
+                <!-- Gambar Hero -->
+                <div class="col-md-6">
+                    <div class="card-section">
+                        <h6 class="fw-bold" style="color:#5A45D3;">Gambar Hero</h6>
+                        <input type="file" name="hero_image" class="form-control mt-2" accept="image/*">
+                        @if(!empty($hero->image))
+                            <div class="mt-2">
+                                <img src="{{ asset('storage/'.$hero->image) }}" alt="Hero Image" class="img-fluid rounded" style="max-height:200px;">
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
+                <!-- Font Hero -->
+                <div class="col-md-6">
+                    <div class="card-section">
+                        <h6 class="fw-bold" style="color:#5A45D3;">Pengaturan Font Hero</h6>
+
+                        <label class="mt-3 fw-medium">Warna Font</label>
+                        <input type="color" name="hero_font_color" class="form-control form-control-color"
+                               value="{{ $hero->font_color ?? '#000000' }}" style="max-width:80px;">
+
+                        <label class="mt-3 fw-medium">Jenis Font</label>
+                        <select name="hero_font" class="form-select" style="max-width:200px;">
+                            <option value="Poppins" {{ ($hero->font ?? '') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                            <option value="Roboto" {{ ($hero->font ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
+                            <option value="Open Sans" {{ ($hero->font ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
+                        </select>
+
+                        <label class="mt-3 fw-medium">Ukuran Font</label>
+                        <select name="hero_font_size" class="form-select" style="max-width:200px;">
+                            <option value="s" {{ ($hero->font_size ?? '') == 's' ? 'selected' : '' }}>Kecil</option>
+                            <option value="m" {{ ($hero->font_size ?? '') == 'm' ? 'selected' : '' }}>Sedang</option>
+                            <option value="l" {{ ($hero->font_size ?? '') == 'l' ? 'selected' : '' }}>Besar</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -165,23 +170,31 @@
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
         </form>
-
     </div>
 </div>
 
 <script>
-    // ambil semua button elemen
     const buttons = document.querySelectorAll('.card-button');
     const hiddenInput = document.getElementById('selectedElement');
+    const navbarSettings = document.getElementById('navbarSettings');
+    const heroSettings = document.getElementById('heroSettings');
 
     buttons.forEach(btn => {
         btn.addEventListener('click', function() {
-            // hapus class active dari semua
             buttons.forEach(b => b.classList.remove('active'));
-            // tambahkan ke yg diklik
             this.classList.add('active');
-            // simpan data ke input hidden
             hiddenInput.value = this.dataset.element;
+
+            if(this.dataset.element === "navbar") {
+                navbarSettings.style.display = "flex";
+                heroSettings.style.display = "none";
+            } else if(this.dataset.element === "title") {
+                heroSettings.style.display = "flex";
+                navbarSettings.style.display = "none";
+            } else {
+                navbarSettings.style.display = "none";
+                heroSettings.style.display = "none";
+            }
         });
     });
 </script>

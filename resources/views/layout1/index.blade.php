@@ -8416,8 +8416,8 @@ section,
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">College</h1>
+        <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt=""> 
+        <h1 class="sitename">SMKN 4 MALANG</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -8425,7 +8425,7 @@ section,
           <li><a href="index.html" class="active">Home</a></li>
           <li class="dropdown"><a href="{{ url('/layout1/about') }}"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="{{ url('/layout1/about') }}">About Us</a></li>
+              <li><a href="{{ url('layout1/about') }}">About Us</a></li>
               <li><a href="admissions.html">Admissions</a></li>
               <li><a href="academics.html">Academics</a></li>
               <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
