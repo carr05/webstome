@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdminHub - Premium Dashboard Templates & Themes</title>
+    <title>Webstome - Premium Dashboard Templates & Themes</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
@@ -428,6 +428,7 @@
             box-shadow: 0 5px 30px rgba(89, 85, 179, 0.08);
             transition: all 0.3s ease;
             position: relative;
+            z-index: 1;
             border: 1px solid var(--gray-200);
         }
 
@@ -445,6 +446,7 @@
 
         .product-badge {
             position: absolute;
+            z-index: 10;
             top: 1rem;
             left: 1rem;
             background: var(--secondary-color);
@@ -910,7 +912,7 @@
                 <div class="logo-icon">
                     <i class="fas fa-cube"></i>
                 </div>
-                AdminHub
+                Webstome
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Beranda</a></li>
@@ -968,7 +970,7 @@
                         <div class="preview-dot"></div>
                         <div class="preview-dot"></div>
                         <div class="preview-dot"></div>
-                        <div class="preview-title">AdminHub Dashboard</div>
+                        <div class="preview-title">Webstome Dashboard</div>
                     </div>
                     <div class="preview-nav"></div>
                     <div class="preview-content">
@@ -992,16 +994,16 @@
 
             <div class="product-filters">
                 <button class="filter-btn active" data-filter="all">Semua Template</button>
-                <button class="filter-btn" data-filter="react">React</button>
-                <button class="filter-btn" data-filter="vue">Vue.js</button>
-                <button class="filter-btn" data-filter="angular">Angular</button>
+                <button class="filter-btn" data-filter="websekolah">websekolah</button>
+                <button class="filter-btn" data-filter="web kasir">web kasir</button>
+                <button class="filter-btn" data-filter="e-commerce">e-commerce</button>
                 <button class="filter-btn" data-filter="html">HTML/CSS</button>
                 <button class="filter-btn" data-filter="bootstrap">Bootstrap</button>
             </div>
 
             <div class="products-grid" id="productsGrid">
                 <!-- Product 1 -->
-                <div class="product-card" data-category="react">
+                <div class="product-card" data-category="websekolah">
                     <div class="product-image">
                         <div class="product-badge bestseller">Bestseller</div>
                         <div class="product-preview">
@@ -1015,13 +1017,12 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">ReactPro Admin</h3>
-                        <p class="product-description">Dashboard admin React yang lengkap dengan 50+ komponen, dark/light theme, dan integrasi API.</p>
+                        <h3 class="product-title">Webstome Sekolah</h3>
+                        <p class="product-description">Webstome khusus sekolah yang memiliki 2 layout menarik dan CRUD yang lengkap</p>
                         <div class="product-features">
-                            <span class="feature-tag">React 18</span>
-                            <span class="feature-tag">TypeScript</span>
-                            <span class="feature-tag">50+ Pages</span>
-                            <span class="feature-tag">Dark Mode</span>
+                            <span class="feature-tag">Laravel</span>
+                            <span class="feature-tag">10+ pages</span>
+                            <span class="feature-tag">Light Mode</span>
                         </div>
                         <div class="product-footer">
                             <div class="product-price">
@@ -1032,16 +1033,21 @@
                                 <button class="btn-cart" onclick="addToCart('ReactPro Admin', 49)">
                                     <i class="fas fa-cart-plus"></i> Beli
                                 </button>
-                                <button class="btn-preview">
-                                    <i class="fas fa-eye"></i>
+                                <button class="btn-cart">
+                                     <a style="text-decoration:none; color:white;" href="{{ route('login') }}">Coba gratis 3 hari
                                 </button>
+                                </button>
+                                <button class="btn-preview">
+                                    <i class="fas fa-eye"></i><br>
+                                </button>
+                               
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card" data-category="vue">
+                <div class="product-card" data-category="web kasir">
                     <div class="product-image">
                         <div class="product-badge">New</div>
                         <div class="product-preview">
@@ -1081,7 +1087,7 @@
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-card" data-category="angular">
+                <div class="product-card" data-category="e-commerce">
                     <div class="product-image">
                         <div class="product-preview">
                             <div class="preview-nav"></div>
@@ -1246,7 +1252,7 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Mengapa Pilih AdminHub?</h2>
+                <h2 class="section-title">Mengapa Pilih Webstome?</h2>
                 <p class="section-subtitle">Keunggulan yang membuat template kami menjadi pilihan terbaik untuk project Anda</p>
             </div>
             <div class="features-grid">
@@ -1301,7 +1307,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Apa Kata Customer Kami?</h2>
-                <p class="section-subtitle">Feedback dari ribuan developer yang telah menggunakan template AdminHub</p>
+                <p class="section-subtitle">Feedback dari ribuan developer yang telah menggunakan template Webstome</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -1331,7 +1337,7 @@
                 <div class="testimonial-card">
                     <div class="testimonial-quote">"</div>
                     <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-content">Sudah beli 5 template dari AdminHub dan semuanya berkualitas tinggi. Update rutin, bug-free, dan harga sangat reasonable untuk kualitas premium.</p>
+                    <p class="testimonial-content">Sudah beli 5 template dari Webstome dan semuanya berkualitas tinggi. Update rutin, bug-free, dan harga sangat reasonable untuk kualitas premium.</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">BP</div>
                         <div class="author-info">
@@ -1353,7 +1359,7 @@
                         <div class="logo-icon">
                             <i class="fas fa-cube"></i>
                         </div>
-                        AdminHub
+                        Webstome
                     </div>
                     <p class="footer-description">Platform terpercaya untuk template dashboard admin premium. Membantu ribuan developer mengembangkan aplikasi dengan lebih cepat dan efisien.</p>
                     <div class="social-links">
@@ -1393,7 +1399,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 AdminHub. All rights reserved. | <a href="#" style="color: var(--primary-light);">Privacy Policy</a> | <a href="#" style="color: var(--primary-light);">Terms of Service</a></p>
+                <p>&copy; 2025 Webstome. All rights reserved. | <a href="#" style="color: var(--primary-light);">Privacy Policy</a> | <a href="#" style="color: var(--primary-light);">Terms of Service</a></p>
                 <div class="payment-methods">
                     <div class="payment-icon">VISA</div>
                     <div class="payment-icon">MC</div>
