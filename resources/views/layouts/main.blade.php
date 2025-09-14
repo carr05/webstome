@@ -69,7 +69,9 @@
 
    
 
-    <a href="{{ url('/') }}" class="{{ Request::is('preview') ? 'active' : '' }}"><i class="bi bi-eye me-2"></i>Priview</a>
+<a href="{{ route('preview') }}" target="_blank" class="{{ Request::is('preview') ? 'active' : '' }}">
+  <i class="bi bi-eye me-2"></i> Preview
+</a>
 
  <a href="{{ url('/tampilan') }}" class="{{ Request::is('tampilan') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Layout</a>
     <a href="{{ url('/hero') }}" class="{{ Request::is('hero') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Menu</a>

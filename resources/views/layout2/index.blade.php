@@ -46,9 +46,7 @@
   style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
          --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
          --font-size: {{ $tampilan->font_size ?? '16px' }};
-         --font-color: {{ $tampilan->font_color ?? '#04315f' }};
-         
-      ">
+         --font-color: {{ $tampilan->font_color ?? '#04315f' }};">
          
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 

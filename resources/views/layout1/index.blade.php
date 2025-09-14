@@ -26,9 +26,9 @@
   <!-- Google Fonts: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
 
   <!-- Main CSS File -->
   <style>
@@ -47,17 +47,7 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
-:root {
-            /* Font global */
-            --default-font: "{{ $tampilan->font ?? 'Roboto' }}", system-ui, sans-serif;
-            --heading-font: "{{ $tampilan->font ?? 'Open Sans' }}", sans-serif;
-            --nav-font: "{{ $tampilan->font ?? 'Poppins' }}", sans-serif;
 
-            /* Warna utama dari input user */
-            --accent-color: {{ $tampilan->warna ?? '#04415f' }};
-            --nav-color: {{ $tampilan->warna ?? '#04415f' }};
-            --nav-hover-color: {{ $tampilan->warna ?? '#2086b8' }};
-        }
 
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -170,14 +160,14 @@ h6 {
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--nav-color);
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
 }
 
 .header .header-container {
-  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  background: color-mix(in srgb, var(--nav-color), transparent 97%);
   transition: all 0.5s;
   position: relative;
   padding-top: 10px;
@@ -200,7 +190,8 @@ h6 {
   font-size: 26px;
   margin: 0;
   font-weight: 500;
-  color: var(--contrast-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
 }
 
 @media (max-width: 1200px) {
@@ -246,10 +237,10 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
+    color: var(--font-color);
     padding: 18px 15px;
-    font-size: 16px;
-    font-family: var(--nav-font);
+    font-size: var(--font-size);
+    font-family: var(--font-family);
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -458,6 +449,10 @@ h6 {
   .mobile-nav-active .navmenu>ul {
     display: block;
   }
+  .sitename {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
 }
 
 /*--------------------------------------------------------------
@@ -782,6 +777,8 @@ section,
   font-weight: 800;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  font-family: var(--hero-font-family);
+  color: var(--hero-font-color);
 }
 
 @media (max-width: 992px) {
@@ -800,6 +797,8 @@ section,
   font-size: 1.1rem;
   margin-bottom: 2rem;
   line-height: 1.6;
+  font-family: var(--hero-font-family);
+  color: var(--hero-font-color);
 }
 
 .hero .hero-wrapper .hero-content .stats-row {
@@ -8411,7 +8410,11 @@ section,
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top" 
+  style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
+         --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
+         --font-size: {{ $tampilan->font_size ?? '16px' }};
+         --font-color: {{ $tampilan->font_color ?? '#04315f' }};">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">

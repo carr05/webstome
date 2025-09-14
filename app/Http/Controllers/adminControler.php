@@ -149,6 +149,18 @@ public function home()
     {
         return view('karya');
     }
+    public function preview()
+{
+    $tampilan = \App\Models\Tampilan::first(); // Ambil data layout yg dipilih admin
+
+    if ($tampilan && $tampilan->layout == 'layout2') {
+        return redirect()->route('layout2.index');
+    }
+
+    // Default layout1
+    return redirect()->route('layout1.index');
+}
+
 
     
 
