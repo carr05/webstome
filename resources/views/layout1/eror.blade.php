@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - College Bootstrap Template</title>
+  <title>404 - College Bootstrap Template</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -36,7 +36,7 @@
   ======================================================== -->
 </head>
 
-<body class="contact-page">
+<body class="page-404">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
@@ -47,33 +47,8 @@
         <h1 class="sitename">College</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+     <nav id="navmenu" class="navmenu">
         <ul>
-<<<<<<< HEAD
-          <li><a href="index.html">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="admissions.html">Admissions</a></li>
-              <li><a href="academics.html">Academics</a></li>
-              <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
-              <li><a href="campus-facilities.html">Campus &amp; Facilities</a></li>
-            </ul>
-          </li>
-
-          <li><a href="students-life.html">Students Life</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
-          <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="news-details.html">News Details</a></li>
-              <li><a href="event-details.html">Event Details</a></li>
-              <li><a href="privacy.html">Privacy</a></li>
-              <li><a href="terms-of-service.html">Terms of Service</a></li>
-              <li><a href="404.html">Error 404</a></li>
-              <li><a href="starter-page.html">Starter Page</a></li>
-=======
           <li><a href="{{ url('/layout1/index') }}">Beranda</a></li>
           <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -98,35 +73,18 @@
                <li><a href="{{ url('/layout1/terms_of_service') }}">Terms of Service</a></li>
                <li><a href="{{ url('/layout1/eror') }}">Error 404</a></li>
                <li><a href="{{ url('/layout1/starter_page') }}">Starter Page</a></li>
->>>>>>> 435a7c3 (landing web promosi)
             </ul>
           </li>
 
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
-<<<<<<< HEAD
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-=======
->>>>>>> 435a7c3 (landing web promosi)
               <li><a href="#">Dropdown 2</a></li>
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-<<<<<<< HEAD
-          <li><a href="contact.html" class="active">Contact</a></li>
-=======
           <li><a href="contact.html">Contact</a></li>
->>>>>>> 435a7c3 (landing web promosi)
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -139,109 +97,53 @@
     <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Contact</h1>
+        <h1 class="mb-2 mb-lg-0">404</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Contact</li>
+            <li class="current">404</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <!-- Error 404 Section -->
+    <section id="error-404" class="error-404 section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="contact-main-wrapper">
-          <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <div class="text-center">
+          <div class="error-icon mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <i class="bi bi-exclamation-circle"></i>
           </div>
 
-          <div class="contact-content">
-            <div class="contact-cards-container" data-aos="fade-up" data-aos-delay="300">
-              <div class="contact-card">
-                <div class="icon-box">
-                  <i class="bi bi-geo-alt"></i>
-                </div>
-                <div class="contact-text">
-                  <h4>Location</h4>
-                  <p>8721 Broadway Avenue, New York, NY 10023</p>
-                </div>
+          <h1 class="error-code mb-4" data-aos="fade-up" data-aos-delay="300">404</h1>
+
+          <h2 class="error-title mb-3" data-aos="fade-up" data-aos-delay="400">Oops! Page Not Found</h2>
+
+          <p class="error-text mb-4" data-aos="fade-up" data-aos-delay="500">
+            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+          </p>
+
+          <div class="search-box mb-4" data-aos="fade-up" data-aos-delay="600">
+            <form action="#" class="search-form">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for pages..." aria-label="Search">
+                <button class="btn search-btn" type="submit">
+                  <i class="bi bi-search"></i>
+                </button>
               </div>
+            </form>
+          </div>
 
-              <div class="contact-card">
-                <div class="icon-box">
-                  <i class="bi bi-envelope"></i>
-                </div>
-                <div class="contact-text">
-                  <h4>Email</h4>
-                  <p>info@examplecompany.com</p>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="icon-box">
-                  <i class="bi bi-telephone"></i>
-                </div>
-                <div class="contact-text">
-                  <h4>Call</h4>
-                  <p>+1 (212) 555-7890</p>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="icon-box">
-                  <i class="bi bi-clock"></i>
-                </div>
-                <div class="contact-text">
-                  <h4>Open Hours</h4>
-                  <p>Monday-Friday: 9AM - 6PM</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
-              <h3>Get in Touch</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing.</p>
-
-              <form action="forms/contact.php" method="post" class="php-email-form">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                  </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                  </div>
-                </div>
-                <div class="form-group mt-3">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
-                </div>
-                <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-
-                <div class="form-submit">
-                  <button type="submit">Send Message</button>
-                  <div class="social-links">
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </form>
-            </div>
+          <div class="error-action" data-aos="fade-up" data-aos-delay="700">
+            <a href="/" class="btn btn-primary">Back to Home</a>
           </div>
         </div>
+
       </div>
-    </section><!-- /Contact Section -->
+
+    </section><!-- /Error 404 Section -->
 
   </main>
 

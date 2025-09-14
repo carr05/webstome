@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -20,11 +21,36 @@ class beritaController extends Controller
     /**
      * Tampilkan form tambah berita
      */
+=======
+use Illuminate\Http\Request;
+use App\Models\Berita;
+use App\Models\Admin;
+
+class beritaController extends Controller
+{
+    public function index()
+    {
+        $admin = Admin::find(session('admin_id')); // ambil admin yang login
+
+        // Tampilkan CRUD berita sesuai layout
+        if ($admin->selected_layout == 'layout1') {
+            return view('layout1.berita.index', [
+                'berita' => Berita::all()
+            ]);
+        } else {
+            return view('layout2.berita.index', [
+                'berita' => Berita::all()
+            ]);
+        }
+    }
+
+>>>>>>> 435a7c3 (landing web promosi)
     public function create()
     {
         return view('berita.create');
     }
 
+<<<<<<< HEAD
     /**
      * Simpan berita baru
      */
@@ -97,5 +123,31 @@ class beritaController extends Controller
         $beritum->delete();
 
         return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus');
+=======
+    public function store(Request $request)
+    {
+        Berita::create($request->all());
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil ditambahkan!');
+    }
+
+    public function edit($id)
+    {
+        $berita = Berita::findOrFail($id);
+        return view('berita.edit', compact('berita'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $berita = Berita::findOrFail($id);
+        $berita->update($request->all());
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil diperbarui!');
+    }
+
+    public function destroy($id)
+    {
+        $berita = Berita::findOrFail($id);
+        $berita->delete();
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus!');
+>>>>>>> 435a7c3 (landing web promosi)
     }
 }
