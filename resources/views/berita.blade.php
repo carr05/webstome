@@ -33,8 +33,6 @@
       margin-bottom: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
-<<<<<<< HEAD
-=======
     .stats {
       display: flex;
       gap: 20px;
@@ -59,7 +57,6 @@
       font-weight: 700;
       margin-top: 5px;
     }
->>>>>>> 435a7c3 (landing web promosi)
     .upload-btn {
       display: inline-flex;
       align-items: center;
@@ -102,8 +99,6 @@
     tbody tr:nth-child(even) {
       background-color: #f9f9f9;
     }
-<<<<<<< HEAD
-=======
     .pagination {
       display: flex;
       justify-content: center;
@@ -123,7 +118,6 @@
       background: #4B3FAE;
       color: white;
     }
->>>>>>> 435a7c3 (landing web promosi)
   </style>
 </head>
 <body>
@@ -133,12 +127,6 @@
 <div class="main-container">
   <div class="main-content">
     <div class="card-section">
-<<<<<<< HEAD
-      <h2 class="fw-bold" style="color:#5955B3;">BERITA</h2>
-
-      <!-- Tombol Upload -->
-      <a href="{{ route('berita.create') }}" class="upload-btn">
-=======
      <h2 class="fw-bold" style="color:#5955B3;">BERITA</h2>
 
 
@@ -163,7 +151,6 @@
 
       <!-- Tombol Upload -->
       <a href="#" class="upload-btn">
->>>>>>> 435a7c3 (landing web promosi)
         Upload
         <div class="plus-icon">+</div>
       </a>
@@ -181,35 +168,6 @@
           </tr>
         </thead>
         <tbody>
-<<<<<<< HEAD
-          @forelse ($berita as $index => $item)
-          <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td>
-              @if($item->gambar)
-                <img src="{{ asset('storage/'.$item->gambar) }}" alt="" width="50">
-              @else
-                <span class="text-muted">-</span>
-              @endif
-            </td>
-            <td>{{ $item->judul }}</td>
-            <td>{{ Str::limit($item->konten, 50) }}</td>
-            <td>{{ $item->tanggal }}</td>
-            <td>
-              <a href="{{ route('berita.edit', $item->id) }}" class="btn btn-sm btn-warning">✏️</a>
-              <form action="{{ route('berita.destroy', $item->id) }}" method="POST" style="display:inline-block;">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin hapus berita ini?')">🗑️</button>
-              </form>
-            </td>
-          </tr>
-          @empty
-          <tr>
-            <td colspan="6" class="text-center">Belum ada berita.</td>
-          </tr>
-          @endforelse
-=======
           <tr>
             <td>1</td>
             <td><img src="https://via.placeholder.com/50" alt=""></td>
@@ -218,15 +176,10 @@
             <td>10/08/2025</td>
             <td>✏️ 🗑️</td>
           </tr>
->>>>>>> 435a7c3 (landing web promosi)
         </tbody>
       </table>
 
       <!-- Pagination -->
-<<<<<<< HEAD
-      <div class="mt-3">
-        {{ $berita->links() }}
-=======
       <div class="pagination">
         <button>&lt;</button>
         <button class="active">1</button>
@@ -235,7 +188,6 @@
         <button>4</button>
         <button>...</button>
         <button>&gt;</button>
->>>>>>> 435a7c3 (landing web promosi)
       </div>
     </div>
   </div>

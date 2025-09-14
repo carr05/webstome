@@ -9,10 +9,6 @@ use App\Models\admin;
 use Illuminate\Support\Facades\Hash;
 use App\Models\berita;
 use App\Models\tampilan;
-<<<<<<< HEAD
-use App\Models\hero;
-=======
->>>>>>> 435a7c3 (landing web promosi)
 
 class adminControler extends Controller
 {
@@ -25,15 +21,8 @@ class adminControler extends Controller
     public function landing2()
 {
     $tampilan = Tampilan::first();
-<<<<<<< HEAD
-    $hero = Hero::first(); // ambil data hero pertama
-    return view('layout2.index', compact('tampilan', 'hero'));
-}
-    
-=======
     return view('layout2.index', compact('tampilan'));
 }
->>>>>>> 435a7c3 (landing web promosi)
 
     public function formLogin()
     {
@@ -41,44 +30,6 @@ class adminControler extends Controller
     }
 
     public function prosesLogin(Request $request)
-<<<<<<< HEAD
-{
-    $request->validate([
-        'username' => 'required|string',
-        'password' => 'required|string',
-    ]);
-
-    $admin = Admin::where('username', $request->username)->first();
-
-    if ($admin && Hash::check($request->password, $admin->password)) {
-        session([
-            'admin_id' => $admin->id,
-            'admin_username' => $admin->username,
-        ]);
-
-        $tampilan = Tampilan::find(1);
-
-        if (!$tampilan) {
-            $tampilan = Tampilan::create([
-                'layout' => null,
-                'font_size' => 'm',
-                'warna' => null,
-            ]);
-        }
-
-        // Jika sudah pilih layout → langsung ke home
-        if ($tampilan->layout) {
-            return redirect()->route('home');
-        }
-
-        // Kalau belum pilih layout → arahkan ke halaman layout.blade
-        return redirect()->route('layout');
-    }
-
-    return back()->with('error', 'Username atau password salah.');
-}
-
-=======
     {
         $request->validate([
             'username' => 'required|string',
@@ -114,7 +65,6 @@ class adminControler extends Controller
 
         return back()->with('error', 'Username atau password salah.');
     }
->>>>>>> 435a7c3 (landing web promosi)
 public function home()
     {
         if (!session()->has('admin_id')) {
@@ -124,11 +74,7 @@ public function home()
         $tampilan = Tampilan::find(1);
 
         if (!$tampilan || !$tampilan->layout) {
-<<<<<<< HEAD
-            return redirect()->route('layout');
-=======
             return redirect()->route('tampilan.index');
->>>>>>> 435a7c3 (landing web promosi)
         }
 
         return view('home', ['layout' => $tampilan->layout]);
@@ -137,11 +83,7 @@ public function home()
 
     public function layout()
     {
-<<<<<<< HEAD
-        return view('layout'); // atau nama view yang benar
-=======
         return view('tampilan.index'); // atau nama view yang benar
->>>>>>> 435a7c3 (landing web promosi)
     }
 
     public function tampilan1()
@@ -150,13 +92,6 @@ public function home()
         return view('tampilan.index'); // atau nama view yang benar
     }
 
-<<<<<<< HEAD
-    public function about()
-    {
-        return view('layout1.about');
-    }
-=======
->>>>>>> 435a7c3 (landing web promosi)
     public function hero()
     {
         return view('hero'); // atau nama view yang benar
@@ -194,13 +129,6 @@ public function home()
     {
         return view('staff');
     }
-<<<<<<< HEAD
-    public function alumni()
-    {
-        return view('alumni');
-    }
-=======
->>>>>>> 435a7c3 (landing web promosi)
     public function ekstrakurikuler()
     {
         return view('ekstrakurikuler');
@@ -224,8 +152,6 @@ public function home()
         session()->forget(['admin_id', 'admin_username']);
         return redirect()->route('login');
     }
-<<<<<<< HEAD
-=======
 
     //layout 1
     public function kepsek()
@@ -362,5 +288,4 @@ public function home()
     }
 
 
->>>>>>> 435a7c3 (landing web promosi)
 }

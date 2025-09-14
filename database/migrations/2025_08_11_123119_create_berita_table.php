@@ -11,11 +11,7 @@ return new class extends Migration
      */
     public function up()
 {
-<<<<<<< HEAD
     Schema::create('berita', function (Blueprint $table) {
-=======
-    Schema::create('beritas', function (Blueprint $table) {
->>>>>>> 435a7c3 (landing web promosi)
         $table->id();
         $table->string('judul');
         $table->text('konten');
