@@ -46,71 +46,70 @@
   style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
          --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
          --font-size: {{ $tampilan->font_size ?? '16px' }};
+         --font-color: {{ $tampilan->font_color ?? '#04315f' }};
          
-         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
-         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
-         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
-         --hero-background: url('{{ $hero->image ? asset('assets2/img/'.$hero->image) : asset('assets2/img/default-hero.jpg') }}');">
-         
+      ">
          
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-      <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt=""> 
+      <img src="{{ asset('storage/' . $tampilan->logo) }}" alt=""> 
         
         <h1 class="sitename" >MySchool</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="admissions.html">Admissions</a></li>
-              <li><a href="academics.html">Academics</a></li>
-              <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
-              <li><a href="campus-facilities.html">Campus &amp; Facilities</a></li>
-            </ul>
-          </li>
+    <ul>
+        {{-- Home selalu ada --}}
+        <li><a href="{{ url('/') }}" class="active">Home</a></li>
 
-          <li><a href="students-life.html">Students Life</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
-          <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="news-details.html">News Details</a></li>
-              <li><a href="event-details.html">Event Details</a></li>
-              <li><a href="privacy.html">Privacy</a></li>
-              <li><a href="terms-of-service.html">Terms of Service</a></li>
-              <li><a href="404.html">Error 404</a></li>
-              <li><a href="starter-page.html">Starter Page</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        {{-- Menu 1 --}}
+        @if(!empty($tampilan->menu1))
+            <li class="dropdown">
+                <a href="#"><span>{{ $tampilan->menu1 }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+                    {{-- contoh submenu bisa pakai menu1a, menu1b, menu1c kalau kamu buat di database --}}
+                    @if(!empty($tampilan->menu1a)) <li><a href="{{ url($tampilan->menu1a) }}">{{ ucfirst($tampilan->menu1a) }}</a></li> @endif
+                    @if(!empty($tampilan->menu1b)) <li><a href="{{ url($tampilan->menu1b) }}">{{ ucfirst($tampilan->menu1b) }}</a></li> @endif
+                    @if(!empty($tampilan->menu1c)) <li><a href="{{ url($tampilan->menu1c) }}">{{ ucfirst($tampilan->menu1c) }}</a></li> @endif
                 </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+            </li>
+        @endif
+
+        {{-- Menu 2 --}}
+        @if(!empty($tampilan->menu2))
+            <li><a href="{{ url($tampilan->menu2) }}">{{ ucfirst($tampilan->menu2) }}</a></li>
+        @endif
+
+        {{-- Menu 3 --}}
+        @if(!empty($tampilan->menu3))
+            <li><a href="{{ url($tampilan->menu3) }}">{{ ucfirst($tampilan->menu3) }}</a></li>
+        @endif
+
+        {{-- Menu 4 --}}
+        @if(!empty($tampilan->menu4))
+            <li><a href="{{ url($tampilan->menu4) }}">{{ ucfirst($tampilan->menu4) }}</a></li>
+        @endif
+
+        {{-- Menu 5 (contoh dropdown lain) --}}
+        @if(!empty($tampilan->menu5))
+            <li class="dropdown">
+                <a href="#"><span>{{ $tampilan->menu5 }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                    <li><a href="#">Submenu 1</a></li>
+                    <li><a href="#">Submenu 2</a></li>
+                    <li><a href="#">Submenu 3</a></li>
+                </ul>
+            </li>
+        @endif
+
+        {{-- Contact default --}}
+        <li><a href="{{ url('contact') }}">Contact</a></li>
+    </ul>
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
 
     </div>
   </header>
@@ -123,8 +122,7 @@
          --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
          --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
          --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
-         --hero-background: url('{{ $hero->image ? asset('assets2/img/'.$hero->image) : asset('assets2/img/default-hero.jpg') }}');">
-
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');">
       <div class="hero-container">
         <div class="hero-content">
           <h1>Shaping Minds for Tomorrow's World</h1>

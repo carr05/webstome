@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tampilan;
 use App\Models\Hero;
+use Illuminate\Support\Facades\Storage;
 
 class TampilanController extends Controller
 {
@@ -23,20 +24,41 @@ class TampilanController extends Controller
         if ($request->filled('layout')) {
             $tampilan->layout = $request->layout;
         }
-        if ($request->filled('warna')) {
-            $tampilan->warna = $request->warna;
-        }
         if ($request->filled('font')) {
             $tampilan->font = $request->font;
         }
         if ($request->filled('font_size')) {
             $tampilan->font_size = $request->font_size;
         }
+        if ($request->filled('warna')) {
+            $tampilan->warna = $request->warna;
+        }
+        if ($request->filled('font_color')) {
+            $tampilan->font_color = $request->font_color;
+        }
+        if ($request->filled('nama_sekolah')) {
+            $tampilan->nama_sekolah = $request->nama_sekolah;
+        }
+        if ($request->filled('menu1')) {
+            $tampilan->menu1 = $request->menu1; // simpan array menu ke JSON
+        }
+        if ($request->filled('menu2')) {
+            $tampilan->menu2 = $request->menu2; // simpan array menu ke JSON
+        }
+        if ($request->filled('menu3')) {
+            $tampilan->menu3 = $request->menu3; // simpan array menu ke JSON
+        }
+        if ($request->filled('menu4')) {
+            $tampilan->menu4 = $request->menu4; // simpan array menu ke JSON
+        }
+        if ($request->filled('menu5')) {
+            $tampilan->menu5 = $request->menu5; // simpan array menu ke JSON
+        }
 
         if ($request->hasFile('logo')) {
-            $logoPath = $request->file('logo')->store('logos', 'public');
-            $tampilan->logo = $logoPath;
-        }
+        $logoPath = $request->file('logo')->store('logos', 'public');
+        $tampilan->logo = $logoPath;
+    }
 
         $tampilan->save();
 
@@ -54,8 +76,10 @@ class TampilanController extends Controller
         }
 
         if ($request->hasFile('hero_image')) {
-            $path = $request->file('hero_image')->store('hero', 'public');
-            $hero->image = $path;
+            if ($hero->image && Storage::disk('public')->exists($hero->image)) {
+                Storage::disk('public')->delete($hero->image);
+            }
+            $hero->image = $request->file('hero_image')->store('hero', 'public');
         }
 
         $hero->save();

@@ -76,53 +76,79 @@
             </div>
 
             <!-- Navbar Settings -->
-            <div class="row" id="navbarSettings" style="display:none;">
-                <!-- Skema Warna -->
-                <div class="col-md-6">
-                    <div class="card-section">
-                        <h6 class="fw-bold" style="color:#5A45D3;">Skema warna</h6>
-                        <label class="mt-3 fw-medium">Primary</label>
-                        <div class="d-flex gap-3 align-items-center">
-                            <input type="color" name="warna" class="form-control form-control-color" 
-                                   value="{{ $tampilan->warna ?? '#000000' }}" title="Pilih warna utama" style="max-width:80px;">
-                            <div class="color-box" style="background-color:{{ $tampilan->warna ?? '#000000' }};width:40px;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Typography -->
-                <div class="col-md-6">
-                    <div class="card-section">
-                        <h6 class="fw-bold" style="color:#5A45D3;">Typography</h6>
-                        <label class="mt-3 fw-medium">Primary font</label>
-                        <select name="font" class="form-select" style="max-width:200px;">
-                            <option value="Poppins" {{ ($tampilan->font ?? '') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
-                            <option value="Roboto" {{ ($tampilan->font ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
-                            <option value="Open Sans" {{ ($tampilan->font ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
-                        </select>
-
-                        <label class="mt-3 fw-medium">Ukuran font</label>
-                        <select name="font_size" class="form-select" style="max-width:200px;">
-                            <option value="s" {{ ($tampilan->font_size ?? '') == 's' ? 'selected' : '' }}>Kecil</option>
-                            <option value="m" {{ ($tampilan->font_size ?? '') == 'm' ? 'selected' : '' }}>Sedang</option>
-                            <option value="l" {{ ($tampilan->font_size ?? '') == 'l' ? 'selected' : '' }}>Besar</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Logo -->
-                <div class="col-md-12">
-                    <div class="card-section">
-                        <h6 class="fw-bold" style="color:#5A45D3;">Logo</h6>
-                        <input type="file" name="logo" class="form-control mt-2" accept="image/*">
-                        @if(!empty($tampilan->logo))
-                            <div class="mt-2">
-                                <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt="Logo" style="max-height:80px;">
-                            </div>
-                        @endif
-                    </div>
-                </div>
+<div class="row" id="navbarSettings" style="display:none;">
+    <div class="card-section mt-3">
+            <h6 class="fw-bold" style="color:#5A45D3;">Identitas</h6>
+            <label class="mt-3 fw-medium">Nama Sekolah</label>
+            <input type="text" name="nama_sekolah" class="form-control"
+                   value="{{ $tampilan->nama_sekolah ?? '' }}" placeholder="Masukkan nama sekolah">
+        </div>
+    <!-- Skema Warna -->
+    <div class="col-6 col-md-5">
+        <div class="card-section">
+            <h6 class="fw-bold" style="color:#5A45D3;">Skema warna</h6>
+            <label class="mt-3 fw-medium">Primary</label>
+            <div class="d-flex gap-3 align-items-center">
+                <input type="color" name="warna" class="form-control form-control-color" 
+                       value="{{ $tampilan->warna ?? '#000000' }}" style="max-width:80px;">
             </div>
+            <label class="mt-3 fw-medium">Warna Font</label>
+            <div class="d-flex gap-3 align-items-center">
+                <input type="color" name="font_color" class="form-control form-control-color" 
+                       value="{{ $tampilan->font_color ?? '#000000' }}" style="max-width:80px;">
+            </div>
+        </div>
+
+        
+    </div>
+
+    <!-- Typography -->
+    <div class="col-6 col-md-6">
+        <div class="card-section">
+            <h6 class="fw-bold" style="color:#5A45D3;">Typography</h6>
+            <label class="mt-3 fw-medium">Primary font</label>
+            <select name="font" class="form-select" style="max-width:200px;">
+                <option value="Poppins" {{ ($tampilan->font ?? '') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                <option value="Roboto" {{ ($tampilan->font ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
+                <option value="Open Sans" {{ ($tampilan->font ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
+            </select>
+
+            <label class="mt-3 fw-medium">Ukuran font</label>
+            <select name="font_size" class="form-select" style="max-width:200px;">
+                <option value="s" {{ ($tampilan->font_size ?? '') == 's' ? 'selected' : '' }}>Kecil</option>
+                <option value="m" {{ ($tampilan->font_size ?? '') == 'm' ? 'selected' : '' }}>Sedang</option>
+                <option value="l" {{ ($tampilan->font_size ?? '') == 'l' ? 'selected' : '' }}>Besar</option>
+            </select>
+        </div>
+
+        <div class="card-section mt-3">
+            <h6 class="fw-bold" style="color:#5A45D3;">Menu Navigasi</h6>
+            <label class="mt-2 fw-medium">Menu 1</label>
+            <input type="text" name="menu1" class="form-control" value="{{ $tampilan->menu1 ?? '' }}">
+            <label class="mt-2 fw-medium">Menu 2</label>
+            <input type="text" name="menu2" class="form-control" value="{{ $tampilan->menu2 ?? '' }}">
+            <label class="mt-2 fw-medium">Menu 3</label>
+            <input type="text" name="menu3" class="form-control" value="{{ $tampilan->menu3 ?? '' }}">
+            <label class="mt-2 fw-medium">Menu 4</label>
+            <input type="text" name="menu4" class="form-control" value="{{ $tampilan->menu4 ?? '' }}">
+            <label class="mt-2 fw-medium">Menu 5</label>
+            <input type="text" name="menu5" class="form-control" value="{{ $tampilan->menu5 ?? '' }}">
+        </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="col-6 col-md-5">
+        <div class="card-section">
+            <h6 class="fw-bold" style="color:#5A45D3;">Logo</h6>
+            <input type="file" name="logo" class="form-control mt-2" accept="image/*">
+            @if(!empty($tampilan->logo))
+                <div class="mt-2">
+                    <img src="{{ asset('storage/' . $tampilan->logo) }}" alt="Logo" style="max-height:80px;">
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
 
             <!-- Hero Settings -->
             <div class="row" id="heroSettings" style="display:none;">

@@ -153,7 +153,7 @@ h6 {
   font-size: 28px;
   margin: 0;
   font-weight: 400;
-  color: var(--heading-color);
+  color: var(--font-color);
 }
 
 .scrolled .header {
@@ -183,7 +183,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--default-color);
+    color: var(--font-color);
     padding: 18px 15px;
     font-size: var(--font-size);
     font-family: var(--font-family);
@@ -210,7 +210,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    color: var(--font-color);
   }
 
   .navmenu .dropdown ul {
@@ -237,7 +237,7 @@ h6 {
     padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
-    color: var(--nav-dropdown-color);
+    color: var(--font-color);
   }
 
   .navmenu .dropdown ul a i {
@@ -890,7 +890,8 @@ section,
 }
 
 .hero .hero-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/education/showcase-1.webp") center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+        var(--hero-background) center/cover no-repeat;
   min-height: 80vh;
   display: flex;
   align-items: center;
