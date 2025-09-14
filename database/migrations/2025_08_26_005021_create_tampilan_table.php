@@ -11,21 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('tampilan', function (Blueprint $table) {
-<<<<<<< HEAD
-    $table->id();
-=======
-             $table->id();
->>>>>>> 435a7c3 (landing web promosi)
-    $table->string('layout')->nullable();
-    $table->enum('font_size', ['s', 'm', 'l'])->default('m');
-    $table->string('warna')->nullable();
-    $table->string('font')->nullable();
-<<<<<<< HEAD
-    $table->string('logo')->nullable();
-=======
->>>>>>> 435a7c3 (landing web promosi)
-    $table->timestamps();
+        Schema::create('tampilan', function (Blueprint $table) {
+            $table->id();
+            $table->string('layout')->nullable();
+            $table->enum('font_size', ['s', 'm', 'l'])->default('m');
+            $table->string('warna')->nullable();
+            $table->string('font')->nullable();
+            $table->string('logo')->nullable();
+            $table->timestamps();
         });
     }
 

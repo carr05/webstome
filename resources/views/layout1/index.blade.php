@@ -8419,7 +8419,6 @@ section,
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-<<<<<<< HEAD
         <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt=""> 
         <h1 class="sitename">SMKN 4 MALANG</h1>
       </a>
@@ -8449,7 +8448,6 @@ section,
               <li><a href="terms-of-service.html">Terms of Service</a></li>
               <li><a href="404.html">Error 404</a></li>
               <li><a href="starter-page.html">Starter Page</a></li>
-=======
         <!-- <img src="assets/img/logo.webp" alt=""> -->
         <h1 class="sitename">College</h1>
       </a>
@@ -8480,14 +8478,12 @@ section,
                <li><a href="{{ url('/layout1/terms_of_service') }}">Terms of Service</a></li>
                <li><a href="{{ url('/layout1/eror') }}">Error 404</a></li>
                <li><a href="{{ url('/layout1/starter_page') }}">Starter Page</a></li>
->>>>>>> 435a7c3 (landing web promosi)
             </ul>
           </li>
 
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
-<<<<<<< HEAD
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
@@ -8497,8 +8493,7 @@ section,
                   <li><a href="#">Deep Dropdown 5</a></li>
                 </ul>
               </li>
-=======
->>>>>>> 435a7c3 (landing web promosi)
+
               <li><a href="#">Dropdown 2</a></li>
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
@@ -8509,11 +8504,7 @@ section,
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 435a7c3 (landing web promosi)
     </div>
   </header>
 
@@ -8526,7 +8517,7 @@ section,
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
-<<<<<<< HEAD
+
               <h1>Inspiring Excellence Through Education</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacus id tortor facilisis tincidunt. Donec gravida risus at sollicitudin luctus.</p>
               <div class="stats-row">
@@ -8546,7 +8537,6 @@ section,
               <div class="action-buttons">
                 <a href="#" class="btn-primary">Start Your Journey</a>
                 <a href="#" class="btn-secondary">Virtual Tour</a>
-=======
               <h1>SMA 3 WEBSTOME</h1>
               <p>Tempat tumbuhnya insan berilmu dan berakhlak mulia, berlandaskan semangat belajar sepanjang hayat.</p>
               <div class="stats-row">
@@ -8565,7 +8555,7 @@ section,
               </div>
               <div class="action-buttons">
                 <a href="#" class="btn-primary">Profil Sekolah</a>
->>>>>>> 435a7c3 (landing web promosi)
+
               </div>
             </div>
             <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
@@ -8574,11 +8564,11 @@ section,
               <div class="image-overlay">
                 <div class="badge-accredited">
                   <i class="bi bi-patch-check-fill"></i>
-<<<<<<< HEAD
+
                   <span>Accredited Excellence</span>
-=======
+
                   <span>Terakreditasi A</span>
->>>>>>> 435a7c3 (landing web promosi)
+
                 </div>
               </div>
             </div>
@@ -8595,13 +8585,13 @@ section,
                   <i class="bi bi-book-fill"></i>
                 </div>
                 <div class="feature-content">
-<<<<<<< HEAD
+
                   <h3>Innovative Curriculum</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacus id tortor facilisis.</p>
-=======
+
                   <h3>Inovative Kurikulum</h3>
                   <p>Menerapkan kurikulum inovatif yang memadukan ilmu pengetahuan, teknologi, dan karakter.</p>
->>>>>>> 435a7c3 (landing web promosi)
+
                 </div>
               </div>
             </div>
@@ -8612,13 +8602,13 @@ section,
                   <i class="bi bi-laptop-fill"></i>
                 </div>
                 <div class="feature-content">
-<<<<<<< HEAD
+
                   <h3>Modern Facilities</h3>
                   <p>Donec gravida risus at sollicitudin luctus. Nullam feugiat odio vitae justo pharetra.</p>
-=======
+
                   <h3>Fasilitas</h3>
                   <p>Dilengkapi fasilitas modern dan ramah siswa untuk mendukung pembelajaran kreatif dan inovatif.</p>
->>>>>>> 435a7c3 (landing web promosi)
+
                 </div>
               </div>
             </div>
@@ -8629,13 +8619,13 @@ section,
                   <i class="bi bi-people-fill"></i>
                 </div>
                 <div class="feature-content">
-<<<<<<< HEAD
+
                   <h3>Expert Faculty</h3>
                   <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-=======
+
                   <h3>Alumni</h3>
                   <p>Ikatan alumni aktif berkontribusi melalui program mentoring, beasiswa, dan kolaborasi kegiatan sekolah.</p>
->>>>>>> 435a7c3 (landing web promosi)
+
                 </div>
               </div>
             </div>
@@ -8643,7 +8633,7 @@ section,
         </div>
       </div>
 
-<<<<<<< HEAD
+
       <div class="upcoming-event" data-aos="fade-up" data-aos-delay="400">
         <div class="container">
           <div class="event-content">
@@ -8662,10 +8652,9 @@ section,
           </div>
         </div>
       </div>
-=======
+
       
               
->>>>>>> 435a7c3 (landing web promosi)
 
     </section><!-- /Hero Section -->
 
@@ -8723,20 +8712,20 @@ section,
 
               <div class="mission-vision" data-aos="fade-up" data-aos-delay="400">
                 <div class="mission">
-<<<<<<< HEAD
+
                   <h3>Our Mission</h3>
-=======
+
                   <h3>Misi Kami</h3>
->>>>>>> 435a7c3 (landing web promosi)
+
                   <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
                 </div>
 
                 <div class="vision">
-<<<<<<< HEAD
+
                   <h3>Our Vision</h3>
-=======
+
                   <h3>Visi Kami</h3>
->>>>>>> 435a7c3 (landing web promosi)
+
                   <p>Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta.</p>
                 </div>
               </div>
@@ -8747,11 +8736,11 @@ section,
         <div class="row mt-5">
           <div class="col-lg-12">
             <div class="core-values" data-aos="fade-up" data-aos-delay="500">
-<<<<<<< HEAD
+
               <h3 class="text-center mb-4">Core Values</h3>
-=======
+
               <h3 class="text-center mb-4">Keunggulan Kami</h3>
->>>>>>> 435a7c3 (landing web promosi)
+
               <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 <div class="col">
                   <div class="value-card">
@@ -8806,13 +8795,13 @@ section,
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-<<<<<<< HEAD
+
         <h2>Featured Programs</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-=======
+
         <h2>Prestasi</h2>
         <p>Prestasi akademik, seni, olahraga, dan teknologi lahir dari budaya belajar yang disiplin dan kreatif</p>
->>>>>>> 435a7c3 (landing web promosi)
+
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -8946,17 +8935,17 @@ section,
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-<<<<<<< HEAD
+
         <h2>Students Life</h2>
-=======
+
         <h2>Galeri</h2>
->>>>>>> 435a7c3 (landing web promosi)
+
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-<<<<<<< HEAD
+
         <div class="row align-items-center g-5 mb-5">
           <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
             <div class="hero-image-wrapper">
@@ -9014,9 +9003,7 @@ section,
             </div>
           </div>
         </div>
-=======
-      
->>>>>>> 435a7c3 (landing web promosi)
+
 
         <div class="activities-showcase">
           <div class="row g-4">
@@ -9162,11 +9149,11 @@ section,
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-<<<<<<< HEAD
+
         <h2>Recent News</h2>
-=======
+
         <h2>Berita Terbaru</h2>
->>>>>>> 435a7c3 (landing web promosi)
+
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
@@ -9297,11 +9284,11 @@ section,
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-<<<<<<< HEAD
+
         <h2>Events</h2>
-=======
+
         <h2>Agenda</h2>
->>>>>>> 435a7c3 (landing web promosi)
+
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 

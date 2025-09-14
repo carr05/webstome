@@ -9,21 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
-{
-<<<<<<< HEAD
-    Schema::create('berita', function (Blueprint $table) {
-=======
-    Schema::create('beritas', function (Blueprint $table) {
->>>>>>> 435a7c3 (landing web promosi)
-        $table->id();
-        $table->string('judul');
-        $table->text('konten');
-        $table->string('gambar')->nullable();
-        $table->date('tanggal');
-        $table->timestamps();
-    });
-}
+    public function up(): void
+    {
+        Schema::create('berita', function (Blueprint $table) {
+            $table->id();
+            $table->string('judul');
+            $table->text('konten');
+            $table->string('gambar')->nullable();
+            $table->date('tanggal');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.

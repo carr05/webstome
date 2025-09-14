@@ -140,11 +140,11 @@ h6 {
 }
 
 .header .logo img {
-<<<<<<< HEAD
+
   max-height: 75px;
-=======
+
   max-height: 32px;
->>>>>>> 435a7c3 (landing web promosi)
+
   margin-right: 8px;
 }
 
@@ -157,11 +157,11 @@ h6 {
   font-size: 28px;
   margin: 0;
   font-weight: 400;
-<<<<<<< HEAD
+
   color: var(--font-color);
-=======
+
   color: var(--heading-color);
->>>>>>> 435a7c3 (landing web promosi)
+
 }
 
 .scrolled .header {
@@ -191,15 +191,15 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-<<<<<<< HEAD
+
     color: var(--font-color);
     padding: 18px 15px;
     font-size: var(--font-size);
-=======
+
     color: var(--default-color);
     padding: 18px 15px;
     font-size: 14px;
->>>>>>> 435a7c3 (landing web promosi)
+
     font-family: var(--font-family);
     font-weight: 400;
     display: flex;
@@ -224,11 +224,10 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-<<<<<<< HEAD
+
     color: var(--font-color);
-=======
+
     color: var(--nav-hover-color);
->>>>>>> 435a7c3 (landing web promosi)
   }
 
   .navmenu .dropdown ul {
@@ -255,11 +254,8 @@ h6 {
     padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
-<<<<<<< HEAD
     color: var(--font-color);
-=======
     color: var(--nav-dropdown-color);
->>>>>>> 435a7c3 (landing web promosi)
   }
 
   .navmenu .dropdown ul a i {
@@ -912,12 +908,12 @@ section,
 }
 
 .hero .hero-container {
-<<<<<<< HEAD
+
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
         var(--hero-background) center/cover no-repeat;
-=======
+
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/education/showcase-1.webp") center/cover no-repeat;
->>>>>>> 435a7c3 (landing web promosi)
+
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -936,44 +932,44 @@ section,
 .hero .hero-container .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 700;
-<<<<<<< HEAD
+
   font-family: var(--hero-font-family);
   margin-bottom: 20px;
   color: var(--hero-font-color);
-=======
+
   margin-bottom: 20px;
   color: var(--contrast-color);
->>>>>>> 435a7c3 (landing web promosi)
+
 }
 
 @media (max-width: 768px) {
   .hero .hero-container .hero-content h1 {
-<<<<<<< HEAD
+
     font-size: var(--hero-font-size);
     font-family: var(--hero-font-family);
-=======
+    color: var(--hero-font-color);
     font-size: 2.5rem;
->>>>>>> 435a7c3 (landing web promosi)
+
   }
 }
 
 .hero .hero-container .hero-content p {
   font-size: 1.25rem;
   margin-bottom: 30px;
-<<<<<<< HEAD
+
   font-family: var(--hero-font-family);
   color: var(--hero-font-color);
-=======
->>>>>>> 435a7c3 (landing web promosi)
+
+
 }
 
 @media (max-width: 768px) {
   .hero .hero-container .hero-content p {
     font-size: 1.1rem;
-<<<<<<< HEAD
+
     font-family: var(--hero-font-family);
-=======
->>>>>>> 435a7c3 (landing web promosi)
+
+
   }
 }
 
@@ -987,11 +983,8 @@ section,
   margin: 0 10px;
   border-radius: 50px;
   font-weight: 600;
-<<<<<<< HEAD
   font-family: var(--hero-font-family);
   color: var(--hero-font-color);
-=======
->>>>>>> 435a7c3 (landing web promosi)
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
@@ -1007,11 +1000,7 @@ section,
 
 .hero .hero-container .hero-content .cta-buttons .btn-apply {
   background-color: var(--accent-color);
-<<<<<<< HEAD
   color: var(--hero-font-color);
-=======
-  color: var(--contrast-color);
->>>>>>> 435a7c3 (landing web promosi)
 }
 
 .hero .hero-container .hero-content .cta-buttons .btn-apply:hover {
@@ -1022,11 +1011,7 @@ section,
 
 .hero .hero-container .hero-content .cta-buttons .btn-tour {
   background-color: transparent;
-<<<<<<< HEAD
   color: var(--hero-font-color);
-=======
-  color: var(--contrast-color);
->>>>>>> 435a7c3 (landing web promosi)
   border: 2px solid var(--contrast-color);
 }
 
@@ -1047,12 +1032,8 @@ section,
 
 .hero .hero-container .hero-content .announcement .announcement-badge {
   background-color: var(--accent-color);
-<<<<<<< HEAD
   color: var(--hero-font-color);
   font-family: var(--hero-font-family);
-=======
-  color: var(--contrast-color);
->>>>>>> 435a7c3 (landing web promosi)
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -1071,6 +1052,7 @@ section,
   position: relative;
   z-index: 10;
 }
+
 
 .hero .highlights-container .highlight-item {
   background-color: var(--surface-color);
