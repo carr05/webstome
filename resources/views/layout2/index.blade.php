@@ -42,6 +42,7 @@
 
 <body class="index-page">
 
+<<<<<<< HEAD
   <header id="header" class="header d-flex align-items-center sticky-top" 
   style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
          --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
@@ -113,10 +114,15 @@
 
     </div>
   </header>
+=======
+@include('layout2.navbar.main')
+
+>>>>>>> 435a7c3 (landing web promosi)
 
   <main class="main">
 
     <!-- Hero Section -->
+<<<<<<< HEAD
     <section id="hero" class="hero section" 
     style="         
          --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
@@ -126,6 +132,13 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1>Shaping Minds for Tomorrow's World</h1>
+=======
+    <section id="hero" class="hero section">
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>SMP NEGERI 2 MALANG</h1>
+>>>>>>> 435a7c3 (landing web promosi)
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis magna vel dolor mattis hendrerit. Vestibulum sodales dignissim ipsum id commodo.</p>
           <div class="cta-buttons">
             <a href="#" class="btn-apply">Apply Now</a>

@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\Tampilan;
 use App\Models\Hero;
 use Illuminate\Support\Facades\Storage;
 
 class TampilanController extends Controller
+=======
+use App\Models\tampilan;
+
+class tampilanController extends Controller
+>>>>>>> 435a7c3 (landing web promosi)
 {
     public function index()
     {
         $tampilan = Tampilan::first();
+<<<<<<< HEAD
         $hero = Hero::first();
         return view('tampilan.index', compact('tampilan', 'hero'));
     }
@@ -88,3 +95,42 @@ class TampilanController extends Controller
                          ->with('success', 'Tampilan & Hero berhasil diperbarui!');
     }
 }
+=======
+        return view('tampilan.index', compact('tampilan'));
+
+    }
+
+   public function update(Request $request)
+{
+    $tampilan = Tampilan::first();
+
+    if (!$tampilan) {
+        $tampilan = new Tampilan();
+    }
+
+    // Update layout kalau dikirim
+    if ($request->has('layout') && $request->layout != '') {
+        $tampilan->layout = $request->layout;
+    }
+
+    // Update warna/font/font_size kalau dikirim
+    if ($request->has('warna') && $request->warna != '') {
+        $tampilan->warna = $request->warna;
+    }
+    if ($request->has('font') && $request->font != '') {
+        $tampilan->font = $request->font;
+    }
+    if ($request->has('font_size') && $request->font_size != '') {
+        $tampilan->font_size = $request->font_size;
+    }
+
+    $tampilan->save();
+
+    return redirect()->route('tampilan.index')
+                     ->with('success', 'Tampilan berhasil diperbarui!');
+}
+
+}
+
+
+>>>>>>> 435a7c3 (landing web promosi)

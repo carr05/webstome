@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - College Bootstrap Template</title>
+  <title>Terms Of Service - College Bootstrap Template</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -36,7 +36,7 @@
   ======================================================== -->
 </head>
 
-<body class="contact-page">
+<body class="terms-of-service-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
@@ -47,33 +47,8 @@
         <h1 class="sitename">College</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+       <nav id="navmenu" class="navmenu">
         <ul>
-<<<<<<< HEAD
-          <li><a href="index.html">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="admissions.html">Admissions</a></li>
-              <li><a href="academics.html">Academics</a></li>
-              <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
-              <li><a href="campus-facilities.html">Campus &amp; Facilities</a></li>
-            </ul>
-          </li>
-
-          <li><a href="students-life.html">Students Life</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
-          <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="news-details.html">News Details</a></li>
-              <li><a href="event-details.html">Event Details</a></li>
-              <li><a href="privacy.html">Privacy</a></li>
-              <li><a href="terms-of-service.html">Terms of Service</a></li>
-              <li><a href="404.html">Error 404</a></li>
-              <li><a href="starter-page.html">Starter Page</a></li>
-=======
           <li><a href="{{ url('/layout1/index') }}">Beranda</a></li>
           <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -98,35 +73,18 @@
                <li><a href="{{ url('/layout1/terms_of_service') }}">Terms of Service</a></li>
                <li><a href="{{ url('/layout1/eror') }}">Error 404</a></li>
                <li><a href="{{ url('/layout1/starter_page') }}">Starter Page</a></li>
->>>>>>> 435a7c3 (landing web promosi)
             </ul>
           </li>
 
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
-<<<<<<< HEAD
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-=======
->>>>>>> 435a7c3 (landing web promosi)
               <li><a href="#">Dropdown 2</a></li>
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-<<<<<<< HEAD
-          <li><a href="contact.html" class="active">Contact</a></li>
-=======
           <li><a href="contact.html">Contact</a></li>
->>>>>>> 435a7c3 (landing web promosi)
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -139,109 +97,204 @@
     <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Contact</h1>
+        <h1 class="mb-2 mb-lg-0">Terms Of Service</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Contact</li>
+            <li class="current">Terms Of Service</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <!-- Terms Of Service Section -->
+    <section id="terms-of-service" class="terms-of-service section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="contact-main-wrapper">
-          <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-
-          <div class="contact-content">
-            <div class="contact-cards-container" data-aos="fade-up" data-aos-delay="300">
-              <div class="contact-card">
-                <div class="icon-box">
-                  <i class="bi bi-geo-alt"></i>
-                </div>
-                <div class="contact-text">
-                  <h4>Location</h4>
-                  <p>8721 Broadway Avenue, New York, NY 10023</p>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="icon-box">
-                  <i class="bi bi-envelope"></i>
-                </div>
-                <div class="contact-text">
-                  <h4>Email</h4>
-                  <p>info@examplecompany.com</p>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="icon-box">
-                  <i class="bi bi-telephone"></i>
-                </div>
-                <div class="contact-text">
-                  <h4>Call</h4>
-                  <p>+1 (212) 555-7890</p>
-                </div>
-              </div>
-
-              <div class="contact-card">
-                <div class="icon-box">
-                  <i class="bi bi-clock"></i>
-                </div>
-                <div class="contact-text">
-                  <h4>Open Hours</h4>
-                  <p>Monday-Friday: 9AM - 6PM</p>
-                </div>
-              </div>
+      <div class="container" data-aos="fade-up">
+        <!-- Hero Section -->
+        <div class="terms-hero" data-aos="fade-up">
+          <span class="badge">Last Updated: February 27, 2025</span>
+          <h2>Terms &amp; Conditions</h2>
+          <p>These terms and conditions outline your rights and responsibilities when using our services</p>
+          <div class="terms-highlights">
+            <div class="highlight-item">
+              <i class="bi bi-shield-check"></i>
+              <span>Secure Service</span>
             </div>
-
-            <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
-              <h3>Get in Touch</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing.</p>
-
-              <form action="forms/contact.php" method="post" class="php-email-form">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                  </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                  </div>
-                </div>
-                <div class="form-group mt-3">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
-                </div>
-                <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-
-                <div class="form-submit">
-                  <button type="submit">Send Message</button>
-                  <div class="social-links">
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </form>
+            <div class="highlight-item">
+              <i class="bi bi-lock"></i>
+              <span>Data Protection</span>
+            </div>
+            <div class="highlight-item">
+              <i class="bi bi-hand-thumbs-up"></i>
+              <span>Fair Terms</span>
             </div>
           </div>
         </div>
+
+        <!-- Terms Grid -->
+        <div class="terms-grid" data-aos="fade-up">
+          <!-- Agreement Card -->
+          <div class="terms-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-header">
+              <div class="header-icon">
+                <i class="bi bi-file-text"></i>
+              </div>
+              <h3>Agreement Terms</h3>
+            </div>
+            <div class="card-content">
+              <p>By accessing our service, you confirm that you are agreeing to be bound by these terms of service. These terms apply to all users and visitors.</p>
+              <ul class="check-list">
+                <li>Acceptance of terms</li>
+                <li>Compliance with laws</li>
+                <li>Service availability</li>
+                <li>User obligations</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- User Rights Card -->
+          <div class="terms-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-header">
+              <div class="header-icon">
+                <i class="bi bi-person-check"></i>
+              </div>
+              <h3>User Rights</h3>
+            </div>
+            <div class="card-content">
+              <p>As a user, you have specific rights when using our service, including data privacy and access to features.</p>
+              <ul class="check-list">
+                <li>Account control</li>
+                <li>Data privacy</li>
+                <li>Service access</li>
+                <li>Content ownership</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Restrictions Card -->
+          <div class="terms-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-header">
+              <div class="header-icon">
+                <i class="bi bi-shield-x"></i>
+              </div>
+              <h3>Restrictions</h3>
+            </div>
+            <div class="card-content">
+              <div class="restrictions-list">
+                <div class="restriction-item">
+                  <i class="bi bi-x-circle"></i>
+                  <span>No unauthorized data collection</span>
+                </div>
+                <div class="restriction-item">
+                  <i class="bi bi-x-circle"></i>
+                  <span>No service misuse</span>
+                </div>
+                <div class="restriction-item">
+                  <i class="bi bi-x-circle"></i>
+                  <span>No intellectual property violation</span>
+                </div>
+                <div class="restriction-item">
+                  <i class="bi bi-x-circle"></i>
+                  <span>No harmful activities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Points -->
+        <div class="terms-points" data-aos="fade-up">
+          <h3>Key Points to Note</h3>
+          <div class="points-grid">
+            <div class="point-item">
+              <div class="point-icon">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <div class="point-content">
+                <h4>Service Availability</h4>
+                <p>We strive to provide uninterrupted service but cannot guarantee 100% availability.</p>
+              </div>
+            </div>
+
+            <div class="point-item">
+              <div class="point-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div class="point-content">
+                <h4>Privacy Protection</h4>
+                <p>Your data is protected according to our privacy policy and applicable laws.</p>
+              </div>
+            </div>
+
+            <div class="point-item">
+              <div class="point-icon">
+                <i class="bi bi-pencil-square"></i>
+              </div>
+              <div class="point-content">
+                <h4>Content Rights</h4>
+                <p>You retain rights to your content while granting us license to use it.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Notices -->
+          <div class="terms-notices" data-aos="fade-up">
+            <div class="notice-wrapper">
+              <div class="notice-items">
+                <div class="notice-item">
+                  <div class="notice-marker">
+                    <i class="bi bi-exclamation-circle"></i>
+                  </div>
+                  <div class="notice-content">
+                    <h4>Service Modifications</h4>
+                    <p>We reserve the right to modify or discontinue any part of our service with or without notice.</p>
+                  </div>
+                </div>
+
+                <div class="notice-item">
+                  <div class="notice-marker">
+                    <i class="bi bi-exclamation-circle"></i>
+                  </div>
+                  <div class="notice-content">
+                    <h4>Account Termination</h4>
+                    <p>We may terminate accounts that violate these terms or for any other reason at our discretion.</p>
+                  </div>
+                </div>
+
+                <div class="notice-item">
+                  <div class="notice-marker">
+                    <i class="bi bi-exclamation-circle"></i>
+                  </div>
+                  <div class="notice-content">
+                    <h4>Terms Updates</h4>
+                    <p>These terms may be updated at any time. Continued use of the service implies acceptance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Box -->
+          <div class="terms-contact" data-aos="fade-up">
+            <div class="contact-wrapper">
+              <div class="contact-content">
+                <div class="contact-text">
+                  <h4>Need Clarification?</h4>
+                  <p>If you have questions about these terms, our support team is here to help.</p>
+                </div>
+                <div class="contact-actions">
+                  <a href="#" class="btn-primary">Contact Support</a>
+                  <a href="#" class="btn-outline">Download Terms</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-    </section><!-- /Contact Section -->
+    </section><!-- /Terms Of Service Section -->
 
   </main>
 

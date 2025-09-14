@@ -47,6 +47,7 @@
         <h1 class="sitename">College</h1>
       </a>
 
+<<<<<<< HEAD
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -72,12 +73,41 @@
               <li><a href="terms-of-service.html">Terms of Service</a></li>
               <li><a href="404.html">Error 404</a></li>
               <li><a href="starter-page.html">Starter Page</a></li>
+=======
+       <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{{ url('/layout1/index') }}">Beranda</a></li>
+          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{{ url('/layout1/kepsek') }}">Kepala Sekolah</a></li>
+              <li><a href="{{ url('/layout1/admissions') }}">Admissions</a></li>
+              <li><a href="{{ url('/layout1/academics') }}">Academics</a></li>
+              <li><a href="{{ url('/layout1/faculty_staff') }}">Faculty &amp; Staff</a></li>
+              <li><a href="{{ url('/layout1/campus_facilities') }}">Campus &amp; Facilities</a></li>
+            </ul>
+          </li>
+
+          {{-- dari sini --}}
+           <li><a href="{{ url('/layout1/students_life') }}">Students Life</a></li>
+           <li><a href="{{ url('/layout1/news') }}">News</a></li>
+           <li><a href="{{ url('/layout1/events') }}">Events</a></li>
+           <li><a href="{{ url('/layout1/alumni') }}">Alumni</a></li>
+          <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+               <li><a href="{{ url('/layout1/news_details') }}">News Details</a></li>
+               <li><a href="{{ url('/layout1/event_details') }}">Event Details</a></li>
+               <li><a href="{{ url('/layout1/privacy') }}">Privacy</a></li>
+               <li><a href="{{ url('/layout1/terms_of_service') }}">Terms of Service</a></li>
+               <li><a href="{{ url('/layout1/eror') }}">Error 404</a></li>
+               <li><a href="{{ url('/layout1/starter_page') }}">Starter Page</a></li>
+>>>>>>> 435a7c3 (landing web promosi)
             </ul>
           </li>
 
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
+<<<<<<< HEAD
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
@@ -87,6 +117,8 @@
                   <li><a href="#">Deep Dropdown 5</a></li>
                 </ul>
               </li>
+=======
+>>>>>>> 435a7c3 (landing web promosi)
               <li><a href="#">Dropdown 2</a></li>
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
@@ -96,7 +128,10 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 435a7c3 (landing web promosi)
     </div>
   </header>
 

@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 435a7c3 (landing web promosi)
 <style>
   /* Sidebar */
   .sidebar {
@@ -82,7 +88,10 @@
     <a href="{{ url('/prestasi') }}" class="{{ Request::is('prestasi') ? 'active' : '' }}"><i class="bi bi-trophy me-2"></i> Prestasi</a>
     <a href="{{ url('/guru') }}" class="{{ Request::is('guru') ? 'active' : '' }}"><i class="bi bi-person-badge me-2"></i> Guru</a>
     <a href="{{ url('/staff') }}" class="{{ Request::is('staff') ? 'active' : '' }}"><i class="bi bi-people-fill me-2"></i> Staff</a>
+<<<<<<< HEAD
     <a href="{{ url('/alumni') }}" class="{{ Request::is('alumni') ? 'active' : '' }}"><i class="bi bi-mortarboard me-2"></i> Alumni</a>
+=======
+>>>>>>> 435a7c3 (landing web promosi)
     <a href="{{ url('/ekstrakurikuler') }}" class="{{ Request::is('ekstrakurikuler') ? 'active' : '' }}"><i class="bi bi-activity me-2"></i> Ekstrakurikuler</a>
     <a href="{{ url('/karya') }}" class="{{ Request::is('karya') ? 'active' : '' }}"><i class="bi bi-palette me-2"></i> Karya</a>
   </div>
@@ -90,5 +99,21 @@
 
 
     <a href="{{ url('/logout') }}"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
+<<<<<<< HEAD
+=======
+    <ul class="list-unstyled">
+
+      
+  @foreach($menus as $menu)
+    <li class="{{ $menu->is_active ? '' : 'text-muted' }}">
+      <a href="#" class="nav-link">
+        {{ $menu->name }}
+      </a>
+    </li>
+  @endforeach
+</ul>
+
+
+>>>>>>> 435a7c3 (landing web promosi)
   </div>
 </div>
