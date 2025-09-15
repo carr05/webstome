@@ -952,7 +952,7 @@ section,
 .hero .hero-container .hero-content p {
   font-size: 1.25rem;
   margin-bottom: 30px;
-
+  color: var(--hero-font-color);
   font-family: var(--hero-font-family);
 }
 

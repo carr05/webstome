@@ -55,12 +55,12 @@
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
     <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-      @if(!empty($tampilan->logo))
-        <img src="{{ asset('storage/' . $tampilan->logo) }}" alt="Logo" style="max-height: 50px;">
-      @else
-        <h1 class="sitename">MySchool</h1>
-      @endif
-    </a>
+  @if(!empty($tampilan->logo))
+    <img src="{{ asset('storage/' . $tampilan->logo) }}" alt="Logo" style="max-height: 50px; margin-right: 8px;">
+  @endif
+  <h1 class="sitename">{{ $tampilan->nama_sekolah ?? 'Nama Sekolah' }}</h1>
+</a>
+
 
     <nav id="navmenu" class="navmenu">
       <ul>
@@ -104,12 +104,6 @@
   </div>
 </header>
 
-
-
-
-
- 
-
     <!-- Hero Section -->
 
     <section id="hero" class="hero section" 
@@ -120,22 +114,8 @@
          --hero-background: url('{{ asset('storage/'.$hero->image) }}');">
       <div class="hero-container">
         <div class="hero-content">
-          <h1>Shaping Minds for Tomorrow's World</h1>
-
-    <section id="hero" class="hero section">
-
-      <div class="hero-container">
-        <div class="hero-content">
-          <h1>SMP NEGERI 2 MALANG</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis magna vel dolor mattis hendrerit. Vestibulum sodales dignissim ipsum id commodo.</p>
-          <div class="cta-buttons">
-            <a href="#" class="btn-apply">Apply Now</a>
-            <a href="#" class="btn-tour">Campus Tour</a>
-          </div>
-          <div class="announcement">
-            <div class="announcement-badge">New</div>
-            <p>Fall 2025 Applications Open - Early Decision Deadline December 15</p>
-          </div>
+          <h1>{{ $hero->title ?? 'Selamat Datang di SMK Negeri 1 Malang' }}</h1>
+          <p>{{ $hero->subtitle ?? '' }}</p>
         </div>
       </div>
 
@@ -958,6 +938,9 @@
                 <span class="month">MAY</span>
                 <span class="day">8</span>
                 <span class="year">2025</span>
+
+
+
               </div>
               <div class="event-content">
                 <div class="event-tag community">Community</div>

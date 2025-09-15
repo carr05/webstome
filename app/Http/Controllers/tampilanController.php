@@ -78,6 +78,14 @@ class tampilanController extends Controller
             $hero->font = $request->hero_font;
         }
 
+        // ✅ Tambahan untuk Title & Subtitle
+        if ($request->filled('hero_title')) {
+            $hero->title = $request->hero_title;
+        }
+        if ($request->filled('hero_subtitle')) {
+            $hero->subtitle = $request->hero_subtitle;
+        }
+
         if ($request->hasFile('hero_image')) {
             if ($hero->image && Storage::disk('public')->exists($hero->image)) {
                 Storage::disk('public')->delete($hero->image);

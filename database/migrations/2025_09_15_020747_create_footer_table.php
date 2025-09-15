@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('footer', function (Blueprint $table) {
             $table->id();
+            $table->text('informasi_kontak')->nullable();
+            $table->text('link_berguna')->nullable();
+            $table->text('layanan')->nullable();
+            $table->text('hic_solutastip')->nullable();
+            $table->text('nobis_illum')->nullable();
+            $table->text('informasi_hak_cipta')->nullable();
             $table->timestamps();
         });
     }

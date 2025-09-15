@@ -12,6 +12,8 @@ class hero extends Model
 
     protected $table = 'hero';
     protected $fillable = [
+        'title',
+        'subtitle',
         'font_size',
         'font_color',
         'font',
