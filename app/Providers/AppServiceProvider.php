@@ -3,15 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\View;
-use App\Models\Menu;
-=======
 
 use Illuminate\Support\Facades\View;
 use App\Models\Menu;
 
->>>>>>> 61f30f0a60449b6d2279037786da386d5c582724
 
 class AppServiceProvider extends ServiceProvider
 {
