@@ -98,9 +98,9 @@ class adminControler extends Controller
         return view('layout1.about');
     }
 
-    public function hero()
+    public function menu()
     {
-        return view('hero'); // atau nama view yang benar
+        return view('menu'); // atau nama view yang benar
     }
 
     public function berita()
@@ -155,7 +155,7 @@ class adminControler extends Controller
 
     public function preview()
     {
-        $tampilan = \App\Models\Tampilan::first(); // Ambil data layout yg dipilih admin
+        $tampilan = Tampilan::first(); // Ambil data layout yg dipilih admin
 
         if ($tampilan && $tampilan->layout == 'layout2') {
             return redirect()->route('layout2.index');

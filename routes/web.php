@@ -33,7 +33,7 @@ Route::post('/tampilan/update', [tampilanController::class, 'update'])->name('ta
 // landing
 Route::get('/webpromosi', [adminControler::class, 'webpromosi'])->name('webpromosi');
 // Sidebar Menu
-Route::get('/hero', [adminControler::class, 'hero'])->name('hero');
+Route::get('/menu', [adminControler::class, 'menu'])->name('menu');
 Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');
 Route::get('/berita', [adminControler::class, 'berita'])->name('berita');
 Route::get('/galeri', [adminControler::class, 'galeri'])->name('galeri');
