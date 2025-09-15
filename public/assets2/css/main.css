@@ -140,7 +140,11 @@ h6 {
 }
 
 .header .logo img {
+
+  max-height: 75px;
+
   max-height: 32px;
+
   margin-right: 8px;
 }
 
@@ -153,8 +157,11 @@ h6 {
   font-size: 28px;
   margin: 0;
   font-weight: 400;
+
   color: var(--font-color);
+
   color: var(--heading-color);
+
 }
 
 .scrolled .header {
@@ -188,6 +195,11 @@ h6 {
     color: var(--font-color);
     padding: 18px 15px;
     font-size: var(--font-size);
+
+    color: var(--default-color);
+    padding: 18px 15px;
+    font-size: 14px;
+
     font-family: var(--font-family);
     font-weight: 400;
     display: flex;
@@ -895,8 +907,12 @@ section,
 }
 
 .hero .hero-container {
+
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
         var(--hero-background) center/cover no-repeat;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/education/showcase-1.webp") center/cover no-repeat;
+
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -915,29 +931,40 @@ section,
 .hero .hero-container .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 700;
+
   font-family: var(--hero-font-family);
   margin-bottom: 20px;
+  color: var(--hero-font-color);
+
+  margin-bottom: 20px;
   color: var(--contrast-color);
+
 }
 
 @media (max-width: 768px) {
   .hero .hero-container .hero-content h1 {
+
     font-size: var(--hero-font-size);
     font-family: var(--hero-font-family);
+    color: var(--hero-font-color);
+    font-size: 2.5rem;
+
   }
 }
 
 .hero .hero-container .hero-content p {
   font-size: 1.25rem;
   margin-bottom: 30px;
+
   font-family: var(--hero-font-family);
-  color: var(--hero-font-color);
 }
 
 @media (max-width: 768px) {
   .hero .hero-container .hero-content p {
     font-size: 1.1rem;
     font-family: var(--hero-font-family);
+
+
   }
 }
 
@@ -969,7 +996,6 @@ section,
 .hero .hero-container .hero-content .cta-buttons .btn-apply {
   background-color: var(--accent-color);
   color: var(--hero-font-color);
-  color: var(--contrast-color);
 }
 
 .hero .hero-container .hero-content .cta-buttons .btn-apply:hover {
@@ -981,7 +1007,6 @@ section,
 .hero .hero-container .hero-content .cta-buttons .btn-tour {
   background-color: transparent;
   color: var(--hero-font-color);
-  color: var(--contrast-color);
   border: 2px solid var(--contrast-color);
 }
 
@@ -1004,7 +1029,6 @@ section,
   background-color: var(--accent-color);
   color: var(--hero-font-color);
   font-family: var(--hero-font-family);
-  color: var(--contrast-color);
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -1023,6 +1047,7 @@ section,
   position: relative;
   z-index: 10;
 }
+
 
 .hero .highlights-container .highlight-item {
   background-color: var(--surface-color);

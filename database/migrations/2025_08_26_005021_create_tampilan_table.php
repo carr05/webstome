@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('tampilan', function (Blueprint $table) {
-    $table->id();
-    $table->string('layout')->nullable();
-    $table->enum('font_size', ['s', 'm', 'l'])->default('m');
-    $table->string('warna')->nullable();
-    $table->string('font')->nullable();
-    $table->string('logo')->nullable();
-    $table->timestamps();
+        Schema::create('tampilan', function (Blueprint $table) {
+            $table->id();
+            $table->string('layout')->nullable();
+            $table->enum('font_size', ['s', 'm', 'l'])->default('m');
+            $table->string('warna')->nullable();
+            $table->string('font')->nullable();
+            $table->string('logo')->nullable();
+            $table->timestamps();
         });
     }
 

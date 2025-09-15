@@ -9,20 +9,22 @@ use App\Models\admin;
 use Illuminate\Support\Facades\Hash;
 use App\Models\berita;
 use App\Models\tampilan;
+use App\Models\hero;
 
 class adminControler extends Controller
 {
     public function landing()
-{
-    $tampilan = Tampilan::first();
-    return view('layout1.index', compact('tampilan'));
-}
+    {
+        $tampilan = Tampilan::first();
+        return view('layout1.index', compact('tampilan'));
+    }
 
     public function landing2()
-{
-    $tampilan = Tampilan::first();
-    return view('layout2.index', compact('tampilan'));
-}
+    {
+        $tampilan = Tampilan::first();
+        $hero = Hero::first(); // ambil data hero pertama
+        return view('layout2.index', compact('tampilan', 'hero'));
+    }
 
     public function formLogin()
     {
@@ -59,13 +61,14 @@ class adminControler extends Controller
                 return redirect()->route('home');
             }
 
-            // Kalau belum pilih layout → arahkan ke halaman pilih layout
-            return redirect()->route('tampilan.index');
+            // Kalau belum pilih layout → arahkan ke halaman layout.blade
+            return redirect()->route('layout');
         }
 
         return back()->with('error', 'Username atau password salah.');
     }
-public function home()
+
+    public function home()
     {
         if (!session()->has('admin_id')) {
             return redirect()->route('login');
@@ -74,28 +77,30 @@ public function home()
         $tampilan = Tampilan::find(1);
 
         if (!$tampilan || !$tampilan->layout) {
-            return redirect()->route('tampilan.index');
+            return redirect()->route('layout');
         }
 
         return view('home', ['layout' => $tampilan->layout]);
     }
 
-
     public function layout()
+    {
+        return view('layout'); // atau nama view yang benar
+    }
+
+    public function tampilan1()
     {
         return view('tampilan.index'); // atau nama view yang benar
     }
 
-    public function tampilan1()
-
+    public function about()
     {
-        return view('tampilan.index'); // atau nama view yang benar
+        return view('layout1.about');
     }
 
     public function hero()
     {
         return view('hero'); // atau nama view yang benar
-
     }
 
     public function berita()
@@ -117,35 +122,54 @@ public function home()
     {
         return view('jurusan');
     }
+
     public function prestasi()
     {
         return view('prestasi');
     }
+
     public function guru()
     {
         return view('guru');
     }
+
     public function staff()
     {
         return view('staff');
     }
+
+    public function alumni()
+    {
+        return view('alumni');
+    }
+
     public function ekstrakurikuler()
     {
         return view('ekstrakurikuler');
     }
+
     public function karya()
     {
         return view('karya');
     }
 
-    
+    public function preview()
+    {
+        $tampilan = \App\Models\Tampilan::first(); // Ambil data layout yg dipilih admin
+
+        if ($tampilan && $tampilan->layout == 'layout2') {
+            return redirect()->route('layout2.index');
+        }
+
+        // Default layout1
+        return redirect()->route('layout1.index');
+    }
 
     public function index()
-{
-    $recentNews = berita::latest()->take(3)->get();
-    return view('layout1.index', compact('recentNews'));
-}
-
+    {
+        $recentNews = berita::latest()->take(3)->get();
+        return view('layout1.index', compact('recentNews'));
+    }
 
     public function logout()
     {
@@ -186,10 +210,6 @@ public function home()
     public function events()
     {
         return view('layout1.events');
-    }
-    public function alumni()
-    {
-        return view('layout1.alumni');
     }
     public function news_details()
     {

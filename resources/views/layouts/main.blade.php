@@ -70,7 +70,9 @@
 
    
 
-    <a href="{{ url('/') }}" class="{{ Request::is('preview') ? 'active' : '' }}"><i class="bi bi-eye me-2"></i>Priview</a>
+<a href="{{ route('preview') }}" target="_blank" class="{{ Request::is('preview') ? 'active' : '' }}">
+  <i class="bi bi-eye me-2"></i> Preview
+</a>
 
  <a href="{{ url('/tampilan') }}" class="{{ Request::is('tampilan') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Layout</a>
     <a href="{{ url('/hero') }}" class="{{ Request::is('hero') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Menu</a>
@@ -83,7 +85,13 @@
     <a href="{{ url('/prestasi') }}" class="{{ Request::is('prestasi') ? 'active' : '' }}"><i class="bi bi-trophy me-2"></i> Prestasi</a>
     <a href="{{ url('/guru') }}" class="{{ Request::is('guru') ? 'active' : '' }}"><i class="bi bi-person-badge me-2"></i> Guru</a>
     <a href="{{ url('/staff') }}" class="{{ Request::is('staff') ? 'active' : '' }}"><i class="bi bi-people-fill me-2"></i> Staff</a>
+
     <a href="{{ url('/alumni') }}" class="{{ Request::is('alumni') ? 'active' : '' }}"><i class="bi bi-mortarboard me-2"></i> Alumni</a>
+
+
+    <a href="{{ url('/alumni') }}" class="{{ Request::is('alumni') ? 'active' : '' }}"><i class="bi bi-mortarboard me-2"></i> Alumni</a>
+
+
     <a href="{{ url('/ekstrakurikuler') }}" class="{{ Request::is('ekstrakurikuler') ? 'active' : '' }}"><i class="bi bi-activity me-2"></i> Ekstrakurikuler</a>
     <a href="{{ url('/karya') }}" class="{{ Request::is('karya') ? 'active' : '' }}"><i class="bi bi-palette me-2"></i> Karya</a>
   </div>
@@ -91,6 +99,8 @@
 
 
     <a href="{{ url('/logout') }}"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
+
+
     <ul class="list-unstyled">
 
       
@@ -102,6 +112,7 @@
     </li>
   @endforeach
 </ul>
+
 
 
   </div>

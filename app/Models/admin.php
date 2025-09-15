@@ -17,9 +17,4 @@ class admin extends Model
     {
         return $this->hasOne(Tampilan::class, 'admin_id', 'id');
     }
-
-
 }
-
-
-

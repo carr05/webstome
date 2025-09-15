@@ -44,6 +44,8 @@ Route::get('/staff', [adminControler::class, 'staff'])->name('staff');
 Route::get('/alumni', [adminControler::class, 'alumni'])->name('alumni');
 Route::get('/ekstrakurikuler', [adminControler::class, 'ekstrakurikuler'])->name('ekstrakurikuler');
 Route::get('/karya', [adminControler::class, 'karya'])->name('karya');
+Route::get('/preview', [adminControler::class, 'preview'])->name('preview');
+
 
 // Layout landing pages
 Route::get('/layout1/index', [adminControler::class, 'landing'])->name('layout1.index');
