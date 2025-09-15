@@ -926,6 +926,7 @@ section,
 .hero .hero-container .hero-content {
   max-width: 800px;
   margin: 0 auto;
+  color: var(--contrast-color);
 }
 
 .hero .hero-container .hero-content h1 {
@@ -935,10 +936,6 @@ section,
   font-family: var(--hero-font-family);
   margin-bottom: 20px;
   color: var(--hero-font-color);
-
-  margin-bottom: 20px;
-  color: var(--contrast-color);
-
 }
 
 @media (max-width: 768px) {
