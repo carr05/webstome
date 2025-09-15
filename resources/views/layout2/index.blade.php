@@ -42,19 +42,6 @@
 
 <body class="index-page">
 
-<<<<<<< HEAD
-
- <header id="header" class="header d-flex align-items-center sticky-top" 
-  style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
-         --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
-         --font-size: {{ $tampilan->font_size ?? '16px' }};
-         --font-color: {{ $tampilan->font_color ?? '#04315f' }};
-         
-      ">
-         
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-=======
->>>>>>> 61f30f0a60449b6d2279037786da386d5c582724
 
  <header id="header" 
   class="header d-flex align-items-center sticky-top" 
@@ -116,6 +103,12 @@
 
   </div>
 </header>
+
+
+
+
+
+ 
 
     <!-- Hero Section -->
 
