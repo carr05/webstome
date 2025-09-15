@@ -12,7 +12,8 @@ Route::get('/haloo', function () {
 })->middleware('check.subdomain');
 
 // Autentikasi
-Route::get('/', [adminControler::class, 'formLogin'])->name('login');
+Route::get('/', [adminControler::class, 'webpromosi'])->name('webpromosi');
+Route::get('/login', [adminControler::class, 'formLogin'])->name('login');
 Route::post('/login', [adminControler::class, 'prosesLogin'])->name('login.post');
 Route::get('/logout', [adminControler::class, 'logout'])->name('logout');
 

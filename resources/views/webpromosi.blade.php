@@ -923,10 +923,10 @@
             </ul>
             <div class="header-actions">
                 <div class="cart-icon" onclick="toggleCart()">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge" id="cartCount">0</span>
+                    
+                   
                 </div>
-                <a href="#products" class="btn-primary">Belanja Sekarang</a>
+                <a href="#products" class="btn-primary">Hubungi Kami</a>
             </div>
         </nav>
     </header>
@@ -1005,7 +1005,7 @@
                 <!-- Product 1 -->
                 <div class="product-card" data-category="websekolah">
                     <div class="product-image">
-                        <div class="product-badge bestseller">Bestseller</div>
+                        <div class="product-badge bestseller">Demr</div>
                         <div class="product-preview">
                             <div class="preview-nav"></div>
                             <div class="preview-content">
@@ -1026,226 +1026,24 @@
                         </div>
                         <div class="product-footer">
                             <div class="product-price">
-                                <span class="price-current">$49</span>
-                                <span class="price-original">$89</span>
+                                <span class="price-current"></span>
+                                <span class="price-original"></span>
                             </div>
                             <div class="product-actions">
-                                <button class="btn-cart" onclick="addToCart('ReactPro Admin', 49)">
-                                    <i class="fas fa-cart-plus"></i> Beli
-                                </button>
+                                
                                 <button class="btn-cart">
                                      <a style="text-decoration:none; color:white;" href="{{ route('login') }}">Coba gratis 3 hari
                                 </button>
                                 </button>
                                 <button class="btn-preview">
-                                    <i class="fas fa-eye"></i><br>
+                                    
                                 </button>
                                
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Product 2 -->
-                <div class="product-card" data-category="web kasir">
-                    <div class="product-image">
-                        <div class="product-badge">New</div>
-                        <div class="product-preview">
-                            <div class="preview-nav"></div>
-                            <div class="preview-content">
-                                <div class="preview-widget">Vue Dashboard</div>
-                                <div class="preview-widget">Charts</div>
-                                <div class="preview-widget">Tables</div>
-                                <div class="preview-widget">Forms</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">VueMax Dashboard</h3>
-                        <p class="product-description">Template Vue.js modern dengan Composition API, Pinia state management, dan PWA support.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Vue 3</span>
-                            <span class="feature-tag">Pinia</span>
-                            <span class="feature-tag">PWA</span>
-                            <span class="feature-tag">Responsive</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-current">$39</span>
-                                <span class="price-original">$69</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="btn-cart" onclick="addToCart('VueMax Dashboard', 39)">
-                                    <i class="fas fa-cart-plus"></i> Beli
-                                </button>
-                                <button class="btn-preview">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="product-card" data-category="e-commerce">
-                    <div class="product-image">
-                        <div class="product-preview">
-                            <div class="preview-nav"></div>
-                            <div class="preview-content">
-                                <div class="preview-widget">Angular App</div>
-                                <div class="preview-widget">Material UI</div>
-                                <div class="preview-widget">Lazy Loading</div>
-                                <div class="preview-widget">Guards</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">AngularCore Admin</h3>
-                        <p class="product-description">Dashboard Angular dengan Material Design, lazy loading, guards, dan arsitektur yang scalable.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Angular 16</span>
-                            <span class="feature-tag">Material UI</span>
-                            <span class="feature-tag">Guards</span>
-                            <span class="feature-tag">i18n</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-current">$59</span>
-                                <span class="price-original">$99</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="btn-cart" onclick="addToCart('AngularCore Admin', 59)">
-                                    <i class="fas fa-cart-plus"></i> Beli
-                                </button>
-                                <button class="btn-preview">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card" data-category="html">
-                    <div class="product-image">
-                        <div class="product-badge">Popular</div>
-                        <div class="product-preview">
-                            <div class="preview-nav"></div>
-                            <div class="preview-content">
-                                <div class="preview-widget">HTML5</div>
-                                <div class="preview-widget">CSS3</div>
-                                <div class="preview-widget">JavaScript</div>
-                                <div class="preview-widget">jQuery</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">HTMLPro Dashboard</h3>
-                        <p class="product-description">Template HTML murni dengan CSS3 animations, JavaScript interactions, dan jQuery plugins.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">HTML5</span>
-                            <span class="feature-tag">CSS3</span>
-                            <span class="feature-tag">jQuery</span>
-                            <span class="feature-tag">Plugins</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-current">$29</span>
-                                <span class="price-original">$49</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="btn-cart" onclick="addToCart('HTMLPro Dashboard', 29)">
-                                    <i class="fas fa-cart-plus"></i> Beli
-                                </button>
-                                <button class="btn-preview">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="product-card" data-category="bootstrap">
-                    <div class="product-image">
-                        <div class="product-badge bestseller">Bestseller</div>
-                        <div class="product-preview">
-                            <div class="preview-nav"></div>
-                            <div class="preview-content">
-                                <div class="preview-widget">Bootstrap 5</div>
-                                <div class="preview-widget">SCSS</div>
-                                <div class="preview-widget">Components</div>
-                                <div class="preview-widget">Utilities</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">BootstrapMax Admin</h3>
-                        <p class="product-description">Template Bootstrap 5 dengan custom SCSS, utility classes, dan component library yang lengkap.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Bootstrap 5</span>
-                            <span class="feature-tag">SCSS</span>
-                            <span class="feature-tag">Components</span>
-                            <span class="feature-tag">RTL Support</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-current">$35</span>
-                                <span class="price-original">$59</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="btn-cart" onclick="addToCart('BootstrapMax Admin', 35)">
-                                    <i class="fas fa-cart-plus"></i> Beli
-                                </button>
-                                <button class="btn-preview">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="product-card" data-category="react">
-                    <div class="product-image">
-                        <div class="product-badge">Premium</div>
-                        <div class="product-preview">
-                            <div class="preview-nav"></div>
-                            <div class="preview-content">
-                                <div class="preview-widget">Next.js</div>
-                                <div class="preview-widget">Auth</div>
-                                <div class="preview-widget">Database</div>
-                                <div class="preview-widget">API</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">NextJS Enterprise</h3>
-                        <p class="product-description">Full-stack solution dengan Next.js, authentication, database integration, dan deployment ready.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Next.js 13</span>
-                            <span class="feature-tag">Auth</span>
-                            <span class="feature-tag">Database</span>
-                            <span class="feature-tag">Deployment</span>
-                        </div>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-current">$79</span>
-                                <span class="price-original">$129</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="btn-cart" onclick="addToCart('NextJS Enterprise', 79)">
-                                    <i class="fas fa-cart-plus"></i> Beli
-                                </button>
-                                <button class="btn-preview">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                
     </section>
 
     <!-- Features Section -->
