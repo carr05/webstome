@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tampilan;
 use App\Models\Hero;
+use App\Models\footer; 
 use Illuminate\Support\Facades\Storage;
 
 class tampilanController extends Controller
@@ -13,7 +14,8 @@ class tampilanController extends Controller
     {
         $tampilan = Tampilan::first();
         $hero = Hero::first();
-        return view('tampilan.index', compact('tampilan', 'hero'));
+        $footer = Footer::first(); 
+        return view('tampilan.index', compact('tampilan', 'hero', 'footer'));
     }
 
     public function update(Request $request)
@@ -56,7 +58,6 @@ class tampilanController extends Controller
         }
 
         if ($request->hasFile('logo')) {
-            // hapus logo lama
             if ($tampilan->logo && Storage::disk('public')->exists($tampilan->logo)) {
                 Storage::disk('public')->delete($tampilan->logo);
             }
@@ -77,8 +78,6 @@ class tampilanController extends Controller
         if ($request->filled('hero_font')) {
             $hero->font = $request->hero_font;
         }
-
-        // ✅ Tambahan untuk Title & Subtitle
         if ($request->filled('hero_title')) {
             $hero->title = $request->hero_title;
         }
@@ -95,7 +94,31 @@ class tampilanController extends Controller
 
         $hero->save();
 
+        // --- Update Footer ---
+        $footer = Footer::first() ?? new Footer();
+
+        if ($request->filled('informasi_kontak')) {
+            $footer->informasi_kontak = $request->informasi_kontak;
+        }
+        if ($request->filled('link_berguna')) {
+            $footer->link_berguna = $request->link_berguna;
+        }
+        if ($request->filled('layanan')) {
+            $footer->layanan = $request->layanan;
+        }
+        if ($request->filled('hic_solutastip')) {
+            $footer->hic_solutastip = $request->hic_solutastip;
+        }
+        if ($request->filled('nobis_illum')) {
+            $footer->nobis_illum = $request->nobis_illum;
+        }
+        if ($request->filled('informasi_hak_cipta')) {
+            $footer->informasi_hak_cipta = $request->informasi_hak_cipta;
+        }
+
+        $footer->save();
+
         return redirect()->route('tampilan.index')
-                         ->with('success', 'Tampilan & Hero berhasil diperbarui!');
+                         ->with('success', 'Tampilan, Hero & Footer berhasil diperbarui!');
     }
 }

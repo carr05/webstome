@@ -665,6 +665,44 @@
                     <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
                 </button>
             </div>
+
+            <!-- Footer Settings -->
+<!-- Footer Settings -->
+<div id="footerSettings" class="settings-section">
+  <h4>Pengaturan Footer</h4>
+  
+  <div class="mb-3">
+    <label class="form-label">Informasi Kontak</label>
+    <textarea name="informasi_kontak" class="form-control" rows="3">{{ $footer->informasi_kontak ?? '' }}</textarea>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Link Berguna</label>
+    <textarea name="link_berguna" class="form-control" rows="3">{{ $footer->link_berguna ?? '' }}</textarea>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Layanan</label>
+    <textarea name="layanan" class="form-control" rows="3">{{ $footer->layanan ?? '' }}</textarea>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Hic Solutastip</label>
+    <textarea name="hic_solutastip" class="form-control" rows="3">{{ $footer->hic_solutastip ?? '' }}</textarea>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Nobis Illum</label>
+    <textarea name="nobis_illum" class="form-control" rows="3">{{ $footer->nobis_illum ?? '' }}</textarea>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Informasi Hak Cipta</label>
+    <textarea name="informasi_hak_cipta" class="form-control" rows="3">{{ $footer->informasi_hak_cipta ?? '' }}</textarea>
+  </div>
+</div>
+
+
         </form>
     </div>
 </div>
@@ -674,33 +712,36 @@
     const buttons = document.querySelectorAll('.card-button');
     const hiddenInput = document.getElementById('selectedElement');
     const settingsSections = document.querySelectorAll('.settings-section');
+    const form = document.getElementById('customizationForm');
+    const loadingOverlay = document.getElementById('loadingOverlay');
 
     buttons.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Remove active class from all buttons
-            buttons.forEach(b => b.classList.remove('active'));
-            
-            // Add active class to clicked button
+            // Reset semua tombol
+            buttons.forEach(b => {
+                b.classList.remove('active');
+                b.style.transform = 'scale(1)';
+            });
+
+            // Aktifkan tombol yang diklik
             this.classList.add('active');
-            
-            // Set hidden input value
             hiddenInput.value = this.dataset.element;
-            
-            // Hide all settings sections
+
+            // Sembunyikan semua section
             settingsSections.forEach(section => {
                 section.classList.remove('active');
             });
-            
-            // Show selected settings section
+
+            // Tampilkan section sesuai pilihan
             const targetSection = document.getElementById(this.dataset.element + 'Settings');
             if (targetSection) {
                 targetSection.classList.add('active');
             }
-            
-            // Add some visual feedback
+
+            // Feedback animasi klik
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
-                this.style.transform = '';
+                this.style.transform = 'scale(1)';
             }, 150);
         });
     });
@@ -708,7 +749,6 @@
     // Color Input Updates
     document.querySelectorAll('input[type="color"]').forEach(colorInput => {
         const textSpan = colorInput.parentElement.querySelector('span');
-        
         colorInput.addEventListener('input', function() {
             if (textSpan) {
                 textSpan.textContent = this.value.toUpperCase();
@@ -717,27 +757,21 @@
     });
 
     // Form Submission
-    document.getElementById('customizationForm').addEventListener('submit', function(e) {
-        // Show loading
-        document.getElementById('loadingOverlay').classList.add('active');
-        
-        // Remove loading after a delay (remove this in production)
-        setTimeout(() => {
-            document.getElementById('loadingOverlay').classList.remove('active');
-        }, 1500);
+    form.addEventListener('submit', function() {
+        loadingOverlay.classList.add('active');
     });
 
     // Reset Form Function
     function resetForm() {
         if (confirm('Apakah Anda yakin ingin mereset semua pengaturan?')) {
-            document.getElementById('customizationForm').reset();
-            
+            form.reset();
+
             // Reset active states
             buttons.forEach(b => b.classList.remove('active'));
             settingsSections.forEach(section => {
                 section.classList.remove('active');
             });
-            
+
             hiddenInput.value = '';
         }
     }
@@ -756,8 +790,7 @@
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    // Find associated image preview
-                    const preview = fileInput.parentElement.parentElement.querySelector('img');
+                    const preview = fileInput.closest('.mb-3, .card-section')?.querySelector('img');
                     if (preview) {
                         preview.src = e.target.result;
                     }
@@ -772,14 +805,12 @@
         input.addEventListener('focus', function() {
             this.style.transform = 'translateY(-1px)';
         });
-        
         input.addEventListener('blur', function() {
             this.style.transform = '';
         });
     });
-
-    
 </script>
+
 
 </body>
 </html>

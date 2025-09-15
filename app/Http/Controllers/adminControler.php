@@ -16,7 +16,8 @@ class adminControler extends Controller
     public function landing()
     {
         $tampilan = Tampilan::first();
-        return view('layout1.index', compact('tampilan'));
+         $hero = Hero::first();
+        return view('layout1.index', compact('tampilan', 'hero'));
     }
 
     public function landing2()
