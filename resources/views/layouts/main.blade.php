@@ -75,7 +75,7 @@
 </a>
 
  <a href="{{ url('/tampilan') }}" class="{{ Request::is('tampilan') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Layout</a>
-    <a href="{{ url('/hero') }}" class="{{ Request::is('hero') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Menu</a>
+    <a href="{{ url('/menu') }}" class="{{ Request::is('menu') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Menu</a>
 
 
     <a href="{{ url('/berita') }}" class="{{ Request::is('berita') ? 'active' : '' }}"><i class="bi bi-newspaper me-2"></i> Berita</a>
@@ -88,6 +88,10 @@
 
     <a href="{{ url('/alumni') }}" class="{{ Request::is('alumni') ? 'active' : '' }}"><i class="bi bi-mortarboard me-2"></i> Alumni</a>
 
+
+
+
+
     <a href="{{ url('/ekstrakurikuler') }}" class="{{ Request::is('ekstrakurikuler') ? 'active' : '' }}"><i class="bi bi-activity me-2"></i> Ekstrakurikuler</a>
     <a href="{{ url('/karya') }}" class="{{ Request::is('karya') ? 'active' : '' }}"><i class="bi bi-palette me-2"></i> Karya</a>
   </div>
@@ -95,6 +99,7 @@
 
 
     <a href="{{ url('/logout') }}"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
+
 
     <ul class="list-unstyled">
 

@@ -599,6 +599,7 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
 
                     <div class="col-lg-6">
                         <div class="card-section">
@@ -645,6 +646,7 @@
                                 <textarea name="hero_subtitle" class="form-control" rows="3" 
                                           placeholder="Deskripsi singkat tentang sekolah">{{ $hero->subtitle ?? 'Membentuk siswa yang unggul, berkarakter, dan siap menghadapi tantangan masa depan dengan pendidikan berkualitas dan fasilitas modern.' }}</textarea>
                             </div>
+
                         </div>
                     </div>
                 </div>

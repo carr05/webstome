@@ -98,9 +98,9 @@ class adminControler extends Controller
         return view('layout1.about');
     }
 
-    public function hero()
+    public function menu()
     {
-        return view('hero'); // atau nama view yang benar
+        return view('menu'); // atau nama view yang benar
     }
 
     public function berita()
@@ -147,10 +147,6 @@ class adminControler extends Controller
     {
         return view('ekstrakurikuler');
     }
-    public function webpromosi()
-    {
-        return view('webpromosi');
-    }
 
     public function karya()
     {
@@ -159,7 +155,7 @@ class adminControler extends Controller
 
     public function preview()
     {
-        $tampilan = \App\Models\Tampilan::first(); // Ambil data layout yg dipilih admin
+        $tampilan = Tampilan::first(); // Ambil data layout yg dipilih admin
 
         if ($tampilan && $tampilan->layout == 'layout2') {
             return redirect()->route('layout2.index');
@@ -180,4 +176,136 @@ class adminControler extends Controller
         session()->forget(['admin_id', 'admin_username']);
         return redirect()->route('login');
     }
+
+    //layout 1
+    public function kepsek()
+    {
+        return view('layout1.kepsek');
+    }
+
+    public function admissions()
+    {
+        return view('layout1.admissions');
+    }
+    public function academics()
+    {
+        return view('layout1.academics');
+    }
+    public function faculty_staff()
+    {
+        return view('layout1.faculty_staff');
+    }
+    public function campus_facilities()
+    {
+        return view('layout1.campus_facilities');
+    }
+    public function students_life()
+    {
+        return view('layout1.students_life');
+    }
+    public function news()
+    {
+        return view('layout1.news');
+    }
+    public function events()
+    {
+        return view('layout1.events');
+    }
+    public function news_details()
+    {
+        return view('layout1.news_details');
+    }
+    public function event_details()
+    {
+        return view('layout1.event_details');
+    }
+    public function privacy()
+    {
+        return view('layout1.privacy');
+    }
+    public function terms_of_service()
+    {
+        return view('layout1.terms_of_service');
+    }
+    public function eror()
+    {
+        return view('layout1.eror');
+    }
+    public function starter_page()
+    {
+        return view('layout1.starter_page');
+    }
+
+
+    //layout 2
+    public function kepsek2()
+    {
+        return view('layout2.kepsek');
+    }
+
+    public function admissions2()
+    {
+        return view('layout2.admissions');
+    }
+    public function academics2()
+    {
+        return view('layout2.academics');
+    }
+    public function faculty_staff2()
+    {
+        return view('layout2.faculty_staff');
+    }
+    public function campus_facilities2()
+    {
+        return view('layout2.campus_facilities');
+    }
+    public function students_life2()
+    {
+        return view('layout2.students_life');
+    }
+    public function news2()
+    {
+        return view('layout2.news');
+    }
+    public function events2()
+    {
+        return view('layout2.events');
+    }
+    public function alumni2()
+    {
+        return view('layout2.alumni');
+    }
+    public function news_details2()
+    {
+        return view('layout2.news_details');
+    }
+    public function event_details2()
+    {
+        return view('layout2.event_details');
+    }
+    public function privacy2()
+    {
+        return view('layout2.privacy');
+    }
+    public function terms_of_service2()
+    {
+        return view('layout2.terms_of_service');
+    }
+    public function eror2()
+    {
+        return view('layout2.eror');
+    }
+    public function starter_page2()
+    {
+        return view('layout2.starter_page');
+    }
+
+
+    // landing
+    public function webpromosi()
+    {
+        return view('webpromosi');
+    }
+
+
 }

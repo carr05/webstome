@@ -12,6 +12,7 @@ class beritaController extends Controller
     /**
      * Tampilkan daftar berita sesuai layout admin
      */
+
     public function index()
     {
         $admin = Admin::find(session('admin_id')); // ambil admin yang login
@@ -25,13 +26,11 @@ class beritaController extends Controller
         }
     }
 
-    /**
-     * Form tambah berita
-     */
     public function create()
     {
         return view('berita.create');
     }
+
 
     /**
      * Simpan berita baru
@@ -105,6 +104,7 @@ class beritaController extends Controller
         }
 
         $beritum->delete();
+
 
         return redirect()->route('berita.index')->with('success', 'Berita berhasil dihapus!');
     }

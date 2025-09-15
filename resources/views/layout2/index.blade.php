@@ -42,6 +42,19 @@
 
 <body class="index-page">
 
+<<<<<<< HEAD
+
+ <header id="header" class="header d-flex align-items-center sticky-top" 
+  style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
+         --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
+         --font-size: {{ $tampilan->font_size ?? '16px' }};
+         --font-color: {{ $tampilan->font_color ?? '#04315f' }};
+         
+      ">
+         
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+=======
+>>>>>>> 61f30f0a60449b6d2279037786da386d5c582724
 
  <header id="header" 
   class="header d-flex align-items-center sticky-top" 
@@ -115,6 +128,12 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1>Shaping Minds for Tomorrow's World</h1>
+
+    <section id="hero" class="hero section">
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>SMP NEGERI 2 MALANG</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis magna vel dolor mattis hendrerit. Vestibulum sodales dignissim ipsum id commodo.</p>
           <div class="cta-buttons">
             <a href="#" class="btn-apply">Apply Now</a>

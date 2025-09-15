@@ -226,7 +226,6 @@ h6 {
   .navmenu .active:focus {
 
     color: var(--font-color);
-
     color: var(--nav-hover-color);
   }
 
@@ -955,15 +954,11 @@ section,
   margin-bottom: 30px;
 
   font-family: var(--hero-font-family);
-  color: var(--hero-font-color);
-
-
 }
 
 @media (max-width: 768px) {
   .hero .hero-container .hero-content p {
     font-size: 1.1rem;
-
     font-family: var(--hero-font-family);
 
 

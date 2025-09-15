@@ -33,7 +33,7 @@ Route::post('/tampilan/update', [tampilanController::class, 'update'])->name('ta
 // landing
 Route::get('/webpromosi', [adminControler::class, 'webpromosi'])->name('webpromosi');
 // Sidebar Menu
-Route::get('/hero', [adminControler::class, 'hero'])->name('hero');
+Route::get('/menu', [adminControler::class, 'menu'])->name('menu');
 Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');
 Route::get('/berita', [adminControler::class, 'berita'])->name('berita');
 Route::get('/galeri', [adminControler::class, 'galeri'])->name('galeri');
@@ -50,7 +50,6 @@ Route::get('/preview', [adminControler::class, 'preview'])->name('preview');
 // Layout landing pages
 Route::get('/layout1/index', [adminControler::class, 'landing'])->name('layout1.index');
 Route::get('/layout2/index', [adminControler::class, 'landing2'])->name('layout2.index');
-
 Route::get('/ekstrakurikuler', [adminControler::class, 'ekstrakurikuler'])->name('ekstrakurikuler');
 Route::get('/karya', [adminControler::class, 'karya'])->name('karya');
 
