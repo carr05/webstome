@@ -8465,7 +8465,8 @@ section,
             </ul>
           </li>
 
-          {{-- dari sini --}}
+          
+          
            <li><a href="{{ url('/layout1/students_life') }}">Students Life</a></li>
            <li><a href="{{ url('/layout1/news') }}">Berita</a></li>
            <li><a href="{{ url('/layout1/events') }}">Agenda</a></li>

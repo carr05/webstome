@@ -599,7 +599,7 @@
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
+
 
                     <div class="col-lg-6">
                         <div class="card-section">
@@ -661,10 +661,6 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="d-flex justify-content-end gap-3 mt-4">
-                <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
-                    <i class="bi bi-arrow-clockwise me-2"></i>Reset
-                </button>
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
                 </button>
@@ -781,6 +777,8 @@
             this.style.transform = '';
         });
     });
+
+    
 </script>
 
 </body>
