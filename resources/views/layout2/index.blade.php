@@ -104,12 +104,6 @@
   </div>
 </header>
 
-
-
-
-
- 
-
     <!-- Hero Section -->
 
     <section id="hero" class="hero section" 
