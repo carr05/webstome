@@ -10,20 +10,26 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\berita;
 use App\Models\tampilan;
 use App\Models\hero;
+use App\Models\footer;
 
 class adminControler extends Controller
 {
     public function landing()
     {
         $tampilan = Tampilan::first();
-        return view('layout1.index', compact('tampilan'));
+        $hero = Hero::first();
+        $footer = Footer::first();
+
+        return view('layout1.index', compact('tampilan', 'hero', 'footer'));
     }
 
     public function landing2()
     {
         $tampilan = Tampilan::first();
-        $hero = Hero::first(); // ambil data hero pertama
-        return view('layout2.index', compact('tampilan', 'hero'));
+        $hero = Hero::first();
+        $footer = Footer::first();
+
+        return view('layout2.index', compact('tampilan', 'hero', 'footer'));
     }
 
     public function formLogin()

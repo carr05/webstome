@@ -164,7 +164,7 @@ h6 {
 }
 
 .header .logo {
-  background: var(--accent-color);
+  background: var(--nav-color);
   position: absolute;
   inset: 0 auto 0 0;
   padding: 0 20px;
@@ -225,10 +225,10 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
+    color: var(--font-color);
     padding: 18px 15px;
-    font-size: 16px;
-    font-family: var(--nav-font);
+    font-size: var(--font-size);
+    font-family: var(--font-family);
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -252,7 +252,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    color: var(--font-color);
   }
 
   .navmenu .dropdown ul {

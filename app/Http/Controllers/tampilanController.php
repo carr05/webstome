@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tampilan;
 use App\Models\Hero;
+use App\Models\footer; 
 use Illuminate\Support\Facades\Storage;
 
 class tampilanController extends Controller
@@ -13,7 +14,8 @@ class tampilanController extends Controller
     {
         $tampilan = Tampilan::first();
         $hero = Hero::first();
-        return view('tampilan.index', compact('tampilan', 'hero'));
+        $footer = Footer::first(); 
+        return view('tampilan.index', compact('tampilan', 'hero', 'footer'));
     }
 
     public function update(Request $request)
@@ -56,7 +58,6 @@ class tampilanController extends Controller
         }
 
         if ($request->hasFile('logo')) {
-            // hapus logo lama
             if ($tampilan->logo && Storage::disk('public')->exists($tampilan->logo)) {
                 Storage::disk('public')->delete($tampilan->logo);
             }
@@ -77,8 +78,6 @@ class tampilanController extends Controller
         if ($request->filled('hero_font')) {
             $hero->font = $request->hero_font;
         }
-
-        // ✅ Tambahan untuk Title & Subtitle
         if ($request->filled('hero_title')) {
             $hero->title = $request->hero_title;
         }
@@ -95,7 +94,87 @@ class tampilanController extends Controller
 
         $hero->save();
 
+        // --- Update Footer ---
+
+$footer = Footer::first() ?? new Footer();
+
+// Style
+if ($request->filled('footer_bg_color')) {
+    $footer->footer_bg_color = $request->footer_bg_color;
+}
+if ($request->filled('footer_text_color')) {
+    $footer->footer_text_color = $request->footer_text_color;
+}
+if ($request->filled('footer_link_color')) {
+    $footer->footer_link_color = $request->footer_link_color;
+}
+
+// Kontak
+if ($request->filled('footer_institution_name')) {
+    $footer->footer_institution_name = $request->footer_institution_name;
+}
+if ($request->filled('footer_address')) {
+    $footer->footer_address = $request->footer_address;
+}
+if ($request->filled('footer_phone')) {
+    $footer->footer_phone = $request->footer_phone;
+}
+if ($request->filled('footer_email')) {
+    $footer->footer_email = $request->footer_email;
+}
+
+// Media Sosial
+if ($request->filled('footer_youtube')) {
+    $footer->footer_youtube = $request->footer_youtube;
+}
+if ($request->filled('footer_instagram')) {
+    $footer->footer_instagram = $request->footer_instagram;
+}
+if ($request->filled('footer_facebook')) {
+    $footer->footer_facebook = $request->footer_facebook;
+}
+if ($request->filled('footer_twitter')) {
+    $footer->footer_twitter = $request->footer_twitter;
+}
+
+// Layanan & Program
+if ($request->filled('footer_services')) {
+    $footer->footer_services = $request->footer_services;
+}
+if ($request->filled('footer_programs')) {
+    $footer->footer_programs = $request->footer_programs;
+}
+
+// Link Penting
+if ($request->filled('footer_policies')) {
+    $footer->footer_policies = $request->footer_policies;
+}
+if ($request->filled('footer_external_links')) {
+    $footer->footer_external_links = $request->footer_external_links;
+}
+
+// Jam Operasional
+if ($request->filled('footer_weekday_hours')) {
+    $footer->footer_weekday_hours = $request->footer_weekday_hours;
+}
+if ($request->filled('footer_saturday_hours')) {
+    $footer->footer_saturday_hours = $request->footer_saturday_hours;
+}
+$footer->footer_show_hours = $request->has('footer_show_hours') ? 1 : 0;
+
+// Hak Cipta & Developer
+if ($request->filled('footer_copyright')) {
+    $footer->footer_copyright = $request->footer_copyright;
+}
+if ($request->filled('footer_developer')) {
+    $footer->footer_developer = $request->footer_developer;
+}
+$footer->footer_show_developer = $request->has('footer_show_developer') ? 1 : 0;
+
+$footer->save();
+
+
         return redirect()->route('tampilan.index')
-                         ->with('success', 'Tampilan & Hero berhasil diperbarui!');
+                         ->with('success', 'Tampilan, Hero & Footer berhasil diperbarui!');
     }
 }

@@ -421,302 +421,119 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
-.footer-16 {
-  background: var(--background-color);
+.footer {
   color: var(--default-color);
-  font-size: 15px;
-  padding: 100px 0 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  background-color: var(--background-color);
+  font-size: 14px;
+  position: relative;
 }
 
-.footer-16 .footer-main {
-  margin-bottom: 80px;
+.footer .footer-top {
+  padding-top: 50px;
 }
 
-.footer-16 .brand-section .logo {
-  text-decoration: none;
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
 }
 
-.footer-16 .brand-section .logo .sitename {
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: 300;
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
   color: var(--heading-color);
-  letter-spacing: -0.5px;
+  font-family: var(--heading-font);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.footer-16 .brand-section .brand-description {
-  font-size: 18px;
-  line-height: 1.7;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
-  font-weight: 300;
-  max-width: 380px;
-  margin: 0;
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
 }
 
-.footer-16 .brand-section .contact-info .contact-item {
+.footer .social-links a {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 16px;
-  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-right: 10px;
+  transition: 0.3s;
 }
 
-.footer-16 .brand-section .contact-info .contact-item i {
-  font-size: 16px;
+.footer .social-links a:hover {
   color: var(--accent-color);
-  margin-right: 12px;
-  margin-top: 3px;
-  flex-shrink: 0;
+  border-color: var(--accent-color);
 }
 
-.footer-16 .brand-section .contact-info .contact-item span {
-  line-height: 1.6;
-}
-
-.footer-16 .footer-nav-wrapper {
-  padding-left: 60px;
-}
-
-@media (max-width: 991px) {
-  .footer-16 .footer-nav-wrapper {
-    padding-left: 0;
-    margin-top: 50px;
-  }
-}
-
-.footer-16 .nav-column {
-  margin-bottom: 40px;
-}
-
-.footer-16 .nav-column h6 {
-  font-family: var(--heading-font);
+.footer h4 {
   font-size: 16px;
-  font-weight: 400;
-  color: var(--heading-color);
-  margin-bottom: 24px;
-  letter-spacing: 0.3px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
 }
 
-.footer-16 .nav-column .footer-nav {
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  align-items: center;
 }
 
-.footer-16 .nav-column .footer-nav a {
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 300;
-  transition: all 0.3s ease;
-  line-height: 1.4;
+  display: inline-block;
+  line-height: 1;
 }
 
-.footer-16 .nav-column .footer-nav a:hover {
+.footer .footer-links ul a:hover {
   color: var(--accent-color);
-  transform: translateX(4px);
 }
 
-.footer-16 .footer-social {
-  padding: 50px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 94%);
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 94%);
+.footer .footer-contact p {
+  margin-bottom: 5px;
 }
 
-.footer-16 .footer-social .newsletter-section h5 {
-  font-family: var(--heading-font);
-  font-size: 20px;
-  font-weight: 300;
-  color: var(--heading-color);
-  margin-bottom: 12px;
-  letter-spacing: -0.2px;
+.footer .copyright {
+  padding: 25px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.footer-16 .footer-social .newsletter-section p {
-  font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 35%);
-  margin: 0;
-  line-height: 1.6;
-  max-width: 340px;
+.footer .copyright p {
+  margin-bottom: 0;
 }
 
-.footer-16 .footer-social .social-section {
-  display: flex;
-  justify-content: flex-end;
-}
-
-@media (max-width: 991px) {
-  .footer-16 .footer-social .social-section {
-    justify-content: flex-start;
-    margin-top: 30px;
-  }
-}
-
-.footer-16 .footer-social .social-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-
-@media (max-width: 576px) {
-  .footer-16 .footer-social .social-links {
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-}
-
-.footer-16 .footer-social .social-links .social-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 14px;
-  font-weight: 400;
-  transition: all 0.3s ease;
-}
-
-.footer-16 .footer-social .social-links .social-link i {
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
-
-.footer-16 .footer-social .social-links .social-link span {
-  transition: all 0.3s ease;
-}
-
-.footer-16 .footer-social .social-links .social-link:hover {
-  color: var(--accent-color);
-  transform: translateY(-2px);
-}
-
-.footer-16 .footer-social .social-links .social-link:hover i {
-  transform: scale(1.1);
-}
-
-.footer-16 .footer-bottom {
-  padding: 30px 0;
-}
-
-.footer-16 .footer-bottom .copyright p {
-  margin: 0;
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 45%);
-  font-weight: 300;
-}
-
-.footer-16 .footer-bottom .copyright p .sitename {
-  color: var(--heading-color);
-  font-weight: 400;
-}
-
-.footer-16 .footer-bottom .legal-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 24px;
-}
-
-@media (max-width: 991px) {
-  .footer-16 .footer-bottom .legal-links {
-    justify-content: flex-start;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-}
-
-.footer-16 .footer-bottom .legal-links a {
+.footer .credits {
+  margin-top: 8px;
   font-size: 13px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  text-decoration: none;
-  font-weight: 300;
-  transition: color 0.3s ease;
 }
-
-.footer-16 .footer-bottom .legal-links a:hover {
-  color: var(--accent-color);
-}
-
-.footer-16 .footer-bottom .legal-links .credits {
-  font-size: 12px;
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  margin-left: 8px;
-  padding-left: 24px;
-  border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-@media (max-width: 576px) {
-  .footer-16 .footer-bottom .legal-links .credits {
-    margin-left: 0;
-    padding-left: 0;
-    border-left: none;
-    width: 100%;
-    margin-top: 12px;
-  }
-}
-
-.footer-16 .footer-bottom .legal-links .credits a {
-  color: var(--accent-color);
-  font-size: 12px;
-}
-
-.footer-16 .footer-bottom .legal-links .credits a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .footer-16 {
-    padding: 70px 0 0;
-  }
-
-  .footer-16 .brand-section {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .footer-16 .brand-section .brand-description {
-    max-width: none;
-  }
-
-  .footer-16 .brand-section .contact-info {
-    text-align: left;
-    display: inline-block;
-  }
-
-  .footer-16 .footer-nav-wrapper .nav-column {
-    text-align: left;
-  }
-
-  .footer-16 .footer-nav-wrapper .nav-column h6 {
-    margin-bottom: 16px;
-  }
-
-  .footer-16 .footer-nav-wrapper .nav-column .footer-nav {
-    gap: 10px;
-  }
-
-  .footer-16 .footer-social {
-    text-align: center;
-  }
-
-  .footer-16 .footer-social .newsletter-section p {
-    max-width: none;
-  }
-
-  .footer-16 .footer-social .social-links {
-    justify-content: center;
-  }
-
-  .footer-16 .footer-bottom {
-    text-align: center;
-  }
-
-  .footer-16 .footer-bottom .legal-links {
-    justify-content: center;
-  }
-}
-
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/

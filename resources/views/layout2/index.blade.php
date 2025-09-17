@@ -976,170 +976,88 @@
 
   </main>
 
-  <footer id="footer" class="footer-16 footer position-relative dark-background">
+   <footer id="footer" class="footer position-relative light-background" 
+  style="background-color: {{ $footer->footer_bg_color ?? '#f8f9fa' }};
+         color: {{ $footer->footer_text_color ?? '#333' }};">
 
-    <div class="container">
-
-      <div class="footer-main">
-        <div class="row align-items-start">
-
-          <div class="col-lg-5">
-            <div class="brand-section">
-              <a href="index.html" class="logo d-flex align-items-center mb-4">
-                <span class="sitename">MySchool</span>
-              </a>
-              <p class="brand-description">Crafting exceptional digital experiences through thoughtful design and innovative solutions that elevate your brand presence.</p>
-
-              <div class="contact-info mt-5">
-                <div class="contact-item">
-                  <i class="bi bi-geo-alt"></i>
-                  <span>123 Creative Boulevard, Design District, NY 10012</span>
-                </div>
-                <div class="contact-item">
-                  <i class="bi bi-telephone"></i>
-                  <span>+1 (555) 987-6543</span>
-                </div>
-                <div class="contact-item">
-                  <i class="bi bi-envelope"></i>
-                  <span>hello@designstudio.com</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-7">
-            <div class="footer-nav-wrapper">
-              <div class="row">
-
-                <div class="col-6 col-lg-3">
-                  <div class="nav-column">
-                    <h6>Studio</h6>
-                    <nav class="footer-nav">
-                      <a href="#">Our Story</a>
-                      <a href="#">Design Process</a>
-                      <a href="#">Portfolio</a>
-                      <a href="#">Case Studies</a>
-                      <a href="#">Awards</a>
-                    </nav>
-                  </div>
-                </div>
-
-                <div class="col-6 col-lg-3">
-                  <div class="nav-column">
-                    <h6>Services</h6>
-                    <nav class="footer-nav">
-                      <a href="#">Brand Identity</a>
-                      <a href="#">Web Design</a>
-                      <a href="#">Mobile Apps</a>
-                      <a href="#">Digital Strategy</a>
-                      <a href="#">Consultation</a>
-                    </nav>
-                  </div>
-                </div>
-
-                <div class="col-6 col-lg-3">
-                  <div class="nav-column">
-                    <h6>Resources</h6>
-                    <nav class="footer-nav">
-                      <a href="#">Design Blog</a>
-                      <a href="#">Style Guide</a>
-                      <a href="#">Free Assets</a>
-                      <a href="#">Tutorials</a>
-                      <a href="#">Inspiration</a>
-                    </nav>
-                  </div>
-                </div>
-
-                <div class="col-6 col-lg-3">
-                  <div class="nav-column">
-                    <h6>Connect</h6>
-                    <nav class="footer-nav">
-                      <a href="#">Start Project</a>
-                      <a href="#">Schedule Call</a>
-                      <a href="#">Join Newsletter</a>
-                      <a href="#">Follow Updates</a>
-                      <a href="#">Partnership</a>
-                    </nav>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
+  <div class="container footer-top">
+    <div class="row gy-4">
+      {{-- Identitas & Kontak --}}
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="{{ url('/') }}" class="logo d-flex align-items-center">
+          <span class="sitename">{{ $footer->footer_institution_name ?? 'Nama Sekolah' }}</span>
+        </a>
+        <div class="footer-contact pt-3">
+          <p>{{ $footer->footer_address ?? 'Alamat belum diisi' }}</p>
+          <p class="mt-3"><strong>Phone:</strong> <span>{{ $footer->footer_phone ?? '-' }}</span></p>
+          <p><strong>Email:</strong> <span>{{ $footer->footer_email ?? '-' }}</span></p>
+        </div>
+        <div class="social-links d-flex mt-4">
+          @if($footer->footer_twitter)
+            <a href="{{ $footer->footer_twitter }}"><i class="bi bi-twitter-x"></i></a>
+          @endif
+          @if($footer->footer_facebook)
+            <a href="{{ $footer->footer_facebook }}"><i class="bi bi-facebook"></i></a>
+          @endif
+          @if($footer->footer_instagram)
+            <a href="{{ $footer->footer_instagram }}"><i class="bi bi-instagram"></i></a>
+          @endif
+          @if($footer->footer_youtube)
+            <a href="{{ $footer->footer_youtube }}"><i class="bi bi-youtube"></i></a>
+          @endif
         </div>
       </div>
 
-      <div class="footer-social">
-        <div class="row align-items-center">
+      {{-- Link Penting --}}
+<div class="col-lg-2 col-md-3 footer-links">
+  <h4>Link Penting</h4>
+  <ul>
+    @foreach(json_decode($footer->footer_policies ?? '[]', true) ?: [] as $link)
+      <li><a href="{{ $link['url'] ?? '#' }}">{{ $link['title'] ?? 'Link' }}</a></li>
+    @endforeach
+  </ul>
+</div>
 
-          <div class="col-lg-6">
-            <div class="newsletter-section">
-              <h5>Stay Inspired</h5>
-              <p>Subscribe to receive design insights and creative inspiration delivered monthly.</p>
-            </div>
-          </div>
+{{-- Layanan --}}
+<div class="col-lg-2 col-md-3 footer-links">
+  <h4>Layanan</h4>
+  <ul>
+    @foreach(json_decode($footer->footer_services ?? '[]', true) ?: [] as $service)
+      <li><a href="#">{{ $service }}</a></li>
+    @endforeach
+  </ul>
+</div>
 
-          <div class="col-lg-6">
-            <div class="social-section">
-              <div class="social-links">
-                <a href="#" aria-label="Dribbble" class="social-link">
-                  <i class="bi bi-dribbble"></i>
-                  <span>Dribbble</span>
-                </a>
-                <a href="#" aria-label="Behance" class="social-link">
-                  <i class="bi bi-behance"></i>
-                  <span>Behance</span>
-                </a>
-                <a href="#" aria-label="Instagram" class="social-link">
-                  <i class="bi bi-instagram"></i>
-                  <span>Instagram</span>
-                </a>
-                <a href="#" aria-label="LinkedIn" class="social-link">
-                  <i class="bi bi-linkedin"></i>
-                  <span>LinkedIn</span>
-                </a>
-              </div>
-            </div>
-          </div>
 
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="bottom-content">
-          <div class="row align-items-center">
-
-            <div class="col-lg-6">
-              <div class="copyright">
-                <p>© <span class="sitename">MyWebsite</span>. All rights reserved.</p>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="legal-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Cookie Policy</a>
-                <div class="credits">
-                  <!-- All the links in the footer should remain intact. -->
-                  <!-- You can delete the links only if you've purchased the pro version. -->
-                  <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                  <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
+      {{-- Jam Operasional --}}
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Jam Operasional</h4>
+        <ul>
+          <li>Senin - Jum’at: {{ $footer->footer_weekday_hours ?? '-' }}</li>
+          <li>Sabtu: {{ $footer->footer_saturday_hours ?? '-' }}</li>
+        </ul>
       </div>
     </div>
+  </div>
 
-  </footer>
+  {{-- Copyright --}}
+  <div class="container copyright text-center mt-4">
+    <p>© <span>{{ $footer->footer_copyright ?? date('Y') }}</span> 
+      <strong class="px-1 sitename">{{ $footer->footer_institution_name ?? 'Sekolah' }}</strong> 
+      <span>All Rights Reserved</span>
+    </p>
+    @if($footer->footer_show_developer)
+      <div class="credits">
+        Designed by <a href="#">{{ $footer->footer_developer ?? 'Developer' }}</a>
+      </div>
+    @endif
+  </div>
+
+</footer>
+
+
+
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
