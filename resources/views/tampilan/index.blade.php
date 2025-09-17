@@ -26,6 +26,10 @@
         --border-radius: 16px;
         --border-radius-sm: 12px;
         --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --success-color: #10b981;
+        --warning-color: #f59e0b;
+        --danger-color: #ef4444;
+        --info-color: #3b82f6;
     }
 
     body {
@@ -150,6 +154,194 @@
         border-radius: 2px;
     }
 
+    /* Enhanced Card Section */
+    .card-section {
+        background: var(--card-background);
+        border-radius: var(--border-radius);
+        padding: 28px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-light);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .card-section:hover::before {
+        opacity: 1;
+    }
+
+    .card-section:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-medium);
+    }
+
+    .card-section h6 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--active-color);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .card-section h6::before {
+        content: '';
+        width: 4px;
+        height: 20px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        border-radius: 2px;
+    }
+
+    /* Footer Settings Specific Styles */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+    }
+
+    .footer-section-card {
+        background: linear-gradient(135deg, var(--card-background) 0%, rgba(255, 255, 255, 0.95) 100%);
+        border-radius: var(--border-radius-sm);
+        padding: 24px;
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer-section-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        transform: translateX(-100%);
+        transition: var(--transition);
+    }
+
+    .footer-section-card:hover::before {
+        transform: translateX(0);
+    }
+
+    .footer-section-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-medium);
+    }
+
+    .footer-section-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-section-title i {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        background: var(--accent-color);
+        padding: 8px;
+        border-radius: 8px;
+        transition: var(--transition);
+    }
+
+    .footer-section-card:hover .footer-section-title i {
+        background: var(--primary-color);
+        color: white;
+        transform: scale(1.1);
+    }
+
+    /* Footer Preview Section */
+    .footer-preview {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        border-radius: var(--border-radius);
+        padding: 32px;
+        margin-top: 24px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer-preview::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.3" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
+    }
+
+    .footer-preview-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer-preview h6 {
+        color: var(--primary-light);
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+    }
+
+    /* Social Links Input */
+    .social-link-input {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        background: rgba(89, 85, 179, 0.05);
+        padding: 12px;
+        border-radius: var(--border-radius-sm);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+    }
+
+    .social-link-input:hover {
+        background: rgba(89, 85, 179, 0.1);
+        transform: translateY(-1px);
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+
+    .social-icon.youtube { background: #ff0000; }
+    .social-icon.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+    .social-icon.facebook { background: #1877f2; }
+    .social-icon.twitter { background: #1da1f2; }
+    .social-icon.linkedin { background: #0077b5; }
+
     /* Element Selection Buttons */
     .element-grid {
         display: grid;
@@ -211,6 +403,14 @@
         color: var(--text-primary);
         margin-bottom: 8px;
         font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .form-label i {
+        font-size: 0.85rem;
+        color: var(--primary-color);
     }
 
     .form-control, .form-select {
@@ -220,6 +420,7 @@
         font-size: 0.95rem;
         transition: var(--transition);
         background: var(--card-background);
+        resize: vertical;
     }
 
     .form-control:focus, .form-select:focus {
@@ -241,6 +442,23 @@
     .form-control-color:hover {
         transform: scale(1.05);
         box-shadow: var(--shadow-light);
+    }
+
+    /* Color Input Group */
+    .color-input-group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--accent-color);
+        padding: 8px 12px;
+        border-radius: var(--border-radius-sm);
+        border: 2px solid transparent;
+        transition: var(--transition);
+    }
+
+    .color-input-group:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-1px);
     }
 
     /* Settings Sections */
@@ -282,12 +500,29 @@
     .btn-primary {
         background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
         border: none;
-        padding: 12px 28px;
+        padding: 14px 32px;
         border-radius: var(--border-radius-sm);
         font-weight: 600;
         font-size: 0.95rem;
         transition: var(--transition);
         box-shadow: var(--shadow-light);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: var(--transition);
+    }
+
+    .btn-primary:hover::before {
+        left: 100%;
     }
 
     .btn-primary:hover {
@@ -311,13 +546,6 @@
     .image-preview:hover {
         transform: scale(1.02);
         box-shadow: var(--shadow-medium);
-    }
-
-    /* Color Input Group */
-    .color-input-group {
-        display: flex;
-        align-items: center;
-        gap: 12px;
     }
 
     /* Menu Input Group */
@@ -354,6 +582,53 @@
         counter-reset: menu-counter;
     }
 
+    /* Toggle Switch */
+    .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 52px;
+        height: 28px;
+    }
+
+    .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--border-color);
+        transition: var(--transition);
+        border-radius: 34px;
+    }
+
+    .toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: var(--transition);
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    input:checked + .toggle-slider {
+        background-color: var(--primary-color);
+    }
+
+    input:checked + .toggle-slider:before {
+        transform: translateX(24px);
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
         .main-container {
@@ -383,6 +658,19 @@
         }
         
         .card-section {
+            padding: 20px;
+        }
+        
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        
+        .footer-section-card {
+            padding: 20px;
+        }
+        
+        .footer-preview {
             padding: 20px;
         }
     }
@@ -600,7 +888,6 @@
                         </div>
                     </div>
 
-
                     <div class="col-lg-6">
                         <div class="card-section">
                             <h6><i class="bi bi-type-h1"></i> Typography Hero</h6>
@@ -646,7 +933,6 @@
                                 <textarea name="hero_subtitle" class="form-control" rows="3" 
                                           placeholder="Deskripsi singkat tentang sekolah">{{ $hero->subtitle ?? 'Membentuk siswa yang unggul, berkarakter, dan siap menghadapi tantangan masa depan dengan pendidikan berkualitas dan fasilitas modern.' }}</textarea>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -655,54 +941,265 @@
             <!-- Footer Settings -->
             <div class="settings-section" id="footerSettings">
                 <div class="card-section">
-                    <h6><i class="bi bi-layout-text-window"></i> Pengaturan Footer</h6>
-                    <p class="text-muted">Pengaturan footer akan tersedia pada pembaruan selanjutnya.</p>
+                    <h6><i class="bi bi-layout-text-window"></i> Pengaturan Footer Komprehensif</h6>
+                    
+                    <!-- Footer Style Configuration -->
+                    <div class="footer-section-card mb-4">
+                        <div class="footer-section-title">
+                            <i class="bi bi-palette"></i>
+                            <span>Gaya & Warna Footer</span>
+                        </div>
+                        
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label"><i class="bi bi-paint-bucket"></i> Warna Background</label>
+                                <div class="color-input-group">
+                                    <input type="color" name="footer_bg_color" class="form-control-color" value="{{ $footer->footer_bg_color ?? '#1a1a1a' }}">
+                                    <span class="text-muted">{{ $footer->footer_bg_color ?? '#1A1A1A' }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><i class="bi bi-type"></i> Warna Teks</label>
+                                <div class="color-input-group">
+                                    <input type="color" name="footer_text_color" class="form-control-color" value="{{ $footer->footer_text_color ?? '#ffffff' }}">
+                                    <span class="text-muted">{{ $footer->footer_text_color ?? '#FFFFFF' }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><i class="bi bi-link-45deg"></i> Warna Link</label>
+                                <div class="color-input-group">
+                                    <input type="color" name="footer_link_color" class="form-control-color" value="{{ $footer->footer_link_color ?? '#7B6FE8' }}">
+                                    <span class="text-muted">{{ $footer->footer_link_color ?? '#7B6FE8' }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-grid">
+                        <!-- Informasi Kontak -->
+                        <div class="footer-section-card">
+                            <div class="footer-section-title">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Informasi Kontak</span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-building"></i> Nama Institusi</label>
+                                <input type="text" name="footer_institution_name" class="form-control" 
+                                       value="{{ $footer->footer_institution_name ?? 'SMK Negeri 1 Malang' }}" placeholder="Nama sekolah/institusi">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-geo-alt"></i> Alamat Lengkap</label>
+                                <textarea name="footer_address" class="form-control" rows="2" 
+                                          placeholder="Jl. Raya Malang No. 123, Malang, Jawa Timur 65144">{{ $footer->footer_address ?? 'Jl. Raya Malang No. 123, Malang, Jawa Timur 65144' }}</textarea>
+                            </div>
+                            
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <label class="form-label"><i class="bi bi-telephone"></i> Telepon</label>
+                                    <input type="text" name="footer_phone" class="form-control" 
+                                           value="{{ $footer->footer_phone ?? '(0341) 123456' }}" placeholder="Nomor telepon">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                                    <input type="email" name="footer_email" class="form-control" 
+                                           value="{{ $footer->footer_email ?? 'info@smkn1malang.sch.id' }}" placeholder="Email kontak">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Link Media Sosial -->
+                        <div class="footer-section-card">
+                            <div class="footer-section-title">
+                                <i class="bi bi-share"></i>
+                                <span>Media Sosial</span>
+                            </div>
+                            
+                            <div class="social-link-input">
+                                <div class="social-icon youtube"><i class="bi bi-youtube"></i></div>
+                                <input type="url" name="footer_youtube" class="form-control" 
+                                       value="{{ $footer->footer_youtube ?? 'https://youtube.com/smkn1malang' }}" placeholder="Link YouTube">
+                            </div>
+                            
+                            <div class="social-link-input">
+                                <div class="social-icon instagram"><i class="bi bi-instagram"></i></div>
+                                <input type="url" name="footer_instagram" class="form-control" 
+                                       value="{{ $footer->footer_instagram ?? 'https://instagram.com/smkn1malang' }}" placeholder="Link Instagram">
+                            </div>
+                            
+                            <div class="social-link-input">
+                                <div class="social-icon facebook"><i class="bi bi-facebook"></i></div>
+                                <input type="url" name="footer_facebook" class="form-control" 
+                                       value="{{ $footer->footer_facebook ?? 'https://facebook.com/smkn1malang' }}" placeholder="Link Facebook">
+                            </div>
+                            
+                            <div class="social-link-input">
+                                <div class="social-icon twitter"><i class="bi bi-twitter"></i></div>
+                                <input type="url" name="footer_twitter" class="form-control" 
+                                       value="{{ $footer->footer_twitter ?? '' }}" placeholder="Link Twitter (opsional)">
+                            </div>
+                        </div>
+
+                        <!-- Layanan & Program -->
+                        <div class="footer-section-card">
+                            <div class="footer-section-title">
+                                <i class="bi bi-gear-fill"></i>
+                                <span>Layanan & Program</span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-list-ul"></i> Daftar Layanan</label>
+                                <textarea name="footer_services" class="form-control" rows="4" 
+                                          placeholder="Pendaftaran Siswa Baru&#10;Informasi Akademik&#10;E-Learning&#10;Perpustakaan Digital">{{ $footer->footer_services ?? 'Pendaftaran Siswa Baru
+Informasi Akademik
+E-Learning
+Perpustakaan Digital' }}</textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-mortarboard"></i> Program Keahlian</label>
+                                <textarea name="footer_programs" class="form-control" rows="3" 
+                                          placeholder="Rekayasa Perangkat Lunak&#10;Teknik Komputer Jaringan&#10;Multimedia">{{ $footer->footer_programs ?? 'Rekayasa Perangkat Lunak
+Teknik Komputer Jaringan
+Multimedia' }}</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Link Penting -->
+                        <div class="footer-section-card">
+                            <div class="footer-section-title">
+                                <i class="bi bi-link-45deg"></i>
+                                <span>Link Penting</span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-journal-text"></i> Kebijakan & Dokumen</label>
+                                <textarea name="footer_policies" class="form-control" rows="3" 
+                                          placeholder="Kebijakan Privasi&#10;Syarat & Ketentuan&#10;Panduan Akademik">{{ $footer->footer_policies ?? 'Kebijakan Privasi
+Syarat & Ketentuan
+Panduan Akademik' }}</textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-globe"></i> Link Eksternal</label>
+                                <textarea name="footer_external_links" class="form-control" rows="3" 
+                                          placeholder="Kemendikbudristek&#10;LPMP Jawa Timur&#10;Dinas Pendidikan Kota Malang">{{ $footer->footer_external_links ?? 'Kemendikbudristek
+LPMP Jawa Timur
+Dinas Pendidikan Kota Malang' }}</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Jam Operasional -->
+                        <div class="footer-section-card">
+                            <div class="footer-section-title">
+                                <i class="bi bi-clock"></i>
+                                <span>Jam Operasional</span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-calendar-week"></i> Hari Kerja</label>
+                                <input type="text" name="footer_weekday_hours" class="form-control" 
+                                       value="{{ $footer->footer_weekday_hours ?? 'Senin - Jumat: 07:00 - 15:30 WIB' }}" placeholder="Jam kerja hari biasa">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-calendar-day"></i> Hari Sabtu</label>
+                                <input type="text" name="footer_saturday_hours" class="form-control" 
+                                       value="{{ $footer->footer_saturday_hours ?? 'Sabtu: 07:00 - 11:00 WIB' }}" placeholder="Jam kerja hari Sabtu">
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="footer_show_hours" id="showHours" {{ isset($footer->footer_show_hours) && $footer->footer_show_hours ? 'checked' : 'checked' }}>
+                                <label class="form-check-label" for="showHours">
+                                    Tampilkan jam operasional di footer
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Informasi Hak Cipta -->
+                        <div class="footer-section-card">
+                            <div class="footer-section-title">
+                                <i class="bi bi-c-circle"></i>
+                                <span>Hak Cipta & Credit</span>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-shield-check"></i> Informasi Hak Cipta</label>
+                                <textarea name="footer_copyright" class="form-control" rows="2" 
+                                          placeholder="© 2023 SMK Negeri 1 Malang. Semua Hak Dilindungi.">{{ $footer->footer_copyright ?? '© 2023 SMK Negeri 1 Malang. Semua Hak Dilindungi.' }}</textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label"><i class="bi bi-code-slash"></i> Developer Credit</label>
+                                <input type="text" name="footer_developer" class="form-control" 
+                                       value="{{ $footer->footer_developer ?? 'Dikembangkan oleh Tim IT SMK Negeri 1 Malang' }}" placeholder="Credit pengembang">
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="footer_show_developer" id="showDeveloper" {{ isset($footer->footer_show_developer) && $footer->footer_show_developer ? 'checked' : 'checked' }}>
+                                <label class="form-check-label" for="showDeveloper">
+                                    Tampilkan credit pengembang
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Preview -->
+                    <div class="footer-preview">
+                        <div class="footer-preview-content">
+                            <h6><i class="bi bi-eye"></i> Preview Footer</h6>
+                            <div class="row g-4">
+                                <div class="col-md-3">
+                                    <h6 class="text-white">Kontak Kami</h6>
+                                    <p class="mb-1"><i class="bi bi-geo-alt me-2"></i>{{ $footer->footer_address ?? 'Jl. Raya Malang No. 123' }}</p>
+                                    <p class="mb-1"><i class="bi bi-telephone me-2"></i>{{ $footer->footer_phone ?? '(0341) 123456' }}</p>
+                                    <p class="mb-0"><i class="bi bi-envelope me-2"></i>{{ $footer->footer_email ?? 'info@smkn1malang.sch.id' }}</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6 class="text-white">Layanan</h6>
+                                    <p class="mb-1">• {{ explode("\n", $footer->footer_services ?? 'Pendaftaran Siswa Baru')[0] ?? 'Pendaftaran Siswa Baru' }}</p>
+                                    <p class="mb-1">• {{ explode("\n", $footer->footer_services ?? 'Informasi Akademik')[1] ?? 'Informasi Akademik' }}</p>
+                                    <p class="mb-0">• {{ explode("\n", $footer->footer_services ?? 'E-Learning')[2] ?? 'E-Learning' }}</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6 class="text-white">Program Keahlian</h6>
+                                    <p class="mb-1">• {{ explode("\n", $footer->footer_programs ?? 'Rekayasa Perangkat Lunak')[0] ?? 'Rekayasa Perangkat Lunak' }}</p>
+                                    <p class="mb-1">• {{ explode("\n", $footer->footer_programs ?? 'Teknik Komputer Jaringan')[1] ?? 'Teknik Komputer Jaringan' }}</p>
+                                    <p class="mb-0">• {{ explode("\n", $footer->footer_programs ?? 'Multimedia')[2] ?? 'Multimedia' }}</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6 class="text-white">Media Sosial</h6>
+                                    <div class="d-flex gap-2">
+                                        @if(!empty($footer->footer_youtube))
+                                            <i class="bi bi-youtube text-danger"></i>
+                                        @endif
+                                        @if(!empty($footer->footer_instagram))
+                                            <i class="bi bi-instagram text-primary"></i>
+                                        @endif
+                                        @if(!empty($footer->footer_facebook))
+                                            <i class="bi bi-facebook text-primary"></i>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="border-light my-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="mb-0">{{ $footer->footer_copyright ?? '© 2023 SMK Negeri 1 Malang. Semua Hak Dilindungi.' }}</p>
+                                <p class="mb-0 text-muted small">{{ $footer->footer_weekday_hours ?? 'Senin - Jumat: 07:00 - 15:30 WIB' }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Action Buttons -->
+            <div class="mt-4 d-flex gap-3 justify-content-end">
+                
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
                 </button>
             </div>
-
-            <!-- Footer Settings -->
-<!-- Footer Settings -->
-<div id="footerSettings" class="settings-section">
-  <h4>Pengaturan Footer</h4>
-  
-  <div class="mb-3">
-    <label class="form-label">Informasi Kontak</label>
-    <textarea name="informasi_kontak" class="form-control" rows="3">{{ $footer->informasi_kontak ?? '' }}</textarea>
-  </div>
-
-  <div class="mb-3">
-    <label class="form-label">Link Berguna</label>
-    <textarea name="link_berguna" class="form-control" rows="3">{{ $footer->link_berguna ?? '' }}</textarea>
-  </div>
-
-  <div class="mb-3">
-    <label class="form-label">Layanan</label>
-    <textarea name="layanan" class="form-control" rows="3">{{ $footer->layanan ?? '' }}</textarea>
-  </div>
-
-  <div class="mb-3">
-    <label class="form-label">Hic Solutastip</label>
-    <textarea name="hic_solutastip" class="form-control" rows="3">{{ $footer->hic_solutastip ?? '' }}</textarea>
-  </div>
-
-  <div class="mb-3">
-    <label class="form-label">Nobis Illum</label>
-    <textarea name="nobis_illum" class="form-control" rows="3">{{ $footer->nobis_illum ?? '' }}</textarea>
-  </div>
-
-  <div class="mb-3">
-    <label class="form-label">Informasi Hak Cipta</label>
-    <textarea name="informasi_hak_cipta" class="form-control" rows="3">{{ $footer->informasi_hak_cipta ?? '' }}</textarea>
-  </div>
-</div>
-
-
         </form>
     </div>
 </div>
@@ -753,8 +1250,48 @@
             if (textSpan) {
                 textSpan.textContent = this.value.toUpperCase();
             }
+            updateFooterPreview();
         });
     });
+
+    // Real-time preview updates
+    document.querySelectorAll('#footerSettings input, #footerSettings textarea').forEach(input => {
+        input.addEventListener('input', function() {
+            updateFooterPreview();
+        });
+    });
+
+    function updateFooterPreview() {
+        // Update preview based on form inputs
+        const address = document.querySelector('textarea[name="footer_address"]').value;
+        const phone = document.querySelector('input[name="footer_phone"]').value;
+        const email = document.querySelector('input[name="footer_email"]').value;
+        const services = document.querySelector('textarea[name="footer_services"]').value.split('\n');
+        const programs = document.querySelector('textarea[name="footer_programs"]').value.split('\n');
+        const copyright = document.querySelector('textarea[name="footer_copyright"]').value;
+        const hours = document.querySelector('input[name="footer_weekday_hours"]').value;
+        
+        // Update preview content
+        document.querySelector('.footer-preview .col-md-3:nth-child(1) p:nth-child(2)').textContent = address || 'Jl. Raya Malang No. 123';
+        document.querySelector('.footer-preview .col-md-3:nth-child(1) p:nth-child(3)').textContent = phone || '(0341) 123456';
+        document.querySelector('.footer-preview .col-md-3:nth-child(1) p:nth-child(4)').textContent = email || 'info@smkn1malang.sch.id';
+        
+        // Update services
+        const serviceElements = document.querySelectorAll('.footer-preview .col-md-3:nth-child(2) p');
+        serviceElements[0].textContent = '• ' + (services[0] || 'Pendaftaran Siswa Baru');
+        serviceElements[1].textContent = '• ' + (services[1] || 'Informasi Akademik');
+        serviceElements[2].textContent = '• ' + (services[2] || 'E-Learning');
+        
+        // Update programs
+        const programElements = document.querySelectorAll('.footer-preview .col-md-3:nth-child(3) p');
+        programElements[0].textContent = '• ' + (programs[0] || 'Rekayasa Perangkat Lunak');
+        programElements[1].textContent = '• ' + (programs[1] || 'Teknik Komputer Jaringan');
+        programElements[2].textContent = '• ' + (programs[2] || 'Multimedia');
+        
+        // Update copyright and hours
+        document.querySelector('.footer-preview-content > .d-flex > p:first-child').textContent = copyright || '© 2023 SMK Negeri 1 Malang. Semua Hak Dilindungi.';
+        document.querySelector('.footer-preview-content > .d-flex > p:last-child').textContent = hours || 'Senin - Jumat: 07:00 - 15:30 WIB';
+    }
 
     // Form Submission
     form.addEventListener('submit', function() {
@@ -773,6 +1310,9 @@
             });
 
             hiddenInput.value = '';
+            
+            // Update preview after reset
+            updateFooterPreview();
         }
     }
 
@@ -781,6 +1321,9 @@
         if (buttons.length > 0) {
             buttons[0].click();
         }
+        
+        // Initialize footer preview
+        updateFooterPreview();
     });
 
     // File input preview functionality
@@ -809,8 +1352,17 @@
             this.style.transform = '';
         });
     });
-</script>
 
+    // Social media validation
+    document.querySelectorAll('input[type="url"]').forEach(urlInput => {
+        urlInput.addEventListener('blur', function() {
+            if (this.value && !this.value.startsWith('http')) {
+                this.value = 'https://' + this.value;
+            }
+            updateFooterPreview();
+        });
+    });
+</script>
 
 </body>
 </html>

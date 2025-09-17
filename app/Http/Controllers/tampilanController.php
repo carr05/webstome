@@ -95,28 +95,84 @@ class tampilanController extends Controller
         $hero->save();
 
         // --- Update Footer ---
-        $footer = Footer::first() ?? new Footer();
 
-        if ($request->filled('informasi_kontak')) {
-            $footer->informasi_kontak = $request->informasi_kontak;
-        }
-        if ($request->filled('link_berguna')) {
-            $footer->link_berguna = $request->link_berguna;
-        }
-        if ($request->filled('layanan')) {
-            $footer->layanan = $request->layanan;
-        }
-        if ($request->filled('hic_solutastip')) {
-            $footer->hic_solutastip = $request->hic_solutastip;
-        }
-        if ($request->filled('nobis_illum')) {
-            $footer->nobis_illum = $request->nobis_illum;
-        }
-        if ($request->filled('informasi_hak_cipta')) {
-            $footer->informasi_hak_cipta = $request->informasi_hak_cipta;
-        }
+$footer = Footer::first() ?? new Footer();
 
-        $footer->save();
+// Style
+if ($request->filled('footer_bg_color')) {
+    $footer->footer_bg_color = $request->footer_bg_color;
+}
+if ($request->filled('footer_text_color')) {
+    $footer->footer_text_color = $request->footer_text_color;
+}
+if ($request->filled('footer_link_color')) {
+    $footer->footer_link_color = $request->footer_link_color;
+}
+
+// Kontak
+if ($request->filled('footer_institution_name')) {
+    $footer->footer_institution_name = $request->footer_institution_name;
+}
+if ($request->filled('footer_address')) {
+    $footer->footer_address = $request->footer_address;
+}
+if ($request->filled('footer_phone')) {
+    $footer->footer_phone = $request->footer_phone;
+}
+if ($request->filled('footer_email')) {
+    $footer->footer_email = $request->footer_email;
+}
+
+// Media Sosial
+if ($request->filled('footer_youtube')) {
+    $footer->footer_youtube = $request->footer_youtube;
+}
+if ($request->filled('footer_instagram')) {
+    $footer->footer_instagram = $request->footer_instagram;
+}
+if ($request->filled('footer_facebook')) {
+    $footer->footer_facebook = $request->footer_facebook;
+}
+if ($request->filled('footer_twitter')) {
+    $footer->footer_twitter = $request->footer_twitter;
+}
+
+// Layanan & Program
+if ($request->filled('footer_services')) {
+    $footer->footer_services = $request->footer_services;
+}
+if ($request->filled('footer_programs')) {
+    $footer->footer_programs = $request->footer_programs;
+}
+
+// Link Penting
+if ($request->filled('footer_policies')) {
+    $footer->footer_policies = $request->footer_policies;
+}
+if ($request->filled('footer_external_links')) {
+    $footer->footer_external_links = $request->footer_external_links;
+}
+
+// Jam Operasional
+if ($request->filled('footer_weekday_hours')) {
+    $footer->footer_weekday_hours = $request->footer_weekday_hours;
+}
+if ($request->filled('footer_saturday_hours')) {
+    $footer->footer_saturday_hours = $request->footer_saturday_hours;
+}
+$footer->footer_show_hours = $request->has('footer_show_hours') ? 1 : 0;
+
+// Hak Cipta & Developer
+if ($request->filled('footer_copyright')) {
+    $footer->footer_copyright = $request->footer_copyright;
+}
+if ($request->filled('footer_developer')) {
+    $footer->footer_developer = $request->footer_developer;
+}
+$footer->footer_show_developer = $request->has('footer_show_developer') ? 1 : 0;
+
+$footer->save();
+
 
         return redirect()->route('tampilan.index')
                          ->with('success', 'Tampilan, Hero & Footer berhasil diperbarui!');

@@ -1308,87 +1308,85 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
+  <footer id="footer" class="footer position-relative light-background" 
+  style="background-color: {{ $footer->footer_bg_color ?? '#f8f9fa' }};
+         color: {{ $footer->footer_text_color ?? '#333' }};">
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">College</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
+  <div class="container footer-top">
+    <div class="row gy-4">
+      {{-- Identitas & Kontak --}}
+      <div class="col-lg-4 col-md-6 footer-about">
+        <a href="{{ url('/') }}" class="logo d-flex align-items-center">
+          <span class="sitename">{{ $footer->footer_institution_name ?? 'Nama Sekolah' }}</span>
+        </a>
+        <div class="footer-contact pt-3">
+          <p>{{ $footer->footer_address ?? 'Alamat belum diisi' }}</p>
+          <p class="mt-3"><strong>Phone:</strong> <span>{{ $footer->footer_phone ?? '-' }}</span></p>
+          <p><strong>Email:</strong> <span>{{ $footer->footer_email ?? '-' }}</span></p>
         </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
+        <div class="social-links d-flex mt-4">
+          @if($footer->footer_twitter)
+            <a href="{{ $footer->footer_twitter }}"><i class="bi bi-twitter-x"></i></a>
+          @endif
+          @if($footer->footer_facebook)
+            <a href="{{ $footer->footer_facebook }}"><i class="bi bi-facebook"></i></a>
+          @endif
+          @if($footer->footer_instagram)
+            <a href="{{ $footer->footer_instagram }}"><i class="bi bi-instagram"></i></a>
+          @endif
+          @if($footer->footer_youtube)
+            <a href="{{ $footer->footer_youtube }}"><i class="bi bi-youtube"></i></a>
+          @endif
         </div>
+      </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
+      {{-- Link Penting --}}
+<div class="col-lg-2 col-md-3 footer-links">
+  <h4>Link Penting</h4>
+  <ul>
+    @foreach(json_decode($footer->footer_policies ?? '[]', true) ?: [] as $link)
+      <li><a href="{{ $link['url'] ?? '#' }}">{{ $link['title'] ?? 'Link' }}</a></li>
+    @endforeach
+  </ul>
+</div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
+{{-- Layanan --}}
+<div class="col-lg-2 col-md-3 footer-links">
+  <h4>Layanan</h4>
+  <ul>
+    @foreach(json_decode($footer->footer_services ?? '[]', true) ?: [] as $service)
+      <li><a href="#">{{ $service }}</a></li>
+    @endforeach
+  </ul>
+</div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div>
 
+      {{-- Jam Operasional --}}
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Jam Operasional</h4>
+        <ul>
+          <li>Senin - Jum’at: {{ $footer->footer_weekday_hours ?? '-' }}</li>
+          <li>Sabtu: {{ $footer->footer_saturday_hours ?? '-' }}</li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
+  {{-- Copyright --}}
+  <div class="container copyright text-center mt-4">
+    <p>© <span>{{ $footer->footer_copyright ?? date('Y') }}</span> 
+      <strong class="px-1 sitename">{{ $footer->footer_institution_name ?? 'Sekolah' }}</strong> 
+      <span>All Rights Reserved</span>
+    </p>
+    @if($footer->footer_show_developer)
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="#">{{ $footer->footer_developer ?? 'Developer' }}</a>
       </div>
-    </div>
+    @endif
+  </div>
 
-  </footer>
+</footer>
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
