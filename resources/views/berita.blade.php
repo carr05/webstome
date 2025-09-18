@@ -15,7 +15,7 @@
       margin: 0;
     }
     
-    /* Existing CSS - DO NOT MODIFY */
+    /* Main Layout */
     .main-container {
       margin-left: 240px;
       padding: 20px;
@@ -37,7 +37,7 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
 
-    /* Enhanced Styling */
+    /* Header */
     .page-header {
       display: flex;
       justify-content: space-between;
@@ -57,6 +57,7 @@
       gap: 10px;
     }
 
+    /* Statistics Cards */
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -68,10 +69,13 @@
       background: linear-gradient(135deg, #5955B3, #7B68EE);
       padding: 25px;
       border-radius: 15px;
-      text-align: center;
       color: white;
       transition: all 0.3s ease;
       box-shadow: 0 8px 25px rgba(89, 85, 179, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      height: 100px;
     }
 
     .stat-card:hover {
@@ -80,14 +84,18 @@
     }
 
     .stat-card i {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
+      font-size: 2rem;
       opacity: 0.9;
+      flex-shrink: 0;
+    }
+
+    .stat-content {
+      flex: 1;
     }
 
     .stat-card .stat-number {
       display: block;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 5px;
     }
@@ -100,6 +108,7 @@
       letter-spacing: 1px;
     }
 
+    /* Action Bar */
     .actions-bar {
       display: flex;
       justify-content: space-between;
@@ -174,23 +183,7 @@
       color: #999;
     }
 
-    .filter-select {
-      padding: 12px 15px;
-      border: 2px solid #e0e0e0;
-      border-radius: 10px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.95rem;
-      outline: none;
-      background: white;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .filter-select:focus {
-      border-color: #5955B3;
-      box-shadow: 0 0 0 3px rgba(89, 85, 179, 0.1);
-    }
-
+    /* Table */
     .table-container {
       background: white;
       border-radius: 15px;
@@ -343,6 +336,7 @@
       box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
     }
 
+    /* Pagination */
     .pagination {
       display: flex;
       justify-content: center;
@@ -386,6 +380,7 @@
       transform: none;
     }
 
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -490,6 +485,7 @@
       font-size: 0.95rem;
       outline: none;
       transition: all 0.3s ease;
+      box-sizing: border-box;
     }
 
     .form-group textarea {
@@ -564,6 +560,33 @@
       color: #999;
     }
 
+    /* Success Message */
+    .success-message {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+      z-index: 1001;
+      display: none;
+      animation: slideInRight 0.3s ease;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .main-container {
         margin-left: 0;
@@ -587,6 +610,17 @@
         grid-template-columns: 1fr;
       }
 
+      .stat-card {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+      }
+
+      .stat-card i {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
       table {
         font-size: 0.8rem;
       }
@@ -603,8 +637,7 @@
   </style>
 </head>
 <body>
-
-@include('layouts.main')
+  @extends('layouts.main')
 
 <div class="main-container">
   <div class="main-content">
@@ -620,23 +653,31 @@
       <div class="stats">
         <div class="stat-card">
           <i class="fas fa-upload"></i>
-          <span class="stat-number" id="totalUploaded">24</span>
-          <div class="stat-label">Berita Diunggah</div>
+          <div class="stat-content">
+            <span class="stat-number" id="totalUploaded">24</span>
+            <div class="stat-label">Berita Diunggah</div>
+          </div>
         </div>
         <div class="stat-card">
           <i class="fas fa-edit"></i>
-          <span class="stat-number" id="totalUpdated">12</span>
-          <div class="stat-label">Berita Diupdate</div>
+          <div class="stat-content">
+            <span class="stat-number" id="totalUpdated">12</span>
+            <div class="stat-label">Berita Diupdate</div>
+          </div>
         </div>
         <div class="stat-card">
           <i class="fas fa-trash-alt"></i>
-          <span class="stat-number" id="totalDeleted">5</span>
-          <div class="stat-label">Berita Dihapus</div>
+          <div class="stat-content">
+            <span class="stat-number" id="totalDeleted">5</span>
+            <div class="stat-label">Berita Dihapus</div>
+          </div>
         </div>
         <div class="stat-card">
           <i class="fas fa-eye"></i>
-          <span class="stat-number" id="totalViews">15.2K</span>
-          <div class="stat-label">Total Views</div>
+          <div class="stat-content">
+            <span class="stat-number" id="totalViews">15.2K</span>
+            <div class="stat-label">Total Views</div>
+          </div>
         </div>
       </div>
 
@@ -651,14 +692,6 @@
             <input type="text" placeholder="Cari berita..." oninput="searchNews(this.value)">
             <i class="fas fa-search"></i>
           </div>
-          <select class="filter-select" onchange="filterByCategory(this.value)">
-            <option value="">Semua Kategori</option>
-            <option value="politik">Politik</option>
-            <option value="ekonomi">Ekonomi</option>
-            <option value="teknologi">Teknologi</option>
-            <option value="olahraga">Olahraga</option>
-            <option value="hiburan">Hiburan</option>
-          </select>
         </div>
       </div>
 
@@ -687,6 +720,7 @@
       </div>
     </div>
 
+    
     <!-- Modal Tambah/Edit Berita -->
     <div id="newsModal" class="modal">
       <div class="modal-content">
@@ -698,11 +732,11 @@
           <form id="newsForm">
             <div class="form-grid">
               <div class="form-group full-width">
-                <label for="newsTitle">Judul Berita</label>
-                <input type="text" id="newsTitle" required>
+                <label for="newsTitle">Judul Berita *</label>
+                <input type="text" id="newsTitle" required placeholder="Masukkan judul berita">
               </div>
               <div class="form-group">
-                <label for="newsCategory">Kategori</label>
+                <label for="newsCategory">Kategori *</label>
                 <select id="newsCategory" required>
                   <option value="">Pilih Kategori</option>
                   <option value="politik">Politik</option>
@@ -710,18 +744,21 @@
                   <option value="teknologi">Teknologi</option>
                   <option value="olahraga">Olahraga</option>
                   <option value="hiburan">Hiburan</option>
+                  <option value="kesehatan">Kesehatan</option>
+                  <option value="pendidikan">Pendidikan</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="newsDate">Tanggal Publikasi</label>
+                <label for="newsDate">Tanggal Publikasi *</label>
                 <input type="date" id="newsDate" required>
               </div>
               <div class="form-group full-width">
                 <label for="newsImage">URL Gambar</label>
                 <input type="url" id="newsImage" placeholder="https://example.com/image.jpg">
+                <small style="color: #666; font-size: 0.8rem;">*Opsional - jika kosong akan menggunakan gambar default</small>
               </div>
               <div class="form-group full-width">
-                <label for="newsContent">Konten Berita</label>
+                <label for="newsContent">Konten Berita *</label>
                 <textarea id="newsContent" rows="6" placeholder="Tulis konten berita di sini..." required></textarea>
               </div>
             </div>
@@ -732,10 +769,16 @@
             <i class="fas fa-times"></i> Batal
           </button>
           <button type="button" class="btn btn-primary" onclick="saveNews()">
-            <i class="fas fa-save"></i> Simpan
+            <i class="fas fa-save"></i> <span id="saveButtonText">Simpan</span>
           </button>
         </div>
       </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message">
+      <i class="fas fa-check-circle" style="margin-right: 10px;"></i>
+      <span id="successText">Berita berhasil disimpan!</span>
     </div>
   </div>
 </div>
@@ -746,7 +789,7 @@
       id: 1, 
       title: 'Pemilu 2024: Hasil Quick Count Menunjukkan Tren Positif', 
       category: 'politik', 
-      content: 'Quick count pemilu menunjukkan partisipasi masyarakat yang tinggi dan proses pemilu berjalan lancar di seluruh Indonesia...', 
+      content: 'Quick count pemilu menunjukkan partisipasi masyarakat yang tinggi dan proses pemilu berjalan lancar di seluruh Indonesia. Berbagai lembaga survei melaporkan hasil yang konsisten dengan tingkat partisipasi mencapai 75%.', 
       date: '2024-02-15', 
       image: 'https://via.placeholder.com/300x200/5955B3/white?text=Politik'
     },
@@ -754,7 +797,7 @@
       id: 2, 
       title: 'Rupiah Menguat Terhadap Dollar AS', 
       category: 'ekonomi', 
-      content: 'Nilai tukar rupiah menunjukkan penguatan signifikan terhadap dollar Amerika Serikat di pasar valuta asing Asia...', 
+      content: 'Nilai tukar rupiah menunjukkan penguatan signifikan terhadap dollar Amerika Serikat di pasar valuta asing Asia. Bank Indonesia optimis dengan stabilitas mata uang nasional di tengah volatilitas global.', 
       date: '2024-02-14', 
       image: 'https://via.placeholder.com/300x200/28a745/white?text=Ekonomi'
     },
@@ -762,7 +805,7 @@
       id: 3, 
       title: 'Teknologi AI Terbaru Dikembangkan Startup Indonesia', 
       category: 'teknologi', 
-      content: 'Startup teknologi Indonesia berhasil mengembangkan AI untuk membantu UMKM dalam digitalisasi bisnis...', 
+      content: 'Startup teknologi Indonesia berhasil mengembangkan AI untuk membantu UMKM dalam digitalisasi bisnis. Inovasi ini diharapkan dapat meningkatkan produktivitas sektor UMKM hingga 40%.', 
       date: '2024-02-13', 
       image: 'https://via.placeholder.com/300x200/17a2b8/white?text=Teknologi'
     },
@@ -770,7 +813,7 @@
       id: 4, 
       title: 'Timnas Indonesia Lolos ke Babak 16 Besar', 
       category: 'olahraga', 
-      content: 'Tim nasional Indonesia berhasil meraih prestasi membanggakan dengan lolos ke babak 16 besar Piala Asia...', 
+      content: 'Tim nasional Indonesia berhasil meraih prestasi membanggakan dengan lolos ke babak 16 besar Piala Asia. Pencapaian ini merupakan yang terbaik dalam sejarah sepak bola Indonesia di kompetisi kontinental.', 
       date: '2024-02-12', 
       image: 'https://via.placeholder.com/300x200/dc3545/white?text=Olahraga'
     },
@@ -778,7 +821,7 @@
       id: 5, 
       title: 'Festival Film Indonesia Raih Penghargaan Internasional', 
       category: 'hiburan', 
-      content: 'Film Indonesia meraih berbagai penghargaan di festival film internasional, membanggakan industri perfilman tanah air...', 
+      content: 'Film Indonesia meraih berbagai penghargaan di festival film internasional, membanggakan industri perfilman tanah air. Total 5 film Indonesia berhasil meraih penghargaan dalam berbagai kategori.', 
       date: '2024-02-11', 
       image: 'https://via.placeholder.com/300x200/6f42c1/white?text=Hiburan'
     }
@@ -814,19 +857,19 @@
         <td><img src="${item.image}" alt="" class="news-image" onerror="this.src='https://via.placeholder.com/60x40/5955B3/white?text=News'"></td>
         <td class="news-title">
           <span class="title-text">${item.title}</span>
-          <span class="category-badge">${item.category}</span>
+          <span class="category-badge">${item.category.toUpperCase()}</span>
         </td>
-        <td class="news-content">${item.content.substring(0, 80)}...</td>
-        <td><span class="date-badge">${new Date(item.date).toLocaleDateString('id-ID')}</span></td>
+        <td class="news-content">${item.content.substring(0, 100)}${item.content.length > 100 ? '...' : ''}</td>
+        <td><span class="date-badge">${formatDate(item.date)}</span></td>
         <td>
           <div class="action-buttons">
-            <button class="btn-action btn-view" onclick="viewNews(${item.id})" title="Lihat">
+            <button class="btn-action btn-view" onclick="viewNews(${item.id})" title="Lihat Detail">
               <i class="fas fa-eye"></i>
             </button>
-            <button class="btn-action btn-edit" onclick="editNews(${item.id})" title="Edit">
+            <button class="btn-action btn-edit" onclick="editNews(${item.id})" title="Edit Berita">
               <i class="fas fa-edit"></i>
             </button>
-            <button class="btn-action btn-delete" onclick="deleteNews(${item.id})" title="Hapus">
+            <button class="btn-action btn-delete" onclick="deleteNews(${item.id})" title="Hapus Berita">
               <i class="fas fa-trash"></i>
             </button>
           </div>
@@ -885,22 +928,58 @@
     renderTable();
   }
 
-  function filterByCategory(category) {
-    if (category === '') {
-      filteredNews = [...newsData];
-    } else {
-      filteredNews = newsData.filter(item => item.category === category);
-    }
-    currentPage = 1;
-    renderTable();
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric',
+      locale: 'id-ID'
+    };
+    return date.toLocaleDateString('id-ID', options);
+  }
+
+  function getCategoryImage(category) {
+    const colors = {
+      'politik': '5955B3',
+      'ekonomi': '28a745',
+      'teknologi': '17a2b8',
+      'olahraga': 'dc3545',
+      'hiburan': '6f42c1',
+      'kesehatan': 'fd7e14',
+      'pendidikan': '20c997'
+    };
+    const color = colors[category] || '5955B3';
+    return `https://via.placeholder.com/300x200/${color}/white?text=${category.toUpperCase()}`;
+  }
+
+  function showSuccessMessage(message) {
+    const successMessage = document.getElementById('successMessage');
+    const successText = document.getElementById('successText');
+    successText.textContent = message;
+    successMessage.style.display = 'block';
+    
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 3000);
   }
 
   function openAddModal() {
     currentEditId = null;
-    document.getElementById('modalTitle').textContent = 'Tambah Berita';
+    document.getElementById('modalTitle').textContent = 'Tambah Berita Baru';
+    document.getElementById('saveButtonText').textContent = 'Simpan';
     document.getElementById('newsForm').reset();
-    document.getElementById('newsDate').value = new Date().toISOString().split('T')[0];
+    
+    // Set tanggal hari ini sebagai default
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('newsDate').value = today;
+    
     document.getElementById('newsModal').style.display = 'block';
+    
+    // Focus pada input pertama
+    setTimeout(() => {
+      document.getElementById('newsTitle').focus();
+    }, 300);
   }
 
   function editNews(id) {
@@ -909,30 +988,57 @@
 
     currentEditId = id;
     document.getElementById('modalTitle').textContent = 'Edit Berita';
+    document.getElementById('saveButtonText').textContent = 'Update';
+    
+    // Isi form dengan data yang ada
     document.getElementById('newsTitle').value = item.title;
     document.getElementById('newsCategory').value = item.category;
     document.getElementById('newsDate').value = item.date;
     document.getElementById('newsImage').value = item.image;
     document.getElementById('newsContent').value = item.content;
+    
     document.getElementById('newsModal').style.display = 'block';
+    
+    // Focus pada input pertama
+    setTimeout(() => {
+      document.getElementById('newsTitle').focus();
+    }, 300);
   }
 
   function viewNews(id) {
     const item = newsData.find(n => n.id === id);
     if (!item) return;
     
-    alert(`Detail Berita:\n\nJudul: ${item.title}\nKategori: ${item.category}\nTanggal: ${new Date(item.date).toLocaleDateString('id-ID')}\n\nKonten: ${item.content}`);
+    const formattedDate = formatDate(item.date);
+    const message = `DETAIL BERITA\n\n` +
+                   `Judul: ${item.title}\n\n` +
+                   `Kategori: ${item.category.toUpperCase()}\n\n` +
+                   `Tanggal: ${formattedDate}\n\n` +
+                   `Konten:\n${item.content}`;
+    
+    alert(message);
   }
 
   function deleteNews(id) {
-    if (confirm('Apakah Anda yakin ingin menghapus berita ini?')) {
+    const item = newsData.find(n => n.id === id);
+    if (!item) return;
+
+    if (confirm(`Apakah Anda yakin ingin menghapus berita "${item.title}"?\n\nTindakan ini tidak dapat dibatalkan.`)) {
       newsData = newsData.filter(n => n.id !== id);
-      filteredNews = [...newsData];
+      filteredNews = filteredNews.filter(n => n.id !== id);
       
-      // Update stats
-      document.getElementById('totalDeleted').textContent = parseInt(document.getElementById('totalDeleted').textContent) + 1;
+      // Update statistik
+      const currentDeleted = parseInt(document.getElementById('totalDeleted').textContent);
+      document.getElementById('totalDeleted').textContent = currentDeleted + 1;
+      
+      // Adjust current page if necessary
+      const totalPages = Math.ceil(filteredNews.length / itemsPerPage);
+      if (currentPage > totalPages && totalPages > 0) {
+        currentPage = totalPages;
+      }
       
       renderTable();
+      showSuccessMessage('Berita berhasil dihapus!');
     }
   }
 
@@ -941,59 +1047,153 @@
     currentEditId = null;
   }
 
+  function validateForm() {
+    const title = document.getElementById('newsTitle').value.trim();
+    const category = document.getElementById('newsCategory').value;
+    const date = document.getElementById('newsDate').value;
+    const content = document.getElementById('newsContent').value.trim();
+
+    if (!title) {
+      alert('Judul berita tidak boleh kosong!');
+      document.getElementById('newsTitle').focus();
+      return false;
+    }
+
+    if (title.length < 10) {
+      alert('Judul berita minimal 10 karakter!');
+      document.getElementById('newsTitle').focus();
+      return false;
+    }
+
+    if (!category) {
+      alert('Silakan pilih kategori berita!');
+      document.getElementById('newsCategory').focus();
+      return false;
+    }
+
+    if (!date) {
+      alert('Tanggal publikasi tidak boleh kosong!');
+      document.getElementById('newsDate').focus();
+      return false;
+    }
+
+    // Validasi tanggal tidak boleh lebih dari hari ini
+    const selectedDate = new Date(date);
+    const today = new Date();
+    today.setHours(23, 59, 59, 999); // Set ke akhir hari
+    
+    if (selectedDate > today) {
+      alert('Tanggal publikasi tidak boleh lebih dari hari ini!');
+      document.getElementById('newsDate').focus();
+      return false;
+    }
+
+    if (!content) {
+      alert('Konten berita tidak boleh kosong!');
+      document.getElementById('newsContent').focus();
+      return false;
+    }
+
+    if (content.length < 50) {
+      alert('Konten berita minimal 50 karakter!');
+      document.getElementById('newsContent').focus();
+      return false;
+    }
+
+    return true;
+  }
+
   function saveNews() {
+    if (!validateForm()) {
+      return;
+    }
+
     const title = document.getElementById('newsTitle').value.trim();
     const category = document.getElementById('newsCategory').value;
     const date = document.getElementById('newsDate').value;
     const image = document.getElementById('newsImage').value.trim();
     const content = document.getElementById('newsContent').value.trim();
 
-    if (!title || !category || !date || !content) {
-      alert('Mohon lengkapi semua field yang wajib diisi!');
-      return;
-    }
-
-    const defaultImage = `https://via.placeholder.com/300x200/5955B3/white?text=${category}`;
+    // Generate image URL jika tidak diisi
+    const finalImage = image || getCategoryImage(category);
 
     if (currentEditId) {
-      // Edit existing news
+      // Update berita yang ada
       const itemIndex = newsData.findIndex(n => n.id === currentEditId);
       if (itemIndex !== -1) {
         newsData[itemIndex] = { 
           ...newsData[itemIndex], 
-          title, category, date, content,
-          image: image || defaultImage
+          title, 
+          category, 
+          date, 
+          content,
+          image: finalImage
         };
         
-        // Update stats
-        document.getElementById('totalUpdated').textContent = parseInt(document.getElementById('totalUpdated').textContent) + 1;
+        // Update statistik
+        const currentUpdated = parseInt(document.getElementById('totalUpdated').textContent);
+        document.getElementById('totalUpdated').textContent = currentUpdated + 1;
+        
+        showSuccessMessage('Berita berhasil diupdate!');
       }
     } else {
-      // Add new news
+      // Tambah berita baru
       const newId = Math.max(...newsData.map(n => n.id), 0) + 1;
-      newsData.push({ 
-        id: newId, title, category, date, content,
-        image: image || defaultImage
-      });
+      const newNews = { 
+        id: newId, 
+        title, 
+        category, 
+        date, 
+        content,
+        image: finalImage
+      };
       
-      // Update stats
-      document.getElementById('totalUploaded').textContent = parseInt(document.getElementById('totalUploaded').textContent) + 1;
+      newsData.unshift(newNews); // Tambah di awal array
+      
+      // Update statistik
+      const currentUploaded = parseInt(document.getElementById('totalUploaded').textContent);
+      document.getElementById('totalUploaded').textContent = currentUploaded + 1;
+      
+      showSuccessMessage('Berita baru berhasil ditambahkan!');
     }
 
     closeModal();
     filteredNews = [...newsData];
+    currentPage = 1; // Reset ke halaman pertama
     renderTable();
   }
 
-  // Close modal when clicking outside
-  window.onclick = function(event) {
-    const modal = document.getElementById('newsModal');
-    if (event.target === modal) {
-      closeModal();
-    }
-  }
-
-  // Initialize page
+  // Event listeners
   document.addEventListener('DOMContentLoaded', function() {
     renderTable();
+    
+    // Close modal ketika klik di luar modal
+    window.onclick = function(event) {
+      const modal = document.getElementById('newsModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // Close modal dengan ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modal = document.getElementById('newsModal');
+        if (modal.style.display === 'block') {
+          closeModal();
+        }
+      }
+    });
+
+    // Submit form dengan Enter (kecuali di textarea)
+    document.getElementById('newsForm').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' && event.target.tagName !== 'TEXTAREA') {
+        event.preventDefault();
+        saveNews();
+      }
+    });
   });
+</script>
+
+</body>
+</html>
