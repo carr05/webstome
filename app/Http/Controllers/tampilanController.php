@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tampilan;
 use App\Models\Hero;
 use App\Models\footer; 
+use App\Models\semua;
 use Illuminate\Support\Facades\Storage;
 
 class tampilanController extends Controller
@@ -173,6 +174,13 @@ $footer->footer_show_developer = $request->has('footer_show_developer') ? 1 : 0;
 
 $footer->save();
 
+$semua = Semua::first() ?? new Semua();
+if ($request->filled('global_color')){
+    $semua->warna = $request->global_color;
+}
+if ($request->filled('global_font')){
+    $semua->font = $request->global_font;
+}
 
         return redirect()->route('tampilan.index')
                          ->with('success', 'Tampilan, Hero & Footer berhasil diperbarui!');

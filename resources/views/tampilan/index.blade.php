@@ -154,58 +154,6 @@
         border-radius: 2px;
     }
 
-    /* Enhanced Card Section */
-    .card-section {
-        background: var(--card-background);
-        border-radius: var(--border-radius);
-        padding: 28px;
-        margin-bottom: 24px;
-        box-shadow: var(--shadow-light);
-        border: 1px solid var(--border-color);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .card-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-        opacity: 0;
-        transition: var(--transition);
-    }
-
-    .card-section:hover::before {
-        opacity: 1;
-    }
-
-    .card-section:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-medium);
-    }
-
-    .card-section h6 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: var(--active-color);
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .card-section h6::before {
-        content: '';
-        width: 4px;
-        height: 20px;
-        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-        border-radius: 2px;
-    }
-
     /* Footer Settings Specific Styles */
     .footer-grid {
         display: grid;
@@ -629,6 +577,205 @@
         transform: translateX(24px);
     }
 
+    /* Global Settings Specific Styles */
+    #globalSettings {
+        animation: fadeInUp 0.4s ease-out;
+    }
+
+    #globalSettings .card-section {
+        background: linear-gradient(135deg, var(--card-background) 0%, rgba(255, 255, 255, 0.98) 100%);
+        border-radius: var(--border-radius);
+        padding: 32px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-light);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    #globalSettings .card-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    #globalSettings .card-section:hover::before {
+        opacity: 1;
+    }
+
+    #globalSettings .card-section:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-medium);
+    }
+
+    #globalSettings .card-section h6 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--active-color);
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    #globalSettings .card-section h6::before {
+        content: '';
+        width: 4px;
+        height: 24px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        border-radius: 2px;
+    }
+
+    #globalSettings .card-section h6 i {
+        font-size: 1.4rem;
+        color: var(--primary-color);
+        background: var(--accent-color);
+        padding: 10px;
+        border-radius: 12px;
+        transition: var(--transition);
+    }
+
+    #globalSettings .card-section:hover h6 i {
+        background: var(--primary-color);
+        color: white;
+        transform: scale(1.1);
+    }
+
+    /* Global Settings Form Controls */
+    #globalSettings .form-label {
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-transform: capitalize;
+    }
+
+    #globalSettings .form-label i {
+        font-size: 1rem;
+        color: var(--primary-color);
+        background: var(--accent-color);
+        padding: 6px;
+        border-radius: 6px;
+        transition: var(--transition);
+    }
+
+    #globalSettings .form-select {
+        border-radius: var(--border-radius-sm);
+        border: 2px solid var(--border-color);
+        padding: 14px 16px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: var(--transition);
+        background: var(--card-background);
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%235955B3' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px 12px;
+        appearance: none;
+    }
+
+    #globalSettings .form-select:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 4px rgba(89, 85, 179, 0.15);
+        outline: none;
+        transform: translateY(-2px);
+        background-color: rgba(89, 85, 179, 0.02);
+    }
+
+    #globalSettings .form-select:hover {
+        border-color: var(--primary-light);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-light);
+    }
+
+    /* Global Settings Color Input */
+    #globalSettings .color-input-group {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: linear-gradient(135deg, var(--accent-color), rgba(235, 230, 255, 0.7));
+        padding: 12px 16px;
+        border-radius: var(--border-radius-sm);
+        border: 2px solid transparent;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    #globalSettings .color-input-group::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(89, 85, 179, 0.1), transparent);
+        transition: var(--transition);
+    }
+
+    #globalSettings .color-input-group:hover::before {
+        left: 100%;
+    }
+
+    #globalSettings .color-input-group:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-light);
+    }
+
+    #globalSettings .form-control-color {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 12px !important;
+        border: 3px solid white !important;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #globalSettings .form-control-color:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(89, 85, 179, 0.3);
+    }
+
+    #globalSettings .form-control-color:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(89, 85, 179, 0.2);
+        transform: scale(1.05);
+    }
+
+    #globalSettings .color-input-group .text-muted {
+        font-family: 'Courier New', monospace;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--text-primary);
+        background: white;
+        padding: 6px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        transition: var(--transition);
+    }
+
+    #globalSettings .color-input-group:hover .text-muted {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
         .main-container {
@@ -673,6 +820,51 @@
         .footer-preview {
             padding: 20px;
         }
+
+        #globalSettings .card-section {
+            padding: 24px 20px;
+        }
+        
+        #globalSettings .card-section h6 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        #globalSettings .form-select {
+            padding: 12px 14px;
+            font-size: 0.9rem;
+        }
+        
+        #globalSettings .color-input-group {
+            padding: 10px 12px;
+            gap: 10px;
+        }
+        
+        #globalSettings .form-control-color {
+            width: 40px !important;
+            height: 40px !important;
+        }
+        
+        #globalSettings .color-input-group .text-muted {
+            font-size: 0.8rem;
+            padding: 4px 8px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #globalSettings .row.g-4 > .col-md-4 {
+            margin-bottom: 20px;
+        }
+        
+        #globalSettings .form-label {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        #globalSettings .form-label i {
+            font-size: 0.9rem;
+            padding: 5px;
+        }
     }
 
     /* Loading State */
@@ -709,6 +901,37 @@
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
+    }
+
+    /* Interactive Effects */
+    #globalSettings .form-select option {
+        padding: 8px;
+        background: var(--card-background);
+        color: var(--text-primary);
+    }
+
+    #globalSettings .form-select option:hover {
+        background: var(--accent-color);
+    }
+
+    /* Loading State for Global Settings */
+    #globalSettings.loading {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    #globalSettings.loading .card-section::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        border: 3px solid var(--accent-color);
+        border-top: 3px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
     }
 </style>
 </head>
@@ -760,6 +983,10 @@
                     <button type="button" class="card-button" data-element="footer">
                         <i class="bi bi-layout-text-window"></i>
                         <span>Footer</span>
+                    </button>
+                    <button type="button" class="card-button" data-element="global">
+                        <i class="bi bi-globe"></i>
+                        <span>Global</span>
                     </button>
                 </div>
                 <input type="hidden" name="selected_element" id="selectedElement">
@@ -1193,9 +1420,46 @@ Dinas Pendidikan Kota Malang' }}</textarea>
                 </div>
             </div>
 
+            <!-- Global Settings - FIXED SECTION -->
+            <div class="settings-section" id="globalSettings">
+                <div class="card-section">
+                    <h6><i class="bi bi-globe"></i> Pengaturan Global</h6>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="bi bi-palette"></i> Warna Utama</label>
+                            <div class="color-input-group">
+                                <input type="color" name="global_primary_color" class="form-control-color" value="{{ $global->primary_color ?? '#5955B3' }}">
+                                <span class="text-muted">{{ $global->primary_color ?? '#5955B3' }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="bi bi-fonts"></i> Font Utama</label>
+                            <select name="global_primary_font" class="form-select">
+                                <option value="Poppins" {{ ($global->primary_font ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                                <option value="Roboto" {{ ($global->primary_font ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
+                                <option value="Open Sans" {{ ($global->primary_font ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
+                                <option value="Inter" {{ ($global->primary_font ?? '') == 'Inter' ? 'selected' : '' }}>Inter</option>
+                                <option value="Nunito" {{ ($global->primary_font ?? '') == 'Nunito' ? 'selected' : '' }}>Nunito</option>
+                                <option value="Montserrat" {{ ($global->primary_font ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="bi bi-type-h1"></i> Font Heading</label>
+                            <select name="global_heading_font" class="form-select">
+                                <option value="Poppins" {{ ($global->heading_font ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                                <option value="Playfair Display" {{ ($global->heading_font ?? '') == 'Playfair Display' ? 'selected' : '' }}>Playfair Display</option>
+                                <option value="Merriweather" {{ ($global->heading_font ?? '') == 'Merriweather' ? 'selected' : '' }}>Merriweather</option>
+                                <option value="Montserrat" {{ ($global->heading_font ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
+                                <option value="Oswald" {{ ($global->heading_font ?? '') == 'Oswald' ? 'selected' : '' }}>Oswald</option>
+                                <option value="Raleway" {{ ($global->heading_font ?? '') == 'Raleway' ? 'selected' : '' }}>Raleway</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Action Buttons -->
             <div class="mt-4 d-flex gap-3 justify-content-end">
-                
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
                 </button>
@@ -1361,6 +1625,335 @@ Dinas Pendidikan Kota Malang' }}</textarea>
             }
             updateFooterPreview();
         });
+    });
+
+    // Global Settings JavaScript Enhancement
+    // Global Settings Color Input Updates
+    document.querySelectorAll('#globalSettings input[type="color"]').forEach(colorInput => {
+        const textSpan = colorInput.parentElement.querySelector('span');
+        colorInput.addEventListener('input', function() {
+            if (textSpan) {
+                textSpan.textContent = this.value.toUpperCase();
+            }
+            updateGlobalPreview();
+        });
+    });
+
+    // Global Settings Font Selection Updates
+    document.querySelectorAll('#globalSettings select').forEach(selectInput => {
+        selectInput.addEventListener('change', function() {
+            updateGlobalPreview();
+            updateGlobalFontPreview(this.name, this.value);
+        });
+    });
+
+    // Real-time Global Settings Updates
+    document.querySelectorAll('#globalSettings input, #globalSettings select').forEach(input => {
+        input.addEventListener('input', function() {
+            updateGlobalPreview();
+        });
+        input.addEventListener('change', function() {
+            updateGlobalPreview();
+        });
+    });
+
+    // Update Global Preview Function
+    function updateGlobalPreview() {
+        const primaryColor = document.querySelector('input[name="global_primary_color"]')?.value || '#5955B3';
+        const primaryFont = document.querySelector('select[name="global_primary_font"]')?.value || 'Poppins';
+        const headingFont = document.querySelector('select[name="global_heading_font"]')?.value || 'Poppins';
+        
+        // Update CSS custom properties for real-time preview
+        const root = document.documentElement;
+        root.style.setProperty('--preview-primary-color', primaryColor);
+        root.style.setProperty('--preview-primary-font', primaryFont);
+        root.style.setProperty('--preview-heading-font', headingFont);
+        
+        // Update any existing preview elements if they exist
+        updatePreviewElements(primaryColor, primaryFont, headingFont);
+    }
+
+    // Update Preview Elements Function
+    function updatePreviewElements(primaryColor, primaryFont, headingFont) {
+        // Update header title if exists
+        const headerTitle = document.querySelector('.header-card h5');
+        if (headerTitle) {
+            headerTitle.style.fontFamily = headingFont;
+            headerTitle.style.background = `linear-gradient(135deg, ${primaryColor}, ${primaryColor}aa)`;
+            headerTitle.style.webkitBackgroundClip = 'text';
+            headerTitle.style.webkitTextFillColor = 'transparent';
+            headerTitle.style.backgroundClip = 'text';
+        }
+        
+        // Update form labels and body text
+        const formLabels = document.querySelectorAll('.form-label');
+        formLabels.forEach(label => {
+            label.style.fontFamily = primaryFont;
+        });
+        
+        // Update section headings
+        const sectionHeadings = document.querySelectorAll('.card-section h6');
+        sectionHeadings.forEach(heading => {
+            heading.style.fontFamily = headingFont;
+            heading.style.color = primaryColor;
+        });
+        
+        // Update primary buttons
+        const primaryButtons = document.querySelectorAll('.btn-primary');
+        primaryButtons.forEach(btn => {
+            btn.style.background = `linear-gradient(135deg, ${primaryColor}, ${primaryColor}cc)`;
+            btn.style.fontFamily = primaryFont;
+        });
+        
+        // Update card button active state
+        const activeCardButton = document.querySelector('.card-button.active');
+        if (activeCardButton) {
+            activeCardButton.style.background = `linear-gradient(135deg, ${primaryColor}, ${primaryColor}aa)`;
+        }
+        
+        // Update color input groups
+        const colorInputGroups = document.querySelectorAll('.color-input-group');
+        colorInputGroups.forEach(group => {
+            const groupPrimaryColor = primaryColor + '15'; // Add transparency
+            group.style.background = `linear-gradient(135deg, ${groupPrimaryColor}, ${groupPrimaryColor}aa)`;
+        });
+        
+        console.log('Global preview updated:', { primaryColor, primaryFont, headingFont });
+    }
+
+    // Font Preview Update Function
+    function updateGlobalFontPreview(fontName, fontValue) {
+        // Create or update font preview
+        let fontPreview = document.getElementById('globalFontPreview');
+        if (!fontPreview) {
+            fontPreview = document.createElement('div');
+            fontPreview.id = 'globalFontPreview';
+            fontPreview.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                border: 2px solid var(--primary-color);
+                border-radius: 12px;
+                padding: 16px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                z-index: 1000;
+                max-width: 300px;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: all 0.3s ease;
+            `;
+            document.body.appendChild(fontPreview);
+        }
+        
+        if (fontName === 'global_primary_font') {
+            fontPreview.innerHTML = `
+                <h6 style="margin: 0 0 8px 0; color: var(--primary-color); font-family: ${fontValue};">Font Utama</h6>
+                <p style="margin: 0; font-family: ${fontValue}; line-height: 1.4;">
+                    Ini adalah contoh teks dengan font ${fontValue}. Lorem ipsum dolor sit amet consectetur.
+                </p>
+            `;
+        } else if (fontName === 'global_heading_font') {
+            fontPreview.innerHTML = `
+                <h6 style="margin: 0 0 8px 0; color: var(--primary-color); font-family: ${fontValue};">Font Heading</h6>
+                <h4 style="margin: 0; font-family: ${fontValue}; line-height: 1.2;">
+                    Contoh Heading ${fontValue}
+                </h4>
+            `;
+        }
+        
+        // Show preview
+        setTimeout(() => {
+            fontPreview.style.opacity = '1';
+            fontPreview.style.transform = 'translateY(0)';
+        }, 10);
+        
+        // Hide after 2 seconds
+        setTimeout(() => {
+            fontPreview.style.opacity = '0';
+            fontPreview.style.transform = 'translateY(-20px)';
+        }, 2000);
+    }
+
+    // Global Settings Validation
+    function validateGlobalSettings() {
+        const primaryColor = document.querySelector('input[name="global_primary_color"]')?.value;
+        const primaryFont = document.querySelector('select[name="global_primary_font"]')?.value;
+        const headingFont = document.querySelector('select[name="global_heading_font"]')?.value;
+        
+        // Validate color format
+        if (primaryColor && !/^#[0-9A-Fa-f]{6}$/.test(primaryColor)) {
+            showNotification('Warna utama tidak valid', 'error');
+            return false;
+        }
+        
+        // Validate font selections
+        if (!primaryFont || !headingFont) {
+            showNotification('Harap pilih font utama dan font heading', 'warning');
+            return false;
+        }
+        
+        return true;
+    }
+
+    // Show Notification Function
+    function showNotification(message, type = 'info') {
+        let notification = document.getElementById('globalNotification');
+        if (!notification) {
+            notification = document.createElement('div');
+            notification.id = 'globalNotification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 12px 24px;
+                border-radius: 8px;
+                color: white;
+                font-weight: 500;
+                z-index: 9999;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            document.body.appendChild(notification);
+        }
+        
+        // Set notification style based on type
+        const styles = {
+            success: 'background: #10b981;',
+            error: 'background: #ef4444;',
+            warning: 'background: #f59e0b;',
+            info: 'background: #3b82f6;'
+        };
+        
+        notification.style.cssText += styles[type] || styles.info;
+        notification.textContent = message;
+        notification.style.opacity = '1';
+        
+        setTimeout(() => {
+            notification.style.opacity = '0';
+        }, 3000);
+    }
+
+    // Enhanced Form Submission for Global Settings
+    const originalFormSubmit = form.addEventListener;
+    form.addEventListener('submit', function(e) {
+        if (!validateGlobalSettings()) {
+            e.preventDefault();
+            loadingOverlay.classList.remove('active');
+            return false;
+        }
+        
+        // Show success message before submission
+        showNotification('Menyimpan pengaturan global...', 'info');
+        loadingOverlay.classList.add('active');
+    });
+
+    // Initialize Global Settings on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize global preview
+        setTimeout(() => {
+            updateGlobalPreview();
+        }, 500);
+        
+        // Add smooth transitions to global settings elements
+        document.querySelectorAll('#globalSettings .form-control, #globalSettings .form-select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 4px 12px rgba(89, 85, 179, 0.15)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+        
+        // Add click effect to color inputs
+        document.querySelectorAll('#globalSettings .form-control-color').forEach(colorInput => {
+            colorInput.addEventListener('click', function() {
+                this.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    });
+
+    // Reset function enhancement for global settings
+    const originalResetForm = window.resetForm;
+    window.resetForm = function() {
+        if (confirm('Apakah Anda yakin ingin mereset semua pengaturan?')) {
+            form.reset();
+            
+            // Reset active states
+            buttons.forEach(b => b.classList.remove('active'));
+            settingsSections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            hiddenInput.value = '';
+            
+            // Reset global preview
+            const root = document.documentElement;
+            root.style.removeProperty('--preview-primary-color');
+            root.style.removeProperty('--preview-primary-font');
+            root.style.removeProperty('--preview-heading-font');
+            
+            // Update previews
+            updateFooterPreview();
+            updateGlobalPreview();
+            
+            showNotification('Semua pengaturan telah direset', 'success');
+        }
+    };
+
+    // Auto-save functionality for global settings (optional)
+    let globalSettingsTimeout;
+    function autoSaveGlobalSettings() {
+        clearTimeout(globalSettingsTimeout);
+        globalSettingsTimeout = setTimeout(() => {
+            const globalData = {
+                primary_color: document.querySelector('input[name="global_primary_color"]')?.value,
+                primary_font: document.querySelector('select[name="global_primary_font"]')?.value,
+                heading_font: document.querySelector('select[name="global_heading_font"]')?.value
+            };
+            
+            // Store in localStorage for persistence
+            localStorage.setItem('globalSettingsDraft', JSON.stringify(globalData));
+            console.log('Global settings auto-saved:', globalData);
+        }, 1000);
+    }
+
+    // Add auto-save to global settings inputs
+    document.querySelectorAll('#globalSettings input, #globalSettings select').forEach(input => {
+        input.addEventListener('input', autoSaveGlobalSettings);
+        input.addEventListener('change', autoSaveGlobalSettings);
+    });
+
+    // Load saved settings on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedSettings = localStorage.getItem('globalSettingsDraft');
+        if (savedSettings) {
+            const settings = JSON.parse(savedSettings);
+            if (settings.primary_color) {
+                const colorInput = document.querySelector('input[name="global_primary_color"]');
+                if (colorInput) colorInput.value = settings.primary_color;
+            }
+            if (settings.primary_font) {
+                const fontInput = document.querySelector('select[name="global_primary_font"]');
+                if (fontInput) fontInput.value = settings.primary_font;
+            }
+            if (settings.heading_font) {
+                const headingInput = document.querySelector('select[name="global_heading_font"]');
+                if (headingInput) headingInput.value = settings.heading_font;
+            }
+            
+            // Update preview with loaded settings
+            setTimeout(() => {
+                updateGlobalPreview();
+            }, 100);
+        }
     });
 </script>
 
