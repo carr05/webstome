@@ -11,6 +11,7 @@ use App\Models\berita;
 use App\Models\tampilan;
 use App\Models\hero;
 use App\Models\footer;
+use App\Models\semua;
 
 class adminControler extends Controller
 {
@@ -19,8 +20,8 @@ class adminControler extends Controller
         $tampilan = Tampilan::first();
         $hero = Hero::first();
         $footer = Footer::first();
-
-        return view('layout1.index', compact('tampilan', 'hero', 'footer'));
+        $semua = Semua::first();
+        return view('layout1.index', compact('tampilan', 'hero', 'footer', 'semua'));
     }
 
     public function landing2()

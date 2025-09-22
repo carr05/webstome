@@ -10,10 +10,12 @@ class semua extends Model
     //
     use HasFactory;
 
-    protected $table = 'tampilan';
+    protected $table = 'semua';
 
     protected $fillable = [
         'warna',
-        'font',
+        'font_utama',
+        'font_heading',
+
     ];
 }

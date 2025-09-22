@@ -112,7 +112,9 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section" style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};">
 
       <div class="hero-wrapper">
         <div class="container">
@@ -216,7 +218,9 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section" style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -336,7 +340,9 @@
     </section><!-- /About Section -->
 
     <!-- Featured Programs Section -->
-    <section id="featured-programs" class="featured-programs section">
+    <section id="featured-programs" class="featured-programs section" style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">

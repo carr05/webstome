@@ -725,7 +725,7 @@ section,
   display: block;
   width: 60px;
   height: 3px;
-  background: var(--accent-color);
+  background: var(--global-color);
   left: 0;
   right: 0;
   bottom: 0;
@@ -807,7 +807,7 @@ section,
   display: block;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--global-color);
 }
 
 .hero .hero-wrapper .hero-content .stats-row .stat-item .stat-label {
@@ -845,7 +845,7 @@ section,
 }
 
 .hero .hero-wrapper .hero-content .action-buttons .btn-primary {
-  background: var(--accent-color);
+  background: var(--global-color);
   color: var(--contrast-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -905,7 +905,7 @@ section,
 }
 
 .hero .hero-wrapper .hero-media .image-overlay .badge-accredited {
-  background: var(--accent-color);
+  background: var(--global-color);
   color: var(--contrast-color);
   padding: 12px 20px;
   border-radius: 50px;
@@ -947,19 +947,19 @@ section,
 
 .hero .feature-cards-wrapper .feature-card.active {
   background: var(--surface-color);
-  border-left: 4px solid var(--accent-color);
+  border-left: 4px solid var(--global-color);
 }
 
 .hero .feature-cards-wrapper .feature-card.active .feature-icon {
-  background: var(--accent-color);
+  background: var(--global-color);
   color: var(--contrast-color);
 }
 
 .hero .feature-cards-wrapper .feature-card .feature-icon {
   width: 60px;
   height: 60px;
-  background: color-mix(in srgb, var(--heading-color), transparent 90%);
-  color: var(--heading-color);
+  background: color-mix(in srgb, var(--global-color), transparent 90%);
+  color: var(--global-color);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -985,7 +985,7 @@ section,
 }
 
 .hero .upcoming-event {
-  background: var(--heading-color);
+  background: var(--global-color);
   color: var(--contrast-color);
   padding: 0;
   margin: 30px 0 0;
@@ -1016,7 +1016,7 @@ section,
 .hero .upcoming-event .event-content .event-date {
   display: flex;
   flex-direction: column;
-  background: var(--accent-color);
+  background: var(--global-color);
   color: var(--contrast-color);
   text-align: center;
   padding: 15px;
@@ -1080,7 +1080,7 @@ section,
 }
 
 .hero .upcoming-event .event-content .event-action .btn-event {
-  background: var(--accent-color);
+  background: var(--global-color);
   color: var(--contrast-color);
   padding: 12px 30px;
   border-radius: 8px;
@@ -1110,10 +1110,12 @@ section,
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: 700;
+  font-family: var(--global-font-heading);
+  color: var();
 }
 
 .about .about-content h3 {
-  color: var(--accent-color);
+  color: var(--global-color);
   font-weight: 600;
   margin-bottom: 10px;
   font-size: 1.1rem;
@@ -1155,7 +1157,7 @@ section,
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: var(--accent-color);
+  background-color: var(--global-color);
 }
 
 .about .about-content .timeline .timeline-item .timeline-content h4 {
@@ -1216,7 +1218,7 @@ section,
   top: 8px;
   width: 5px;
   height: 20px;
-  background-color: var(--accent-color);
+  background-color: var(--global-color);
   border-radius: 3px;
 }
 
@@ -1263,7 +1265,7 @@ section,
 
 .about .core-values .value-card .value-icon i {
   font-size: 32px;
-  color: var(--accent-color);
+  color: var(--global-color);
 }
 
 .about .core-values .value-card h4 {
@@ -1314,7 +1316,7 @@ section,
   position: absolute;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000 20%));
+  background: linear-gradient(135deg, var(--global-color));
   color: var(--contrast-color);
   padding: 8px 16px;
   border-radius: 25px;
@@ -1345,7 +1347,7 @@ section,
 
 .featured-programs .banner-info .program-header .program-stats span {
   font-size: 0.9rem;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--global-color), transparent 30%);
   display: flex;
   align-items: center;
 }
@@ -1386,7 +1388,7 @@ section,
 
 .featured-programs .banner-info .discover-btn {
   display: inline-block;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000 15%));
+  background: linear-gradient(135deg, var(--global-color));
   color: var(--contrast-color);
   padding: 12px 28px;
   border-radius: 30px;
@@ -1419,7 +1421,7 @@ section,
 }
 
 .featured-programs .program-item:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  background-color: color-mix(in srgb, var(--global-color), transparent 95%);
   border-color: color-mix(in srgb, var(--accent-color), transparent 80%);
   transform: translateX(10px);
 }
@@ -1469,7 +1471,7 @@ section,
 
 .featured-programs .program-item .item-content .meta-info span {
   font-size: 0.8rem;
-  color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: color-mix(in srgb, var(--global-color), transparent 20%);
   font-weight: 500;
 }
 
@@ -1514,6 +1516,7 @@ section,
     width: 60px;
     height: 60px;
     margin-right: 15px;
+    color: var(--global-color);
   }
 
   .featured-programs .program-item .item-content h4 {
@@ -7119,7 +7122,7 @@ section,
 .alumni .alumni-intro .alumni-stats .stat-item .stat-number {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--global-color);
   line-height: 1;
 }
 

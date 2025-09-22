@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('semua', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('warna')->nullable();
-            $table->string('font')->nullable();
+            $table->string('warna_utama')->nullable();
+            $table->string('warna_kedua')->nullable();
+            $table->string('font_color')->nullable();
+            $table->string('font_utama')->nullable();
+            $table->string('font_heading')->nullable();
         });
     }
 

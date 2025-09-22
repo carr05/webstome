@@ -1422,41 +1422,43 @@ Dinas Pendidikan Kota Malang' }}</textarea>
 
             <!-- Global Settings - FIXED SECTION -->
             <div class="settings-section" id="globalSettings">
-                <div class="card-section">
-                    <h6><i class="bi bi-globe"></i> Pengaturan Global</h6>
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <label class="form-label"><i class="bi bi-palette"></i> Warna Utama</label>
-                            <div class="color-input-group">
-                                <input type="color" name="global_primary_color" class="form-control-color" value="{{ $global->primary_color ?? '#5955B3' }}">
-                                <span class="text-muted">{{ $global->primary_color ?? '#5955B3' }}</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="form-label"><i class="bi bi-fonts"></i> Font Utama</label>
-                            <select name="global_primary_font" class="form-select">
-                                <option value="Poppins" {{ ($global->primary_font ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
-                                <option value="Roboto" {{ ($global->primary_font ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
-                                <option value="Open Sans" {{ ($global->primary_font ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
-                                <option value="Inter" {{ ($global->primary_font ?? '') == 'Inter' ? 'selected' : '' }}>Inter</option>
-                                <option value="Nunito" {{ ($global->primary_font ?? '') == 'Nunito' ? 'selected' : '' }}>Nunito</option>
-                                <option value="Montserrat" {{ ($global->primary_font ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="form-label"><i class="bi bi-type-h1"></i> Font Heading</label>
-                            <select name="global_heading_font" class="form-select">
-                                <option value="Poppins" {{ ($global->heading_font ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
-                                <option value="Playfair Display" {{ ($global->heading_font ?? '') == 'Playfair Display' ? 'selected' : '' }}>Playfair Display</option>
-                                <option value="Merriweather" {{ ($global->heading_font ?? '') == 'Merriweather' ? 'selected' : '' }}>Merriweather</option>
-                                <option value="Montserrat" {{ ($global->heading_font ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
-                                <option value="Oswald" {{ ($global->heading_font ?? '') == 'Oswald' ? 'selected' : '' }}>Oswald</option>
-                                <option value="Raleway" {{ ($global->heading_font ?? '') == 'Raleway' ? 'selected' : '' }}>Raleway</option>
-                            </select>
-                        </div>
-                    </div>
+    <div class="card-section">
+        <h6><i class="bi bi-globe"></i> Pengaturan Global</h6>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <label class="form-label"><i class="bi bi-palette"></i> Warna Utama</label>
+                <div class="color-input-group">
+                    <input type="color" name="global_primary_color" class="form-control-color" 
+                           value="{{ $semua->warna ?? '#5955B3' }}">
+                    <span class="text-muted">{{ $semua->warna_utama ?? '#5955B3' }}</span>
                 </div>
             </div>
+            <div class="col-md-4">
+                <label class="form-label"><i class="bi bi-fonts"></i> Font Utama</label>
+                <select name="global_primary_font" class="form-select">
+                    <option value="Poppins" {{ ($semua->font_utama ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                    <option value="Roboto" {{ ($semua->font_utama ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
+                    <option value="Open Sans" {{ ($semua->font_utama ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
+                    <option value="Inter" {{ ($semua->font_utama ?? '') == 'Inter' ? 'selected' : '' }}>Inter</option>
+                    <option value="Nunito" {{ ($semua->font_utama ?? '') == 'Nunito' ? 'selected' : '' }}>Nunito</option>
+                    <option value="Montserrat" {{ ($semua->font_utama ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label"><i class="bi bi-type-h1"></i> Font Heading</label>
+                <select name="global_heading_font" class="form-select">
+                    <option value="Poppins" {{ ($semua->font_heading ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                    <option value="Playfair Display" {{ ($semua->font_heading ?? '') == 'Playfair Display' ? 'selected' : '' }}>Playfair Display</option>
+                    <option value="Merriweather" {{ ($semua->font_heading ?? '') == 'Merriweather' ? 'selected' : '' }}>Merriweather</option>
+                    <option value="Montserrat" {{ ($semua->font_heading ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
+                    <option value="Oswald" {{ ($semua->font_heading ?? '') == 'Oswald' ? 'selected' : '' }}>Oswald</option>
+                    <option value="Raleway" {{ ($semua->font_heading ?? '') == 'Raleway' ? 'selected' : '' }}>Raleway</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
 
             <!-- Action Buttons -->
             <div class="mt-4 d-flex gap-3 justify-content-end">
