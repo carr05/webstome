@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('mapel');
-            $table->string('gambar')->nullable();
+            $table->string('foto')->nullable(); // ubah dari 'gambar' ke 'foto'
             $table->date('tanggal');
             $table->timestamps();
         });

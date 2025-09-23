@@ -44,7 +44,11 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section" style="--global-color: {{  $semua->warna_utama ?? ''}};
          --global-font-utama: {{ $semua->font_utama ?? ''}};
-         --global-font-heading: {{ $semua->font_heading ?? ''}};">
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');">
 
       <div class="hero-wrapper">
         <div class="container">
@@ -72,17 +76,17 @@
               </div>
             </div>
             <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
-              <img src="assets/img/education/showcase-6.webp" alt="Education" class="img-fluid main-image">
-              <div class="image-overlay">
-                <div class="badge-accredited">
-                  <i class="bi bi-patch-check-fill"></i>
-                  <span>Accredited Excellence</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <img src="{{ asset('storage/' . $hero->image) }}" 
+       alt="{{ $hero->title ?? 'Hero Image' }}" 
+       class="img-fluid main-image">
+  <div class="image-overlay">
+    <div class="badge-accredited">
+      <i class="bi bi-patch-check-fill"></i>
+      <span>Accredited Excellence</span>
+    </div>
+  </div>
+</div>
+
 
       <div class="feature-cards-wrapper" data-aos="fade-up" data-aos-delay="300">
         <div class="container">
