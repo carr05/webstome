@@ -109,11 +109,7 @@ class adminControler extends Controller
         return view('menu'); // atau nama view yang benar
     }
 
-    public function berita()
-    {
-        return view('berita');
-    }
-
+    
     public function agenda()
     {
         return view('agenda');
@@ -152,6 +148,11 @@ class adminControler extends Controller
     public function ekstrakurikuler()
     {
         return view('ekstrakurikuler');
+    }
+
+    public function berita()
+    {
+        return view('berita');
     }
 
     public function karya()

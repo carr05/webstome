@@ -78,7 +78,7 @@
     <a href="{{ url('/menu') }}" class="{{ Request::is('menu') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Menu</a>
 
 
-    <a href="{{ url('/berita') }}" class="{{ Request::is('berita') ? 'active' : '' }}"><i class="bi bi-newspaper me-2"></i> Berita</a>
+    <a href="{{ url('/berita') }}" class="{{ Request::is('berita.berita') ? 'active' : '' }}"><i class="bi bi-newspaper me-2"></i> Berita</a>
     <a href="{{ url('/agenda') }}" class="{{ Request::is('agenda') ? 'active' : '' }}"><i class="bi bi-calendar me-2"></i> Agenda</a>
     <a href="{{ url('/galeri') }}" class="{{ Request::is('galeri') ? 'active' : '' }}"><i class="bi bi-images me-2"></i> Galeri</a>
     <a href="{{ url('/jurusan') }}" class="{{ Request::is('jurusan') ? 'active' : '' }}"><i class="bi bi-diagram-3 me-2"></i> Jurusan</a>
