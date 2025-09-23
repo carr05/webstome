@@ -37,77 +37,7 @@
   ======================================================== -->
 </head>
 
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top" 
-  style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
-         --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
-         --font-size: {{ $tampilan->font_size ?? '16px' }};
-         --font-color: {{ $tampilan->font_color ?? '#04315f' }};">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
-
-        <a href="{{ url('/layout1/index') }}" class="logo d-flex align-items-center me-auto">
-  @if(!empty($tampilan->logo))
-    <img src="{{ asset('storage/'.$tampilan->logo) }}" alt="Logo" style="max-height:50px; margin-right:10px;">
-  @else
-    <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt="Logo" style="max-height:50px; margin-right:10px;">
-  @endif
-  <h1 class="sitename">{{ $tampilan->nama_sekolah ?? 'SMKN 4 MALANG' }}</h1>
-</a>
-      
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="{{ url('/layout1/index') }}" class="active">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="{{ url('/layout1/kepsek') }}">About Us</a></li>
-              <li><a href="{{ url('/layout1/admissions') }}">Admissions</a></li>
-              <li><a href="{{ url('/layout1/academics') }}">Academics</a></li>
-              <li><a href="{{ url('/layout1/faculty_staff') }}">Faculty &amp; Staff</a></li>
-              <li><a href="{{ url('/layout1/campus_facilities') }}">Campus &amp; Facilities</a></li>
-            </ul>
-          </li>
-
-        <li><a href="{{ url('/layout1/students_life') }}">Students Life</a></li>
-        <li><a href="{{ url('/layout1/news') }}">Berita</a></li>
-        <li><a href="{{ url('/layout1/events') }}">Agenda</a></li>
-        <li><a href="{{ url('/layout1/alumni') }}">Alumni</a></li>
-          <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="{{ url('/layout1/news_details') }}">News Details</a></li>
-            <li><a href="{{ url('/layout1/event_details') }}">Event Details</a></li>
-            <li><a href="{{ url('/layout1/privacy') }}">Privacy</a></li>
-            <li><a href="{{ url('/layout1/terms_of_service') }}">Terms of Service</a></li>
-            <li><a href="{{ url('/layout1/eror') }}">Error 404</a></li>
-            <li><a href="{{ url('/layout1/starter_page') }}">Starter Page</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="{{ url('/layout1/contact') }}">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
+@include('layout1.navbar.main')
 
   <main class="main">
 
@@ -474,7 +404,9 @@
     </section><!-- /Featured Programs Section -->
 
     <!-- Students Life Block Section -->
-    <section id="students-life-block" class="students-life-block section">
+    <section id="students-life-block" class="students-life-block section" style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -601,7 +533,9 @@
     </section><!-- /Students Life Block Section -->
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+    <section id="testimonials" class="testimonials section"  style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};>">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -772,7 +706,7 @@
 
           <div class="swiper-navigation">
             <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-next "></div>
           </div>
 
         </div>
@@ -782,13 +716,16 @@
     </section><!-- /Testimonials Section -->
 
     <!-- Stats Section -->
-    <section id="stats" class="stats section">
+    <section id="stats" class="stats section"  style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};>">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
             <div class="intro-content" data-aos="fade-up" data-aos-delay="200">
+              <!-- tittle -->
               <h2 class="section-heading">Transforming Lives Through Quality Education</h2>
               <p class="section-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
@@ -927,9 +864,11 @@
     </section><!-- /Stats Section -->
 
     <!-- Recent News Section -->
-    <section id="recent-news" class="recent-news section">
+    <section id="recent-news" class="recent-news section"  style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};"> 
 
-      <!-- Section Title -->
+     
       <div class="container section-title" data-aos="fade-up">
         <h2>Recent News</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
@@ -1058,7 +997,9 @@
     </section><!-- /Recent News Section -->
 
     <!-- Events Section -->
-    <section id="events" class="events section">
+    <section id="events" class="events section"  style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};>">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -1314,144 +1255,8 @@
 
   </main>
 
-<footer id="footer" class="footer"
-        style="--default-color: {{ $footer->footer_text_color ?? '#fff' }};
-               --background-color: {{ $footer->footer_bg_color ?? '#222' }};
-               --heading-color: {{ $footer->footer_text_color ?? '#fff' }};
-               --accent-color: #4ade80;
-               --heading-font: 'Poppins', sans-serif;">
-
-  <div class="footer-top py-5">
-    <div class="container">
-      <div class="row gy-4 justify-content-between">
-
-        {{-- About Section --}}
-        <div class="col-lg-4 col-md-6 footer-about">
-          <div class="logo mb-3">
-            <span class="fw-bold fs-4">{{ $footer->footer_institution_name ?? 'MySchool' }}</span>
-          </div>
-          <p class="small">{{ $footer->footer_address ?? 'Alamat belum diisi' }}</p>
-
-          <div class="footer-contact small mt-3">
-            <p><i class="bi bi-geo-alt-fill"></i> {{ $footer->footer_address ?? 'Alamat belum diisi' }}</p>
-            <p><i class="bi bi-telephone-fill"></i> {{ $footer->footer_phone ?? '-' }}</p>
-            <p><i class="bi bi-envelope-fill"></i> {{ $footer->footer_email ?? '-' }}</p>
-          </div>
-
-          {{-- Jam Operasional --}}
-          @if($footer->footer_show_hours ?? false)
-            <div class="mt-3 small">
-              <h6 class="fw-semibold">Jam Operasional</h6>
-              <p><i class="bi bi-clock"></i> Senin - Jumat: {{ $footer->footer_weekday_hours ?? '-' }}</p>
-              <p><i class="bi bi-clock"></i> Sabtu: {{ $footer->footer_saturday_hours ?? '-' }}</p>
-            </div>
-          @endif
-
-          {{-- Sosial Media --}}
-          <div class="social-links d-flex gap-2 mt-3">
-            @if($footer->footer_facebook)
-              <a href="{{ $footer->footer_facebook }}" class="social-icon"><i class="bi bi-facebook"></i></a>
-            @endif
-            @if($footer->footer_instagram)
-              <a href="{{ $footer->footer_instagram }}" class="social-icon"><i class="bi bi-instagram"></i></a>
-            @endif
-            @if($footer->footer_twitter)
-              <a href="{{ $footer->footer_twitter }}" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-            @endif
-            @if($footer->footer_youtube)
-              <a href="{{ $footer->footer_youtube }}" class="social-icon"><i class="bi bi-youtube"></i></a>
-            @endif
-          </div>
-        </div>
-
-        {{-- Layanan --}}
-        <div class="col-lg-2 col-6 footer-links">
-          <h6 class="fw-semibold">Layanan</h6>
-          <ul class="list-unstyled">
-            @foreach(explode("\n", $footer->footer_services ?? '') as $service)
-              @if(trim($service) != '')
-                <li><a href="#">{{ trim($service) }}</a></li>
-              @endif
-            @endforeach
-          </ul>
-        </div>
-
-        {{-- Program --}}
-        <div class="col-lg-2 col-6 footer-links">
-          <h6 class="fw-semibold">Program</h6>
-          <ul class="list-unstyled">
-            @foreach(explode("\n", $footer->footer_programs ?? '') as $program)
-              @if(trim($program) != '')
-                <li><a href="#">{{ trim($program) }}</a></li>
-              @endif
-            @endforeach
-          </ul>
-        </div>
-
-        
-
-        {{-- Info --}}
-        <div class="col-lg-2 col-6 footer-links">
-          <h6 class="fw-semibold">Informasi</h6>
-          <ul class="list-unstyled">
-            <li><a href="#">Berita</a></li>
-            <li><a href="#">Pengumuman</a></li>
-            <li><a href="#">Galeri</a></li>
-            <li><a href="#">Kontak</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  {{-- Copyright --}}
-  <div class="copyright text-center py-3 mt-3"
-       style="background: rgba(0,0,0,0.25); font-size: 14px;">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <p class="mb-0">{!! $footer->footer_copyright ?? '© <strong><span>MySchool</span></strong>. All Rights Reserved' !!}</p>
-      @if(($footer->footer_show_developer ?? false) && $footer->footer_developer)
-        <div class="credits small">
-          Designed by <a href="#" target="_blank">{{ $footer->footer_developer }}</a>
-        </div>
-      @endif
-    </div>
-  </div>
-
-  <style>
-    .footer a { 
-      color: var(--default-color); 
-      text-decoration: none; 
-      transition: color .3s; 
-    }
-    .footer a:hover { 
-      color: var(--accent-color); 
-    }
-    .footer h6 { 
-      margin-bottom: 15px; 
-    }
-    .footer .footer-links ul li { 
-      margin-bottom: 8px; 
-    }
-    .footer .social-icon {
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
-      width: 35px; height: 35px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      color: var(--default-color);
-      transition: all .3s;
-    }
-    .footer .social-icon:hover {
-      background: var(--accent-color);
-      color: #fff;
-      transform: translateY(-3px);
-    }
-  </style>
-</footer>
-
-
+<!-- footer -->
+@include('layout1.footer.main')
 
 
   <!-- Scroll Top -->
