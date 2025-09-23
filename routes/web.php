@@ -94,14 +94,14 @@ Route::get('/layout1/terms_of_service', [adminControler::class, 'terms_of_servic
 Route::get('/layout1/eror', [adminControler::class, 'eror'])->name('layout1.eror');
 Route::get('/layout1/starter_page', [adminControler::class, 'starter_page'])->name('layout1.starter_page');
 Route::get('/layout1/contact', [adminControler::class, 'contact'])->name('layout1.contact');
-Route::get('/layout1/footer/main', [tampilanControler::class, 'layout1.footer.main'])->name('layout1.footer.main');
+Route::get('/layout1/footer/main', [tampilanController::class, 'layout1.footer.main'])->name('layout1.footer.main');
 
 
 
 //Layout 2
 Route::get('/layout2/index', [adminControler::class, 'landing2'])->name('layout2.index');
 Route::get('/layout2/kepsek', [adminControler::class, 'kepsek'])->name('layout2.kepsek');
-Route::get('/layout2/Tentang', [adminControler::class, 'Tentang'])->name('layout2.Tentang');
+Route::get('/layout2/admissions2', [adminControler::class, 'admissions2'])->name('layout2.admissions2');
 Route::get('/layout2/academics', [adminControler::class, 'academics'])->name('layout2.academics');
 Route::get('/layout2/faculty_staff', [adminControler::class, 'faculty_staff'])->name('layout2.faculty_staff');
 Route::get('/layout2/campus_facilities', [adminControler::class, 'campus_facilities'])->name('layout2.campus_facilities');
@@ -118,5 +118,5 @@ Route::post('/pilih-layout/{layout}', [layoutController::class, 'pilihLayout'])-
 Route::get('/hero', [heroController::class, 'index'])->name('hero.index');
 Route::post('/hero/update', [heroController::class, 'update'])->name('hero.update');
 
-Route::get('/layout2/{halaman}', [AdminController::class, 'halamanDinamis'])
+Route::get('/layout2/{halaman}', [tampilanController::class, 'halamanDinamis'])
      ->name('layout2.halaman');

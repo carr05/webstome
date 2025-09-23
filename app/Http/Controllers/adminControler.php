@@ -342,64 +342,137 @@ class adminControler extends Controller
     //layout 2
     public function kepsek2()
     {
-        return view('layout2.kepsek');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.kepsek', compact('tampilan', 'hero', 'footer', 'semua'));
     }
 
-    public function Tentang()
+    public function admissions2()
     {
-        return view('layout2.Tentang');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.admissions2', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+   
     public function academics2()
     {
-        return view('layout2.academics');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.academics2', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function faculty_staff2()
     {
-        return view('layout2.faculty_staff');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.faculty_staff', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function campus_facilities2()
     {
-        return view('layout2.campus_facilities');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.campus_facilities', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function students_life2()
     {
-        return view('layout2.students_life');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.students_life', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function news2()
     {
-        return view('layout2.news');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.news', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function events2()
     {
-        return view('layout2.events');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.events', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function alumni2()
     {
-        return view('layout2.alumni');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.alumni', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function news_details2()
     {
-        return view('layout2.news_details');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.news_details', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function event_details2()
     {
-        return view('layout2.event_details');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.event_details', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function privacy2()
     {
-        return view('layout2.privacy');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.privacy', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function terms_of_service2()
     {
-        return view('layout2.terms_of_service');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.terms_of_service', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function eror2()
     {
-        return view('layout2.eror');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.eror', compact('tampilan', 'hero', 'footer', 'semua'));
     }
+
     public function starter_page2()
     {
-        return view('layout2.starter_page');
+        $tampilan = Tampilan::first();
+        $hero = Hero::first();
+        $footer = Footer::first();
+        $semua = Semua::first();
+        return view('layout2.starter_page', compact('tampilan', 'hero', 'footer', 'semua'));
     }
 
 
@@ -413,6 +486,9 @@ public function halamanDinamis($halaman)
 {
     // Ambil data dari DB kalau ada
     $tampilan = \App\Models\Tampilan::first();
+    $hero = Hero::first();
+    $footer = Footer::first();
+    $semua = Semua::first();
 
     // Cek apakah $halaman sesuai dengan salah satu menu
     $validMenus = [
@@ -424,7 +500,7 @@ public function halamanDinamis($halaman)
     ];
 
     if (in_array($halaman, $validMenus)) {
-        return view("layout2.$halaman", compact('tampilan'));
+        return view("layout2.$halaman", compact('tampilan', 'hero', 'footer', 'semua'));
     }
 
     // Kalau tidak ada → tampilkan 404 custom

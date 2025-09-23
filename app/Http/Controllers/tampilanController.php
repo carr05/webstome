@@ -203,4 +203,12 @@ $semua->save();
     {
         return view('layout1.footer.main');
     }
+    // Tambahin biar route /layout2/{halaman} bisa jalan
+    public function halamanDinamis($halaman)
+    {
+        if (view()->exists("layout2.$halaman")) {
+            return view("layout2.$halaman");
+        }
+        abort(404, "Halaman '$halaman' tidak ditemukan");
+    }
 }

@@ -332,7 +332,7 @@
           </li>
 
         <li><a href="{{ url('/layout1/students_life') }}">Students Life</a></li>
-        <li><a href="{{ url('/layout1/news') }}">Berita</a></li>
+        <li><a href="{{ url('/layout1/berita') }}">Berita</a></li>
         <li><a href="{{ url('/layout1/events') }}">Agenda</a></li>
         <li><a href="{{ url('/layout1/alumni') }}">Alumni</a></li>
           <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>

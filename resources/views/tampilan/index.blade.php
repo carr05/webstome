@@ -953,7 +953,7 @@
                 <h5><i class="bi bi-palette"></i> Tampilan</h5>
                 <p>Sesuaikan template dan nuansa panel admin Anda dengan elemen, teks, tata letak, dan tema yang menarik.</p>
             </div>
-            <img src="https://via.placeholder.com/150x100/5955B3/ffffff?text=Preview" alt="Ilustrasi" class="image-preview">
+               <img src="{{ asset('assets/tampilan(atas).png') }}" alt="Ilustrasi" class="image-preview">
         </div>
 
         <!-- Alert Sukses -->

@@ -857,7 +857,7 @@ section,
 }
 
 .hero .highlights-container {
-  margin-top: -70px;
+  margin-top: 50px;
   position: relative;
   z-index: 10;
 }
