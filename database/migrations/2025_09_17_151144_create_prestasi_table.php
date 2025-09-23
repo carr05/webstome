@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('prestasi', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->text('konten');
-            $table->string('gambar')->nullable();
-            $table->date('tanggal');
-            $table->timestamps();
+$table->string('judul');
+$table->text('konten');
+$table->string('gambar')->nullable();
+$table->date('tanggal');
+$table->timestamps();
+
         });
     }
 

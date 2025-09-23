@@ -52,18 +52,19 @@ class AgendaController extends Controller
     }
 
     // Menampilkan detail agenda
-    public function show($id)
-    {
-        $agenda = Agenda::findOrFail($id);
-        return view('agenda.show', compact('agenda'));
-    }
+    // AgendaController.php
+public function edit($id)
+{
+    $agenda = Agenda::findOrFail($id);
+    return response()->json($agenda);
+}
 
-    // Form edit agenda
-    public function edit($id)
-    {
-        $agenda = Agenda::findOrFail($id);
-        return view('agenda.edit', compact('agenda'));
-    }
+public function show($id)
+{
+    $agenda = Agenda::findOrFail($id);
+    return response()->json($agenda);
+}
+
 
     // Update agenda
     public function update(Request $request, $id)
@@ -94,15 +95,14 @@ class AgendaController extends Controller
 
     // Hapus agenda
     public function destroy($id)
-    {
-        $agenda = Agenda::findOrFail($id);
+{
+    $agenda = Agenda::findOrFail($id);
+    $agenda->delete();
 
-        if ($agenda->gambar && \Storage::disk('public')->exists($agenda->gambar)) {
-            \Storage::disk('public')->delete($agenda->gambar);
-        }
+    return response()->json([
+        'success' => true,
+        'message' => 'Agenda berhasil dihapus'
+    ], 200);
+}
 
-        $agenda->delete();
-
-        return redirect()->route('agenda.index')->with('success', 'Agenda berhasil dihapus!');
-    }
 }

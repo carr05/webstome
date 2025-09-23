@@ -2,17 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class guru extends Model
+class Guru extends Model
 {
-    //
-    protected $table = 'guru';
+    use HasFactory;
 
-    protected $fillable = [
-        'nama',
-        'mapel',
-        'gambar',
-        'tanggal',
-    ];
+    protected $table = 'guru'; // pastikan sesuai nama tabel di DB
+    protected $fillable = ['nama', 'mapel', 'tanggal', 'foto'];
 }

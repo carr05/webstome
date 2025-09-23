@@ -85,7 +85,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: var(--hero-font-color);
   font-family: var(--heading-font);
 }
 

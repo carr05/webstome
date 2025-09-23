@@ -29,8 +29,8 @@ class adminControler extends Controller
         $tampilan = Tampilan::first();
         $hero = Hero::first();
         $footer = Footer::first();
-
-        return view('layout2.index', compact('tampilan', 'hero', 'footer'));
+        $semua = Semua::first();
+        return view('layout2.index', compact('tampilan', 'hero', 'footer', 'semua'));
     }
 
     public function formLogin()

@@ -7,6 +7,9 @@ use App\Http\Controllers\layoutController;
 use App\Http\Controllers\tampilanController;
 use App\Http\Controllers\heroController;
 use App\Http\Controllers\agendaController;
+use App\Http\Controllers\prestasiController;
+use App\Http\Controllers\galeriController;
+use App\Http\Controllers\guruController;
 
 
 Route::get('/haloo', function () {
@@ -38,14 +41,17 @@ Route::get('/webpromosi', [adminControler::class, 'webpromosi'])->name('webpromo
 // Sidebar Menu
 Route::get('/menu', [adminControler::class, 'menu'])->name('menu');
 Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');
-Route::get('/agenda', [agendaController::class, 'index'])->name('agenda.index');
-Route::get('/agenda/create', [agendaController::class, 'create'])->name('agenda.create');
-Route::post('/agenda', [agendaController::class, 'store'])->name('agenda.store');
-Route::get('/agenda/{id}', [agendaController::class, 'show'])->name('agenda.show');
-Route::get('/agenda/{id}/edit', [agendaController::class, 'edit'])->name('agenda.edit');
-Route::put('/agenda/{id}', [agendaController::class, 'update'])->name('agenda.update');
-Route::delete('/agenda/{id}', [agendaController::class, 'destroy'])->name('agenda.destroy');
+// routes/web.php
+Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
+Route::post('/agenda', [AgendaController::class, 'store'])->name('agenda.store');
+// routes/web.php
+Route::get('/agenda/{id}/edit', [AgendaController::class, 'edit'])->name('agenda.edit'); // view
+Route::get('/api/agenda/{id}', [AgendaController::class, 'getAgenda']); // JSON
 
+Route::put('/agenda/{id}', [AgendaController::class, 'update']);
+Route::delete('/agenda/{id}', [AgendaController::class, 'destroy']);
+Route::get('/agenda/{id}', [AgendaController::class, 'show']);
+Route::get('/agenda/search', [AgendaController::class, 'search']);
 Route::resource('berita', BeritaController::class);
 
 
@@ -58,10 +64,45 @@ Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show
 Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
 Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
 Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
-Route::get('/galeri', [adminControler::class, 'galeri'])->name('galeri');
+
+
+Route::get('/galeri', [galeriController::class, 'index'])->name('galeri.index');
+Route::post('/galeri', [galeriController::class, 'store'])->name('galeri.store');
+Route::get('/galeri/{id}', [galeriController::class, 'show'])->name('galeri.show');
+Route::get('/galeri/{id}/edit', [galeriController::class, 'edit'])->name('galeri.edit');
+Route::put('/galeri/{id}', [galeriController::class, 'update'])->name('galeri.update');
+Route::delete('/galeri/{id}', [galeriController::class, 'destroy'])->name('galeri.destroy');
+
 Route::get('/jurusan', [adminControler::class, 'jurusan'])->name('jurusan');
-Route::get('/prestasi', [adminControler::class, 'prestasi'])->name('prestasi');
-Route::get('/guru', [adminControler::class, 'guru'])->name('guru');
+
+
+Route::get('/prestasi', [prestasiController::class, 'index'])->name('prestasi.index');
+
+// Ambil detail 1 prestasi (untuk modal detail)
+Route::get('/prestasi/{id}', [prestasiController::class, 'show'])->name('prestasi.show');
+
+// Form edit (ambil data untuk modal edit)
+Route::get('/prestasi/{id}/edit', [prestasiController::class, 'edit'])->name('prestasi.edit');
+
+// Tambah prestasi
+Route::post('/prestasi', [prestasiController::class, 'store'])->name('prestasi.store');
+
+// Update prestasi
+Route::put('/prestasi/{id}', [prestasiController::class, 'update'])->name('prestasi.update');
+
+// Hapus prestasi
+Route::delete('/prestasi/{id}', [prestasiController::class, 'destroy'])->name('prestasi.destroy');
+
+// Cari prestasi (judul, konten, tanggal, dsb.)
+Route::get('/prestasi/search', [prestasiController::class, 'search'])->name('prestasi.search');
+
+Route::get('/guru', [guruController::class, 'index'])->name('guru.index');
+Route::post('/guru', [guruController::class, 'store'])->name('guru.store');
+Route::get('/guru/{id}', [guruController::class, 'show'])->name('guru.show');
+Route::get('/guru/{id}/edit', [guruController::class, 'edit'])->name('guru.edit');
+Route::put('/guru/{id}', [guruController::class, 'update'])->name('guru.update');
+Route::delete('/guru/{id}', [guruController::class, 'destroy'])->name('guru.destroy');
+
 Route::get('/staff', [adminControler::class, 'staff'])->name('staff');
 Route::get('/alumni', [adminControler::class, 'alumni'])->name('alumni');
 Route::get('/ekstrakurikuler', [adminControler::class, 'ekstrakurikuler'])->name('ekstrakurikuler');
