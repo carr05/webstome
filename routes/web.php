@@ -6,6 +6,7 @@ use App\Http\Controllers\beritaController;
 use App\Http\Controllers\layoutController;
 use App\Http\Controllers\tampilanController;
 use App\Http\Controllers\heroController;
+use App\Http\Controllers\agendaController;
 
 
 Route::get('/haloo', function () {
@@ -37,6 +38,14 @@ Route::get('/webpromosi', [adminControler::class, 'webpromosi'])->name('webpromo
 // Sidebar Menu
 Route::get('/menu', [adminControler::class, 'menu'])->name('menu');
 Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');
+Route::get('/agenda', [agendaController::class, 'index'])->name('agenda.index');
+Route::get('/agenda/create', [agendaController::class, 'create'])->name('agenda.create');
+Route::post('/agenda', [agendaController::class, 'store'])->name('agenda.store');
+Route::get('/agenda/{id}', [agendaController::class, 'show'])->name('agenda.show');
+Route::get('/agenda/{id}/edit', [agendaController::class, 'edit'])->name('agenda.edit');
+Route::put('/agenda/{id}', [agendaController::class, 'update'])->name('agenda.update');
+Route::delete('/agenda/{id}', [agendaController::class, 'destroy'])->name('agenda.destroy');
+
 Route::resource('berita', BeritaController::class);
 
 
