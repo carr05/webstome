@@ -2,20 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class berita extends Model
+class Berita extends Model
 {
-    //
     use HasFactory;
 
     protected $table = 'berita';
 
     protected $fillable = [
         'judul',
+        'kategori',
         'konten',
-        'gambar',
         'tanggal',
+        'gambar',
+        'views'
+    ];
+
+    protected $casts = [
+        'tanggal' => 'date',
     ];
 }
