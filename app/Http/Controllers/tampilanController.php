@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tampilan;
 use App\Models\Hero;
 use App\Models\footer; 
+use App\Models\semua;
 use Illuminate\Support\Facades\Storage;
 
 class tampilanController extends Controller
@@ -14,8 +15,9 @@ class tampilanController extends Controller
     {
         $tampilan = Tampilan::first();
         $hero = Hero::first();
-        $footer = Footer::first(); 
-        return view('tampilan.index', compact('tampilan', 'hero', 'footer'));
+        $footer = Footer::first();
+        $semua = Semua::first(); 
+        return view('tampilan.index', compact('tampilan', 'hero', 'footer', 'semua'));
     }
 
     public function update(Request $request)
@@ -172,6 +174,26 @@ if ($request->filled('footer_developer')) {
 $footer->footer_show_developer = $request->has('footer_show_developer') ? 1 : 0;
 
 $footer->save();
+
+$semua = Semua::first() ?? new Semua();
+
+if ($request->filled('global_primary_color')){
+    $semua->warna_utama = $request->global_primary_color;
+}
+if ($request->filled('global_primary_font')){
+    $semua->font_utama = $request->global_primary_font;
+}
+if ($request->filled('global_heading_font')){
+    $semua->font_heading = $request->global_heading_font;
+}
+if ($request->filled('global_secondry_color')){
+    $semua->warna_kedua = $request->global_secondry_color;
+}
+if ($request->filled('global_font_color')){
+    $semua->font_color = $request->global_font_color;
+}
+
+$semua->save();
 
 
         return redirect()->route('tampilan.index')
