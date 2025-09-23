@@ -199,4 +199,8 @@ $semua->save();
         return redirect()->route('tampilan.index')
                          ->with('success', 'Tampilan, Hero & Footer berhasil diperbarui!');
     }
+     public function footer()
+    {
+        return view('layout1.footer.main');
+    }
 }

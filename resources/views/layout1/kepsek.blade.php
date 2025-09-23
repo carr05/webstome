@@ -98,7 +98,7 @@
     /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
     .light-background {
-      --background-color: #e6edf0;
+      background-color: #e6edf0;
       --surface-color: #ffffff;
     }
 
@@ -693,8 +693,7 @@
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
     .page-title {
-      color: var(--default-color);
-      background-color: var(--background-color);
+      background: var(--global-color);
       padding: 25px 0;
       position: relative;
     }
@@ -1183,6 +1182,7 @@
       position: relative;
       margin-top: 40px;
       padding-left: 30px;
+          background: var(--global-color);
     }
 
     .about .about-content .timeline:before {
@@ -1192,12 +1192,13 @@
       top: 0;
       height: 100%;
       width: 3px;
-      background-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+      background-color: color-mix(in srgb, var(--global-color), transparent 70%);
     }
 
     .about .about-content .timeline .timeline-item {
       position: relative;
       margin-bottom: 30px;
+  
     }
 
     .about .about-content .timeline .timeline-item:last-child {
@@ -1211,7 +1212,7 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background-color: var(--accent-color);
+      background-color: var(--global-color);
     }
 
     .about .about-content .timeline .timeline-item .timeline-content h4 {
@@ -1239,6 +1240,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+      background: var(--global-colar);
     }
 
     @media (max-width: 768px) {
@@ -1253,6 +1255,7 @@
       padding: 25px;
       border-radius: 10px;
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+          background: var(--global-color);
     }
 
     .about .about-image .mission-vision .mission h3,
@@ -3182,7 +3185,7 @@
       position: absolute;
       bottom: 30px;
       left: -20px;
-      background-color: var(--accent-color);
+      background-color: var(--global-color);
       color: var(--contrast-color);
       padding: 15px 25px;
       border-radius: 8px;
@@ -8445,63 +8448,13 @@
 </head>
 
 
-<body class="about-page">
+<body class="about-page" >
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div
-      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">College</h1>
-      </a>
+@include('layout1.navbar.main')
 
-<nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="{{ url('/layout1/index') }}">Beranda</a></li>
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="{{ url('/layout1/kepsek') }}">Kepala Sekolah</a></li>
-              <li><a href="{{ url('/layout1/admissions') }}">Admissions</a></li>
-              <li><a href="{{ url('/layout1/academics') }}">Academics</a></li>
-              <li><a href="{{ url('/layout1/faculty_staff') }}">Faculty &amp; Staff</a></li>
-              <li><a href="{{ url('/layout1/campus_facilities') }}">Campus &amp; Facilities</a></li>
-            </ul>
-          </li>
-
-          {{-- dari sini --}}
-           <li><a href="{{ url('/layout1/students_life') }}">Students Life</a></li>
-           <li><a href="{{ url('/layout1/news') }}">Berita</a></li>
-           <li><a href="{{ url('/layout1/events') }}">Agenda</a></li>
-           <li><a href="{{ url('/layout1/alumni') }}">Alumni</a></li>
-          <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-               <li><a href="{{ url('/layout1/news_details') }}">News Details</a></li>
-               <li><a href="{{ url('/layout1/event_details') }}">Event Details</a></li>
-               <li><a href="{{ url('/layout1/privacy') }}">Privacy</a></li>
-               <li><a href="{{ url('/layout1/terms_of_service') }}">Terms of Service</a></li>
-               <li><a href="{{ url('/layout1/eror') }}">Error 404</a></li>
-               <li><a href="{{ url('/layout1/starter_page') }}">Starter Page</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="main">
+  <main class="main" style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};">
 
     <!-- Page Title -->
     <div class="page-title light-background">
@@ -8510,7 +8463,7 @@
         <h1 class="mb-2 mb-lg-0">Sambutan Kepala Sekolah</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ url('/layout1/kepsek') }}">Kepala Sekolah</a></li>
             <li class="current">About</li>
           </ol>
         </nav>
@@ -8518,7 +8471,9 @@
     </div><!-- End Page Title -->
 
     <!-- History Section -->
-    <section id="history" class="history section">
+    <section id="history" class="history section" style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -8672,7 +8627,9 @@
     </section><!-- /History Section -->
 
     <!-- Leadership Section -->
-    <section id="leadership" class="leadership section">
+    <section id="leadership" class="leadership section" style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -8724,7 +8681,10 @@
           </div>
         </div>
 
-        <div class="leadership-section" data-aos="fade-up">
+        <div class="leadership-section" data-aos="fade-up" style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};">
+
           <div class="section-header text-center">
             <span class="subtitle">Our Team</span>
             <h2 class="title">Meet Our Distinguished Leadership</h2>
@@ -8995,88 +8955,7 @@
     </section><!-- /Leadership Section -->
 
   </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">College</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-
-  </footer>
+@include('layout1.footer.main')
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i

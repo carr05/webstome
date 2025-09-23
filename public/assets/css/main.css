@@ -637,8 +637,8 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: var(--global-color);
+  background-color: var(--global-color);
   padding: 25px 0;
   position: relative;
 }
@@ -1573,14 +1573,13 @@ section,
 .students-life-block .hero-image-wrapper .floating-card .card-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #ff6b6b 30%));
+  background: linear-gradient(135deg, var(--global-color));
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.students-life-block .hero-image-wrapper .floating-card .card-icon i {
+ .students-life-block .hero-image-wrapper .floating-card .card-icon i {
   color: var(--contrast-color);
   font-size: 1.5rem;
 }
@@ -1647,7 +1646,7 @@ section,
 .students-life-block .info-grid .info-item .info-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 85%), color-mix(in srgb, var(--accent-color), transparent 95%));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--global-color), transparent 85%));
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -1683,19 +1682,19 @@ section,
 }
 
 .students-life-block .cta-section .btn-primary {
-  background: var(--accent-color);
+  background: var(--global-color);
   color: var(--contrast-color);
   padding: 14px 30px;
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--global-color);
 }
 
 .students-life-block .cta-section .btn-primary:hover {
   background: transparent;
-  color: var(--accent-color);
+  color: var(--global-color);
   transform: translateY(-2px);
 }
 
@@ -1765,7 +1764,7 @@ section,
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+  background: var(--global-color);
   display: flex;
   align-items: flex-end;
   padding: 2rem;
@@ -1774,7 +1773,7 @@ section,
 }
 
 .students-life-block .activities-showcase .featured-activity .activity-overlay .overlay-content {
-  color: var(--contrast-color);
+  color: var(--global-color);
 }
 
 .students-life-block .activities-showcase .featured-activity .activity-overlay .overlay-content h4 {
@@ -1791,7 +1790,7 @@ section,
 .students-life-block .activities-showcase .featured-activity .activity-overlay .overlay-content .overlay-btn {
   width: 50px;
   height: 50px;
-  background: var(--accent-color);
+  background: var(--global-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2075,18 +2074,21 @@ section,
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   background-color: var(--global-color);
 }
 
 .testimonials .swiper-button-prev:hover,
 .testimonials .swiper-button-next:hover {
   background: color-mix(in srgb, var(--accent-color), var(--heading-color) 20%);
   transform: scale(1.05);
+   background-color: var(--global-color);
 }
 
 .testimonials .swiper-button-prev::after,
 .testimonials .swiper-button-next::after {
   font-size: 16px;
   font-weight: 600;
+   background-color: var(--global-color);
 }
 
 .testimonials .swiper-pagination {
@@ -2177,11 +2179,13 @@ section,
     width: 40px;
     height: 40px;
     font-size: 14px;
+    background-color: var(--global-color);
   }
 
   .testimonials .swiper-button-prev::after,
   .testimonials .swiper-button-next::after {
     font-size: 14px;
+     background-color: var(--global-color);
   }
 }
 
@@ -2291,10 +2295,12 @@ section,
 .stats .metric-card:hover .metric-icon-wrapper {
   background: linear-gradient(135deg, var(--accent-color), var(--heading-color));
   transform: rotate(360deg);
+   background-color: var(--global-color);
 }
 
 .stats .metric-card:hover .metric-icon-wrapper i {
   color: var(--contrast-color);
+   background-color: var(--global-color);
 }
 
 .stats .metric-card .metric-header {
@@ -2313,18 +2319,19 @@ section,
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
+   background-color: var(--global-color);
 }
 
 .stats .metric-card .metric-header .metric-icon-wrapper i {
   font-size: 1.8rem;
   color: var(--accent-color);
   transition: all 0.4s ease;
+   background-color: var(--global-color);
 }
 
 .stats .metric-card .metric-header .metric-value {
   font-size: 2.75rem;
   font-weight: 900;
-  color: var(--heading-color);
   font-family: var(--heading-font);
   line-height: 1;
 }
@@ -2333,7 +2340,7 @@ section,
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: var(--heading-color);
+
 }
 
 .stats .metric-card .metric-info p {
@@ -2385,7 +2392,6 @@ section,
 }
 
 .stats .highlights-section .highlights-content .highlights-features .feature-item i {
-  color: var(--accent-color);
   font-size: 1.2rem;
   margin-right: 1rem;
 }
@@ -2411,17 +2417,20 @@ section,
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 1rem;
+
 }
 
 .stats .highlights-section .highlights-content .highlights-cta .cta-btn.primary {
-  background: linear-gradient(135deg, var(--accent-color), var(--heading-color));
+  background: linear-gradient(135deg, var(--global-color));
   color: var(--contrast-color);
   border: 2px solid transparent;
+   background-color: var(--global-color);
 }
 
 .stats .highlights-section .highlights-content .highlights-cta .cta-btn.primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
+   background-color: var(--global-color);
 }
 
 .stats .highlights-section .highlights-content .highlights-cta .cta-btn.secondary {
@@ -2431,7 +2440,7 @@ section,
 }
 
 .stats .highlights-section .highlights-content .highlights-cta .cta-btn.secondary:hover {
-  background: var(--heading-color);
+  background-color: var(--global-color);
   color: var(--contrast-color);
 }
 
@@ -2555,14 +2564,14 @@ section,
   font-weight: 500;
   padding: 6px 16px;
   margin-bottom: 16px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--global-color), transparent 90%);
+  color: var(--global-color);
   border-radius: 50px;
   transition: 0.3s;
 }
 
 .recent-news .category:hover {
-  background-color: var(--accent-color);
+  background-color: var(--global-color);
   color: var(--contrast-color);
 }
 
@@ -2680,12 +2689,12 @@ section,
   position: absolute;
   top: 15px;
   right: 15px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #ff6b6b 30%));
+  background: linear-gradient(135deg, var(--global-color), color-mix(in srgb, var(--global-color), #ff6b6b 30%));
   color: var(--contrast-color);
   padding: 8px 12px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--global-color), transparent 60%);
 }
 
 .events .event-item .event-image .event-date-overlay .date {
@@ -2785,7 +2794,7 @@ section,
 }
 
 .events .event-item .event-details .event-footer .register-btn {
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c5ce7 20%));
+  background: linear-gradient(135deg, var(--global-color), color-mix(in srgb, var(--global-color), #6c5ce7 20%));
   color: var(--contrast-color);
   padding: 0.6rem 1.4rem;
   border-radius: 25px;
@@ -2797,7 +2806,7 @@ section,
 
 .events .event-item .event-details .event-footer .register-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--global-color), transparent 60%);
 }
 
 .events .event-item .event-details .event-footer .event-share {
@@ -2834,6 +2843,7 @@ section,
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  
 }
 
 .events .events-navigation .filter-tabs .filter-tab {
@@ -2853,8 +2863,8 @@ section,
 }
 
 .events .events-navigation .filter-tabs .filter-tab.active {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  background-color: var(--global-color);
+  border-color: var(--global-color);
   color: var(--contrast-color);
 }
 
@@ -2876,7 +2886,7 @@ section,
 }
 
 .events .events-navigation .view-calendar-btn:hover {
-  background-color: var(--accent-color);
+  background-color: var(--global-color);
   color: var(--contrast-color);
   transform: translateY(-2px);
 }
@@ -3398,7 +3408,7 @@ section,
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: var(--accent-color);
+  background-color: var(--global-color);
 }
 
 .admissions .application-steps {
@@ -3438,7 +3448,7 @@ section,
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: var(--accent-color);
+  background-color: var(--global-color);
   color: var(--contrast-color);
   display: flex;
   align-items: center;
@@ -5347,18 +5357,19 @@ section,
   border-radius: 50%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+   background-color: var(--global-color);
 }
 
 .campus-facilities .highlights-carousel .campus-slider .swiper-button-prev:hover,
 .campus-facilities .highlights-carousel .campus-slider .swiper-button-next:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background-color: var(--global-color);
 }
 
 .campus-facilities .highlights-carousel .campus-slider .swiper-button-prev:after,
 .campus-facilities .highlights-carousel .campus-slider .swiper-button-next:after {
   font-size: 1.2rem;
   font-weight: 700;
+   background-color: var(--global-color);
 }
 
 .campus-facilities .map-integration .map-sidebar {

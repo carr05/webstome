@@ -19,7 +19,7 @@
 }
 
 .header .logo {
-  background: var(--accent-color);
+  background: var(--nav-color);
   position: absolute;
   inset: 0 auto 0 0;
   padding: 0 20px;
@@ -299,52 +299,29 @@
 }
 }
 </style>
-<header id="header" class="header d-flex align-items-center sticky-top" 
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top" 
   style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
          --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
          --font-size: {{ $tampilan->font_size ?? '16px' }};
          --font-color: {{ $tampilan->font_color ?? '#04315f' }};">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt=""> 
-        <h1 class="sitename">SMKN 4 MALANG</h1>
-      </a>
+        <a href="{{ url('/layout1/index') }}" class="logo d-flex align-items-center me-auto">
+  @if(!empty($tampilan->logo))
+    <img src="{{ asset('storage/'.$tampilan->logo) }}" alt="Logo" style="max-height:50px; margin-right:10px;">
+  @else
+    <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt="Logo" style="max-height:50px; margin-right:10px;">
+  @endif
+  <h1 class="sitename">{{ $tampilan->nama_sekolah ?? 'SMKN 4 MALANG' }}</h1>
+</a>
+      
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li class="dropdown"><a href="{{ url('/layout1/about') }}"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="{{ url('layout1/about') }}">About Us</a></li>
-              <li><a href="admissions.html">Admissions</a></li>
-              <li><a href="academics.html">Academics</a></li>
-              <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
-              <li><a href="campus-facilities.html">Campus &amp; Facilities</a></li>
-            </ul>
-          </li>
-
-          <li><a href="students-life.html">Students Life</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
-          <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="news-details.html">News Details</a></li>
-              <li><a href="event-details.html">Event Details</a></li>
-              <li><a href="privacy.html">Privacy</a></li>
-              <li><a href="terms-of-service.html">Terms of Service</a></li>
-              <li><a href="404.html">Error 404</a></li>
-              <li><a href="starter-page.html">Starter Page</a></li>
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">College</h1>
-      </a>
-
-     <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="{{ url('/layout1/index') }}">Beranda</a></li>
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="{{ url('/layout1/index') }}" class="active">Home</a></li>
+          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{{ url('/layout1/kepsek') }}">Kepala Sekolah</a></li>
               <li><a href="{{ url('/layout1/admissions') }}">Admissions</a></li>
@@ -354,19 +331,18 @@
             </ul>
           </li>
 
-          {{-- dari sini --}}
-           <li><a href="{{ url('/layout1/students_life') }}">Students Life</a></li>
-           <li><a href="{{ url('/layout1/news') }}">Berita</a></li>
-           <li><a href="{{ url('/layout1/events') }}">Agenda</a></li>
-           <li><a href="{{ url('/layout1/alumni') }}">Alumni</a></li>
+        <li><a href="{{ url('/layout1/students_life') }}">Students Life</a></li>
+        <li><a href="{{ url('/layout1/news') }}">Berita</a></li>
+        <li><a href="{{ url('/layout1/events') }}">Agenda</a></li>
+        <li><a href="{{ url('/layout1/alumni') }}">Alumni</a></li>
           <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-               <li><a href="{{ url('/layout1/news_details') }}">News Details</a></li>
-               <li><a href="{{ url('/layout1/event_details') }}">Event Details</a></li>
-               <li><a href="{{ url('/layout1/privacy') }}">Privacy</a></li>
-               <li><a href="{{ url('/layout1/terms_of_service') }}">Terms of Service</a></li>
-               <li><a href="{{ url('/layout1/eror') }}">Error 404</a></li>
-               <li><a href="{{ url('/layout1/starter_page') }}">Starter Page</a></li>
+              <li><a href="{{ url('/layout1/news_details') }}">News Details</a></li>
+            <li><a href="{{ url('/layout1/event_details') }}">Event Details</a></li>
+            <li><a href="{{ url('/layout1/privacy') }}">Privacy</a></li>
+            <li><a href="{{ url('/layout1/terms_of_service') }}">Terms of Service</a></li>
+            <li><a href="{{ url('/layout1/eror') }}">Error 404</a></li>
+            <li><a href="{{ url('/layout1/starter_page') }}">Starter Page</a></li>
             </ul>
           </li>
 
@@ -382,17 +358,15 @@
                   <li><a href="#">Deep Dropdown 5</a></li>
                 </ul>
               </li>
-
               <li><a href="#">Dropdown 2</a></li>
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{{ url('/layout1/contact') }}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
 
     </div>
   </header>
