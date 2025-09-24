@@ -1,4 +1,3 @@
-@extends('layout2.index')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +37,7 @@
 
 <body class="admissions-page">
 
-@include('layout1.navbar.main')
+@include('layout2.navbar.main')
 
   <main class="main">
 
