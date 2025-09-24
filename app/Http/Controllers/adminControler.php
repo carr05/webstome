@@ -13,6 +13,8 @@ use App\Models\hero;
 use App\Models\footer;
 use App\Models\semua;
 
+
+
 class adminControler extends Controller
 {
     public function landing()
@@ -25,13 +27,25 @@ class adminControler extends Controller
     }
 
     public function landing2()
-    {
-        $tampilan = Tampilan::first();
-        $hero = Hero::first();
-        $footer = Footer::first();
-        $semua = Semua::first();
-        return view('layout2.index', compact('tampilan', 'hero', 'footer', 'semua'));
-    }
+{
+    $tampilan = Tampilan::first();
+    $hero     = Hero::first();
+    $footer   = Footer::first();
+    $semua    = Semua::first();
+
+    // ambil semua berita
+    $berita   = \App\Models\Berita::latest()->get();
+
+    // ambil semua agenda
+    $agendas  = \App\Models\Agenda::orderBy('tanggal', 'asc')->get();
+
+    // ambil prestasi terbaru
+    $prestasi = \App\Models\Prestasi::latest()->first();
+
+    return view('layout2.index', compact('tampilan', 'hero', 'footer', 'semua', 'berita', 'agendas', 'prestasi'));
+}
+
+
 
     public function formLogin()
     {
@@ -394,14 +408,19 @@ class adminControler extends Controller
         return view('layout2.students_life', compact('tampilan', 'hero', 'footer', 'semua'));
     }
 
-    public function news2()
-    {
-        $tampilan = Tampilan::first();
-        $hero = Hero::first();
-        $footer = Footer::first();
-        $semua = Semua::first();
-        return view('layout2.news', compact('tampilan', 'hero', 'footer', 'semua'));
-    }
+   public function news2()
+{
+    $tampilan = Tampilan::first();
+    $hero     = Hero::first();
+    $footer   = Footer::first();
+    $semua    = Semua::first();
+
+    // Ambil berita dan kirim sebagai $berita
+    $berita = Berita::orderBy('created_at', 'desc')->paginate(6);
+
+    return view('layout2.news', compact('tampilan', 'hero', 'footer', 'semua', 'berita'));
+}
+
 
     public function events2()
     {
