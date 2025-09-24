@@ -595,328 +595,166 @@
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section light-background">
 
-      <div class="container">
+  <div class="container">
+    <div class="row align-items-center">
 
-        <div class="row align-items-center">
-
-          <div class="col-lg-5">
-            <div class="content-wrapper">
-              <div class="badge">
-                <i class="bi bi-mortarboard-fill"></i>
-                <span>Premium Education</span>
-              </div>
-
-              <h2>Elevate Your Learning Journey with World-Class Education</h2>
-
-              <p>Discover unlimited potential through our carefully curated learning experiences designed by industry leaders and educational experts.</p>
-
-              <div class="highlight-stats">
-                <div class="stat-group">
-                  <div class="stat-item">
-                    <span class="number purecounter" data-purecounter-start="0" data-purecounter-end="25000" data-purecounter-duration="2">0</span>
-                    <span class="label">Active Learners</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="number purecounter" data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="2">0</span>
-                    <span class="label">Expert Courses</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="action-buttons">
-                <a href="programs.html" class="btn-primary">Explore Programs</a>
-                <a href="trial.html" class="btn-secondary">
-                  <span>Start Free Trial</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
+      <div class="col-lg-5">
+        <div class="content-wrapper">
+          <div class="badge">
+            <i class="bi bi-trophy-fill"></i>
+            <span>Prestasi Siswa</span>
           </div>
 
-          <div class="col-lg-7">
-            <div class="visual-section">
-              <div class="main-image-container">
-                <img src="assets/img/education/students-1.webp" alt="Students Learning" class="main-image">
-                <div class="overlay-gradient"></div>
-              </div>
+          {{-- Judul Prestasi --}}
+<h2>{{ optional($prestasi)->judul ?? 'Belum ada prestasi terbaru' }}</h2>
 
-              <div class="feature-cards">
-                <div class="feature-card achievement">
-                  <div class="icon">
-                    <i class="bi bi-trophy-fill"></i>
-                  </div>
-                  <div class="content">
-                    <h4>Certified Excellence</h4>
-                    <p>Industry-recognized certificates</p>
-                  </div>
-                </div>
+{{-- Konten Prestasi --}}
+<p>{{ optional($prestasi)->konten ?? 'Prestasi terbaru akan muncul di sini setelah ditambahkan.' }}</p>
 
-                <div class="feature-card flexibility">
-                  <div class="icon">
-                    <i class="bi bi-clock-fill"></i>
-                  </div>
-                  <div class="content">
-                    <h4>Learn at Your Pace</h4>
-                    <p>24/7 access to all materials</p>
-                  </div>
-                </div>
+<div class="action-buttons">
+    <a href="{{ route('prestasi.index') }}" class="btn-primary">Lihat Semua Prestasi</a>
+    @if($prestasi)
+        <a href="{{ route('prestasi.show', $prestasi->id) }}" class="btn-secondary">
+            <span>Detail Prestasi</span>
+            <i class="bi bi-arrow-right"></i>
+        </a>
+    @endif
+</div>
 
-                <div class="feature-card community">
-                  <div class="icon">
-                    <i class="bi bi-people-fill"></i>
-                  </div>
-                  <div class="content">
-                    <h4>Global Community</h4>
-                    <p>Connect with learners worldwide</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-        </div>
+      {{-- Gambar Prestasi --}}
+@if($prestasi && $prestasi->gambar)
+    <img src="{{ asset($prestasi->gambar) }}" alt="{{ $prestasi->judul }}">
+@else
+    <img src="{{ asset('assets/img/default-prestasi.jpg') }}" alt="Prestasi Default">
+@endif
 
-      </div>
+{{-- Judul Prestasi --}}
+<h2>{{ $prestasi->judul ?? 'Belum ada prestasi terbaru' }}</h2>
 
-    </section><!-- /Call To Action Section -->
+{{-- Konten Prestasi --}}
+<p>{{ $prestasi->konten ?? 'Prestasi terbaru akan muncul di sini setelah ditambahkan.' }}</p>
+
+<div class="action-buttons">
+    <a href="{{ route('prestasi.index') }}" class="btn-primary">Lihat Semua Prestasi</a>
+    @if($prestasi)
+        <a href="{{ route('prestasi.show', $prestasi->id) }}" class="btn-secondary">
+            <span>Detail Prestasi</span>
+            <i class="bi bi-arrow-right"></i>
+        </a>
+    @endif
+</div>
+
+
+</section>
+
 
     <!-- Recent News Section -->
     <section id="recent-news" class="recent-news section">
 
-      <!-- Section Title -->
-      <div class="container section-title">
-        <h2>Recent News</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title">
+    <h2>Recent News</h2>
+    
+  </div><!-- End Section Title -->
 
-      <div class="container">
+  <div class="container">
+    <div class="row gy-5">
 
-        <div class="row gy-5">
-
-          <div class="col-xl-3 col-md-6">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-post-1.webp" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div>
-              <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis</h3>
-              <p>Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel omnis laudantium. Asperiores eum ipsa est officiis. Modi qui magni est...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+      @foreach($berita as $item)
+        <div class="col-xl-3 col-md-6">
+          <div class="post-box">
+            <div class="post-img">
+              @if($item->gambar)
+                <img src="{{ asset('storage/'.$item->gambar) }}" class="img-fluid" alt="{{ $item->judul }}">
+              @else
+                <img src="{{ asset('assets/img/default-news.jpg') }}" class="img-fluid" alt="default image">
+              @endif
             </div>
-          </div>
 
-          <div class="col-xl-3 col-md-6">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-post-2.webp" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Fri, September 05</span>
-                <span class="post-author"> / Mario Douglas</span>
-              </div>
-              <h3 class="post-title">Et repellendus molestiae qui est sed omnis</h3>
-              <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis doloribus...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            <div class="meta">
+              <span class="post-date">
+                {{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('D, d M Y') }}
+              </span>
+              <span class="post-author"> / {{ $item->penulis ?? 'Admin' }}</span>
             </div>
-          </div>
 
-          <div class="col-xl-3 col-md-6">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-post-3.webp" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, July 27</span>
-                <span class="post-author"> / Lisa Hunter</span>
-              </div>
-              <h3 class="post-title">Quia assumenda est et veritati</h3>
-              <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
+            <h3 class="post-title">{{ $item->judul }}</h3>
+            <p>{{ \Illuminate\Support\Str::limit(strip_tags($item->konten), 100, '...') }}</p>
 
-          <div class="col-xl-3 col-md-6">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-post-4.webp" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, Sep 16</span>
-                <span class="post-author"> / Mario Douglas</span>
-              </div>
-              <h3 class="post-title">Pariatur quia facilis similique deleniti</h3>
-              <p>Et consequatur eveniet nam voluptas commodi cumque ea est ex. Aut quis omnis sint ipsum earum quia eligendi...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
+            <a href="{{ route('berita.show', $item->id) }}" class="readmore stretched-link">
+              <span>Read More</span><i class="bi bi-arrow-right"></i>
+            </a>
           </div>
-
         </div>
+      @endforeach
 
-      </div>
+    </div>
+  </div>
 
-    </section><!-- /Recent News Section -->
+</section><!-- /Recent News Section -->
+
 
     <!-- Events Section -->
-    <section id="events" class="events section">
+   <section id="events" class="events section">
 
-      <!-- Section Title -->
-      <div class="container section-title">
-        <h2>Events</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title">
+    <h2>Events</h2>
+    <p>Daftar kegiatan yang sudah terjadwal di sekolah</p>
+  </div><!-- End Section Title -->
 
-      <div class="container">
+  <div class="container">
 
-        <div class="event-filters mb-4">
-          <div class="row justify-content-center g-3">
-            <div class="col-md-4">
-              <select class="form-select">
-                <option selected="">All Months</option>
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-              </select>
+    <div class="row g-4">
+      @forelse($agendas as $agenda)
+        @php
+          $tanggal = \Carbon\Carbon::parse($agenda->tanggal);
+        @endphp
+
+        <div class="col-lg-6">
+          <div class="event-card">
+            <div class="event-date">
+              <span class="month">{{ strtoupper($tanggal->format('M')) }}</span>
+              <span class="day">{{ $tanggal->format('d') }}</span>
+              <span class="year">{{ $tanggal->format('Y') }}</span>
             </div>
-            <div class="col-md-4">
-              <select class="form-select">
-                <option selected="">All Categories</option>
-                <option>Academic</option>
-                <option>Arts</option>
-                <option>Sports</option>
-                <option>Community</option>
-              </select>
+            <div class="event-content">
+              <div class="event-tag academic">Agenda</div>
+              <h3>{{ $agenda->judul }}</h3>
+              <p>{{ Str::limit($agenda->konten, 150) }}</p>
+              <div class="event-meta">
+                <div class="meta-item">
+                  <i class="bi bi-clock"></i>
+                  <span>{{ $tanggal->format('H:i') }}</span>
+                </div>
+                <div class="meta-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>{{ $agenda->lokasi ?? 'Sekolah' }}</span>
+                </div>
+              </div>
+              <div class="event-actions">
+                <a href="{{ route('show', $agenda->id) }}" class="btn-learn-more">Learn More</a>
+
+                <a href="#" class="btn-calendar"><i class="bi bi-calendar-plus"></i> Add to Calendar</a>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="row g-4">
-
-          <div class="col-lg-6">
-            <div class="event-card">
-              <div class="event-date">
-                <span class="month">FEB</span>
-                <span class="day">15</span>
-                <span class="year">2025</span>
-              </div>
-              <div class="event-content">
-                <div class="event-tag academic">Academic</div>
-                <h3>Science Fair Exhibition</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div class="event-meta">
-                  <div class="meta-item">
-                    <i class="bi bi-clock"></i>
-                    <span>09:00 AM - 03:00 PM</span>
-                  </div>
-                  <div class="meta-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Main Auditorium</span>
-                  </div>
-                </div>
-                <div class="event-actions">
-                  <a href="#" class="btn-learn-more">Learn More</a>
-                  <a href="#" class="btn-calendar"><i class="bi bi-calendar-plus"></i> Add to Calendar</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="event-card">
-              <div class="event-date">
-                <span class="month">MAR</span>
-                <span class="day">10</span>
-                <span class="year">2025</span>
-              </div>
-              <div class="event-content">
-                <div class="event-tag sports">Sports</div>
-                <h3>Annual Sports Day</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                <div class="event-meta">
-                  <div class="meta-item">
-                    <i class="bi bi-clock"></i>
-                    <span>08:30 AM - 05:00 PM</span>
-                  </div>
-                  <div class="meta-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>School Playground</span>
-                  </div>
-                </div>
-                <div class="event-actions">
-                  <a href="#" class="btn-learn-more">Learn More</a>
-                  <a href="#" class="btn-calendar"><i class="bi bi-calendar-plus"></i> Add to Calendar</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="event-card">
-              <div class="event-date">
-                <span class="month">APR</span>
-                <span class="day">22</span>
-                <span class="year">2025</span>
-              </div>
-              <div class="event-content">
-                <div class="event-tag arts">Arts</div>
-                <h3>Spring Music Concert</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-                <div class="event-meta">
-                  <div class="meta-item">
-                    <i class="bi bi-clock"></i>
-                    <span>06:30 PM - 08:30 PM</span>
-                  </div>
-                  <div class="meta-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Performing Arts Center</span>
-                  </div>
-                </div>
-                <div class="event-actions">
-                  <a href="#" class="btn-learn-more">Learn More</a>
-                  <a href="#" class="btn-calendar"><i class="bi bi-calendar-plus"></i> Add to Calendar</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="event-card">
-              <div class="event-date">
-                <span class="month">MAY</span>
-                <span class="day">8</span>
-                <span class="year">2025</span>
-
-
-
-              </div>
-              <div class="event-content">
-                <div class="event-tag community">Community</div>
-                <h3>Parent-Teacher Conference</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-                <div class="event-meta">
-                  <div class="meta-item">
-                    <i class="bi bi-clock"></i>
-                    <span>01:00 PM - 07:00 PM</span>
-                  </div>
-                  <div class="meta-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Various Classrooms</span>
-                  </div>
-                </div>
-                <div class="event-actions">
-                  <a href="#" class="btn-learn-more">Learn More</a>
-                  <a href="#" class="btn-calendar"><i class="bi bi-calendar-plus"></i> Add to Calendar</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+      @empty
+        <div class="col-12 text-center">
+          <p>Belum ada agenda tersedia.</p>
         </div>
+      @endforelse
+    </div>
 
-        <div class="text-center mt-5">
-          <a href="#" class="btn-view-all">View All Events</a>
-        </div>
+    <div class="text-center mt-5">
+      <a href="{{ route('agenda.index') }}" class="btn-view-all">View All Events</a>
+    </div>
 
-      </div>
+  </div>
+</section>
 
-    </section><!-- /Events Section -->
 
   </main>
 

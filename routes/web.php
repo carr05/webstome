@@ -50,7 +50,8 @@ Route::get('/api/agenda/{id}', [AgendaController::class, 'getAgenda']); // JSON
 
 Route::put('/agenda/{id}', [AgendaController::class, 'update']);
 Route::delete('/agenda/{id}', [AgendaController::class, 'destroy']);
-Route::get('/agenda/{id}', [AgendaController::class, 'show']);
+Route::get('/agenda/{id}', [agendaController::class, 'show'])->name('show');
+
 Route::get('/agenda/search', [AgendaController::class, 'search']);
 Route::resource('berita', BeritaController::class);
 
