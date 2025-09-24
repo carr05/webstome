@@ -141,14 +141,14 @@ Route::get('/layout1/footer/main', [tampilanController::class, 'layout1.footer.m
 
 //Layout 2
 Route::get('/layout2/index', [adminControler::class, 'landing2'])->name('layout2.index');
-Route::get('/layout2/kepsek', [adminControler::class, 'kepsek'])->name('layout2.kepsek');
+Route::get('/layout2/kepsek', [adminControler::class, 'kepsek2'])->name('layout2.kepsek');
 Route::get('/layout2/admissions2', [adminControler::class, 'admissions2'])->name('layout2.admissions2');
-Route::get('/layout2/academics', [adminControler::class, 'academics'])->name('layout2.academics');
-Route::get('/layout2/faculty_staff', [adminControler::class, 'faculty_staff'])->name('layout2.faculty_staff');
-Route::get('/layout2/campus_facilities', [adminControler::class, 'campus_facilities'])->name('layout2.campus_facilities');
-Route::get('/layout2/students_life', [adminControler::class, 'students_life'])->name('layout2.students_life');
-Route::get('/layout2/news', [adminControler::class, 'news'])->name('layout2.news');
-Route::get('/layout2/events', [adminControler::class, 'events'])->name('layout2.events');
+Route::get('/layout2/academics', [adminControler::class, 'academics2'])->name('layout2.academics');
+Route::get('/layout2/faculty_staff', [adminControler::class, 'faculty_staff2'])->name('layout2.faculty_staff');
+Route::get('/layout2/campus_facilities', [adminControler::class, 'campus_facilities2'])->name('layout2.campus_facilities');
+Route::get('/layout2/students_life', [adminControler::class, 'students_life2'])->name('layout2.students_life');
+Route::get('/layout2/news', [adminControler::class, 'news2'])->name('layout2.news');
+Route::get('/layout2/events', [adminControler::class, 'events2'])->name('layout2.events');
 Route::get('/layout2/alumni', [adminControler::class, 'alumni2'])->name('layout2.alumni');
 
 // Pilih Layout

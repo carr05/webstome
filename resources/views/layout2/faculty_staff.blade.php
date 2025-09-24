@@ -1,5 +1,4 @@
-@extends('layout2.index')<
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>

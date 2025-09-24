@@ -1,4 +1,4 @@
-@extends('layout2.index')
+
 <!DOCTYPE html>
 <html lang="en">
 
