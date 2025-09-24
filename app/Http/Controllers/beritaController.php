@@ -13,6 +13,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
+    
         $beritaList   = Berita::orderBy('created_at', 'desc')->paginate(5);
         $totalBerita  = Berita::count();
 
