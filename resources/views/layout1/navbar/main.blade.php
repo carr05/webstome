@@ -321,9 +321,9 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ url('/layout1/index') }}" class="active">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="{{ url('/layout1/kepsek') }}">Kepala Sekolah</a></li>
+              <li><a href="{{ url('/layout1/kepsek') }}" >Kepala Sekolah</a></li>
               <li><a href="{{ url('/layout1/admissions') }}">Admissions</a></li>
               <li><a href="{{ url('/layout1/academics') }}">Academics</a></li>
               <li><a href="{{ url('/layout1/faculty_staff') }}">Faculty &amp; Staff</a></li>

@@ -54,7 +54,7 @@
          --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
          --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
          --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
-         --hero-background: url('{{ $hero && $hero->image ? asset('storage/'.$hero->image) : asset('assets/img/default-hero.jpg') }}');">
+         --hero-background: url('{{ $hero && $hero->image ? asset('storage/'.$hero->image) : asset('assets/img/grafika.png') }}');">
       <div class="hero-container">
         <div class="hero-content">
           <h1>{{ $hero->title ?? 'Selamat Datang di SMK Negeri 1 Malang' }}</h1>

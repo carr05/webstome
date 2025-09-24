@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMKN 4 Malang</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         .header {
@@ -21,7 +23,7 @@
             --nav-dropdown-color: #ffffff;
             --nav-dropdown-hover-color: #e8eaff;
             --nav-mobile-background-color: #6a3de8;
-            
+
             color: var(--default-color);
             background: linear-gradient(135deg, #7c4dff 0%, #6a3de8 100%);
             padding: 0;
@@ -50,6 +52,11 @@
         .header .logo img {
             max-height: 45px;
             margin-right: 12px;
+
+        }
+
+        .logo {
+            background: transparent;
         }
 
         .header .logo h1 {
@@ -58,7 +65,7 @@
             font-weight: 600;
             color: var(--font-color);
             font-family: var(--font-family);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .sitename {
@@ -78,7 +85,7 @@
             .header .navmenu {
                 order: 3;
             }
-            
+
             .header .header-container {
                 flex-wrap: wrap;
                 justify-content: space-between;
@@ -137,7 +144,7 @@
                 padding-right: 0;
             }
 
-            .navmenu li:hover > a,
+            .navmenu li:hover>a,
             .navmenu .active,
             .navmenu .active:focus {
                 color: var(--nav-hover-color);
@@ -182,13 +189,13 @@
 
             .navmenu .dropdown ul a:hover,
             .navmenu .dropdown ul .active:hover,
-            .navmenu .dropdown ul li:hover > a {
+            .navmenu .dropdown ul li:hover>a {
                 color: var(--nav-dropdown-hover-color);
                 background: rgba(255, 255, 255, 0.1);
                 padding-left: 25px;
             }
 
-            .navmenu .dropdown:hover > ul {
+            .navmenu .dropdown:hover>ul {
                 opacity: 1;
                 top: 100%;
                 visibility: visible;
@@ -200,7 +207,7 @@
                 visibility: hidden;
             }
 
-            .navmenu .dropdown .dropdown:hover > ul {
+            .navmenu .dropdown .dropdown:hover>ul {
                 opacity: 1;
                 top: 0;
                 left: 100%;
@@ -312,7 +319,7 @@
                 padding-left: 60px;
             }
 
-            .navmenu .dropdown > .dropdown-active {
+            .navmenu .dropdown>.dropdown-active {
                 display: block;
             }
 
@@ -338,7 +345,7 @@
                 padding-top: 80px;
             }
 
-            .mobile-nav-active .navmenu > ul {
+            .mobile-nav-active .navmenu>ul {
                 display: block;
             }
         }
@@ -361,25 +368,25 @@
             color: #7c4dff;
             margin-bottom: 20px;
         }
-        
+
         /* Utility classes */
         .d-flex {
             display: flex;
         }
-        
+
         .align-items-center {
             align-items: center;
         }
-        
+
         .justify-content-end {
             justify-content: flex-end;
         }
-        
+
         .sticky-top {
             position: sticky;
             top: 0;
         }
-        
+
         .container-fluid {
             width: 100%;
             padding-right: var(--bs-gutter-x, 0.75rem);
@@ -387,19 +394,19 @@
             margin-right: auto;
             margin-left: auto;
         }
-        
+
         .container-xl {
             max-width: 1140px;
         }
-        
+
         .me-auto {
             margin-right: auto;
         }
-        
+
         .d-xl-none {
             display: none;
         }
-        
+
         @media (max-width: 1199px) {
             .d-xl-none {
                 display: block;
@@ -407,75 +414,78 @@
         }
     </style>
 </head>
+
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top" 
-  style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
+    <header id="header" class="header d-flex align-items-center sticky-top" style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
          --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
          --font-size: {{ $tampilan->font_size ?? '16px' }};
          --font-color: {{ $tampilan->font_color ?? '#04315f' }};">
-    <div class="header-container container-fluid container-xl d-flex align-items-center justify-content-between">
+        <div class="header-container container-fluid container-xl d-flex align-items-center justify-content-between">
 
-        <a href="{{ url('/layout2/index') }}" class="logo d-flex align-items-center me-auto">
-            @if(!empty($tampilan->logo))
-                <img src="{{ asset('storage/'.$tampilan->logo) }}" alt="Logo" style="max-height:50px; margin-right:10px;">
-            @else
-                <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt="Logo" style="max-height:50px; margin-right:10px;">
-            @endif
-            <h1 class="sitename">{{ $tampilan->nama_sekolah ?? 'SMKN 4 MALANG' }}</h1>
-        </a>
+            <a href="{{ url('/layout2/index') }}" class="logo d-flex align-items-center me-auto">
+                @if(!empty($tampilan->logo))
+                    <img src="{{ asset('storage/' . $tampilan->logo) }}" alt="Logo"
+                        style="max-height:50px; margin-right:10px;">
+                @else
+                    <img src="{{ asset('assets2/img/logosmkn4.png') }}" alt="Logo"
+                        style="max-height:50px; margin-right:10px;">
+                @endif
+                <h1 class="sitename">{{ $tampilan->nama_sekolah ?? 'SMKN 4 MALANG' }}</h1>
+            </a>
 
-        <nav id="navmenu" class="navmenu">
-            <ul>
-                <li><a href="{{ url('/layout2/index') }}" class="active">Home</a></li>
-                <li class="dropdown">
-                    <a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="{{ url('/layout2/kepsek') }}">Kepala Sekolah</a></li>
-                        <li><a href="{{ url('/layout2/admissions2') }}">Admissions</a></li>
-                        <li><a href="{{ url('/layout2/academics') }}">Academics</a></li>
-                        <li><a href="{{ url('/layout2/faculty_staff') }}">Faculty &amp; Staff</a></li>
-                        <li><a href="{{ url('/layout2/campus_facilities') }}">Campus &amp; Facilities</a></li>
-                    </ul>
-                </li>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="{{ url('/layout2/index') }}" class="active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="{{ url('/layout2/kepsek') }}">Kepala Sekolah</a></li>
+                            <li><a href="{{ url('/layout2/admissions2') }}">Admissions</a></li>
+                            <li><a href="{{ url('/layout2/academics') }}">Academics</a></li>
+                            <li><a href="{{ url('/layout2/faculty_staff') }}">Faculty &amp; Staff</a></li>
+                            <li><a href="{{ url('/layout2/campus_facilities') }}">Campus &amp; Facilities</a></li>
+                        </ul>
+                    </li>
 
-                <li><a href="{{ url('/layout2/students_life') }}">Students Life</a></li>
-                <li><a href="{{ url('/layout2/news') }}">Berita</a></li>
-                <li><a href="{{ url('/layout2/events') }}">Agenda</a></li>
-                <li><a href="{{ url('/layout2/alumni') }}">Alumni</a></li>
-                
-                <li class="dropdown">
-                    <a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="{{ url('/layout2/news_details') }}">News Details</a></li>
-                        <li><a href="{{ url('/layout2/event_details') }}">Event Details</a></li>
-                        <li><a href="{{ url('/layout2/privacy') }}">Privacy</a></li>
-                        <li><a href="{{ url('/layout2/terms_of_service') }}">Terms of Service</a></li>
-                        <li><a href="{{ url('/layout2/eror') }}">Error 404</a></li>
-                        <li><a href="{{ url('/layout2/starter_page') }}">Starter Page</a></li>
-                    </ul>
-                </li>
+                    <li><a href="{{ url('/layout2/students_life') }}">Students Life</a></li>
+                    <li><a href="{{ url('/layout2/news') }}">Berita</a></li>
+                    <li><a href="{{ url('/layout2/events') }}">Agenda</a></li>
+                    <li><a href="{{ url('/layout2/alumni') }}">Alumni</a></li>
 
-                <li class="dropdown">
-                    <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">Dropdown 1</a></li>
-                        <li><a href="#">Dropdown 1</a></li>
-                        <li><a href="#">Dropdown 1</a></li>
-                        <li><a href="#">Dropdown 1</a></li>
-                        <li><a href="#">Dropdown 1</a></li>
-                        
-                           
-                <li><a href="{{ url('/layout1/contact') }}">Contact</a></li>
-            </ul>
-            <button class="mobile-nav-toggle d-xl-none bi bi-list"></button>
-        </nav>
+                    <li class="dropdown">
+                        <a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="{{ url('/layout2/news_details') }}">News Details</a></li>
+                            <li><a href="{{ url('/layout2/event_details') }}">Event Details</a></li>
+                            <li><a href="{{ url('/layout2/privacy') }}">Privacy</a></li>
+                            <li><a href="{{ url('/layout2/terms_of_service') }}">Terms of Service</a></li>
+                            <li><a href="{{ url('/layout2/eror') }}">Error 404</a></li>
+                            <li><a href="{{ url('/layout2/starter_page') }}">Starter Page</a></li>
+                        </ul>
+                    </li>
 
-    </div>
-  </header>
+                    <li class="dropdown">
+                        <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="#">Dropdown 1</a></li>
+                            <li><a href="#">Dropdown 1</a></li>
+                            <li><a href="#">Dropdown 1</a></li>
+                            <li><a href="#">Dropdown 1</a></li>
+                            <li><a href="#">Dropdown 1</a></li>
+
+
+                            <li><a href="{{ url('/layout1/contact') }}">Contact</a></li>
+                        </ul>
+                        <button class="mobile-nav-toggle d-xl-none bi bi-list"></button>
+            </nav>
+
+        </div>
+    </header>
 
 
 
 
 </body>
-</html> 
+
+</html>

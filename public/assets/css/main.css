@@ -159,7 +159,7 @@ h6 {
   background: color-mix(in srgb, var(--nav-color), transparent 97%);
   transition: all 0.5s;
   position: relative;
-  padding-top: 10px;
+  padding-top: 30px;
   padding-bottom: 10px;
 }
 
