@@ -114,6 +114,7 @@ Route::get('/preview', [adminControler::class, 'preview'])->name('preview');
 // Layout landing pages
 Route::get('/layout1/index', [adminControler::class, 'landing'])->name('layout1.index');
 Route::get('/layout2/index', [adminControler::class, 'landing2'])->name('layout2.index');
+Route::get('/layout3/index', [adminControler::class, 'landing3'])->name('layout3.index');
 Route::get('/ekstrakurikuler', [adminControler::class, 'ekstrakurikuler'])->name('ekstrakurikuler');
 Route::get('/karya', [adminControler::class, 'karya'])->name('karya');
 

@@ -45,6 +45,25 @@ class adminControler extends Controller
     return view('layout2.index', compact('tampilan', 'hero', 'footer', 'semua', 'berita', 'agendas', 'prestasi'));
 }
 
+public function landing3()
+{
+    $tampilan = Tampilan::first();
+    $hero     = Hero::first();
+    $footer   = Footer::first();
+    $semua    = Semua::first();
+
+    // ambil semua berita
+    $berita   = \App\Models\Berita::latest()->get();
+
+    // ambil semua agenda
+    $agendas  = \App\Models\Agenda::orderBy('tanggal', 'asc')->get();
+
+    // ambil prestasi terbaru
+    $prestasi = \App\Models\Prestasi::latest()->first();
+
+    return view('layout3.index', compact('tampilan', 'hero', 'footer', 'semua', 'berita', 'agendas', 'prestasi'));
+}
+
 
 
     public function formLogin()
