@@ -1374,51 +1374,121 @@ Dinas Pendidikan Kota Malang' }}</textarea>
 
                     <!-- Footer Preview -->
                     <div class="footer-preview">
-                        <div class="footer-preview-content">
+                        <div class="footer-preview-content" id="footerPreview" 
+                            style="background: {{ $footer->footer_bg_color ?? '#1a1a1a' }};
+                                color: {{ $footer->footer_text_color ?? '#ffffff' }}">
+
                             <h6><i class="bi bi-eye"></i> Preview Footer</h6>
+
                             <div class="row g-4">
                                 <div class="col-md-3">
                                     <h6 class="text-white">Kontak Kami</h6>
-                                    <p class="mb-1"><i class="bi bi-geo-alt me-2"></i>{{ $footer->footer_address ?? 'Jl. Raya Malang No. 123' }}</p>
-                                    <p class="mb-1"><i class="bi bi-telephone me-2"></i>{{ $footer->footer_phone ?? '(0341) 123456' }}</p>
-                                    <p class="mb-0"><i class="bi bi-envelope me-2"></i>{{ $footer->footer_email ?? 'info@smkn1malang.sch.id' }}</p>
+                                    <p class="mb-1" id="preview-address"><i class="bi bi-geo-alt me-2"></i>{{ $footer->footer_address }}</p>
+                                    <p class="mb-1" id="preview-phone"><i class="bi bi-telephone me-2"></i>{{ $footer->footer_phone }}</p>
+                                    <p class="mb-0" id="preview-email"><i class="bi bi-envelope me-2"></i>{{ $footer->footer_email }}</p>
                                 </div>
+
                                 <div class="col-md-3">
                                     <h6 class="text-white">Layanan</h6>
-                                    <p class="mb-1">• {{ explode("\n", $footer->footer_services ?? 'Pendaftaran Siswa Baru')[0] ?? 'Pendaftaran Siswa Baru' }}</p>
-                                    <p class="mb-1">• {{ explode("\n", $footer->footer_services ?? 'Informasi Akademik')[1] ?? 'Informasi Akademik' }}</p>
-                                    <p class="mb-0">• {{ explode("\n", $footer->footer_services ?? 'E-Learning')[2] ?? 'E-Learning' }}</p>
+                                    <div id="preview-services">
+                                        @foreach(explode("\n", $footer->footer_services ?? '') as $srv)
+                                            <p class="mb-1">• {{ $srv }}</p>
+                                        @endforeach
+                                    </div>
                                 </div>
+
                                 <div class="col-md-3">
                                     <h6 class="text-white">Program Keahlian</h6>
-                                    <p class="mb-1">• {{ explode("\n", $footer->footer_programs ?? 'Rekayasa Perangkat Lunak')[0] ?? 'Rekayasa Perangkat Lunak' }}</p>
-                                    <p class="mb-1">• {{ explode("\n", $footer->footer_programs ?? 'Teknik Komputer Jaringan')[1] ?? 'Teknik Komputer Jaringan' }}</p>
-                                    <p class="mb-0">• {{ explode("\n", $footer->footer_programs ?? 'Multimedia')[2] ?? 'Multimedia' }}</p>
+                                    <div id="preview-programs">
+                                        @foreach(explode("\n", $footer->footer_programs ?? '') as $prog)
+                                            <p class="mb-1">• {{ $prog }}</p>
+                                        @endforeach
+                                    </div>
                                 </div>
+
                                 <div class="col-md-3">
                                     <h6 class="text-white">Media Sosial</h6>
-                                    <div class="d-flex gap-2">
-                                        @if(!empty($footer->footer_youtube))
+                                    <div class="d-flex gap-2" id="preview-social">
+                                        @if($footer->footer_youtube)
                                             <i class="bi bi-youtube text-danger"></i>
                                         @endif
-                                        @if(!empty($footer->footer_instagram))
+                                        @if($footer->footer_instagram)
                                             <i class="bi bi-instagram text-primary"></i>
                                         @endif
-                                        @if(!empty($footer->footer_facebook))
+                                        @if($footer->footer_facebook)
                                             <i class="bi bi-facebook text-primary"></i>
                                         @endif
                                     </div>
                                 </div>
                             </div>
+
                             <hr class="border-light my-4">
+
                             <div class="d-flex justify-content-between align-items-center">
-                                <p class="mb-0">{{ $footer->footer_copyright ?? '© 2023 SMK Negeri 1 Malang. Semua Hak Dilindungi.' }}</p>
-                                <p class="mb-0 text-muted small">{{ $footer->footer_weekday_hours ?? 'Senin - Jumat: 07:00 - 15:30 WIB' }}</p>
+                                <p class="mb-0" id="preview-copyright">
+                                    {{ $footer->footer_copyright }}
+                                </p>
+                                <p class="mb-0 text-muted small" id="preview-hours">
+                                    {{ $footer->footer_weekday_hours }}
+                                </p>
                             </div>
+
                         </div>
                     </div>
-                </div>
-            </div>
+
+                    <script>
+                    // Update warna background
+                    document.querySelector("input[name='footer_bg_color']").addEventListener("input", function() {
+                        document.getElementById("preview-footer").style.background = this.value;
+                    });
+
+                    // Update warna teks
+                    document.querySelector("input[name='footer_text_color']").addEventListener("input", function() {
+                        document.getElementById("preview-footer").style.color = this.value;
+                    });
+
+                    // Update alamat
+                    document.querySelector("textarea[name='footer_address']").addEventListener("input", function() {
+                        document.getElementById("preview-address").innerText = this.value;
+                    });
+
+                    // Update telepon
+                    document.querySelector("input[name='footer_phone']").addEventListener("input", function() {
+                        document.getElementById("preview-phone").innerText = this.value;
+                    });
+
+                    // Update email
+                    document.querySelector("input[name='footer_email']").addEventListener("input", function() {
+                        document.getElementById("preview-email").innerText = this.value;
+                    });
+
+                    // Update layanan
+                    document.querySelector("textarea[name='footer_services']").addEventListener("input", function() {
+                        let list = this.value.split("\n");
+                        let html = "";
+                        list.forEach(item => html += `<p>• ${item}</p>`);
+                        document.getElementById("preview-services").innerHTML = html;
+                    });
+
+                    // Update program keahlian
+                    document.querySelector("textarea[name='footer_programs']").addEventListener("input", function() {
+                        let list = this.value.split("\n");
+                        let html = "";
+                        list.forEach(item => html += `<p>• ${item}</p>`);
+                        document.getElementById("preview-programs").innerHTML = html;
+                    });
+
+                    // Update hak cipta
+                    document.querySelector("textarea[name='footer_copyright']").addEventListener("input", function() {
+                        document.getElementById("preview-copyright").innerText = this.value;
+                    });
+
+                    // Update jam operasional
+                    document.querySelector("input[name='footer_weekday_hours']").addEventListener("input", function() {
+                        document.getElementById("preview-hours").innerText = this.value;
+                    });
+                    </script>
+
 
             <!-- Global Settings - FIXED SECTION -->
             <div class="settings-section" id="globalSettings">
