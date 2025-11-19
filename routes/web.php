@@ -10,6 +10,7 @@ use App\Http\Controllers\agendaController;
 use App\Http\Controllers\prestasiController;
 use App\Http\Controllers\galeriController;
 use App\Http\Controllers\guruController;
+use App\Http\Controllers\sidebarController;
 
 
 Route::get('/haloo', function () {
@@ -39,7 +40,7 @@ Route::post('/tampilan/update', [tampilanController::class, 'update'])->name('ta
 // landing
 Route::get('/webpromosi', [adminControler::class, 'webpromosi'])->name('webpromosi');
 // Sidebar Menu
-Route::get('/menu', [adminControler::class, 'menu'])->name('menu');
+
 Route::get('/agenda', [adminControler::class, 'agenda'])->name('agenda');
 // routes/web.php
 Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
@@ -114,6 +115,7 @@ Route::get('/preview', [adminControler::class, 'preview'])->name('preview');
 // Layout landing pages
 Route::get('/layout1/index', [adminControler::class, 'landing'])->name('layout1.index');
 Route::get('/layout2/index', [adminControler::class, 'landing2'])->name('layout2.index');
+Route::get('/layout3/index', [adminControler::class, 'landing3'])->name('layout3.index');
 Route::get('/ekstrakurikuler', [adminControler::class, 'ekstrakurikuler'])->name('ekstrakurikuler');
 Route::get('/karya', [adminControler::class, 'karya'])->name('karya');
 
@@ -162,3 +164,13 @@ Route::post('/hero/update', [heroController::class, 'update'])->name('hero.updat
 
 Route::get('/layout2/{halaman}', [tampilanController::class, 'halamanDinamis'])
      ->name('layout2.halaman');
+
+
+// Halaman sidebar
+Route::get('/menu', [SidebarController::class, 'index']);
+
+// API CRUD untuk Sidebar
+Route::get('/api/menus', [SidebarController::class, 'getMenus']);
+Route::post('/api/menus', [SidebarController::class, 'store']);
+Route::put('/api/menus/{id}', [SidebarController::class, 'update']);
+Route::delete('/api/menus/{id}', [SidebarController::class, 'destroy']);

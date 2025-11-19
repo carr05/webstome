@@ -109,7 +109,8 @@
       document.getElementById('previewFrame').src = "/layout1/index.blade.php";
     } else if (layout === 'layout2') {
       document.getElementById('previewFrame').src = "/layout2/index.blade.php";
-    }
+    }else if (layout === 'layout3') {
+      document.getElementById('previewFrame').src = "/layout3/index.blade.php";
   }
 </script>
 
