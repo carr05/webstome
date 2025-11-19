@@ -10,7 +10,7 @@ class layoutController extends Controller
     public function pilihLayout(Request $request)
 {
     $request->validate([
-        'layout' => 'required|in:landing,landing2',
+        'layout' => 'required|in:landing,landing2,landing3',
     ]);
 
     $admin = admin::find(session('admin_id'));

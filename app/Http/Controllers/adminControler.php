@@ -204,6 +204,8 @@ public function landing3()
 
         if ($tampilan && $tampilan->layout == 'layout2') {
             return redirect()->route('layout2.index');
+        }elseif ($tampilan && $tampilan->layout == 'layout3') {
+            return redirect()->route('layout3.index');
         }
 
         // Default layout1
