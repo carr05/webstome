@@ -85,7 +85,13 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section" style="--global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -100,7 +106,7 @@
               </div>
             </div>
 
-            <h1 class="hero-title mb-4">Accelerating business growth through innovative technology</h1>
+            <h1 class="hero-title mb-4">{{ $hero->title ?? 'Selamat Datang di SMK Negeri 1 Malang' }}</h1>
 
             <p class="hero-description mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo.</p>
 

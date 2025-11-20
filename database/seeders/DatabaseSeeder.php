@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
 
         // Baru buat admin dengan school_id valid
         admin::create([
-            'username'   => 'admin',
+            'username'   => 'z',
             'password'   => bcrypt('admin'),
             'school_id'  => $schoolId,
             'created_at' => now(),

@@ -42,7 +42,8 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section" style="--global-color: {{  $semua->warna_utama ?? ''}};
+    <section id="hero" class="hero section" style="
+    --global-color: {{  $semua->warna_utama ?? ''}};
          --global-font-utama: {{ $semua->font_utama ?? ''}};
          --global-font-heading: {{ $semua->font_heading ?? ''}};
          --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};

@@ -10,7 +10,7 @@ class SidebarController extends Controller
     // Tampilkan halaman sidebar
     public function index()
     {
-        return view('sidebar');
+        return view('menu');
     }
 
     // Ambil semua data menu
