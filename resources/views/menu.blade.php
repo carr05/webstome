@@ -378,7 +378,7 @@ function saveMenu() {
 function deleteMenu(id) {
     if (!confirm("Hapus menu ini?")) return;
 
-    fetch(`/sidebar/delete/${id}`, {
+    fetch(`/sidebar/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -391,6 +391,7 @@ function deleteMenu(id) {
         location.reload();
     });
 }
+
 
 // TOGGLE MENU
 function toggleMenuStatus(id) {

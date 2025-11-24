@@ -178,4 +178,11 @@ Route::put('/sidebar/update/{id}', [SidebarController::class, 'update'])->name('
 Route::delete('/sidebar/delete/{id}', [SidebarController::class, 'delete'])->name('sidebar.delete');
 Route::put('/sidebar/toggle/{id}', [SidebarController::class, 'toggleStatus'])->name('sidebar.toggle');
 Route::get('/sidebar/data', [SidebarController::class, 'getData']);
+Route::delete('/sidebar/{id}', [SidebarController::class, 'destroy']);
+Route::put('/sidebar/toggle/{id}', [SidebarController::class, 'toggleStatus']);
+Route::put('/sidebar/update/{id}', [SidebarController::class, 'update']);
+Route::post('/sidebar/store', [SidebarController::class, 'store']);
+Route::get('/sidebar/data', function () {
+    return \App\Models\Sidebar::orderBy('order')->get();
+});
 
