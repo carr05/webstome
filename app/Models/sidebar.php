@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sidebar extends Model
 {
+    protected $table = 'sidebars';
+
     protected $fillable = [
         'name',
         'icon',
         'path',
         'order',
-        'status'
+        'status',
     ];
-
-    protected $table = 'sidebar'; 
 }

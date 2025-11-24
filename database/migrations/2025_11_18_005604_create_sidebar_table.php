@@ -6,28 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-         Schema::create('sidebar', function (Blueprint $table) {
-    $table->id();
-    $table->string('name');
-    $table->string('icon');
-    $table->string('path');
-    $table->integer('order');
-    $table->enum('status', ['active','inactive']);
-    $table->timestamps();
-});
-
+        Schema::create('sidebars', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');       // Nama menu
+            $table->string('icon');       // Class icon Font Awesome
+            $table->string('path');       // URL/path
+            $table->integer('order');     // Urutan tampilan
+            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->timestamps();
+        });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('sidebar');
+        Schema::dropIfExists('sidebars');
     }
 };

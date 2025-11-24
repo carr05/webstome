@@ -2,44 +2,64 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
+use App\Models\Sidebar;
 use Illuminate\Http\Request;
 
 class SidebarController extends Controller
 {
-    // Tampilkan halaman sidebar
     public function index()
     {
-        return view('menu');
+        $menus = Sidebar::orderBy('order', 'asc')->get();
+        return view('menu', compact('menus'));
     }
 
-    // Ambil semua data menu
-    public function getMenus()
-    {
-        return Menu::orderBy('order')->get();
-    }
-
-    // Tambah menu
     public function store(Request $request)
     {
-        $menu = Menu::create($request->all());
-        return response()->json($menu);
+        $request->validate([
+            'name'  => 'required',
+            'icon'  => 'required',
+            'path'  => 'required',
+            'order' => 'required|integer',
+            'status'=> 'required'
+        ]);
+
+        Sidebar::create($request->all());
+
+        return response()->json(['message' => 'Menu berhasil ditambahkan']);
     }
 
-    // Update menu
     public function update(Request $request, $id)
     {
-        $menu = Menu::findOrFail($id);
+        $menu = Sidebar::findOrFail($id);
+
+        $request->validate([
+            'name'  => 'required',
+            'icon'  => 'required',
+            'path'  => 'required',
+            'order' => 'required|integer',
+            'status'=> 'required'
+        ]);
+
         $menu->update($request->all());
 
-        return response()->json($menu);
+        return response()->json(['message' => 'Menu berhasil diperbarui']);
     }
 
-    // Hapus menu
     public function destroy($id)
     {
-        Menu::findOrFail($id)->delete();
+        $menu = Sidebar::findOrFail($id);
+        $menu->delete();
 
-        return response()->json(['message' => 'Menu deleted']);
+        return response()->json(['message' => 'Menu berhasil dihapus']);
+    }
+
+    public function toggleStatus($id)
+    {
+        $menu = Sidebar::findOrFail($id);
+
+        $menu->status = $menu->status === 'active' ? 'inactive' : 'active';
+        $menu->save();
+
+        return response()->json(['message' => 'Status diperbarui']);
     }
 }

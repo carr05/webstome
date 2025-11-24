@@ -170,7 +170,10 @@ Route::get('/layout2/{halaman}', [tampilanController::class, 'halamanDinamis'])
 Route::get('/menu', [SidebarController::class, 'index']);
 
 // API CRUD untuk Sidebar
-Route::get('/api/menus', [SidebarController::class, 'getMenus']);
-Route::post('/api/menus', [SidebarController::class, 'store']);
-Route::put('/api/menus/{id}', [SidebarController::class, 'update']);
-Route::delete('/api/menus/{id}', [SidebarController::class, 'destroy']);
+
+
+Route::get('/sidebar', [SidebarController::class, 'index'])->name('sidebar.index');
+Route::post('/sidebar/store', [SidebarController::class, 'store'])->name('sidebar.store');
+Route::put('/sidebar/update/{id}', [SidebarController::class, 'update'])->name('sidebar.update');
+Route::delete('/sidebar/delete/{id}', [SidebarController::class, 'delete'])->name('sidebar.delete');
+Route::put('/sidebar/toggle/{id}', [SidebarController::class, 'toggleStatus'])->name('sidebar.toggle');

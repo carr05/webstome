@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - GURU</title>
+  <title>Menu</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -475,164 +475,64 @@
     </div>
 
     <script>
-        let menus = [
-            { id: 1, name: 'Dashboard', icon: 'fas fa-tachometer-alt', path: '/dashboard', order: 1, status: 'active' },
-            { id: 2, name: 'Pengguna', icon: 'fas fa-users', path: '/users', order: 2, status: 'active' },
-            { id: 3, name: 'Produk', icon: 'fas fa-box', path: '/products', order: 3, status: 'active' },
-            { id: 4, name: 'Laporan', icon: 'fas fa-chart-line', path: '/reports', order: 4, status: 'inactive' },
-            { id: 5, name: 'Pengaturan', icon: 'fas fa-cog', path: '/settings', order: 5, status: 'active' }
-        ];
-
-        let currentEditId = null;
-        let filteredMenus = [...menus];
-
-        function renderMenus(menuArray = filteredMenus) {
-            const menuList = document.getElementById('menuList');
-            
-            if (menuArray.length === 0) {
-                menuList.innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-bars"></i>
-                        <h3>Tidak ada menu ditemukan</h3>
-                        <p>Tambahkan menu baru atau ubah kriteria pencarian</p>
-                    </div>
-                `;
-                return;
-            }
-
-            const sortedMenus = menuArray.sort((a, b) => a.order - b.order);
-            
-            menuList.innerHTML = sortedMenus.map(menu => `
-                <div class="menu-item" data-id="${menu.id}">
-                    <div class="menu-icon">
-                        <i class="${menu.icon}"></i>
-                    </div>
-                    <div class="menu-details">
-                        <div class="menu-name">${menu.name}</div>
-                        <div class="menu-path">${menu.path}</div>
-                    </div>
-                    <div class="menu-actions">
-                        <label class="toggle-switch">
-                            <input type="checkbox" ${menu.status === 'active' ? 'checked' : ''} 
-                                   onchange="toggleMenuStatus(${menu.id})">
-                            <span class="slider"></span>
-                        </label>
-                        <button class="action-btn edit-btn" onclick="editMenu(${menu.id})">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="action-btn delete-btn" onclick="deleteMenu(${menu.id})">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function openAddModal() {
-            currentEditId = null;
-            document.getElementById('modalTitle').textContent = 'Tambah Menu';
-            document.getElementById('menuForm').reset();
-            document.getElementById('menuOrder').value = menus.length + 1;
-            document.getElementById('menuModal').style.display = 'block';
-        }
-
-        function editMenu(id) {
-            const menu = menus.find(m => m.id === id);
-            if (!menu) return;
-
-            currentEditId = id;
-            document.getElementById('modalTitle').textContent = 'Edit Menu';
-            document.getElementById('menuName').value = menu.name;
-            document.getElementById('menuIcon').value = menu.icon;
-            document.getElementById('menuPath').value = menu.path;
-            document.getElementById('menuOrder').value = menu.order;
-            document.getElementById('menuStatus').value = menu.status;
-            document.getElementById('menuModal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('menuModal').style.display = 'none';
-            currentEditId = null;
-        }
-
         function saveMenu() {
-            const name = document.getElementById('menuName').value.trim();
-            const icon = document.getElementById('menuIcon').value.trim();
-            const path = document.getElementById('menuPath').value.trim();
-            const order = parseInt(document.getElementById('menuOrder').value);
-            const status = document.getElementById('menuStatus').value;
+    const id = currentEditId;
+    const data = {
+        name: document.getElementById('menuName').value,
+        icon: document.getElementById('menuIcon').value,
+        path: document.getElementById('menuPath').value,
+        order: document.getElementById('menuOrder').value,
+        status: document.getElementById('menuStatus').value,
+        _token: "{{ csrf_token() }}"
+    };
 
-            if (!name || !icon || !path || !order) {
-                alert('Semua field wajib diisi!');
-                return;
-            }
+    const url = id 
+        ? `/sidebar/update/${id}` 
+        : `/sidebar/store`;
 
-            if (currentEditId) {
-                // Edit existing menu
-                const menuIndex = menus.findIndex(m => m.id === currentEditId);
-                if (menuIndex !== -1) {
-                    menus[menuIndex] = { ...menus[menuIndex], name, icon, path, order, status };
-                }
-            } else {
-                // Add new menu
-                const newId = Math.max(...menus.map(m => m.id), 0) + 1;
-                menus.push({ id: newId, name, icon, path, order, status });
-            }
+    const method = id ? 'PUT' : 'POST';
 
-            closeModal();
-            filterMenus();
-            renderMenus();
-        }
+    fetch(url, {
+        method: method,
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(res => {
+        alert(res.message);
+        location.reload();
+    });
+}
 
-        function deleteMenu(id) {
-            if (confirm('Apakah Anda yakin ingin menghapus menu ini?')) {
-                menus = menus.filter(m => m.id !== id);
-                filterMenus();
-                renderMenus();
-            }
-        }
+function deleteMenu(id) {
+    if (!confirm("Hapus menu ini?")) return;
 
-        function toggleMenuStatus(id) {
-            const menu = menus.find(m => m.id === id);
-            if (menu) {
-                menu.status = menu.status === 'active' ? 'inactive' : 'active';
-                filterMenus();
-                renderMenus();
-            }
-        }
+    fetch(`/sidebar/delete/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ _token: "{{ csrf_token() }}" })
+    })
+    .then(res => res.json())
+    .then(res => {
+        alert(res.message);
+        location.reload();
+    });
+}
 
-        function searchMenu(query) {
-            const searchTerm = query.toLowerCase().trim();
-            if (searchTerm === '') {
-                filteredMenus = [...menus];
-            } else {
-                filteredMenus = menus.filter(menu => 
-                    menu.name.toLowerCase().includes(searchTerm) ||
-                    menu.path.toLowerCase().includes(searchTerm)
-                );
-            }
-            renderMenus();
-        }
+function toggleMenuStatus(id) {
+    fetch(`/sidebar/toggle/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ _token: "{{ csrf_token() }}" })
+    })
+    .then(res => res.json())
+    .then(res => {
+        console.log("Status updated");
+    });
+}
 
-        function filterMenus() {
-            const searchInput = document.querySelector('.search-box input');
-            if (searchInput.value.trim()) {
-                searchMenu(searchInput.value);
-            } else {
-                filteredMenus = [...menus];
-            }
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('menuModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-
-        // Initial render
-        renderMenus();
     </script>
 </body>
 </html>
