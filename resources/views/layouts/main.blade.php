@@ -1,6 +1,12 @@
 
 <style>
   /* Sidebar */
+
+  .sidebar a.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
   .sidebar {
     position: fixed;
     top: 0;
@@ -78,22 +84,18 @@
     <a href="{{ url('/menu') }}" class="{{ Request::is('menu') ? 'active' : '' }}"><i class="bi bi-columns-gap me-2"></i> Menu</a>
 
 
-    <a href="{{ url('/berita') }}" class="{{ Request::is('berita.berita') ? 'active' : '' }}"><i class="bi bi-newspaper me-2"></i> Berita</a>
-    <a href="{{ url('/agenda') }}" class="{{ Request::is('agenda') ? 'active' : '' }}"><i class="bi bi-calendar me-2"></i> Agenda</a>
-    <a href="{{ url('/galeri') }}" class="{{ Request::is('galeri') ? 'active' : '' }}"><i class="bi bi-images me-2"></i> Galeri</a>
-    <a href="{{ url('/jurusan') }}" class="{{ Request::is('jurusan') ? 'active' : '' }}"><i class="bi bi-diagram-3 me-2"></i> Jurusan</a>
-    <a href="{{ url('/prestasi') }}" class="{{ Request::is('prestasi') ? 'active' : '' }}"><i class="bi bi-trophy me-2"></i> Prestasi</a>
-    <a href="{{ url('/guru') }}" class="{{ Request::is('guru') ? 'active' : '' }}"><i class="bi bi-person-badge me-2"></i> Guru</a>
-    <a href="{{ url('/staff') }}" class="{{ Request::is('staff') ? 'active' : '' }}"><i class="bi bi-people-fill me-2"></i> Staff</a>
-
-    <a href="{{ url('/alumni') }}" class="{{ Request::is('alumni') ? 'active' : '' }}"><i class="bi bi-mortarboard me-2"></i> Alumni</a>
-
-
-
-
-
-    <a href="{{ url('/ekstrakurikuler') }}" class="{{ Request::is('ekstrakurikuler') ? 'active' : '' }}"><i class="bi bi-activity me-2"></i> Ekstrakurikuler</a>
-    <a href="{{ url('/karya') }}" class="{{ Request::is('karya') ? 'active' : '' }}"><i class="bi bi-palette me-2"></i> Karya</a>
+    <ul class="list-unstyled">
+  @foreach($menus as $menu)
+    <li class="nav-item">
+      <a href="{{ url($menu->path) }}" 
+      
+         class="nav-link d-flex align-items-center {{ $menu->status === 'inactive' ? 'disabled text-muted' : '' }}">
+        <i class="{{ $menu->icon }} me-2"></i> 
+        {{ $menu->name }}
+      </a>
+    </li>
+  @endforeach
+</ul>
   </div>
   <div class="sidebar-bottom">
 
@@ -101,17 +103,10 @@
     <a href="{{ url('/logout') }}"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
 
 
-    <ul class="list-unstyled">
+    
 
-      
-  @foreach($menus as $menu)
-    <li class="{{ $menu->is_active ? '' : 'text-muted' }}">
-      <a href="#" class="nav-link">
-        {{ $menu->name }}
-      </a>
-    </li>
-  @endforeach
-</ul>
+
+
 
 
 

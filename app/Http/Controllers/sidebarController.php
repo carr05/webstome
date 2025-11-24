@@ -45,6 +45,12 @@ class SidebarController extends Controller
         return response()->json(['message' => 'Menu berhasil diperbarui']);
     }
 
+    public function getData()
+{
+    return response()->json(Sidebar::orderBy('order', 'asc')->get());
+}
+
+
     public function destroy($id)
     {
         $menu = Sidebar::findOrFail($id);

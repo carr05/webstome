@@ -177,3 +177,5 @@ Route::post('/sidebar/store', [SidebarController::class, 'store'])->name('sideba
 Route::put('/sidebar/update/{id}', [SidebarController::class, 'update'])->name('sidebar.update');
 Route::delete('/sidebar/delete/{id}', [SidebarController::class, 'delete'])->name('sidebar.delete');
 Route::put('/sidebar/toggle/{id}', [SidebarController::class, 'toggleStatus'])->name('sidebar.toggle');
+Route::get('/sidebar/data', [SidebarController::class, 'getData']);
+
