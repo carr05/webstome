@@ -1092,6 +1092,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="mt-4 d-flex gap-3 justify-content-end">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
+                    </button>
+                </div>
             </div>
 
             <!-- Hero Settings -->
@@ -1162,6 +1167,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="mt-4 d-flex gap-3 justify-content-end">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
+                    </button>
                 </div>
             </div>
 
@@ -1491,43 +1501,60 @@ Dinas Pendidikan Kota Malang' }}</textarea>
 
 
             <!-- Global Settings - FIXED SECTION -->
-            <div class="settings-section" id="globalSettings">
+<div class="settings-section" id="globalSettings">
     <div class="card-section">
         <h6><i class="bi bi-globe"></i> Pengaturan Global</h6>
         <div class="row g-4">
+
+            <!-- Warna Utama -->
             <div class="col-md-4">
                 <label class="form-label"><i class="bi bi-palette"></i> Warna Utama</label>
                 <div class="color-input-group">
-                    <input type="color" name="global_primary_color" class="form-control-color" 
-                           value="{{ $semua->warna ?? '#5955B3' }}">
-                    <span class="text-muted">{{ $semua->warna_utama ?? '#5955B3' }}</span>
+                    <input type="color" 
+                           name="global_primary_color" 
+                           class="form-control-color" 
+                           value="{{ $tampilan->warna ?? '#5955B3' }}">
+                    <span class="text-muted">{{ $tampilan->warna ?? '#5955B3' }}</span>
                 </div>
             </div>
+
+            <!-- Font Utama -->
             <div class="col-md-4">
                 <label class="form-label"><i class="bi bi-fonts"></i> Font Utama</label>
                 <select name="global_primary_font" class="form-select">
-                    <option value="Poppins" {{ ($semua->font_utama ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
-                    <option value="Roboto" {{ ($semua->font_utama ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
-                    <option value="Open Sans" {{ ($semua->font_utama ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
-                    <option value="Inter" {{ ($semua->font_utama ?? '') == 'Inter' ? 'selected' : '' }}>Inter</option>
-                    <option value="Nunito" {{ ($semua->font_utama ?? '') == 'Nunito' ? 'selected' : '' }}>Nunito</option>
-                    <option value="Montserrat" {{ ($semua->font_utama ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
+                    <option value="Poppins" {{ ($tampilan->font ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                    <option value="Roboto" {{ ($tampilan->font ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
+                    <option value="Open Sans" {{ ($tampilan->font ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
+                    <option value="Inter" {{ ($tampilan->font ?? '') == 'Inter' ? 'selected' : '' }}>Inter</option>
+                    <option value="Nunito" {{ ($tampilan->font ?? '') == 'Nunito' ? 'selected' : '' }}>Nunito</option>
+                    <option value="Montserrat" {{ ($tampilan->font ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
                 </select>
             </div>
+
+            <!-- Font Heading -->
             <div class="col-md-4">
                 <label class="form-label"><i class="bi bi-type-h1"></i> Font Heading</label>
                 <select name="global_heading_font" class="form-select">
-                    <option value="Poppins" {{ ($semua->font_heading ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
-                    <option value="Playfair Display" {{ ($semua->font_heading ?? '') == 'Playfair Display' ? 'selected' : '' }}>Playfair Display</option>
-                    <option value="Merriweather" {{ ($semua->font_heading ?? '') == 'Merriweather' ? 'selected' : '' }}>Merriweather</option>
-                    <option value="Montserrat" {{ ($semua->font_heading ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
-                    <option value="Oswald" {{ ($semua->font_heading ?? '') == 'Oswald' ? 'selected' : '' }}>Oswald</option>
-                    <option value="Raleway" {{ ($semua->font_heading ?? '') == 'Raleway' ? 'selected' : '' }}>Raleway</option>
+                    <option value="Poppins" {{ ($tampilan->font_heading ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                    <option value="Playfair Display" {{ ($tampilan->font_heading ?? '') == 'Playfair Display' ? 'selected' : '' }}>Playfair Display</option>
+                    <option value="Merriweather" {{ ($tampilan->font_heading ?? '') == 'Merriweather' ? 'selected' : '' }}>Merriweather</option>
+                    <option value="Montserrat" {{ ($tampilan->font_heading ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
+                    <option value="Oswald" {{ ($tampilan->font_heading ?? '') == 'Oswald' ? 'selected' : '' }}>Oswald</option>
+                    <option value="Raleway" {{ ($tampilan->font_heading ?? '') == 'Raleway' ? 'selected' : '' }}>Raleway</option>
                 </select>
             </div>
+
         </div>
     </div>
+
+    <!-- Tombol Simpan -->
+    <div class="mt-4 d-flex gap-3 justify-content-end">
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
+        </button>
+    </div>
 </div>
+
 
 
             <!-- Action Buttons -->
