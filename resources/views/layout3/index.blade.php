@@ -57,7 +57,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#hero" class="active">Beranda</a></li>
           <li><a href="#agenda">Agenda</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#Berita">Berita</a></li>
@@ -458,62 +458,9 @@
          --hero-background: url('{{ asset('storage/'.$hero->image) }}');
          ">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="content-block">
-              <h6 class="subtitle">Our innovative services</h6>
-              <h2 class="title">Our customers excel in technology management</h2>
-              <p class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt diam et gravida consequat. Sed nec mauris quis lacus commodo lobortis. Suspendisse euismod commodo sem, in finibus purus bibendum et. Morbi eu neque sed velit convallis vestibulum a vel odio.
-              </p>
-              <div class="button-wrapper">
-                <a class="btn" href="services.html"><span>Explore All Services</span></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="services-list">
-              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon">
-                  <i class="bi bi-code-square"></i>
-                </div>
-                <div class="service-content">
-                  <h4><a href="service-details.html">Software Engineering</a></h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
-                </div>
-              </div><!-- End Service Item -->
 
-              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-icon">
-                  <i class="bi bi-graph-up"></i>
-                </div>
-                <div class="service-content">
-                  <h4><a href="service-details.html">Business Analytics</a></h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
-                </div>
-              </div><!-- End Service Item -->
-
-              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
-                <div class="service-icon">
-                  <i class="bi bi-phone"></i>
-                </div>
-                <div class="service-content">
-                  <h4><a href="service-details.html">Mobile Solutions</a></h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
-                </div>
-              </div><!-- End Service Item -->
-
-              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
-                <div class="service-icon">
-                  <i class="bi bi-gear"></i>
-                </div>
-                <div class="service-content">
-                  <h4><a href="service-details.html">Tech Infrastructure</a></h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
-                </div>
-              </div><!-- End Service Item -->
+      
             </div>
           </div>
         </div>
@@ -521,59 +468,6 @@
       </div>
 
     </section><!-- /Services Alt Section -->
-
-    <!-- Call To Action 2 Section -->
-    <section id="call-to-action-2" class="call-to-action-2 section light-background" style="
-         --global-color: {{  $semua->warna_utama ?? ''}};
-         --global-font-utama: {{ $semua->font_utama ?? ''}};
-         --global-font-heading: {{ $semua->font_heading ?? ''}};
-         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
-         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
-         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
-         --hero-background: url('{{ asset('storage/'.$hero->image) }}');
-         ">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-            <div class="cta-image-wrapper">
-              <img src="assets/img/cta/cta-4.webp" alt="Call to Action" class="img-fluid rounded-4">
-              <div class="cta-pattern"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
-            <div class="cta-content">
-              <h2>Transform Your Vision Into Reality Today</h2>
-              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-
-              <div class="cta-features">
-                <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span>Lorem ipsum dolor sit amet consectetur</span>
-                </div>
-                <div class="feature-item" data-aos="zoom-in" data-aos-delay="450">
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span>Praesent eget risus vitae massa</span>
-                </div>
-                <div class="feature-item" data-aos="zoom-in" data-aos-delay="500">
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span>Aenean pretium nisi vel pulvinar</span>
-                </div>
-              </div>
-
-              <div class="cta-action mt-5">
-                <a href="#" class="btn btn-primary btn-lg me-3">Get Started</a>
-                <a href="#" class="btn btn-outline-primary btn-lg">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Call To Action 2 Section -->
 
     <!-- Berita Section -->
     <section id="Berita" class="portfolio section" style="
@@ -859,7 +753,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
+        <h2>Testimoni</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
@@ -1178,87 +1072,140 @@
 
   </main>
 
-  <footer id="footer" class="footer light-background">
+   <footer id="footer" class="footer"
+        style="--default-color: {{ $footer->footer_text_color ?? '#fff' }};
+               --background-color: {{ $footer->footer_bg_color ?? '#222' }};
+               --heading-color: {{ $footer->footer_text_color ?? '#fff' }};
+               --accent-color: #4ade80;
+               --heading-font: 'Poppins', sans-serif;">
 
-    <div class="container footer-top">
-      <div class="row gy-4">
+  <div class="footer-top py-5">
+    <div class="container">
+      <div class="row gy-4 justify-content-between">
+
+        {{-- About Section --}}
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">MyWebsite</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <div class="logo mb-3">
+            <span class="fw-bold fs-4">{{ $footer->footer_institution_name ?? 'MySchool' }}</span>
           </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+          <p class="small">{{ $footer->footer_address ?? 'Alamat belum diisi' }}</p>
+
+          <div class="footer-contact small mt-3">
+            <p><i class="bi bi-geo-alt-fill"></i> {{ $footer->footer_address ?? 'Alamat belum diisi' }}</p>
+            <p><i class="bi bi-telephone-fill"></i> {{ $footer->footer_phone ?? '-' }}</p>
+            <p><i class="bi bi-envelope-fill"></i> {{ $footer->footer_email ?? '-' }}</p>
+          </div>
+
+          {{-- Jam Operasional --}}
+          @if($footer->footer_show_hours ?? false)
+            <div class="mt-3 small">
+              <h6 class="fw-semibold">Jam Operasional</h6>
+              <p><i class="bi bi-clock"></i> Senin - Jumat: {{ $footer->footer_weekday_hours ?? '-' }}</p>
+              <p><i class="bi bi-clock"></i> Sabtu: {{ $footer->footer_saturday_hours ?? '-' }}</p>
+            </div>
+          @endif
+
+          {{-- Sosial Media --}}
+          <div class="social-links d-flex gap-2 mt-3">
+            @if($footer->footer_facebook)
+              <a href="{{ $footer->footer_facebook }}" class="social-icon"><i class="bi bi-facebook"></i></a>
+            @endif
+            @if($footer->footer_instagram)
+              <a href="{{ $footer->footer_instagram }}" class="social-icon"><i class="bi bi-instagram"></i></a>
+            @endif
+            @if($footer->footer_twitter)
+              <a href="{{ $footer->footer_twitter }}" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+            @endif
+            @if($footer->footer_youtube)
+              <a href="{{ $footer->footer_youtube }}" class="social-icon"><i class="bi bi-youtube"></i></a>
+            @endif
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+        {{-- Layanan --}}
+        <div class="col-lg-2 col-6 footer-links">
+          <h6 class="fw-semibold">Layanan</h6>
+          <ul class="list-unstyled">
+            @foreach(explode("\n", $footer->footer_services ?? '') as $service)
+              @if(trim($service) != '')
+                <li><a href="#">{{ trim($service) }}</a></li>
+              @endif
+            @endforeach
           </ul>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+        {{-- Program --}}
+        <div class="col-lg-2 col-6 footer-links">
+          <h6 class="fw-semibold">Program</h6>
+          <ul class="list-unstyled">
+            @foreach(explode("\n", $footer->footer_programs ?? '') as $program)
+              @if(trim($program) != '')
+                <li><a href="#">{{ trim($program) }}</a></li>
+              @endif
+            @endforeach
           </ul>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
+        {{-- Info --}}
+        <div class="col-lg-2 col-6 footer-links">
+          <h6 class="fw-semibold">Informasi</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Berita</a></li>
+            <li><a href="#">Pengumuman</a></li>
+            <li><a href="#">Galeri</a></li>
+            <li><a href="#">Kontak</a></li>
           </ul>
         </div>
 
       </div>
     </div>
+  </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+  {{-- Copyright --}}
+  <div class="copyright text-center py-3 mt-3"
+       style="background: rgba(0,0,0,0.25); font-size: 14px;">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <p class="mb-0">{!! $footer->footer_copyright ?? '© <strong><span>MySchool</span></strong>. All Rights Reserved' !!}</p>
+      @if(($footer->footer_show_developer ?? false) && $footer->footer_developer)
+        <div class="credits small">
+          Designed by <a href="#" target="_blank">{{ $footer->footer_developer }}</a>
+        </div>
+      @endif
     </div>
+  </div>
 
-  </footer>
+  <style>
+    .footer a { 
+      color: var(--default-color); 
+      text-decoration: none; 
+      transition: color .3s; 
+    }
+    .footer a:hover { 
+      color: var(--accent-color); 
+    }
+    .footer h6 { 
+      margin-bottom: 15px; 
+    }
+    .footer .footer-links ul li { 
+      margin-bottom: 8px; 
+    }
+    .footer .social-icon {
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      width: 35px; height: 35px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: var(--default-color);
+      transition: all .3s;
+    }
+    .footer .social-icon:hover {
+      background: var(--accent-color);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+  </style>
+</footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
