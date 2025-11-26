@@ -449,9 +449,20 @@
                     </li>
 
                     <li><a href="{{ url('/layout2/students_life') }}">Students Life</a></li>
-                    <li><a href="{{ url('/layout2/news') }}">Berita</a></li>
-                    <li><a href="{{ url('/layout2/events') }}">Agenda</a></li>
-                    <li><a href="{{ url('/layout2/alumni') }}">Alumni</a></li>
+                    @php
+    use App\Models\Sidebar;
+    $menuBeritaAktif = Sidebar::where('name', 'berita')
+                        ->where('status', 'active')
+                        ->exists();
+@endphp
+
+@if($menuBeritaAktif)
+<li><a href="{{ url('/layout2/news') }}">Berita</a></li>
+<li><a href="{{ url('/layout2/events') }}">Agenda</a></li>
+<li><a href="{{ url('/layout2/alumni') }}">Alumni</a></li>
+@endif
+
+                    
 
                     <li class="dropdown">
                         <a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>

@@ -331,10 +331,37 @@
             </ul>
           </li>
 
+@php
+    use App\Models\Sidebar;
+
+    $menuStudentsLifeAktif = Sidebar::where('name', 'students_life')
+                                    ->where('status', 'active')
+                                    ->exists();
+
+    $menuBeritaAktif = Sidebar::where('name', 'berita')
+                              ->where('status', 'active')
+                              ->exists();
+
+    $menuEventsAktif = Sidebar::where('name', 'events')
+                              ->where('status', 'active')
+                              ->exists();
+@endphp
+
+@if($menuStudentsLifeAktif)
+<li><a href="{{ url('/layout1/students_life') }}">Students Life</a></li>
+@endif
+
+@if($menuBeritaAktif)
+<li><a href="{{ url('/layout1/berita') }}">Berita</a></li>
+@endif
+
+@if($menuEventsAktif)
+<li><a href="{{ url('/layout1/events') }}">Agenda</a></li>
+@endif
+
+
+
         <li><a href="{{ url('/layout1/students_life') }}">Students Life</a></li>
-        <li><a href="{{ url('/layout1/berita') }}">Berita</a></li>
-        <li><a href="{{ url('/layout1/events') }}">Agenda</a></li>
-        <li><a href="{{ url('/layout1/alumni') }}">Alumni</a></li>
           <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="{{ url('/layout1/news_details') }}">News Details</a></li>

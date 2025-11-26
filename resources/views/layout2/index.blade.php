@@ -650,13 +650,19 @@
 
 
     <!-- Recent News Section -->
-    <section id="recent-news" class="recent-news section">
+   @php
+    use App\Models\sidebar;
+    $menuBeritaAktif = Sidebar::where('name', 'berita')
+                        ->where('status', 'active')
+                        ->exists();
+@endphp
 
-  <!-- Section Title -->
+@if($menuBeritaAktif)
+<section id="recent-news" class="recent-news section">
+
   <div class="container section-title">
     <h2>Recent News</h2>
-    
-  </div><!-- End Section Title -->
+  </div>
 
   <div class="container">
     <div class="row gy-5">
@@ -692,7 +698,9 @@
     </div>
   </div>
 
-</section><!-- /Recent News Section -->
+</section>
+@endif
+<!-- /Recent News Section -->
 
 
     <!-- Events Section -->

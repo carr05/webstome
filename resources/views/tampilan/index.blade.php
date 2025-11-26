@@ -1092,11 +1092,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-4 d-flex gap-3 justify-content-end">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
-                    </button>
-                </div>
             </div>
 
             <!-- Hero Settings -->
@@ -1167,11 +1162,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="mt-4 d-flex gap-3 justify-content-end">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
-                    </button>
                 </div>
             </div>
 
@@ -1384,177 +1374,90 @@ Dinas Pendidikan Kota Malang' }}</textarea>
 
                     <!-- Footer Preview -->
                     <div class="footer-preview">
-                        <div class="footer-preview-content" id="footerPreview" 
-                            style="background: {{ $footer->footer_bg_color ?? '#1a1a1a' }};
-                                color: {{ $footer->footer_text_color ?? '#ffffff' }}">
-
+                        <div class="footer-preview-content">
                             <h6><i class="bi bi-eye"></i> Preview Footer</h6>
-
                             <div class="row g-4">
                                 <div class="col-md-3">
                                     <h6 class="text-white">Kontak Kami</h6>
-                                    <p class="mb-1" id="preview-address"><i class="bi bi-geo-alt me-2"></i>{{ $footer->footer_address }}</p>
-                                    <p class="mb-1" id="preview-phone"><i class="bi bi-telephone me-2"></i>{{ $footer->footer_phone }}</p>
-                                    <p class="mb-0" id="preview-email"><i class="bi bi-envelope me-2"></i>{{ $footer->footer_email }}</p>
+                                    <p class="mb-1"><i class="bi bi-geo-alt me-2"></i>{{ $footer->footer_address ?? 'Jl. Raya Malang No. 123' }}</p>
+                                    <p class="mb-1"><i class="bi bi-telephone me-2"></i>{{ $footer->footer_phone ?? '(0341) 123456' }}</p>
+                                    <p class="mb-0"><i class="bi bi-envelope me-2"></i>{{ $footer->footer_email ?? 'info@smkn1malang.sch.id' }}</p>
                                 </div>
-
                                 <div class="col-md-3">
                                     <h6 class="text-white">Layanan</h6>
-                                    <div id="preview-services">
-                                        @foreach(explode("\n", $footer->footer_services ?? '') as $srv)
-                                            <p class="mb-1">• {{ $srv }}</p>
-                                        @endforeach
-                                    </div>
+                                    <p class="mb-1">• {{ explode("\n", $footer->footer_services ?? 'Pendaftaran Siswa Baru')[0] ?? 'Pendaftaran Siswa Baru' }}</p>
+                                    <p class="mb-1">• {{ explode("\n", $footer->footer_services ?? 'Informasi Akademik')[1] ?? 'Informasi Akademik' }}</p>
+                                    <p class="mb-0">• {{ explode("\n", $footer->footer_services ?? 'E-Learning')[2] ?? 'E-Learning' }}</p>
                                 </div>
-
                                 <div class="col-md-3">
                                     <h6 class="text-white">Program Keahlian</h6>
-                                    <div id="preview-programs">
-                                        @foreach(explode("\n", $footer->footer_programs ?? '') as $prog)
-                                            <p class="mb-1">• {{ $prog }}</p>
-                                        @endforeach
-                                    </div>
+                                    <p class="mb-1">• {{ explode("\n", $footer->footer_programs ?? 'Rekayasa Perangkat Lunak')[0] ?? 'Rekayasa Perangkat Lunak' }}</p>
+                                    <p class="mb-1">• {{ explode("\n", $footer->footer_programs ?? 'Teknik Komputer Jaringan')[1] ?? 'Teknik Komputer Jaringan' }}</p>
+                                    <p class="mb-0">• {{ explode("\n", $footer->footer_programs ?? 'Multimedia')[2] ?? 'Multimedia' }}</p>
                                 </div>
-
                                 <div class="col-md-3">
                                     <h6 class="text-white">Media Sosial</h6>
-                                    <div class="d-flex gap-2" id="preview-social">
-                                        @if($footer->footer_youtube)
+                                    <div class="d-flex gap-2">
+                                        @if(!empty($footer->footer_youtube))
                                             <i class="bi bi-youtube text-danger"></i>
                                         @endif
-                                        @if($footer->footer_instagram)
+                                        @if(!empty($footer->footer_instagram))
                                             <i class="bi bi-instagram text-primary"></i>
                                         @endif
-                                        @if($footer->footer_facebook)
+                                        @if(!empty($footer->footer_facebook))
                                             <i class="bi bi-facebook text-primary"></i>
                                         @endif
                                     </div>
                                 </div>
                             </div>
-
                             <hr class="border-light my-4">
-
                             <div class="d-flex justify-content-between align-items-center">
-                                <p class="mb-0" id="preview-copyright">
-                                    {{ $footer->footer_copyright }}
-                                </p>
-                                <p class="mb-0 text-muted small" id="preview-hours">
-                                    {{ $footer->footer_weekday_hours }}
-                                </p>
+                                <p class="mb-0">{{ $footer->footer_copyright ?? '© 2023 SMK Negeri 1 Malang. Semua Hak Dilindungi.' }}</p>
+                                <p class="mb-0 text-muted small">{{ $footer->footer_weekday_hours ?? 'Senin - Jumat: 07:00 - 15:30 WIB' }}</p>
                             </div>
-
                         </div>
                     </div>
-
-                    <script>
-                    // Update warna background
-                    document.querySelector("input[name='footer_bg_color']").addEventListener("input", function() {
-                        document.getElementById("preview-footer").style.background = this.value;
-                    });
-
-                    // Update warna teks
-                    document.querySelector("input[name='footer_text_color']").addEventListener("input", function() {
-                        document.getElementById("preview-footer").style.color = this.value;
-                    });
-
-                    // Update alamat
-                    document.querySelector("textarea[name='footer_address']").addEventListener("input", function() {
-                        document.getElementById("preview-address").innerText = this.value;
-                    });
-
-                    // Update telepon
-                    document.querySelector("input[name='footer_phone']").addEventListener("input", function() {
-                        document.getElementById("preview-phone").innerText = this.value;
-                    });
-
-                    // Update email
-                    document.querySelector("input[name='footer_email']").addEventListener("input", function() {
-                        document.getElementById("preview-email").innerText = this.value;
-                    });
-
-                    // Update layanan
-                    document.querySelector("textarea[name='footer_services']").addEventListener("input", function() {
-                        let list = this.value.split("\n");
-                        let html = "";
-                        list.forEach(item => html += `<p>• ${item}</p>`);
-                        document.getElementById("preview-services").innerHTML = html;
-                    });
-
-                    // Update program keahlian
-                    document.querySelector("textarea[name='footer_programs']").addEventListener("input", function() {
-                        let list = this.value.split("\n");
-                        let html = "";
-                        list.forEach(item => html += `<p>• ${item}</p>`);
-                        document.getElementById("preview-programs").innerHTML = html;
-                    });
-
-                    // Update hak cipta
-                    document.querySelector("textarea[name='footer_copyright']").addEventListener("input", function() {
-                        document.getElementById("preview-copyright").innerText = this.value;
-                    });
-
-                    // Update jam operasional
-                    document.querySelector("input[name='footer_weekday_hours']").addEventListener("input", function() {
-                        document.getElementById("preview-hours").innerText = this.value;
-                    });
-                    </script>
-
-
-            <!-- Global Settings - FIXED SECTION -->
-<div class="settings-section" id="globalSettings">
-    <div class="card-section">
-        <h6><i class="bi bi-globe"></i> Pengaturan Global</h6>
-        <div class="row g-4">
-
-            <!-- Warna Utama -->
-            <div class="col-md-4">
-                <label class="form-label"><i class="bi bi-palette"></i> Warna Utama</label>
-                <div class="color-input-group">
-                    <input type="color" 
-                           name="global_primary_color" 
-                           class="form-control-color" 
-                           value="{{ $tampilan->warna ?? '#5955B3' }}">
-                    <span class="text-muted">{{ $tampilan->warna ?? '#5955B3' }}</span>
                 </div>
             </div>
 
-            <!-- Font Utama -->
+            <!-- Global Settings - FIXED SECTION -->
+            <div class="settings-section" id="globalSettings">
+    <div class="card-section">
+        <h6><i class="bi bi-globe"></i> Pengaturan Global</h6>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <label class="form-label"><i class="bi bi-palette"></i> Warna Utama</label>
+                <div class="color-input-group">
+                    <input type="color" name="global_primary_color" class="form-control-color" 
+                           value="{{ $semua->warna ?? '#5955B3' }}">
+                    <span class="text-muted">{{ $semua->warna_utama ?? '#5955B3' }}</span>
+                </div>
+            </div>
             <div class="col-md-4">
                 <label class="form-label"><i class="bi bi-fonts"></i> Font Utama</label>
                 <select name="global_primary_font" class="form-select">
-                    <option value="Poppins" {{ ($tampilan->font ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
-                    <option value="Roboto" {{ ($tampilan->font ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
-                    <option value="Open Sans" {{ ($tampilan->font ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
-                    <option value="Inter" {{ ($tampilan->font ?? '') == 'Inter' ? 'selected' : '' }}>Inter</option>
-                    <option value="Nunito" {{ ($tampilan->font ?? '') == 'Nunito' ? 'selected' : '' }}>Nunito</option>
-                    <option value="Montserrat" {{ ($tampilan->font ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
+                    <option value="Poppins" {{ ($semua->font_utama ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                    <option value="Roboto" {{ ($semua->font_utama ?? '') == 'Roboto' ? 'selected' : '' }}>Roboto</option>
+                    <option value="Open Sans" {{ ($semua->font_utama ?? '') == 'Open Sans' ? 'selected' : '' }}>Open Sans</option>
+                    <option value="Inter" {{ ($semua->font_utama ?? '') == 'Inter' ? 'selected' : '' }}>Inter</option>
+                    <option value="Nunito" {{ ($semua->font_utama ?? '') == 'Nunito' ? 'selected' : '' }}>Nunito</option>
+                    <option value="Montserrat" {{ ($semua->font_utama ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
                 </select>
             </div>
-
-            <!-- Font Heading -->
             <div class="col-md-4">
                 <label class="form-label"><i class="bi bi-type-h1"></i> Font Heading</label>
                 <select name="global_heading_font" class="form-select">
-                    <option value="Poppins" {{ ($tampilan->font_heading ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
-                    <option value="Playfair Display" {{ ($tampilan->font_heading ?? '') == 'Playfair Display' ? 'selected' : '' }}>Playfair Display</option>
-                    <option value="Merriweather" {{ ($tampilan->font_heading ?? '') == 'Merriweather' ? 'selected' : '' }}>Merriweather</option>
-                    <option value="Montserrat" {{ ($tampilan->font_heading ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
-                    <option value="Oswald" {{ ($tampilan->font_heading ?? '') == 'Oswald' ? 'selected' : '' }}>Oswald</option>
-                    <option value="Raleway" {{ ($tampilan->font_heading ?? '') == 'Raleway' ? 'selected' : '' }}>Raleway</option>
+                    <option value="Poppins" {{ ($semua->font_heading ?? 'Poppins') == 'Poppins' ? 'selected' : '' }}>Poppins</option>
+                    <option value="Playfair Display" {{ ($semua->font_heading ?? '') == 'Playfair Display' ? 'selected' : '' }}>Playfair Display</option>
+                    <option value="Merriweather" {{ ($semua->font_heading ?? '') == 'Merriweather' ? 'selected' : '' }}>Merriweather</option>
+                    <option value="Montserrat" {{ ($semua->font_heading ?? '') == 'Montserrat' ? 'selected' : '' }}>Montserrat</option>
+                    <option value="Oswald" {{ ($semua->font_heading ?? '') == 'Oswald' ? 'selected' : '' }}>Oswald</option>
+                    <option value="Raleway" {{ ($semua->font_heading ?? '') == 'Raleway' ? 'selected' : '' }}>Raleway</option>
                 </select>
             </div>
-
         </div>
     </div>
-
-    <!-- Tombol Simpan -->
-    <div class="mt-4 d-flex gap-3 justify-content-end">
-        <button type="submit" class="btn btn-primary">
-            <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
-        </button>
-    </div>
 </div>
-
 
 
             <!-- Action Buttons -->
