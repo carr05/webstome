@@ -630,7 +630,7 @@
    
 
     <!-- Team Section -->
-    <section id="guru" class="guru section light-background" style="
+    <section id="guru" class="team section light-background" style="
          --global-color: {{  $semua->warna_utama ?? ''}};
          --global-font-utama: {{ $semua->font_utama ?? ''}};
          --global-font-heading: {{ $semua->font_heading ?? ''}};
