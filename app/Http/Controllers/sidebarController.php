@@ -68,4 +68,5 @@ class SidebarController extends Controller
 
         return response()->json(['message' => 'Status diperbarui']);
     }
+    
 }
