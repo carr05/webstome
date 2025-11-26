@@ -1072,24 +1072,7 @@
                             </div>
                         </div>
 
-                        <div class="card-section menu-section">
-                            <h6><i class="bi bi-list"></i> Menu Navigasi</h6>
-                            <div class="menu-input">
-                                <input type="text" name="menu1" class="form-control" value="{{ $tampilan->menu1 ?? 'Beranda' }}" placeholder="Menu 1">
-                            </div>
-                            <div class="menu-input">
-                                <input type="text" name="menu2" class="form-control" value="{{ $tampilan->menu2 ?? 'Tentang' }}" placeholder="Menu 2">
-                            </div>
-                            <div class="menu-input">
-                                <input type="text" name="menu3" class="form-control" value="{{ $tampilan->menu3 ?? 'Program' }}" placeholder="Menu 3">
-                            </div>
-                            <div class="menu-input">
-                                <input type="text" name="menu4" class="form-control" value="{{ $tampilan->menu4 ?? 'Galeri' }}" placeholder="Menu 4">
-                            </div>
-                            <div class="menu-input">
-                                <input type="text" name="menu5" class="form-control" value="{{ $tampilan->menu5 ?? 'Kontak' }}" placeholder="Menu 5">
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
