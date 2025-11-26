@@ -708,7 +708,7 @@
 
   <!-- Section Title -->
   <div class="container section-title">
-    <h2>Events</h2>
+    <h2>Agenda</h2>
     <p>Daftar kegiatan yang sudah terjadwal di sekolah</p>
   </div><!-- End Section Title -->
 

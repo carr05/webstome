@@ -470,6 +470,14 @@
     </section><!-- /Services Alt Section -->
 
     <!-- Berita Section -->
+      @php
+    use App\Models\sidebar;
+    $menuBeritaAktif = Sidebar::where('name', 'berita')
+                        ->where('status', 'active')
+                        ->exists();
+@endphp
+
+@if($menuBeritaAktif)
     <section id="Berita" class="portfolio section" style="
     --global-color: {{  $semua->warna_utama ?? ''}};
          --global-font-utama: {{ $semua->font_utama ?? ''}};
@@ -617,13 +625,13 @@
             </div><!-- End Portfolio Item -->
 
           </div><!-- End Portfolio Container -->
-
+ @endforeach
         </div>
 
       </div>
 
     </section><!-- /Portfolio Section -->
-
+@endif
    
 
     <!-- Faq Section -->
