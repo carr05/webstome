@@ -38,8 +38,16 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
+  <header id="header" class="header d-flex align-items-center fixed-top"
+  style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
+         --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
+         --font-size: {{ $tampilan->font_size ?? '16px' }};
+         --font-color: {{ $tampilan->font_color ?? '#04315f' }};">
+    <div class="container position-relative d-flex align-items-center justify-content-between"
+    style="--nav-color: {{ $tampilan->warna ?? '#04415f' }};
+         --font-family: {{ $tampilan->font ?? 'Poppins, sans-serif' }};
+         --font-size: {{ $tampilan->font_size ?? '16px' }};
+         --font-color: {{ $tampilan->font_color ?? '#04315f' }};">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
@@ -50,34 +58,14 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#agenda">Agenda</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#Berita">Berita</a></li>
           <li><a href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <a class="btn-getstarted" href="#about">Get Started</a>
 
     </div>
   </header>
@@ -85,13 +73,16 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section" style="--global-color: {{  $semua->warna_utama ?? ''}};
-         --global-font-utama: {{ $semua->font_utama ?? ''}};
-         --global-font-heading: {{ $semua->font_heading ?? ''}};
-         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
-         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
-         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
-         --hero-background: url('{{ asset('storage/'.$hero->image) }}');">
+    <section id="hero" class="hero section" style="
+    --global-color: {{ $semua->warna_utama ?? '' }};
+    --global-font-utama: {{ $semua->font_utama ?? '' }};
+    --global-font-heading: {{ $semua->font_heading ?? '' }};
+    --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+    --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+    --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+    --hero-background: url({{ asset('storage/'.$hero->image) }});
+">
+
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -99,26 +90,35 @@
           <div class="col-lg-6 mb-4 mb-lg-0">
             <div class="badge-wrapper mb-3">
               <div class="d-inline-flex align-items-center rounded-pill border border-accent-light">
-                <div class="icon-circle me-2">
-                  <i class="bi bi-bell"></i>
+                
+    
                 </div>
-                <span class="badge-text me-3">Innovative Solutions</span>
               </div>
             </div>
 
-            <h1 class="hero-title mb-4">{{ $hero->title ?? 'Selamat Datang di SMK Negeri 1 Malang' }}</h1>
+          <div class="row align-items-center">
+    <!-- Kolom Teks -->
+    <div class="col-lg-6">
+        <h1 class="hero-title mb-4">
+            {{ $hero->title ?? 'Selamat Datang di SMK Negeri 1 Malang' }}
+        </h1>
 
-            <p class="hero-description mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo.</p>
+        <p class="hero-description mb-4">
+            {{ $hero->subtitle ?? '' }}
+        </p>
+    </div>
 
-            <div class="cta-wrapper">
-              <a href="#" class="btn btn-primary">Discover More</a>
-            </div>
-          </div>
+    <!-- Kolom Gambar -->
+    <div class="col-lg-6">
+        <div class="hero-image text-center text-lg-end">
+            <img src="{{ asset('assets3/img/illustration/illustration-16.webp') }}" 
+                 alt="Business Growth" 
+                 class="img-fluid" 
+                 loading="lazy">
+        </div>
+    </div>
+</div>
 
-          <div class="col-lg-6">
-            <div class="hero-image">
-              <img src="{{ asset('assets3/img/illustration/illustration-16.webp') }}" alt="Business Growth" class="img-fluid" loading="lazy">
-            </div>
           </div>
         </div>
 
@@ -164,54 +164,87 @@
 
     </section><!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+    <!-- Agenda Section -->
+<section id="agenda" class="agenda section">
 
-      <div class="container">
+  <!-- Section Title -->
+  <div class="container section-title">
+    <h2>Agenda</h2>
+    <p>Tentang kami dan apa yang kami lakukan</p>
+  </div>
+  <!-- End Section Title -->
 
-        <div class="row gy-4">
+  <div class="container">
 
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p class="who-we-are">Who We Are</p>
-            <h3>Unleashing Potential with Creative Strategy</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-            </ul>
-            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-          </div>
+    <div class="row g-4">
 
-          <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-4">
-              <div class="col-lg-6">
-                <img src="{{ asset('assets3/img/about/about-portrait-1.webp') }}" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-6">
-                <div class="row gy-4">
-                  <div class="col-lg-12">
-                    <img src="{{ asset('assets3/img/about/about-8.webp') }}" class="img-fluid" alt="">
-                  </div>
-                  <div class="col-lg-12">
-                    <img src="{{ asset('assets3/img/about/about-12.webp') }}" class="img-fluid" alt="">
-                  </div>
+      <!-- Left Content -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="agenda-content">
+          <p class="who-we-are">Who We Are</p>
+          <h3>Unleashing Potential with Creative Strategy</h3>
+
+          <p class="fst-italic">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <ul class="agenda-list">
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+            </li>
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span>
+            </li>
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Images -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-images">
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <img src="{{ asset('assets3/img/about/about-portrait-1.webp') }}" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-6">
+              <div class="row g-4">
+                <div class="col-12">
+                  <img src="{{ asset('assets3/img/about/about-8.webp') }}" class="img-fluid" alt="">
+                </div>
+                <div class="col-12">
+                  <img src="{{ asset('assets3/img/about/about-12.webp') }}" class="img-fluid" alt="">
                 </div>
               </div>
             </div>
 
           </div>
-
         </div>
-
       </div>
-    </section><!-- /About Section -->
+
+    </div>
+
+  </div>
+
+</section>
+
 
     <!-- How We Work Section -->
-    <section id="how-we-work" class="how-we-work section">
+    <section id="how-we-work" class="how-we-work section" style="
+    --global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');
+         ">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -292,7 +325,15 @@
     </section><!-- /How We Work Section -->
 
     <!-- Services Section -->
-    <section id="services" class="services section">
+    <section id="services" class="services section" style="
+         --global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');
+         ">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -407,7 +448,15 @@
     </section><!-- /Services Section -->
 
     <!-- Services Alt Section -->
-    <section id="services-alt" class="services-alt section">
+    <section id="services-alt" class="services-alt section" style="
+         --global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');
+         ">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -474,7 +523,15 @@
     </section><!-- /Services Alt Section -->
 
     <!-- Call To Action 2 Section -->
-    <section id="call-to-action-2" class="call-to-action-2 section light-background">
+    <section id="call-to-action-2" class="call-to-action-2 section light-background" style="
+         --global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');
+         ">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -518,12 +575,20 @@
 
     </section><!-- /Call To Action 2 Section -->
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <!-- Berita Section -->
+    <section id="Berita" class="portfolio section" style="
+    --global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');
+         ">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
+        <h2>Berita</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
@@ -546,10 +611,10 @@
             <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
               <div class="portfolio-card">
                 <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-1.webp" class="img-fluid" alt="" loading="lazy">
+                  <img src="{{ asset('assets3/img/portfolio/portfolio-1.webp') }}" class="img-fluid" alt="" loading="lazy">
                   <div class="portfolio-overlay">
                     <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-1.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-web"><i class="bi bi-eye"></i></a>
+                      <a href="{{ asset('assets3/img/portfolio/portfolio-1.webp') }}" class="glightbox preview-link" data-gallery="portfolio-gallery-web"><i class="bi bi-eye"></i></a>
                       <a href="portfolio-details.html" class="details-link"><i class="bi bi-arrow-right"></i></a>
                     </div>
                   </div>
@@ -565,7 +630,7 @@
             <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-graphics">
               <div class="portfolio-card">
                 <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-10.webp" class="img-fluid" alt="" loading="lazy">
+                  <img src="{{ asset('assets3/img/portfolio/portfolio-10.webp') }}" class="img-fluid" alt="" loading="lazy">
                   <div class="portfolio-overlay">
                     <div class="portfolio-actions">
                       <a href="assets/img/portfolio/portfolio-10.webp" class="glightbox preview-link" data-gallery="portfolio-gallery-graphics"><i class="bi bi-eye"></i></a>
@@ -665,231 +730,21 @@
 
     </section><!-- /Portfolio Section -->
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-4 justify-content-center">
-
-          <!-- Basic Plan -->
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="pricing-card">
-              <h3>Basic Plan</h3>
-              <div class="price">
-                <span class="currency">$</span>
-                <span class="amount">9.9</span>
-                <span class="period">/ month</span>
-              </div>
-              <p class="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam.</p>
-
-              <h4>Featured Included:</h4>
-              <ul class="features-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Duis aute irure dolor
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Excepteur sint occaecat
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Nemo enim ipsam voluptatem
-                </li>
-              </ul>
-
-              <a href="#" class="btn btn-primary">
-                Buy Now
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Standard Plan -->
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="pricing-card popular">
-              <div class="popular-badge">Most Popular</div>
-              <h3>Standard Plan</h3>
-              <div class="price">
-                <span class="currency">$</span>
-                <span class="amount">19.9</span>
-                <span class="period">/ month</span>
-              </div>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
-
-              <h4>Featured Included:</h4>
-              <ul class="features-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Lorem ipsum dolor sit amet
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Consectetur adipiscing elit
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Sed do eiusmod tempor
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Ut labore et dolore magna
-                </li>
-              </ul>
-
-              <a href="#" class="btn btn-light">
-                Buy Now
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Premium Plan -->
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="pricing-card">
-              <h3>Premium Plan</h3>
-              <div class="price">
-                <span class="currency">$</span>
-                <span class="amount">39.9</span>
-                <span class="period">/ month</span>
-              </div>
-              <p class="description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p>
-
-              <h4>Featured Included:</h4>
-              <ul class="features-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Temporibus autem quibusdam
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Saepe eveniet ut et voluptates
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Nam libero tempore soluta
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Cumque nihil impedit quo
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  Maxime placeat facere possimus
-                </li>
-              </ul>
-
-              <a href="#" class="btn btn-primary">
-                Buy Now
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Pricing Section -->
+   
 
     <!-- Faq Section -->
-    <section id="faq" class="faq section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-5">
-          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
-            <div class="faq-contact-card">
-              <div class="card-icon">
-                <i class="bi bi-question-circle"></i>
-              </div>
-              <div class="card-content">
-                <h3>Still Have Questions?</h3>
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ac diam sit amet quam vehicula elementum.</p>
-                <div class="contact-options">
-                  <a href="#" class="contact-option">
-                    <i class="bi bi-envelope"></i>
-                    <span>Email Support</span>
-                  </a>
-                  <a href="#" class="contact-option">
-                    <i class="bi bi-chat-dots"></i>
-                    <span>Live Chat</span>
-                  </a>
-                  <a href="#" class="contact-option">
-                    <i class="bi bi-telephone"></i>
-                    <span>Call Us</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="faq-accordion">
-              <div class="faq-item faq-active">
-                <div class="faq-header">
-                  <h3>Vivamus suscipit tortor eget felis porttitor volutpat?</h3>
-                  <i class="bi bi-chevron-down faq-toggle"></i>
-                </div>
-                <div class="faq-content">
-                  <p>
-                    Nulla quis lorem ut libero malesuada feugiat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt.
-                  </p>
-                </div>
-              </div><!-- End FAQ Item-->
-
-              <div class="faq-item" data-aos="zoom-in" data-aos-delay="200">
-                <div class="faq-header">
-                  <h3>Curabitur aliquet quam id dui posuere blandit?</h3>
-                  <i class="bi bi-chevron-down faq-toggle"></i>
-                </div>
-                <div class="faq-content">
-                  <p>
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.
-                  </p>
-                </div>
-              </div><!-- End FAQ Item-->
-
-              <div class="faq-item">
-                <div class="faq-header">
-                  <h3>Sed porttitor lectus nibh ullamcorper sit amet?</h3>
-                  <i class="bi bi-chevron-down faq-toggle"></i>
-                </div>
-                <div class="faq-content">
-                  <p>
-                    Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum.
-                  </p>
-                </div>
-              </div><!-- End FAQ Item-->
-
-              <div class="faq-item">
-                <div class="faq-header">
-                  <h3>Nulla quis lorem ut libero malesuada feugiat?</h3>
-                  <i class="bi bi-chevron-down faq-toggle"></i>
-                </div>
-                <div class="faq-content">
-                  <p>
-                    Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel.
-                  </p>
-                </div>
-              </div><!-- End FAQ Item-->
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Faq Section -->
+   
 
     <!-- Team Section -->
-    <section id="team" class="team section light-background">
+    <section id="team" class="team section light-background" style="
+         --global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');
+         ">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -992,7 +847,15 @@
     </section><!-- /Team Section -->
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+    <section id="testimonials" class="testimonials section" style="
+         --global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');
+         ">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -1198,7 +1061,16 @@
     </section><!-- /Testimonials Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section" style="
+        --global-color: {{  $semua->warna_utama ?? ''}};
+         --global-font-utama: {{ $semua->font_utama ?? ''}};
+         --global-font-heading: {{ $semua->font_heading ?? ''}};
+         --hero-font-color: {{ $hero->font_color ?? '#ffffff' }};
+         --hero-font-family: {{ $hero->font ?? 'Poppins, sans-serif' }};
+         --hero-font-size: {{ $hero->font_size == 's' ? '14px' : ($hero->font_size == 'm' ? '18px' : '24px') }};
+         --hero-background: url('{{ asset('storage/'.$hero->image) }}');
+         ">
+    >
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">

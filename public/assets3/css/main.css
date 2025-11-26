@@ -29,7 +29,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #3a3939;  /* The default color of the main navmenu links */
+  /* The default color of the main navmenu links */
   --nav-hover-color: #5d57f4; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -83,8 +83,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
+  color: var(--global-color);
+  font-family: var( --global-font-heading);
 }
 
 /* PHP Email Form Messages
@@ -145,7 +145,7 @@ h6 {
 .header {
   --background-color: rgba(255, 255, 255, 0);
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--nav-color);
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -240,7 +240,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
+    color: var(--font-color);
     padding: 18px 15px;
     font-size: 15px;
     font-family: var(--nav-font);
@@ -808,7 +808,7 @@ section,
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1.2;
-  color: var(--heading-color);
+  color: var(--global-color);
   margin-bottom: 1.5rem;
 }
 
@@ -841,13 +841,13 @@ section,
   padding: 0.75rem 1.75rem;
   font-weight: 500;
   transition: all 0.3s ease;
-  background-color: var(--accent-color);
+  background-color: var(--global-color);
   border-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
 .hero .cta-wrapper .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  background-color: color-mix(in srgb, var(--global-color), #000 10%);
   border-color: color-mix(in srgb, var(--accent-color), #000 10%);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -912,7 +912,7 @@ section,
 
 .hero .feature-boxes .feature-box .feature-icon i {
   font-size: 1.75rem;
-  color: var(--heading-color);
+  color: var(--global-color);
 }
 
 .hero .feature-boxes .feature-box .feature-content {
@@ -922,7 +922,7 @@ section,
 .hero .feature-boxes .feature-box .feature-content .feature-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--global-color);
   margin-bottom: 0.75rem;
 }
 
